@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zeppstr — Brand One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #3147FF;
+    --yellow: #FFD031;
+    --ink: #0A102F;
+    --body: #404040;
+    --muted: #69727D;
+    --emerald: #064E3B;
+    --bg: #F8F8F6;
+    --rule: #E5E7EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: "Plus Jakarta Sans", system-ui, sans-serif; line-height: 1.5; padding: 48px 24px; -webkit-font-smoothing: antialiased; }
+  .sheet { max-width: 880px; margin: 0 auto; background: #fff; border: 1px solid var(--rule); border-radius: 16px; padding: 56px; display: flex; flex-direction: column; gap: 44px; }
+  .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .mark { background: var(--yellow); color: var(--ink); padding: 0 8px; }
+  .header { border-bottom: 1px solid var(--rule); padding-bottom: 36px; }
+  .header h1 { font-weight: 200; font-size: clamp(32px, 5vw, 52px); letter-spacing: -0.035em; line-height: 1.05; margin: 16px 0; }
+  .header p { font-size: 16px; color: var(--body); max-width: 60ch; line-height: 1.6; }
+  .thesis { background: var(--ink); border-radius: 10px; padding: 28px 32px; }
+  .thesis .eyebrow { color: var(--muted); }
+  .thesis p { color: #fff; font-weight: 200; font-size: clamp(18px, 2.6vw, 24px); line-height: 1.45; letter-spacing: -0.01em; margin-top: 12px; }
+  .thesis .accent { color: var(--yellow); }
+  .grid { display: grid; gap: 14px; }
+  .cols-4 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .cols-2 { grid-template-columns: 1fr 1fr; gap: 44px; }
+  .pill { background: var(--bg); border-radius: 8px; padding: 16px 18px; }
+  .pill h4 { font-weight: 500; font-size: 14px; }
+  .pill span { font-size: 13px; color: var(--muted); }
+  .note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+  .swatch { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .chip { width: 38px; height: 38px; border-radius: 7px; flex: none; }
+  .swatch .name { font-weight: 500; font-size: 14px; }
+  .swatch .hex { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--muted); }
+  .type-aa { font-weight: 200; font-size: 48px; letter-spacing: -0.03em; line-height: 1; }
+  .step { border: 1px solid var(--rule); border-radius: 8px; padding: 16px; }
+  .square { width: 9px; height: 9px; background: var(--yellow); display: block; margin-bottom: 10px; }
+  .step h4 { font-weight: 500; font-size: 14px; }
+  .step span { font-size: 12px; color: var(--muted); }
+  .stat { background: var(--bg); border-radius: 8px; padding: 20px; }
+  .stat .label { font-size: 13px; color: var(--muted); }
+  .stat .big { font-weight: 500; font-size: 24px; margin: 6px 0 4px; }
+  .stat .who { font-size: 11px; color: var(--muted); }
+  .footer { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border-top: 1px solid var(--rule); padding-top: 32px; }
+  .cta-primary { background: var(--yellow); color: var(--ink); font-weight: 500; font-size: 14px; padding: 11px 20px; border-radius: 8px; }
+  .cta-secondary { border: 1px solid var(--rule); color: var(--ink); font-weight: 500; font-size: 14px; padding: 11px 20px; border-radius: 8px; }
+  .url { margin-left: auto; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); }
+  h3.section { font-weight: 500; font-size: 16px; margin-bottom: 14px; }
+  @media print { body { background: #fff; padding: 0; } .sheet { border: none; border-radius: 0; } }
+</style>
+</head>
+<body>
+  <main class="sheet">
+
+    <header class="header">
+      <div class="eyebrow">Brand Operating System — v1.0</div>
+      <h1>Strategic growth planning for <span class="mark">ambitious</span> businesses.</h1>
+      <p>Zeppstr is the strategic growth partner for ambitious businesses. We build the system underneath your marketing — so every channel, every campaign, every rupee compounds.</p>
+    </header>
+
+    <section class="thesis">
+      <div class="eyebrow">The thesis</div>
+      <p>Growth stalls. The reflex is to add — another agency, another platform, another channel. <span class="accent">The constraint was never the channels. It was the architecture beneath them.</span></p>
+    </section>
+
+    <section>
+      <div class="eyebrow" style="margin-bottom:14px;">Voice</div>
+      <div class="grid cols-4">
+        <div class="pill"><h4>Senior strategist</h4><span>Confident, calm, contrarian</span></div>
+        <div class="pill"><h4>Short &amp; declarative</h4><span>Fragments land. No filler</span></div>
+        <div class="pill"><h4>Systems language</h4><span>Architecture, compound, leak</span></div>
+        <div class="pill"><h4>Proof-forward</h4><span>Real numbers, named clients</span></div>
+      </div>
+      <p class="note">No hype. No emoji. No exclamation marks. Never "game-changing" or "ninja".</p>
+    </section>
+
+    <section class="grid cols-2">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">Color</div>
+        <div class="swatch"><span class="chip" style="background:#3147FF;"></span><div><div class="name">Brand blue</div><div class="hex">#3147FF</div></div></div>
+        <div class="swatch"><span class="chip" style="background:#FFD031;"></span><div><div class="name">Brand yellow</div><div class="hex">#FFD031 · spotlight</div></div></div>
+        <div class="swatch"><span class="chip" style="background:#0A102F;"></span><div><div class="name">Ink headline</div><div class="hex">#0A102F</div></div></div>
+        <div class="swatch"><span class="chip" style="background:#064E3B;"></span><div><div class="name">Emerald block</div><div class="hex">#064E3B</div></div></div>
+        <div class="swatch"><span class="chip" style="background:#F8F8F6; border:1px solid var(--rule);"></span><div><div class="name">Off-white</div><div class="hex">#F8F8F6</div></div></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">Type</div>
+        <div class="type-aa">Aa</div>
+        <p class="note" style="margin:8px 0 16px;">Plus Jakarta Sans — hero stays <strong style="font-weight:500;color:var(--ink);">ultra-light 200</strong>, never bold</p>
+        <div style="font-size:16px;">Inter — body, 16px / 1.6</div>
+        <div class="eyebrow" style="margin-top:12px;">JetBrains Mono — tag eyebrows</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow" style="margin-bottom:14px;">Methodology</div>
+      <div class="grid cols-4">
+        <div class="step"><span class="square"></span><h4>Diagnose</h4><span>Audit · 90-day plan</span></div>
+        <div class="step"><span class="square"></span><h4>Architect</h4><span>Revenue system design</span></div>
+        <div class="step"><span class="square"></span><h4>Deploy</h4><span>Channels as one system</span></div>
+        <div class="step"><span class="square"></span><h4>Operate</h4><span>One north-star metric</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow" style="margin-bottom:14px;">Proof</div>
+      <div class="grid cols-3">
+        <div class="stat"><div class="label">Revenue lift</div><div class="big">40K → 2.7M</div><div class="who">Wise Market · AUD · 6 mo</div></div>
+        <div class="stat"><div class="label">Conversion rate</div><div class="big">0.5% → 3%+</div><div class="who">Mini Leaves · ₹60L+/mo</div></div>
+        <div class="stat"><div class="label">Demand reach</div><div class="big">3 flats sold</div><div class="who">Tru Aquapolis · direct leads</div></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="cta-primary">Apply for a diagnostic</span>
+      <span class="cta-secondary">View selected work</span>
+      <span class="url">zeppstr.com</span>
+    </footer>
+
+  </main>
+</body>
+</html>
