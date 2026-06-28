@@ -1,0 +1,106 @@
+import { defineType, defineField } from "sanity";
+
+export const solution = defineType({
+  name: "solution",
+  title: "Solution",
+  type: "document",
+  groups: [
+    { name: "core", title: "Core" },
+    { name: "content", title: "Content" },
+    { name: "relations", title: "Relations" },
+    { name: "seo", title: "SEO" },
+  ],
+  fields: [
+    defineField({
+      name: "name",
+      title: "Solution name",
+      type: "string",
+      group: "core",
+      validation: (R) => R.required().max(60),
+      description: "e.g. Organic Growth Practice",
+    }),
+    defineField({
+      name: "slug",
+      title: "URL slug",
+      type: "slug",
+      group: "core",
+      options: { source: "name", maxLength: 80 },
+      validation: (R) => R.required(),
+    }),
+    defineField({
+      name: "tagline",
+      title: "Tagline",
+      type: "string",
+      group: "core",
+      description: "1-line claim shown on the hub hero",
+      validation: (R) => R.max(120),
+    }),
+    defineField({
+      name: "heroImage",
+      title: "Hero image",
+      type: "image",
+      group: "core",
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Alt text",
+          type: "string",
+          validation: (R) => R.required(),
+        }),
+      ],
+    }),
+    defineField({
+      name: "longDescription",
+      title: "Long description",
+      type: "array",
+      group: "content",
+      of: [{ type: "block" }],
+    }),
+    defineField({
+      name: "services",
+      title: "Sub-services",
+      type: "array",
+      group: "relations",
+      of: [{ type: "reference", to: [{ type: "subService" }] }],
+    }),
+    defineField({
+      name: "relatedIndustries",
+      title: "Related industries",
+      type: "array",
+      group: "relations",
+      of: [{ type: "reference", to: [{ type: "industry" }] }],
+    }),
+    defineField({
+      name: "relatedCaseStudies",
+      title: "Related case studies",
+      type: "array",
+      group: "relations",
+      of: [{ type: "reference", to: [{ type: "caseStudy" }] }],
+    }),
+    defineField({
+      name: "seoTitle",
+      title: "SEO title",
+      type: "string",
+      group: "seo",
+      validation: (R) => R.max(60),
+    }),
+    defineField({
+      name: "seoDescription",
+      title: "SEO description",
+      type: "text",
+      group: "seo",
+      rows: 3,
+      validation: (R) => R.max(160),
+    }),
+    defineField({
+      name: "ogImage",
+      title: "OG image (1200×630)",
+      type: "image",
+      group: "seo",
+    }),
+  ],
+  preview: {
+    select: { title: "name", subtitle: "tagline", media: "heroImage" },
+  },
+});

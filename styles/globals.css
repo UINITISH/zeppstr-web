@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   Brand tokens — locked from /reference/brand-tokens.md
+   Pulled from live zeppstr.com inspection.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand */
+  --color-brand-blue: #3147FF;
+  --color-brand-yellow: #FFD031;
+  --color-brand-yellow-hover: #F5C012;
+
+  /* Ink */
+  --color-ink-headline: #0A102F;
+  --color-ink-body: #404040;
+  --color-ink-muted: #69727D;
+  --color-ink-soft: #585450;
+
+  /* Background */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F8F6;
+  --color-bg-inverse: #0A102F;
+
+  /* CTA */
+  --color-cta-text: #000000;
+
+  /* Borders */
+  --color-rule: #E5E7EB;
+
+  /* Motion */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg-primary text-ink-body font-body text-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-ink-headline;
+  }
+
+  /* Headlines use Plus Jakarta Sans 200 — the brand-defining extra-light weight.
+     DO NOT bulk this up. The lightness IS the brand. */
+  h1 {
+    @apply font-extralight text-display-xl;
+  }
+
+  h2 {
+    @apply font-extralight text-display-lg;
+  }
+
+  h3 {
+    @apply font-light text-display-md;
+  }
+
+  /* Focus ring — accessible + brand-blue */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-blue;
+  }
+
+  /* Selection */
+  ::selection {
+    background: var(--color-brand-yellow);
+    color: var(--color-cta-text);
+  }
+}
+
+@layer components {
+  /* CTA — signature yellow + black */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           bg-brand-yellow text-[#000] font-body font-medium text-button
+           px-[42px] py-[18px] rounded
+           transition-colors duration-hover ease-smooth
+           hover:bg-brand-yellow-hover
+           focus-visible:outline-brand-blue;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center text-brand-blue font-body font-medium text-button
+           px-6 py-[18px] rounded
+           transition-opacity duration-hover
+           hover:opacity-70;
+  }
+
+  .eyebrow {
+    @apply font-body text-eyebrow font-medium text-brand-blue uppercase;
+  }
+
+  .container-layout {
+    @apply max-w-layout mx-auto px-6 md:px-12;
+  }
+
+  .container-reading {
+    @apply max-w-reading mx-auto px-6;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Grid pattern — intersecting cells (16×16px).
+   Used by GridOverlay component. Static — no animation.
+   ───────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────
+   Floating marketing icons — drift animation.
+   Three unique float patterns so icons don't sync.
+   Respects prefers-reduced-motion.
+   ───────────────────────────────────────────── */
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(18px, -14px); }
+  50%      { transform: translate(-8px, 12px); }
+  75%      { transform: translate(12px, 18px); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0); }
+  33%      { transform: translate(-14px, 16px); }
+  66%      { transform: translate(20px, -10px); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0); }
+  20%      { transform: translate(10px, -18px); }
+  50%      { transform: translate(-16px, -8px); }
+  80%      { transform: translate(8px, 14px); }
+}
+
+@keyframes pulse-icon {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 0.75; }
+}
+
+.float-a { animation: float-a 14s ease-in-out infinite, pulse-icon 3.5s ease-in-out infinite; }
+.float-b { animation: float-b 18s ease-in-out infinite, pulse-icon 4.5s ease-in-out infinite; }
+.float-c { animation: float-c 16s ease-in-out infinite, pulse-icon 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-a, .float-b, .float-c { animation: none; }
+}
+
+/* ─────────────────────────────────────────────
+   Outlined display headings (Yellow Slice-style)
+   Renders type as an outline only — no fill.
+   ───────────────────────────────────────────── */
+
+.text-outlined {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-ink-headline);
+}
+
+.text-outlined-yellow {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-ink-headline);
+}
+
+.hatch-overlay {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 15px,
+      rgba(150, 155, 165, 0.1) 15px,
+      rgba(150, 155, 165, 0.1) 16px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 15px,
+      rgba(150, 155, 165, 0.1) 15px,
+      rgba(150, 155, 165, 0.1) 16px
+    );
+}
