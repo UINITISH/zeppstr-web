@@ -31,6 +31,8 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       { protocol: "https", hostname: "cdn.sanity.io" },
+      // Royalty-free placeholder case-study images (replaceable with real photos)
+      { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
   async redirects() {

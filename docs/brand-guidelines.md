@@ -176,7 +176,9 @@ Pulled directly from the locked brand tokens (`tailwind.config.ts` / `globals.cs
 | Conversion rate | **0.5% → 3%+, ₹60L+/month run rate** | Mini Leaves — Indian DTC consumer brand |
 | Demand reach | 3 premium flats sold direct from generated leads | Tru Aquapolis — Indian premium real estate |
 
-**Named clients to reference:** Prohance, 21 Finance, Empuls, Prestige Group, Aishwarya Interiors, Fixstars (Tokyo), Tristar Online (Australia), Wise Market, Mini Leaves, Tru Aquapolis.
+**Named clients to reference:** Prohance, 21 Finance, Empuls, Aishwarya Interiors, Fixstars (Tokyo), Tristar Online (Australia), Wise Market, Mini Leaves, Tru Aquapolis, Invest in Sharjah, Homatico.
+
+**Never name:** Brigade Group, Prestige Group, Sobha Realty, Sobha Limited, Imtiaz Developments. Delivered as third-party/subcontracted work — reporting access only, no publication or naming rights. Refer to this work only in anonymised, aggregate form ("a tier-1 Bengaluru developer").
 
 > When in doubt on any channel: **lead with the outcome, attribute it to the named client, then connect it back to the architecture thesis.**
 

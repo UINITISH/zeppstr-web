@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { CreatorTierLadder } from "@/components/utility/CreatorTierLadder";
 // uses a Comparison block, Tier system, and Stack rather than Symptoms / Principles / Layers.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Influencer & Creator Partnerships — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Most creator programs are media buys in disguise. We build them as growth assets — discovered, briefed, owned, measured, and indexed against the channels you already run.",
-};
+  path: "/solutions/brand-engagement-lifecycle/influencer-partnerships",
+})
 
 // ─── Content ───
 
@@ -43,7 +45,7 @@ const COMPARISON = [
     us: "Pay for performance-indexed assets. Keep the rights for 18 months.",
   },
   {
-    them: "Rent borrowed time on someone else's platform.",
+    them: "Rent borrowed time on someone else’s platform.",
     us: "Build owned media you re-use across paid, lifecycle, and sales.",
   },
   {
@@ -191,7 +193,7 @@ const FAQS = [
       "We do. Discovery is the part most brands underspec, and the part that decides whether the program compounds or stalls. We long-list 80, short-list 20, vet 12.",
   },
   {
-    question: "Flat fee or performance — what's the deal structure?",
+    question: "Flat fee or performance — what’s the deal structure?",
     answer:
       "Both. Paid floor + performance bonus + 18-month rights is the baseline we negotiate against. Same total cost, different incentive alignment — the creator gets paid more when the work performs.",
   },
@@ -203,12 +205,12 @@ const FAQS = [
   {
     question: "Do you handle UGC, affiliate, and employee creators too?",
     answer:
-      "UGC and affiliate sit inside the Resonance and Niche tiers — same operating model, lower production weight. Employee creators are a separate workstream we'll scope if relevant.",
+      "UGC and affiliate sit inside the Resonance and Niche tiers — same operating model, lower production weight. Employee creators are a separate workstream we’ll scope if relevant.",
   },
   {
     question: "What attribution model do you use?",
     answer:
-      "Layered, not single-touch. Coupon code, tracked link, modeled lift against control cohort, and 90-day repeat-purchase. Each layer answers a different question; together they don't lie.",
+      "Layered, not single-touch. Coupon code, tracked link, modeled lift against control cohort, and 90-day repeat-purchase. Each layer answers a different question; together they don’t lie.",
   },
   {
     question: "What does it cost?",

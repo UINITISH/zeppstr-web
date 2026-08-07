@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { EmailFlowGraph } from "@/components/utility/EmailFlowGraph";
 // Flow Library catalog, Architecture stack.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Lifecycle & Email Marketing — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Email is the only channel you own. Treat it like one. We build lifecycle as a state machine — automated flows for every meaningful customer state, measured against revenue, not open rates.",
-};
+  path: "/solutions/brand-engagement-lifecycle/lifecycle-email",
+})
 
 // ─── Content ───
 
@@ -230,7 +232,7 @@ const FAQS = [
   {
     question: "Will sending less actually grow revenue?",
     answer:
-      "Yes, usually. Most lists are over-mailed, under-segmented, and beat down to single-digit open rates. Sending less to better-segmented cohorts compounds. We've cut volume 60% and grown revenue in the same quarter.",
+      "Yes, usually. Most lists are over-mailed, under-segmented, and beat down to single-digit open rates. Sending less to better-segmented cohorts compounds. We’ve cut volume 60% and grown revenue in the same quarter.",
   },
   {
     question: "Do you do SMS, push, and WhatsApp too?",

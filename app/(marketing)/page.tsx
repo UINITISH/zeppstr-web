@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { HeroPrimary } from "@/components/hero/HeroPrimary";
@@ -16,6 +17,12 @@ import {
   recentArticlesQuery,
 } from "@/sanity/lib/queries";
 import type { Solution, CaseStudy, Article, Industry } from "@/sanity/lib/types";
+
+// Home inherits the root default title/description; only the canonical is
+// set here so the homepage self-references correctly.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 type CaseStudyListItem = Pick<
   CaseStudy,
@@ -56,15 +63,6 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
     country: "India",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/empuls.jpg",
-  },
-  {
-    _id: "static-prestige",
-    clientName: "Prestige Group",
-    slug: { current: "prestige-group" },
-    industry: { _id: "ind-real-estate", name: "Real Estate", slug: { current: "real-estate" } },
-    country: "India",
-    linkHref: "/work",
-    screenshotSrc: "/case-screenshots/prestige-group.jpg",
   },
   {
     _id: "static-aishwarya-interiors",

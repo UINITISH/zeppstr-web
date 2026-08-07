@@ -14,20 +14,22 @@
     "sanity:build": "sanity build",
     "sanity:deploy": "sanity deploy",
     "seed": "tsx scripts/seed/seed.ts",
-    "seed:check": "tsx scripts/seed/check.ts"
+    "seed:check": "tsx scripts/seed/check.ts",
+    "seed:projects": "tsx scripts/seed/seed-client-projects.ts"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@portabletext/react": "^3.1.0",
     "@portabletext/types": "^2.0.13",
-    "@sanity/client": "^6.21.0",
-    "@sanity/image-url": "^1.0.2",
-    "@sanity/vision": "^3.50.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-visually-hidden": "^1.1.0",
-    "@hookform/resolvers": "^3.9.0",
+    "@sanity/client": "^6.21.0",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.50.0",
+    "@sentry/nextjs": "^8.30.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "next": "^14.2.5",
@@ -35,12 +37,13 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
+    "react-is": "^19.2.7",
     "resend": "^4.0.0",
     "sanity": "^3.50.0",
+    "styled-components": "^6.4.3",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.8",
-    "@sentry/nextjs": "^8.30.0"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
@@ -48,6 +51,7 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "autoprefixer": "^10.4.19",
+    "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.5",
     "postcss": "^8.4.39",
@@ -55,7 +59,6 @@
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.6",
     "tsx": "^4.19.0",
-    "dotenv": "^16.4.5",
     "typescript": "^5.5.3"
   },
   "engines": {

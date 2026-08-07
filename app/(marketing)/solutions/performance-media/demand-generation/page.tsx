@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { DemandIceberg } from "@/components/utility/DemandIceberg";
 // capture comparison), hero stats, First 30 Days, Demand Catalog.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Demand Generation — Performance Media | Zeppstr",
   description:
     "Stop capturing demand. Create it. Two-funnel demand programs — creation (the 95% that compounds) and capture (the 5% that converts) — operated as one system.",
-};
+  path: "/solutions/performance-media/demand-generation",
+})
 
 // ─── Content ───
 

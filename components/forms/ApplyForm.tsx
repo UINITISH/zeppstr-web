@@ -93,7 +93,7 @@ export function ApplyForm() {
         const data = await res.json().catch(() => ({}));
         throw new Error(
           data?.message ??
-            "We couldn't submit the application. Please try again, or email nitish@zeppstr.com directly."
+            "We couldn’t submit the application. Please try again, or email nitish@zeppstr.com directly."
         );
       }
 

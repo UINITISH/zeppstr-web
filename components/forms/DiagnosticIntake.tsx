@@ -10,7 +10,6 @@ const LOGOS = [
   "wise-market.png",
   "mini-leaves.png",
   "tristar-online.png",
-  "prestige-group.png",
   "aishwarya-interiors.png",
   "empuls.png",
   "fixstars.png",

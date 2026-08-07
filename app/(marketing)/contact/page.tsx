@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import Link from "next/link";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { ContactForm } from "@/components/forms/ContactForm";
 
-export const metadata: Metadata = {
-  title: "Contact Zeppstr Growth Media | Bengaluru",
+export const metadata: Metadata = buildMetadata({
+  title: "Contact | Bengaluru, India",
   description:
     "Reach Zeppstr Growth Media — for engagement applications, press, partnerships, and general inquiries. Bengaluru, India · 27th Main Rd, HSR Layout · nitish@zeppstr.com.",
   alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+})
 
 const CONTACT_PATHS = [
   {
@@ -29,7 +31,7 @@ const CONTACT_PATHS = [
   },
   {
     heading: "Just have a question?",
-    body: "For anything that doesn't fit the categories above — including students, peer firms, or curious operators — write to us directly.",
+    body: "For anything that doesn’t fit the categories above — including students, peer firms, or curious operators — write to us directly.",
     cta: { label: "nitish@zeppstr.com", href: "mailto:nitish@zeppstr.com" },
   },
 ];

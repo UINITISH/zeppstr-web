@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { PortableText } from "@/components/article/PortableText";
@@ -39,10 +40,11 @@ export async function generateMetadata({
     slug: params.slug,
   });
   if (!article) return {};
-  return {
+  return buildMetadata({
     title: article.seoTitle ?? article.title,
     description: article.seoDescription ?? article.excerpt,
-  };
+    path: `/insights/${params.slug}`,
+  });
 }
 
 // ─────────────────────────────────────────────

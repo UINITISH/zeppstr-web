@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { OrganicCompoundingCurve } from "@/components/utility/OrganicCompounding
 // Format Library catalog, Architecture, Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Organic Social — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Posts decay. Formats compound. We build organic social as a format library and editorial rhythm — not a content treadmill measured in posts-per-week.",
-};
+  path: "/solutions/brand-engagement-lifecycle/organic-social",
+})
 
 // ─── Content ───
 

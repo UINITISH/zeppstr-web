@@ -26,6 +26,66 @@ interface PortableTextProps {
   className?: string;
 }
 
+/**
+ * Reconstruct a markdown pipe-table from a text block whose row newlines were
+ * collapsed to spaces during seeding. Strategy: split on "|", count separator
+ * cells (---) to get the column count, drop empties + separators, then chunk.
+ * Returns null when the text isn't a table.
+ */
+const SEP_CELL = /^:?-{2,}:?$/;
+function parsePipeTable(text: string): { headers: string[]; rows: string[][] } | null {
+  if (!text || !text.includes("|") || !/\|\s*:?-{2,}/.test(text)) return null;
+  const cells = text.split("|").map((c) => c.trim());
+  const cols = cells.filter((c) => SEP_CELL.test(c)).length;
+  if (cols < 2) return null;
+  const data = cells.filter((c) => c !== "" && !SEP_CELL.test(c));
+  if (data.length < cols * 2) return null; // need at least a header + one row
+  const headers = data.slice(0, cols);
+  const rows: string[][] = [];
+  for (let i = cols; i + cols <= data.length; i += cols) {
+    rows.push(data.slice(i, i + cols));
+  }
+  return { headers, rows };
+}
+
+function DataTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
+  return (
+    <div className="my-10 overflow-x-auto">
+      <table className="w-full border-collapse text-left">
+        <thead>
+          <tr className="border-b-2 border-ink-headline">
+            {headers.map((h, i) => (
+              <th
+                key={i}
+                className="py-3 pr-6 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-headline whitespace-nowrap"
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, r) => (
+            <tr key={r} className="border-b border-rule">
+              {row.map((cell, c) => (
+                <td
+                  key={c}
+                  className={cn(
+                    "py-3 pr-6 font-body text-body-sm whitespace-nowrap",
+                    c === 0 ? "text-ink-headline font-medium" : "text-ink-body"
+                  )}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
@@ -43,11 +103,18 @@ const components: PortableTextComponents = {
         {children}
       </h4>
     ),
-    normal: ({ children }) => (
-      <p className="font-body text-body-lg text-ink-body leading-relaxed mb-6">
-        {children}
-      </p>
-    ),
+    normal: ({ children, value }) => {
+      const raw = ((value as { children?: { text?: string }[] })?.children ?? [])
+        .map((c) => c.text ?? "")
+        .join("");
+      const table = parsePipeTable(raw);
+      if (table) return <DataTable headers={table.headers} rows={table.rows} />;
+      return (
+        <p className="font-body text-body-lg text-ink-body leading-relaxed mb-6">
+          {children}
+        </p>
+      );
+    },
     blockquote: ({ children }) => (
       <blockquote className="my-10 pl-6 border-l-2 border-brand-yellow font-display font-light text-display-sm text-ink-headline italic">
         {children}

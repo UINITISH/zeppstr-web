@@ -43,14 +43,13 @@ export function LogoStrip({ label, logos }: LogoStripProps) {
 
 // Sample logos for dev preview — production pulls from Sanity
 const SAMPLE_LOGOS: ClientLogo[] = [
-  { name: "Wise Market", src: "/clients/wise-market.png" },
-  { name: "Mini Leaves", src: "/clients/mini-leaves.png" },
-  { name: "Prestige Group", src: "/clients/prestige-group.png" },
-  { name: "Empuls", src: "/clients/empuls.png" },
-  { name: "ProHance", src: "/clients/prohance.png" },
-  { name: "Fixstars", src: "/clients/fixstars.png" },
-  { name: "Invest in Sharjah", src: "/clients/invest-in-sharjah.png" },
-  { name: "Tru Aquapolis", src: "/clients/tru-aquapolis.png" },
-  { name: "LearnCab", src: "/clients/learncab.png" },
+  { name: "Wise Market", src: "/client-logos/wise-market.png" },
+  { name: "Mini Leaves", src: "/client-logos/mini-leaves.png" },
+  { name: "Empuls", src: "/client-logos/empuls.png" },
+  { name: "ProHance", src: "/client-logos/prohance.png" },
+  { name: "Fixstars", src: "/client-logos/fixstars.png" },
+  { name: "Invest in Sharjah", src: "/client-logos/invest-in-sharjah.png" },
+  { name: "Tru Aquapolis", src: "/client-logos/tru-aquapolis.png" },
+  { name: "LearnCab", src: "/client-logos/learncab.png" },
   { name: "+ 15 more", src: "" },
 ];

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { BrandIdentitySystem } from "@/components/utility/BrandIdentitySystem";
 // identity-specific symptoms, principles, and process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Brand Identity — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Most identity projects solve the wrong problem. They optimize for how the brand looks in a deck — not how it performs in a paid ad, a checkout page, or a sales call. We design for the second one.",
-};
+  path: "/solutions/brand-engagement-lifecycle/brand-identity",
+})
 
 // ─── Content ───
 
@@ -111,12 +113,12 @@ const PROCESS_PHASES = [
   {
     title: "Identity Audit",
     duration: "Week 1–2",
-    body: "Every existing identity surface scored for consistency, performance, and decay. Written diagnostic — what's working, what's leaking, what's drifting.",
+    body: "Every existing identity surface scored for consistency, performance, and decay. Written diagnostic — what’s working, what’s leaking, what’s drifting.",
   },
   {
     title: "Positioning Lock",
     duration: "Week 3",
-    body: "One sentence we'll design from. Until this is signed by the founder, no visual work begins. This is the part most agencies skip.",
+    body: "One sentence we’ll design from. Until this is signed by the founder, no visual work begins. This is the part most agencies skip.",
   },
   {
     title: "System Composition",
@@ -126,7 +128,7 @@ const PROCESS_PHASES = [
   {
     title: "Production Build",
     duration: "Week 8–10",
-    body: "Every artifact built in production format. Source files. Design tokens. Code variables. Copy in markdown. No deck that can't be shipped.",
+    body: "Every artifact built in production format. Source files. Design tokens. Code variables. Copy in markdown. No deck that can’t be shipped.",
   },
   {
     title: "Application + Handoff",
@@ -181,7 +183,7 @@ const FAQS = [
   {
     question: "Rebrand or new identity — which do you do?",
     answer:
-      "Mostly rebrands. Nine of ten engagements are operators who already have an identity that's stopped operating. We rarely build a brand from a blank canvas.",
+      "Mostly rebrands. Nine of ten engagements are operators who already have an identity that’s stopped operating. We rarely build a brand from a blank canvas.",
   },
   {
     question: "How is this different from hiring a branding agency?",
@@ -201,7 +203,7 @@ const FAQS = [
   {
     question: "What if our team is the bottleneck, not the identity?",
     answer:
-      "The audit will tell us that. If your problem is operating capacity rather than the identity itself, we'll say so — and recommend Lifecycle or Content Operations instead.",
+      "The audit will tell us that. If your problem is operating capacity rather than the identity itself, we’ll say so — and recommend Lifecycle or Content Operations instead.",
   },
 ];
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { ArticleCard } from "@/components/cards/ArticleCard";
@@ -13,11 +14,12 @@ type ArticleListItem = Pick<
   "_id" | "title" | "slug" | "excerpt" | "heroImage" | "author" | "category" | "publishedAt"
 >;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Insights · The Brief",
   description:
     "Field notes on growth structure — how multi-channel marketing actually compounds. Subscribe to The Brief for one practical, opinionated essay every other Thursday.",
-};
+  path: "/insights",
+})
 
 const CATEGORIES: { value: string; label: string }[] = [
   { value: "all", label: "All" },

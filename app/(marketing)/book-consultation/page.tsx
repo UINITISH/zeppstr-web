@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { DiagnosticIntake } from "@/components/forms/DiagnosticIntake";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Apply for a Diagnostic — Zeppstr",
   description:
     "A 5-step intake. We read your inputs and return a preliminary diagnosis before any conversation. The 45-minute paid diagnostic comes after — refunded in full if we’re not the right fit.",
-};
+  path: "/book-consultation",
+})
 
 export default function BookConsultationPage() {
   return (

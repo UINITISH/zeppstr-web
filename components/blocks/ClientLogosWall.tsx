@@ -31,7 +31,6 @@ const CLIENTS: Client[] = [
   { name: "My Keto Co", file: "my-keto-co.png" },
   { name: "Nakshatech", file: "nakshatech.png" },
   { name: "Pacer", file: "pacer.png" },
-  { name: "Prestige Group", file: "prestige-group.png" },
   { name: "Prohance", file: "prohance.png" },
   { name: "Sky Phonez", file: "sky-phonez.png" },
   { name: "Tansi Fintech", file: "tansi-fintech.png" },

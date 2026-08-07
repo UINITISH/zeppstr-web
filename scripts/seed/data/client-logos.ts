@@ -42,7 +42,6 @@ export const CLIENT_LOGOS: SeedClientLogo[] = [
   { _id: "logo-aishwarya", clientName: "Aishwarya Foods", industryId: "industry-ecommerce-dtc", status: "active" },
   { _id: "logo-truspace", clientName: "Truspace", industryId: "industry-real-estate", status: "active" },
   { _id: "logo-altius", clientName: "Altius Realty", industryId: "industry-real-estate", status: "active" },
-  { _id: "logo-prestige", clientName: "Prestige Group", industryId: "industry-real-estate", status: "active" },
   { _id: "logo-himalayan", clientName: "Himalayan Wellness", industryId: "industry-healthcare-wellness", status: "active" },
   { _id: "logo-greendot", clientName: "GreenDot Health", industryId: "industry-healthcare-wellness", status: "active" },
   { _id: "logo-northstar", clientName: "Northstar Education", industryId: "industry-edtech-education", status: "active" },

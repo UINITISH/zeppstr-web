@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { ResearchMethodMatrix } from "@/components/utility/ResearchMethodMatrix"
 // Method Library, Architecture, research-cycle Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "UX Research — Experience & Engineering | Zeppstr",
   description:
     "Stop asking users. Start watching them. We run continuous discovery as decision infrastructure — every product, design, and marketing call backed by behaviour, not opinion.",
-};
+  path: "/solutions/experience-engineering/ux-research",
+})
 
 // ─── Content ───
 

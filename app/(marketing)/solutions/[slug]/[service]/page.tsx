@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { Button } from "@/components/ui/Button";
@@ -40,10 +41,11 @@ export async function generateMetadata({
     slug: params.service,
   });
   if (!subService) return {};
-  return {
+  return buildMetadata({
     title: subService.seoTitle ?? subService.name,
     description: subService.seoDescription ?? subService.tagline,
-  };
+    path: `/solutions/${params.slug}/${params.service}`,
+  });
 }
 
 // ─────────────────────────────────────────────

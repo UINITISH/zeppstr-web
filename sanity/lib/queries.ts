@@ -293,6 +293,28 @@ export const featuredClientLogosQuery = groq`
 `;
 
 // ─────────────────────────────────────────────
+// CLIENT PROJECTS (internal dashboard)
+// ─────────────────────────────────────────────
+
+/** All ongoing client projects for /dashboard */
+export const allClientProjectsQuery = groq`
+  *[_type == "clientProject"] | order(name asc) {
+    _id,
+    _updatedAt,
+    name,
+    phase,
+    health,
+    percentComplete,
+    owner,
+    startDate,
+    nextMilestone,
+    nextMilestoneDate,
+    kpis[] { label, value, trend },
+    notes
+  }
+`;
+
+// ─────────────────────────────────────────────
 // SITEMAP
 // ─────────────────────────────────────────────
 

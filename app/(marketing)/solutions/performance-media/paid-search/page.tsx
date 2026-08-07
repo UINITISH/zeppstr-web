@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { SpendAllocationDial } from "@/components/utility/SpendAllocationDial";
 // hero stats strip, First 30 Days, Paid Catalog, Architecture, Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Paid Search — Performance Media | Zeppstr",
   description:
     "Stop bidding on keywords. Start buying intent. Paid search built as a portfolio — Brand, Non-brand, Conquest, Long-tail, Remarketing — optimised for revenue, not position.",
-};
+  path: "/solutions/performance-media/paid-search",
+})
 
 // ─── Content ───
 

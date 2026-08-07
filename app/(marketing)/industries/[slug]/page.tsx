@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { Button } from "@/components/ui/Button";
@@ -40,10 +41,11 @@ export async function generateMetadata({
     slug: params.slug,
   });
   if (!industry) return {};
-  return {
-    title: industry.seoTitle ?? `${industry.name} — Zeppstr`,
+  return buildMetadata({
+    title: industry.seoTitle ?? industry.name,
     description: industry.seoDescription ?? industry.heroClaim,
-  };
+    path: `/industries/${params.slug}`,
+  });
 }
 
 // ─────────────────────────────────────────────

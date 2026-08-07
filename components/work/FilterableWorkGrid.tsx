@@ -81,12 +81,17 @@ export function FilterableWorkGrid({ cases }: FilterableWorkGridProps) {
         </div>
       </div>
 
-      {/* Tile grid */}
-      <div className="grid md:grid-cols-2 gap-x-6 gap-y-16 md:gap-y-24">
+      {/* Index layout — numbered plates, mono labels, type-led.
+          Deliberately mirrors the "Atelier Index" system used in the client
+          deliverables (see TRU_Aquapolis_Case_Study_Zeppstr.pdf). A stock-photo
+          card grid looks like every other agency; the index looks like the
+          documents we actually hand clients, and the imagery stops carrying
+          weight it can't bear. */}
+      <ol className="border-t border-ink-headline/15">
         {visibleCases.map((cs, idx) => (
-          <WorkTile key={cs._id} caseStudy={cs} index={idx} />
+          <WorkRow key={cs._id} caseStudy={cs} index={idx} />
         ))}
-      </div>
+      </ol>
 
       {visibleCases.length === 0 && (
         <p className="font-body text-body text-ink-muted text-center py-20">
@@ -124,106 +129,87 @@ function FilterText({
   );
 }
 
-// ─── Single tile ───
 
-function WorkTile({
+// ─── Index row ───
+
+function WorkRow({
   caseStudy,
   index,
 }: {
   caseStudy: CaseStudyListItem;
   index: number;
 }) {
-  const img = caseStudy.heroImage
-    ? sanityImageProps(caseStudy.heroImage, { width: 1200, height: 800 })
-    : null;
+  const img =
+    caseStudy.screenshotSrc ??
+    (caseStudy.heroImage
+      ? sanityImageProps(caseStudy.heroImage, { width: 640, height: 480 }).src
+      : null);
+
+  const plate = String(index + 1).padStart(2, "0");
 
   return (
-    <Link
-      href={caseStudy.linkHref ?? `/work/${caseStudy.slug.current}`}
-      className="group block focus-visible:outline-2 focus-visible:outline-brand-blue focus-visible:outline-offset-4"
-    >
-      {/* Tile visual — sharp edges, no rounding */}
-      <div className="relative aspect-[4/3] bg-emerald-900 overflow-hidden mb-6 transition-opacity duration-hover group-hover:opacity-90">
-        {caseStudy.screenshotSrc ? (
-          <Image
-            src={caseStudy.screenshotSrc}
-            alt={`${caseStudy.clientName} — website`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-top"
-          />
-        ) : img ? (
-          <Image
-            src={img.src}
-            alt={img.alt}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-            placeholder={img.blurDataURL ? "blur" : "empty"}
-            blurDataURL={img.blurDataURL}
-          />
-        ) : (
-          // Type-only placeholder — confident, not apologetic
-          <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-12">
-            <div className="flex items-start justify-between">
-              {caseStudy.industry ? (
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-brand-yellow">
-                  {caseStudy.industry.name}
-                </span>
-              ) : (
-                <span />
-              )}
-              {caseStudy.country && (
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
-                  {caseStudy.country}
-                </span>
-              )}
-            </div>
+    <li className="border-b border-ink-headline/15">
+      <Link
+        href={caseStudy.linkHref ?? `/work/${caseStudy.slug.current}`}
+        className="group grid grid-cols-12 items-center gap-x-4 md:gap-x-8 py-8 md:py-11 focus-visible:outline-2 focus-visible:outline-brand-blue focus-visible:outline-offset-4"
+      >
+        {/* Plate number */}
+        <span className="col-span-2 md:col-span-1 font-mono text-[11px] md:text-[12px] uppercase tracking-[0.2em] text-ink-muted group-hover:text-brand-yellow transition-colors duration-hover">
+          {plate}
+        </span>
 
-            <div>
-              <span
-                aria-hidden="true"
-                className="block w-10 h-[3px] bg-brand-yellow mb-6"
-              />
-              <span className="block font-display font-extralight text-[clamp(40px,5.5vw,80px)] text-white leading-[0.92] tracking-[-0.025em] max-w-[14ch]">
-                {caseStudy.clientName}
-              </span>
-              {caseStudy.headlineMetric && (
-                <span className="block mt-6 font-body text-body-lg text-white/75 max-w-[36ch]">
-                  {caseStudy.headlineMetric}
-                  {caseStudy.headlineTimeframe && (
-                    <span className="text-white/50">
-                      {" "}· {caseStudy.headlineTimeframe}
-                    </span>
-                  )}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Tile meta below — clean editorial line */}
-      <div className="flex items-baseline justify-between gap-6">
-        <div className="flex items-baseline gap-6">
-          <h3 className="font-display font-light text-[clamp(22px,1.8vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] group-hover:text-brand-blue transition-colors duration-hover">
+        {/* Client + sector */}
+        <div className="col-span-10 md:col-span-4">
+          <h3 className="font-display font-extralight text-[clamp(24px,2.6vw,40px)] leading-[1.05] tracking-[-0.02em] text-ink-headline group-hover:text-brand-blue transition-colors duration-hover">
             {caseStudy.clientName}
-            {(caseStudy.industry || caseStudy.country) && (
-              <span className="font-body text-body-sm text-ink-muted ml-3 align-baseline">
-                {caseStudy.industry?.name}
-                {caseStudy.industry && caseStudy.country && " · "}
-                {caseStudy.country}
-              </span>
-            )}
           </h3>
+          <p className="mt-2 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+            {caseStudy.industry?.name}
+            {caseStudy.industry && caseStudy.country && " · "}
+            {caseStudy.country}
+          </p>
         </div>
+
+        {/* Outcome — the reason the row exists */}
+        <div className="col-span-12 md:col-span-4 mt-4 md:mt-0">
+          {caseStudy.headlineMetric && (
+            <p className="font-display font-light text-[clamp(18px,1.5vw,24px)] leading-[1.25] tracking-[-0.01em] text-ink-headline">
+              {caseStudy.headlineMetric}
+            </p>
+          )}
+          {caseStudy.headlineTimeframe && (
+            <p className="mt-1.5 font-body text-body-sm text-ink-muted">
+              {caseStudy.headlineTimeframe}
+            </p>
+          )}
+        </div>
+
+        {/* Thumbnail — always visible in grayscale, colour on hover. It was
+            previously opacity-0 until hover, which hid the imagery entirely
+            rather than desaturating it. */}
+        <div className="col-span-12 md:col-span-2 order-first md:order-none mb-5 md:mb-0">
+          {img && (
+            <div className="relative aspect-[4/3] w-full bg-emerald-900 overflow-hidden">
+              <Image
+                src={img}
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="180px"
+                className="object-cover grayscale group-hover:grayscale-0 transition-[filter] duration-page ease-smooth"
+                unoptimized={/^https?:\/\//.test(img)}
+              />
+            </div>
+          )}
+        </div>
+
         <span
           aria-hidden="true"
-          className="font-display text-display-sm text-ink-muted group-hover:text-brand-blue group-hover:translate-x-1 transition-all duration-hover"
+          className="hidden md:block md:col-span-1 text-right font-display text-display-sm text-ink-muted group-hover:text-brand-blue group-hover:translate-x-1 transition-all duration-hover"
         >
           →
         </span>
-      </div>
-    </Link>
+      </Link>
+    </li>
   );
 }
