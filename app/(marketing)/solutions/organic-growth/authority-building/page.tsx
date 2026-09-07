@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { CitationGraph } from "@/components/utility/CitationGraph";
 // Earned-Media Catalog, Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Authority Building — Organic Growth Practice | Zeppstr",
   description:
-    "Stop building links. Start building citations. Authority isn't bought — it's earned in publications that matter, then leveraged across the rest of the practice.",
-};
+    "Stop building links. Start building citations. Authority isn’t bought — it’s earned in publications that matter, then leveraged across the rest of the practice.",
+  path: "/solutions/organic-growth/authority-building",
+})
 
 // ─── Content ───
 

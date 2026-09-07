@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { IndustryCard } from "@/components/cards/IndustryCard";
@@ -7,11 +8,12 @@ import { sanity } from "@/sanity/lib/client";
 import { allIndustriesQuery } from "@/sanity/lib/queries";
 import type { Industry } from "@/sanity/lib/types";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Industries",
   description:
     "The categories where Zeppstr runs growth systems — Real Estate, E-commerce / D2C, SaaS / Tech, Healthcare & Wellness, EdTech / Education, Professional Services.",
-};
+  path: "/industries",
+})
 
 export default async function IndustriesHubPage() {
   const industries = await sanity.fetch<Industry[]>(allIndustriesQuery);
@@ -41,7 +43,7 @@ export default async function IndustriesHubPage() {
 
         <CTABanner
           eyebrow="Engage"
-          heading="Don't see your industry?"
+          heading="Don’t see your industry?"
           subhead="Apply for a Strategic Diagnostic anyway. The methodology travels — we diagnose first, recommend industries fit second."
           primary={{ label: "Apply for a Diagnostic", href: "/book-consultation" }}
           secondary={{ label: "Or just say hi", href: "/contact" }}

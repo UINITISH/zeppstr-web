@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { ProductionAssetTree } from "@/components/utility/ProductionAssetTree";
 // Asset Library catalog, Architecture, quarter-long Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Video Production — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Stop shooting films. Start running a production line. One shoot day, sixteen deployable assets, ninety days of supply — and the rights stay with you.",
-};
+  path: "/solutions/brand-engagement-lifecycle/video-production",
+})
 
 // ─── Content ───
 
@@ -25,7 +27,6 @@ const FEATURED_LOGOS = [
   { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
   { name: "Wise Market", file: "wise-market.png" },
   { name: "Aishwarya Interiors", file: "aishwarya-interiors.png" },
-  { name: "Prestige Group", file: "prestige-group.png" },
   { name: "Tristar Online", file: "tristar-online.png" },
   { name: "My Keto Co", file: "my-keto-co.png" },
   { name: "Lucky White Goods", file: "lucky-white-goods.png" },

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,17 +13,17 @@ import { LocationCoverageHeatmap } from "@/components/utility/LocationCoverageHe
 // visual weight bars), Local Catalog, Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Local Search — Organic Growth Practice | Zeppstr",
   description:
     "The Map Pack is the SERP. Below it is the consolation prize. We build multi-location local search programs that rank, get reviewed, and convert — across every relevant geo × intent combination.",
-};
+  path: "/solutions/organic-growth/local-search",
+})
 
 // ─── Content ───
 
 const FEATURED_LOGOS = [
   { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
-  { name: "Prestige Group", file: "prestige-group.png" },
   { name: "Aishwarya Interiors", file: "aishwarya-interiors.png" },
   { name: "Sky Phonez", file: "sky-phonez.png" },
   { name: "Tristar Online", file: "tristar-online.png" },

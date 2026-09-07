@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { MegaMenu } from "./MegaMenu";
 import { MobileDrawer } from "./MobileDrawer";
@@ -26,14 +27,19 @@ export async function GlobalNav() {
     <nav className="sticky top-0 z-40 bg-bg-primary border-b border-rule">
       <div className="container-layout flex items-center justify-between py-5">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-display font-bold text-[22px] text-ink-headline tracking-tight"
-        >
-          <span className="inline-flex items-center justify-center w-[26px] h-[26px] bg-emerald-900 text-white rounded-md text-sm">
-            ↗
-          </span>
-          Zeppstr
+        {/* Real horizontal wordmark, replacing the placeholder that was an
+            emerald square with a "↗" character next to the word "Zeppstr" set
+            in the display font. Source: Brand Assets/Zeppstr Logo Flat.jpg,
+            background removed and trimmed — see public/brand/. */}
+        <Link href="/" className="flex items-center" aria-label="Zeppstr — home">
+          <Image
+            src="/brand/zeppstr-logo-horizontal.png"
+            alt="Zeppstr"
+            width={1999}
+            height={548}
+            priority
+            className="h-[30px] w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

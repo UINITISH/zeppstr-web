@@ -123,9 +123,20 @@ export function AnimatedHeadline({
     elements.push(renderWord(words[wi], wi));
   }
 
+  // `Tag` is typed as `keyof JSX.IntrinsicElements`, a union of every HTML tag.
+  // Rendering it directly makes TS resolve the union of every element's props,
+  // which exceeds its complexity limit (TS2590) and fails the production build.
+  // Widening to ElementType collapses that union without losing runtime
+  // behaviour — the `as` prop is still constrained at the call site.
+  const Component = Tag as React.ElementType;
+
   return (
-    <Tag ref={ref as React.Ref<any>} className={className} aria-label={children}>
+    <Component
+      ref={ref as React.Ref<any>}
+      className={className}
+      aria-label={children}
+    >
       {elements}
-    </Tag>
+    </Component>
   );
 }

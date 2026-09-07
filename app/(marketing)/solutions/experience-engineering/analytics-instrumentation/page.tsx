@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { DataInstrumentationFlow } from "@/components/utility/DataInstrumentatio
 // Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Analytics & Instrumentation — Experience & Engineering | Zeppstr",
   description:
-    "If you can't trust the number, you can't trust the decision. We build one event spec, one identity model, one warehouse — and every tool downstream of it.",
-};
+    "If you can’t trust the number, you can’t trust the decision. We build one event spec, one identity model, one warehouse — and every tool downstream of it.",
+  path: "/solutions/experience-engineering/analytics-instrumentation",
+})
 
 // ─── Content ───
 

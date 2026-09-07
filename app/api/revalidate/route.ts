@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { parseBody } from "next-sanity/webhook";
 
@@ -18,7 +18,8 @@ export const dynamic = "force-dynamic";
  *
  * Each content type's edits invalidate only the pages that depend on it.
  */
-export async function POST(request: Request) {
+// next-sanity's parseBody expects a NextRequest (it reads nextUrl/headers).
+export async function POST(request: NextRequest) {
   const secret = process.env.SANITY_REVALIDATE_SECRET;
   if (!secret) {
     return NextResponse.json(
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
       parentSlug?: string;
     }>(request, secret);
     body = parsed.body;
-    isValid = parsed.isValidSignature;
+    isValid = parsed.isValidSignature === true;
   } catch (err) {
     return NextResponse.json(
       { ok: false, message: "Could not parse webhook." },

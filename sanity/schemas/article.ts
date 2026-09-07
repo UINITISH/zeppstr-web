@@ -14,7 +14,7 @@ export const article = defineType({
       options: { hotspot: true },
       fields: [defineField({ name: "alt", type: "string", validation: (R) => R.required() })],
     }),
-    defineField({ name: "author", type: "string", initialValue: "Nitish Kumar" }),
+    defineField({ name: "author", type: "string", initialValue: "Team Zeppstr" }),
     defineField({
       name: "category",
       type: "string",
@@ -24,6 +24,12 @@ export const article = defineType({
           { title: "SEO & Search", value: "seo-search" },
           { title: "Performance & Paid", value: "performance-paid" },
           { title: "Conversion & Experience", value: "conversion-experience" },
+          // Added Sep 2026 for the Drive archive import: the library holds
+          // substantial email-lifecycle and social/content bodies of work that
+          // do not belong under Performance & Paid (they are largely organic)
+          // or Conversion & Experience (they are acquisition, not on-site).
+          { title: "Email & Lifecycle", value: "email-lifecycle" },
+          { title: "Social & Content", value: "social-content" },
           { title: "Industry Insights", value: "industry-insights" },
         ],
       },

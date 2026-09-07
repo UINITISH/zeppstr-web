@@ -5,6 +5,8 @@ import { caseStudy } from "./caseStudy";
 import { article } from "./article";
 import { quote } from "./quote";
 import { clientLogo } from "./clientLogo";
+import { clientProject } from "./clientProject";
+import { comment } from "./comment";
 
 export const schemaTypes = [
   // Documents
@@ -15,4 +17,6 @@ export const schemaTypes = [
   article,
   quote,
   clientLogo,
+  clientProject,
+  comment,
 ];

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { RevenueSystemBlueprint } from "@/components/utility/RevenueSystemBluepr
 // System Catalog, Architecture, 8–12 week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Revenue System Design — Growth Strategy & Advisory | Zeppstr",
   description:
     "Pipeline gets built. Revenue gets designed. We blueprint the full revenue system — acquire, convert, activate, retain, expand — so every downstream team operates from one map, not five.",
-};
+  path: "/solutions/growth-strategy-advisory/revenue-system-design",
+})
 
 // ─── Content ───
 

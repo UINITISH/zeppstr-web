@@ -182,3 +182,32 @@
       rgba(150, 155, 165, 0.1) 16px
     );
 }
+
+/* ─────────────────────────────────────────────
+   Sticky article rail — stays locked while the
+   article column scrolls. When the rail is taller
+   than the viewport it scrolls internally rather
+   than sliding out of view.
+   ───────────────────────────────────────────── */
+
+.rail-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-rule) transparent;
+}
+
+.rail-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.rail-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rail-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-rule);
+  border-radius: 999px;
+}
+
+.rail-scroll:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-ink-muted);
+}

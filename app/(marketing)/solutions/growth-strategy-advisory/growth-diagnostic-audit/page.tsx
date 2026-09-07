@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { DiagnosticReportCover } from "@/components/utility/DiagnosticReportCove
 // Diagnostic Catalog, Architecture, 4–6 week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Growth Diagnostic & Audit — Growth Strategy & Advisory | Zeppstr",
   description:
-    "Most marketing problems are diagnosis problems. A written growth diagnostic, six weeks end-to-end, readable in thirty minutes, actionable on Monday morning. Refundable if we're wrong.",
-};
+    "Most marketing problems are diagnosis problems. A written growth diagnostic, six weeks end-to-end, readable in thirty minutes, actionable on Monday morning. Refundable if we’re wrong.",
+  path: "/solutions/growth-strategy-advisory/growth-diagnostic-audit",
+})
 
 // ─── Content ───
 

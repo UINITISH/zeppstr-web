@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { WebPerformanceScorecard } from "@/components/utility/WebPerformanceScor
 // Build Library catalog, Architecture stack, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Web Development — Experience & Engineering | Zeppstr",
   description:
     "Most websites are debt. We ship infrastructure. Sites that hit 95+ Lighthouse, ship features in days not quarters, and compound with every campaign downstream.",
-};
+  path: "/solutions/experience-engineering/web-development",
+})
 
 // ─── Content ───
 

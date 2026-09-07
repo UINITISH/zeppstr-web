@@ -145,6 +145,8 @@ export type ArticleCategory =
   | "seo-search"
   | "performance-paid"
   | "conversion-experience"
+  | "email-lifecycle"
+  | "social-content"
   | "industry-insights";
 
 export interface Article extends SeoFields {
@@ -191,4 +193,33 @@ export interface ClientLogo {
   industry?: Industry;
   status: ClientLogoStatus;
   website?: string;
+}
+
+// ─────────────────────────────────────────────
+// 8. Client Project (internal dashboard)
+// ─────────────────────────────────────────────
+
+export type ProjectPhase = "Diagnose" | "Architect" | "Deploy" | "Operate";
+export type ProjectHealth = "On Track" | "At Risk" | "Blocked" | "Completed";
+
+export interface ProjectKpi {
+  label: string;
+  value: string;
+  trend?: "up" | "down" | "flat";
+}
+
+export interface ClientProject {
+  _id: string;
+  _type: "clientProject";
+  _updatedAt: string;
+  name: string;
+  phase: ProjectPhase;
+  health: ProjectHealth;
+  percentComplete?: number;
+  owner?: string;
+  startDate?: string;
+  nextMilestone?: string;
+  nextMilestoneDate?: string;
+  kpis?: ProjectKpi[];
+  notes?: string;
 }

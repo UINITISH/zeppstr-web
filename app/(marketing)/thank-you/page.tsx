@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import Link from "next/link";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Thanks for applying | Zeppstr",
   description:
-    "Thanks for applying to work with Zeppstr. Nitish reads every application personally — you'll hear back within 48 hours.",
+    "Thanks for applying to work with Zeppstr. Nitish reads every application personally — you’ll hear back within 48 hours.",
   robots: { index: false, follow: false },
-};
+  path: "/thank-you",
+})
 
 const CALENDLY_URL = "https://cal.com/nitish-kumar-yvxogq/30min";
 

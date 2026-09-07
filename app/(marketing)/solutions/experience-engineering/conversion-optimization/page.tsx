@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { ConversionLeveragePyramid } from "@/components/utility/ConversionLevera
 // Experiment Library catalog, Architecture, sprint-cadence Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Conversion Optimization — Experience & Engineering | Zeppstr",
   description:
-    "Most CRO teams test buttons. We rebuild flows. Color doesn't move CAC — offer does. We work the leverage hierarchy in the right order, not the easy one.",
-};
+    "Most CRO teams test buttons. We rebuild flows. Color doesn’t move CAC — offer does. We work the leverage hierarchy in the right order, not the easy one.",
+  path: "/solutions/experience-engineering/conversion-optimization",
+})
 
 // ─── Content ───
 

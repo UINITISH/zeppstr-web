@@ -51,7 +51,7 @@ export function ContactForm() {
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(
-          data?.message ?? "We couldn't send your message. Please try again."
+          data?.message ?? "We couldn’t send your message. Please try again."
         );
       }
       setSubmitState("success");
@@ -125,7 +125,7 @@ export function ContactForm() {
         <Textarea
           id="contact-message"
           rows={6}
-          placeholder="Tell us what you're reaching out about"
+          placeholder="Tell us what you’re reaching out about"
           aria-invalid={!!errors.message}
           {...register("message")}
         />

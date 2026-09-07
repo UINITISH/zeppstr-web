@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { CreativeScrollFeed } from "@/components/utility/CreativeScrollFeed";
 // block), hero stats, First 30 Days, Paid Social Catalog, Architecture.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Paid Social — Performance Media | Zeppstr",
   description:
     "Most paid social fails on creative, not targeting. We run paid social as a creative production line — native, tested at volume, killed fast, winners doubled.",
-};
+  path: "/solutions/performance-media/paid-social",
+})
 
 // ─── Content ───
 

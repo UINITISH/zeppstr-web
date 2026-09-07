@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { InterfaceBlueprint } from "@/components/utility/InterfaceBlueprint";
 // Component Library catalog, atomic-design Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Experience Design — Experience & Engineering | Zeppstr",
   description:
-    "Design isn't decoration. It's decision architecture. We build experience systems that reduce hesitation — for product, marketing, and sales surfaces alike.",
-};
+    "Design isn’t decoration. It’s decision architecture. We build experience systems that reduce hesitation — for product, marketing, and sales surfaces alike.",
+  path: "/solutions/experience-engineering/experience-design",
+})
 
 // ─── Content ───
 

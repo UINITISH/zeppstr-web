@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { HeroPrimary } from "@/components/hero/HeroPrimary";
@@ -17,15 +18,24 @@ import {
 } from "@/sanity/lib/queries";
 import type { Solution, CaseStudy, Article, Industry } from "@/sanity/lib/types";
 
-type CaseStudyListItem = Pick<
-  CaseStudy,
-  "_id" | "clientName" | "slug" | "headlineMetric" | "headlineTimeframe" | "heroImage"
-> & {
-  industry?: Pick<Industry, "_id" | "name" | "slug">;
-  linkHref?: string;
-  country?: string;
-  screenshotSrc?: string;
+// Home inherits the root default title/description; only the canonical is
+// set here so the homepage self-references correctly.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
 };
+
+// Mirrors the grid's exported type. Outcome fields are optional because the
+// static roster tiles below are named clients without a published case study —
+// they have no metric and must not be given an invented one.
+type CaseStudyListItem = Pick<CaseStudy, "_id" | "clientName" | "slug"> &
+  Partial<
+    Pick<CaseStudy, "headlineMetric" | "headlineTimeframe" | "heroImage">
+  > & {
+    industry?: Pick<Industry, "_id" | "name" | "slug">;
+    linkHref?: string;
+    country?: string;
+    screenshotSrc?: string;
+  };
 
 // Static featured brands — render as Selected Work tiles even without
 // full case study pages. Mapped to the 6 canonical industries so they
@@ -34,8 +44,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   {
     _id: "static-prohance",
     clientName: "Prohance",
-    slug: { current: "prohance" },
-    industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { current: "saas" } },
+    slug: { _type: "slug", current: "prohance" },
+    industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { _type: "slug", current: "saas" } },
     country: "India",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/prohance.jpg",
@@ -43,34 +53,25 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   {
     _id: "static-21finance",
     clientName: "21 Finance",
-    slug: { current: "21-finance" },
-    industry: { _id: "ind-fintech", name: "Fintech", slug: { current: "fintech" } },
+    slug: { _type: "slug", current: "21-finance" },
+    industry: { _id: "ind-professional-services", name: "Professional Services", slug: { _type: "slug", current: "professional-services" } },
     country: "India",
     linkHref: "/work",
   },
   {
     _id: "static-empuls",
     clientName: "Empuls",
-    slug: { current: "empuls" },
-    industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { current: "saas" } },
+    slug: { _type: "slug", current: "empuls" },
+    industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { _type: "slug", current: "saas" } },
     country: "India",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/empuls.jpg",
   },
   {
-    _id: "static-prestige",
-    clientName: "Prestige Group",
-    slug: { current: "prestige-group" },
-    industry: { _id: "ind-real-estate", name: "Real Estate", slug: { current: "real-estate" } },
-    country: "India",
-    linkHref: "/work",
-    screenshotSrc: "/case-screenshots/prestige-group.jpg",
-  },
-  {
     _id: "static-aishwarya-interiors",
     clientName: "Aishwarya Interiors",
-    slug: { current: "aishwarya-interiors" },
-    industry: { _id: "ind-real-estate", name: "Real Estate", slug: { current: "real-estate" } },
+    slug: { _type: "slug", current: "aishwarya-interiors" },
+    industry: { _id: "ind-real-estate", name: "Real Estate", slug: { _type: "slug", current: "real-estate" } },
     country: "India",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/aishwarya-interiors.jpg",
@@ -78,8 +79,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   {
     _id: "static-fixstars",
     clientName: "Fixstars",
-    slug: { current: "fixstars" },
-    industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { current: "saas" } },
+    slug: { _type: "slug", current: "fixstars" },
+    industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { _type: "slug", current: "saas" } },
     country: "Tokyo, Japan",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/fixstars.jpg",
@@ -87,8 +88,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   {
     _id: "static-tristar-online",
     clientName: "Tristar Online",
-    slug: { current: "tristar-online" },
-    industry: { _id: "ind-ecom", name: "E-commerce / D2C", slug: { current: "ecommerce" } },
+    slug: { _type: "slug", current: "tristar-online" },
+    industry: { _id: "ind-ecom", name: "E-commerce / D2C", slug: { _type: "slug", current: "ecommerce" } },
     country: "Australia",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/tristar-online.jpg",

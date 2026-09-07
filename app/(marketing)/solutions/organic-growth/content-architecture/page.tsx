@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { TopicTerritoryMap } from "@/components/utility/TopicTerritoryMap";
 // Content Catalog, Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Content Architecture — Organic Growth Practice | Zeppstr",
   description:
     "Stop publishing articles. Start owning topic territories. We build topic clusters — pillar pages, supporting articles, and the internal-link graph between them — so content compounds instead of accumulating.",
-};
+  path: "/solutions/organic-growth/content-architecture",
+})
 
 // ─── Content ───
 

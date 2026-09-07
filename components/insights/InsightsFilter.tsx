@@ -6,7 +6,7 @@ import { useSearchParams, usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 
 interface InsightsFilterProps {
-  categories: { value: string; label: string }[];
+  categories: { value: string; label: string; count?: number }[];
   activeCategory: string;
 }
 
@@ -33,7 +33,7 @@ export function InsightsFilter({ categories, activeCategory }: InsightsFilterPro
   return (
     <nav
       aria-label="Filter essays by category"
-      className="flex flex-wrap items-center justify-center gap-2 md:gap-3"
+      className="flex flex-wrap items-center gap-2 md:gap-3"
     >
       {categories.map((cat) => {
         const isActive = cat.value === activeCategory;
@@ -53,6 +53,16 @@ export function InsightsFilter({ categories, activeCategory }: InsightsFilterPro
             )}
           >
             {cat.label}
+            {typeof cat.count === "number" && (
+              <span
+                className={cn(
+                  "ml-2 font-body text-[12px] tabular-nums",
+                  isActive ? "text-white/60" : "text-ink-muted"
+                )}
+              >
+                {cat.count}
+              </span>
+            )}
           </Link>
         );
       })}

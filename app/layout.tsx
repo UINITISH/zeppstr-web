@@ -58,12 +58,21 @@ export const metadata: Metadata = {
     title: "Zeppstr — Your Growth Partner in Digital Marketing & SEO",
     description:
       "Organic Growth, Performance Media & Brand Consulting. Your growth partner, embedded.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Zeppstr — Your Growth Partner in Digital Marketing & SEO",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Zeppstr — Your Growth Partner",
     description:
       "Organic Growth, Performance Media & Brand Consulting. Your growth partner, embedded.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

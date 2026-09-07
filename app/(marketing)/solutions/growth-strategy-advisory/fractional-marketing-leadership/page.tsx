@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { OperatingCadenceCalendar } from "@/components/utility/OperatingCadenceC
 // Accountability Catalog, Architecture, 12-month Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Fractional Marketing Leadership — Growth Strategy & Advisory | Zeppstr",
   description:
     "Hire the role, not the headcount. A senior marketing operator embedded in your team two days a week — accountable to the number, not the slide deck.",
-};
+  path: "/solutions/growth-strategy-advisory/fractional-marketing-leadership",
+})
 
 // ─── Content ───
 

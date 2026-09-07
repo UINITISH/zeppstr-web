@@ -27,9 +27,14 @@ import { INDUSTRIES } from "./data/industries";
 import { CLIENT_LOGOS } from "./data/client-logos";
 import { QUOTES } from "./data/quotes";
 import { loadCaseStudies } from "./data/case-studies";
+import { loadArticles } from "./data/articles";
 
 // scripts/seed/seed.ts → up 5 levels lands at zeppstr-new-web/ (the repo root that contains deliverables/)
-const REPO_ROOT = resolve(__dirname, "..", "..", "..", "..", "..");
+// Was: resolve(__dirname, "..", "..", "..", "..", "..") — five levels up, which
+// landed on ~/Documents and pointed loadCaseStudies() at a non-existent
+// deliverables/ directory, so seeding threw before writing anything.
+// Canonical case-study markdown now lives inside the repo.
+const REPO_ROOT = resolve(__dirname, "..", "..");
 
 // ─────────────────────────────────────────────
 // Tiny logging helpers
@@ -151,6 +156,28 @@ async function seedCaseStudies() {
   }
 }
 
+async function seedArticles() {
+  const articles = loadArticles(REPO_ROOT);
+  log.step(`Articles / Insights (${articles.length})`);
+  for (const a of articles) {
+    await sanity.createOrReplace({
+      _id: a._id,
+      _type: "article",
+      title: a.title,
+      slug: { _type: "slug", current: a.slug },
+      excerpt: a.excerpt,
+      author: a.author,
+      category: a.category,
+      body: a.body,
+      publishedAt: a.publishedAt,
+      relatedSolution: a.relatedSolutionId ? ref(a.relatedSolutionId) : undefined,
+      seoTitle: a.seoTitle,
+      seoDescription: a.seoDescription,
+    });
+    log.ok(`${a.category} · ${a.title.slice(0, 52)}…`);
+  }
+}
+
 async function seedQuotes() {
   log.step(`Quotes (${QUOTES.length})`);
   for (const q of QUOTES) {
@@ -230,6 +257,7 @@ async function main() {
   await seedClientLogos();
   await seedSubServices();
   await seedCaseStudies();
+  await seedArticles();
   await seedQuotes();
   await backfillCrossLinks();
 

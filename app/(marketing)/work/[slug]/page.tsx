@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
+import { getCaseStudyMetrics } from "@/lib/case-study-metrics";
+import { CaseStudyMetrics } from "@/components/case-study/CaseStudyMetrics";
+import { getCaseStudyImage } from "@/lib/case-study-images";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { Button } from "@/components/ui/Button";
@@ -39,10 +43,11 @@ export async function generateMetadata({
     slug: params.slug,
   });
   if (!cs) return {};
-  return {
+  return buildMetadata({
     title: cs.seoTitle ?? `${cs.clientName} — ${cs.headlineMetric}`,
     description: cs.seoDescription,
-  };
+    path: `/work/${params.slug}`,
+  });
 }
 
 // ─────────────────────────────────────────────
@@ -60,7 +65,9 @@ export default async function CaseStudyPage({
 
   if (!cs) notFound();
 
+  const metrics = getCaseStudyMetrics(params.slug);
   const heroImg = cs.heroImage ? sanityImageProps(cs.heroImage, { width: 1600, height: 900 }) : null;
+  const heroFallback = !cs.heroImage ? getCaseStudyImage(params.slug) : null;
 
   return (
     <>
@@ -104,7 +111,7 @@ export default async function CaseStudyPage({
         </section>
 
         {/* Hero image */}
-        {heroImg && (
+        {heroImg ? (
           <section className="container-layout pb-16">
             <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-bg-secondary">
               <Image
@@ -119,7 +126,21 @@ export default async function CaseStudyPage({
               />
             </div>
           </section>
-        )}
+        ) : heroFallback ? (
+          <section className="container-layout pb-16">
+            <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-bg-secondary">
+              <Image
+                src={heroFallback}
+                alt={`${cs.clientName} — case study`}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+          </section>
+        ) : null}
 
         {/* Narrative — long-form reading column */}
         <article className="container-reading py-12 space-y-16">
@@ -172,6 +193,9 @@ export default async function CaseStudyPage({
             </section>
           )}
         </article>
+
+        {/* By the numbers — charts (renders when metrics exist for this slug) */}
+        {metrics && <CaseStudyMetrics data={metrics} />}
 
         {/* Solutions deployed */}
         {cs.solutionsUsed && cs.solutionsUsed.length > 0 && (
