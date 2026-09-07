@@ -24,9 +24,24 @@ const RESULTS = [
     client: "Mini Leaves — Indian DTC consumer brand",
   },
   {
-    figure: "22M+",
-    metric: "Demand reach",
-    detail: "Into 3 premium flats sold direct from generated leads",
+    // Was: "22M+ / Demand reach / Into 3 premium flats sold direct from
+    // generated leads". Replaced 19 Aug 2026 for two reasons.
+    //
+    // 1. It contradicted the case study two sections below, which reports
+    //    1,690 qualified enquiries and ₹34 Cr+ of pipeline. Two different
+    //    claims about the same client on the same page, with the weaker one
+    //    appearing first.
+    // 2. "3 premium flats sold direct" is not traceable to any source document
+    //    in the archive. Booking counts depend on the client's sales team and
+    //    inventory, which is not ours to claim — see the editorial standards in
+    //    docs/CHANGELOG-2026-08-05.md.
+    //
+    // Impressions are a reach metric, not an outcome. The pipeline figure is
+    // both stronger and sourced: TRU_Aquapolis_Case_Study_Zeppstr.pdf, Mar–May
+    // 2026, modelled at a 1% close rate and stated as such.
+    figure: "85×",
+    metric: "Media to pipeline",
+    detail: "₹39.7L of media → ₹34 Cr+ qualified pipeline in 90 days",
     client: "Tru Aquapolis — Indian premium real estate",
   },
 ];

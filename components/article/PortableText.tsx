@@ -24,6 +24,17 @@ import type { SanityImage } from "@/sanity/lib/types";
 interface PortableTextProps {
   value: PortableTextBlock[] | undefined;
   className?: string;
+  /**
+   * Map of block `_key` → anchor id. Supplied by the article page so the
+   * sidebar table of contents and the rendered headings agree on ids without
+   * any client-side DOM scraping.
+   */
+  headingIds?: Record<string, string>;
+  /**
+   * Draw a hairline + accent mark above each h2. Long-form articles need the
+   * extra section break; short rich-text fields (solutions, industries) don't.
+   */
+  sectionMarkers?: boolean;
 }
 
 /**
@@ -86,15 +97,36 @@ function DataTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
   );
 }
 
-const components: PortableTextComponents = {
+function buildComponents(
+  headingIds: Record<string, string>,
+  sectionMarkers: boolean
+): PortableTextComponents {
+  return {
   block: {
-    h2: ({ children }) => (
-      <h2 className="font-display font-extralight text-display-md text-ink-headline mt-16 mb-6 tracking-tight">
-        {children}
-      </h2>
+    h2: ({ children, value }) => (
+      <>
+        {sectionMarkers && (
+          <div aria-hidden="true" className="flex items-center gap-3 mt-16 mb-7">
+            <span className="w-7 h-[3px] bg-brand-yellow shrink-0" />
+            <span className="flex-1 h-px bg-rule" />
+          </div>
+        )}
+        <h2
+          id={headingIds[(value as { _key?: string })?._key ?? ""]}
+          className={cn(
+            "scroll-mt-28 font-display font-extralight text-display-md text-ink-headline mb-6 tracking-tight",
+            sectionMarkers ? "mt-0" : "mt-16"
+          )}
+        >
+          {children}
+        </h2>
+      </>
     ),
-    h3: ({ children }) => (
-      <h3 className="font-display font-light text-display-sm text-ink-headline mt-12 mb-4 tracking-tight">
+    h3: ({ children, value }) => (
+      <h3
+        id={headingIds[(value as { _key?: string })?._key ?? ""]}
+        className="scroll-mt-28 font-display font-light text-display-sm text-ink-headline mt-12 mb-4 tracking-tight"
+      >
         {children}
       </h3>
     ),
@@ -209,14 +241,23 @@ const components: PortableTextComponents = {
       );
     },
   },
-};
+  };
+}
 
-export function PortableText({ value, className }: PortableTextProps) {
+export function PortableText({
+  value,
+  className,
+  headingIds,
+  sectionMarkers = false,
+}: PortableTextProps) {
   if (!value || value.length === 0) return null;
 
   return (
     <div className={cn("portable-text", className)}>
-      <BasePortableText value={value} components={components} />
+      <BasePortableText
+        value={value}
+        components={buildComponents(headingIds ?? {}, sectionMarkers)}
+      />
     </div>
   );
 }

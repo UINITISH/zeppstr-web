@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Accordion from "@radix-ui/react-accordion";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 import type { Solution, Industry, SubService } from "@/sanity/lib/types";
 
@@ -64,12 +65,16 @@ export function MobileDrawer({ solutions, industries }: MobileDrawerProps) {
             <Link
               href="/"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 font-display font-bold text-[20px] text-ink-headline"
+              className="flex items-center"
+              aria-label="Zeppstr — home"
             >
-              <span className="inline-flex items-center justify-center w-[24px] h-[24px] bg-emerald-900 text-white rounded-md text-xs">
-                ↗
-              </span>
-              Zeppstr
+              <Image
+                src="/brand/zeppstr-logo-horizontal.png"
+                alt="Zeppstr"
+                width={1999}
+                height={548}
+                className="h-[26px] w-auto"
+              />
             </Link>
             <Dialog.Close asChild>
               <button

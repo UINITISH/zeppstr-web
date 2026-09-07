@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { sanity } from "@/sanity/lib/client";
+import { loadOgFont, safeGlyphs } from "@/lib/og-font";
 
 /**
  * Generated case-study tile thumbnail, keyed by slug.
@@ -34,8 +35,12 @@ export async function GET(
     )
     .catch(() => null);
 
+  // Satori ships no system fonts. Without this the rupee sign renders as tofu.
+  const font = await loadOgFont();
+  const hasFont = Boolean(font);
+
   const title = (data?.clientName || "Zeppstr").slice(0, 40);
-  const metric = (data?.headlineMetric || "").slice(0, 60);
+  const metric = safeGlyphs((data?.headlineMetric || "").slice(0, 60), hasFont);
   const industry = (data?.industry || "Case Study").slice(0, 40);
 
   return new ImageResponse(
@@ -49,7 +54,7 @@ export async function GET(
           justifyContent: "space-between",
           backgroundColor: GREEN,
           padding: "64px",
-          fontFamily: "sans-serif",
+          fontFamily: hasFont ? "Inter" : "sans-serif",
         }}
       >
         <div
@@ -102,6 +107,12 @@ export async function GET(
         </div>
       </div>
     ),
-    { width: 1200, height: 900 }
+    {
+      width: 1200,
+      height: 900,
+      fonts: font
+        ? [{ name: "Inter", data: font, style: "normal" as const, weight: 400 as const }]
+        : undefined,
+    }
   );
 }

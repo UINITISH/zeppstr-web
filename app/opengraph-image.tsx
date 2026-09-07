@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { loadOgFont } from "@/lib/og-font";
+import { markDataUri } from "@/lib/og-mark";
 
 /**
  * Site-wide default Open Graph / Twitter share image.
@@ -18,7 +20,12 @@ export const contentType = "image/png";
 const GREEN = "#064E3B";
 const YELLOW = "#FFD031";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  // Satori ships no system fonts; without this the rupee sign renders as tofu.
+  const font = await loadOgFont();
+  const hasFont = Boolean(font);
+  const mark = markDataUri("white");
+
   return new ImageResponse(
     (
       <div
@@ -30,19 +37,24 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           backgroundColor: GREEN,
           padding: "72px",
-          fontFamily: "sans-serif",
+          fontFamily: hasFont ? "Inter" : "sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              display: "flex",
-              width: "56px",
-              height: "56px",
-              borderRadius: "14px",
-              backgroundColor: YELLOW,
-            }}
-          />
+          {mark ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={mark} width={56} height={56} alt="" />
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                width: "56px",
+                height: "56px",
+                borderRadius: "14px",
+                backgroundColor: YELLOW,
+              }}
+            />
+          )}
           <div style={{ color: "#ffffff", fontSize: "40px", fontWeight: 700 }}>
             Zeppstr
           </div>
@@ -78,6 +90,6 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: font ? [{ name: "Inter", data: font, style: "normal" as const, weight: 400 as const }] : undefined }
   );
 }

@@ -258,8 +258,9 @@ export function DiagnosticIntake() {
 
               <p className="mt-8 font-body text-body-sm text-ink-muted leading-relaxed max-w-[44ch]">
                 Wise Market grew AUD 40K → AUD 2.7M in six months. Mini Leaves
-                moved from 0.5% conversion to 3%+. Tru Aquapolis turned 22M+ views
-                into closed flats. The same architecture, applied across categories.
+                moved from 0.5% conversion to 3%+. Tru Aquapolis turned ₹39.7L of
+                media into ₹34 Cr+ of qualified pipeline. The same architecture,
+                applied across categories.
               </p>
             </div>
           </aside>

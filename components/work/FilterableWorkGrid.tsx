@@ -7,10 +7,19 @@ import { cn } from "@/lib/cn";
 import { sanityImageProps } from "@/sanity/lib/image";
 import type { CaseStudy } from "@/sanity/lib/types";
 
-export type CaseStudyListItem = Pick<
-  CaseStudy,
-  "_id" | "clientName" | "slug" | "headlineMetric" | "headlineTimeframe" | "heroImage"
-> & {
+/**
+ * headlineMetric / headlineTimeframe / heroImage are OPTIONAL by design.
+ *
+ * The grid renders two kinds of entry: published case studies, which always
+ * carry an outcome metric, and roster tiles for named clients whose work has
+ * not been written up yet, which deliberately carry none. Requiring the metric
+ * forced callers to invent one — the exact failure this codebase has been
+ * cleaning up. The row renders the metric only when it exists.
+ */
+export type CaseStudyListItem = Pick<CaseStudy, "_id" | "clientName" | "slug"> &
+  Partial<
+    Pick<CaseStudy, "headlineMetric" | "headlineTimeframe" | "heroImage">
+  > & {
   industry?: { _id: string; name: string; slug: { current: string } };
   /** Optional href override — used for static featured brands without a full case study page */
   linkHref?: string;
@@ -139,11 +148,16 @@ function WorkRow({
   caseStudy: CaseStudyListItem;
   index: number;
 }) {
-  const img =
+  const img: string | null =
     caseStudy.screenshotSrc ??
     (caseStudy.heroImage
-      ? sanityImageProps(caseStudy.heroImage, { width: 640, height: 480 }).src
+      ? sanityImageProps(caseStudy.heroImage, { width: 640, height: 480 })?.src ??
+        null
       : null);
+
+  // A generated /work-thumb card is a text panel, not a photograph — it is not
+  // legible at thumbnail size. Only real imagery earns the thumbnail slot.
+  const isRealImage = Boolean(img && !img.startsWith("/work-thumb/"));
 
   const plate = String(index + 1).padStart(2, "0");
 
@@ -184,11 +198,14 @@ function WorkRow({
           )}
         </div>
 
-        {/* Thumbnail — always visible in grayscale, colour on hover. It was
-            previously opacity-0 until hover, which hid the imagery entirely
-            rather than desaturating it. */}
+        {/* Thumbnail — only rendered when a REAL image exists (Sanity heroImage
+            or a screenshot on file). The generated /work-thumb card is a
+            text-based branded panel: legible at 1200px, an illegible green
+            square at the 180px this column allows. Showing it here added a
+            meaningless block to every row. When there is no real image the
+            column stays empty and the row reads as the typographic index it is. */}
         <div className="col-span-12 md:col-span-2 order-first md:order-none mb-5 md:mb-0">
-          {img && (
+          {isRealImage && img && (
             <div className="relative aspect-[4/3] w-full bg-emerald-900 overflow-hidden">
               <Image
                 src={img}

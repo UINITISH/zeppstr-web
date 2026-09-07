@@ -145,6 +145,8 @@ export type ArticleCategory =
   | "seo-search"
   | "performance-paid"
   | "conversion-experience"
+  | "email-lifecycle"
+  | "social-content"
   | "industry-insights";
 
 export interface Article extends SeoFields {

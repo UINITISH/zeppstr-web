@@ -2,9 +2,9 @@
   "name": "zeppstr-web",
   "version": "0.1.0",
   "private": true,
-  "description": "zeppstr.com — Next.js 14 + Sanity + Tailwind. Built on Architecture v3.1.",
+  "description": "zeppstr.com \u2014 Next.js 14 + Sanity + Tailwind. Built on Architecture v3.1.",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,7 +15,10 @@
     "sanity:deploy": "sanity deploy",
     "seed": "tsx scripts/seed/seed.ts",
     "seed:check": "tsx scripts/seed/check.ts",
-    "seed:projects": "tsx scripts/seed/seed-client-projects.ts"
+    "seed:projects": "tsx scripts/seed/seed-client-projects.ts",
+    "seed:prune": "tsx scripts/seed/prune-articles.ts",
+    "insights:apply": "npm run seed && npm run seed:prune -- --apply && npx tsx scripts/seed/verify-articles.ts",
+    "seed:prune:logos": "tsx scripts/seed/prune-client-logos.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

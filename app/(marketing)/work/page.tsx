@@ -104,7 +104,9 @@ export default async function WorkHubPage() {
           <div className="container-layout py-20 text-center">
             <p className="font-body text-body-lg text-ink-muted">
               First case studies publishing soon.{" "}
-              <a href="/insights/the-brief" className="text-brand-blue underline">
+              {/* Was /insights/the-brief — no such article exists, so the link
+                  404'd. /insights carries the newsletter signup inline. */}
+              <a href="/insights" className="text-brand-blue underline">
                 Subscribe to The Brief
               </a>{" "}
               to get them in your inbox.

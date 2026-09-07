@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -6,11 +7,16 @@ export function Footer() {
       <div className="container-layout py-16 grid md:grid-cols-4 gap-12">
         {/* Brand */}
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2 font-display font-bold text-[22px] mb-4 text-white">
-            <span className="inline-flex items-center justify-center w-[26px] h-[26px] bg-brand-yellow text-ink-headline rounded-md text-sm">
-              ↗
-            </span>
-            Zeppstr
+          {/* White wordmark — the footer panel is bg-bg-inverse (dark green),
+              so the black logo would be invisible here. */}
+          <div className="mb-5">
+            <Image
+              src="/brand/zeppstr-logo-horizontal-white.png"
+              alt="Zeppstr"
+              width={1999}
+              height={548}
+              className="h-[32px] w-auto"
+            />
           </div>
           <p className="font-body text-body-sm text-white/75 mb-6">
             Organic Growth, Performance Media & Brand Consulting. Your growth partner, embedded.
@@ -30,12 +36,12 @@ export function Footer() {
         </FooterCol>
 
         <FooterCol heading="Industries">
-          <FooterLink href="/industries/healthcare">Healthcare</FooterLink>
-          <FooterLink href="/industries/saas">SaaS / Tech</FooterLink>
+          <FooterLink href="/industries/healthcare-wellness">Healthcare</FooterLink>
+          <FooterLink href="/industries/saas-tech">SaaS / Tech</FooterLink>
           <FooterLink href="/industries/real-estate">Real Estate</FooterLink>
-          <FooterLink href="/industries/edtech">EdTech</FooterLink>
+          <FooterLink href="/industries/edtech-education">EdTech</FooterLink>
           <FooterLink href="/industries/professional-services">Professional Services</FooterLink>
-          <FooterLink href="/industries/ecommerce">E-commerce / D2C</FooterLink>
+          <FooterLink href="/industries/ecommerce-dtc">E-commerce / D2C</FooterLink>
         </FooterCol>
 
         <FooterCol heading="Engage">

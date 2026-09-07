@@ -217,8 +217,34 @@ export const caseStudyBySlugQuery = groq`
 // ─────────────────────────────────────────────
 
 /** All articles for /insights index */
+/**
+ * Articles withheld from publication.
+ *
+ * These four essays were seeded to Sanity before being pulled at the founder's
+ * instruction. Removing them from scripts/seed/data/articles.ts stops the seed
+ * re-creating them, but the seed is upsert-only — it never deletes — so the
+ * documents stayed in the dataset and kept rendering on /insights, the homepage
+ * "Field Notes" block, and their own detail pages.
+ *
+ * Rather than depend on `npm run seed:prune -- --apply` having been run, every
+ * article query below excludes them explicitly. The site is correct regardless
+ * of dataset state.
+ *
+ * To republish one: delete its slug from this list AND move its entry back into
+ * META in scripts/seed/data/articles.ts.
+ */
+export const WITHHELD_ARTICLE_SLUGS = [
+  "creative-concentration",
+  "revenue-claims-that-fail-arithmetic",
+  "zero-conversions-147-leads",
+  "win-four-searches-completely",
+] as const;
+
+/** GROQ fragment: drop withheld articles from any article filter. */
+const NOT_WITHHELD = `!(slug.current in ${JSON.stringify([...WITHHELD_ARTICLE_SLUGS])})`;
+
 export const allArticlesQuery = groq`
-  *[_type == "article"] | order(publishedAt desc) {
+  *[_type == "article" && ${NOT_WITHHELD}] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -232,7 +258,7 @@ export const allArticlesQuery = groq`
 
 /** Articles by category (for filter views) */
 export const articlesByCategoryQuery = groq`
-  *[_type == "article" && category == $category] | order(publishedAt desc) {
+  *[_type == "article" && category == $category && ${NOT_WITHHELD}] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -246,11 +272,17 @@ export const articlesByCategoryQuery = groq`
 
 /** Recent articles (for home page teaser) */
 export const recentArticlesQuery = groq`
-  *[_type == "article"] | order(publishedAt desc) [0...3] {
+  *[_type == "article" && ${NOT_WITHHELD}] | order(publishedAt desc) [0...3] {
     _id,
     title,
     slug,
     excerpt,
+    // category was missing here, so ArticleCard on the homepage fell back to a
+    // default: all three covers rendered identical green with a generic
+    // "INSIGHTS" label, while /insights showed the correct per-category colour
+    // and name. The generated cover art is keyed on this field.
+    category,
+    author,
     heroImage { ${imageFragment} },
     publishedAt
   }
@@ -258,7 +290,7 @@ export const recentArticlesQuery = groq`
 
 /** Single article by slug */
 export const articleBySlugQuery = groq`
-  *[_type == "article" && slug.current == $slug][0] {
+  *[_type == "article" && slug.current == $slug && ${NOT_WITHHELD}][0] {
     _id,
     title,
     slug,
@@ -271,6 +303,32 @@ export const articleBySlugQuery = groq`
     relatedSolution->{ ${solutionMinimalFragment} },
     relatedIndustry->{ ${industryMinimalFragment} },
     ${seoFragment}
+  }
+`;
+
+/** Approved comments for an article, oldest first (thread reads top-down) */
+export const approvedCommentsQuery = groq`
+  *[_type == "comment" && approved == true && article._ref == $articleId]
+    | order(createdAt asc) {
+    _id,
+    name,
+    body,
+    createdAt
+  }
+`;
+
+/** Sibling articles in the same category, excluding the current one */
+export const relatedArticlesQuery = groq`
+  *[_type == "article" && category == $category && slug.current != $slug && ${NOT_WITHHELD}]
+    | order(publishedAt desc) [0...3] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    heroImage { ${imageFragment} },
+    author,
+    category,
+    publishedAt
   }
 `;
 
@@ -328,6 +386,6 @@ export const sitemapQuery = groq`
   },
   "industries": *[_type == "industry"]{ "slug": slug.current },
   "caseStudies": *[_type == "caseStudy"]{ "slug": slug.current, publishedAt },
-  "articles": *[_type == "article"]{ "slug": slug.current, publishedAt }
+  "articles": *[_type == "article" && ${NOT_WITHHELD}]{ "slug": slug.current, publishedAt }
 }
 `;

@@ -1,9 +1,45 @@
 /**
- * 24 client logos seeded WITHOUT image assets — Sanity Studio is the right place
- * to upload actual logo PNGs after seeding. Each record is created with a 1×1
- * placeholder so the schema's `validation: required` doesn't fail.
+ * Client logos.
  *
- * After seeding, Nitish replaces the placeholder logo in Studio per row.
+ * ── SOURCE OF TRUTH ─────────────────────────────────────────────────────────
+ * Every entry below corresponds to a real logo asset in /public/client-logos/,
+ * or to a client with a published case study. That is the evidence test: if
+ * Zeppstr holds the client's logo file, the engagement happened.
+ *
+ * ── WHAT WAS REMOVED, AND WHY ───────────────────────────────────────────────
+ * This file previously contained 14 invented company names seeded as live
+ * client records:
+ *
+ *   GreenDot Health · Northstar Education · Bridge Learning · Axis Legal ·
+ *   Meridian Advisory · CloudKey · Flowboard · Vector Tech · Sapphire Realty ·
+ *   Bloomwell · Paragon Education · Keystone Legal · Veridia D2C ·
+ *   Trinity Capital
+ *
+ * They were scaffolding — placeholder names used to populate the industry
+ * filters during development — and they shipped to production in the 5 Aug
+ * seed. None is a Zeppstr client. Publishing invented client names is the same
+ * category of failure as the un-nameable real-estate case studies removed in
+ * the same session.
+ *
+ * Also removed: Prestige Group (subcontracted, no naming rights), and four
+ * entries with no supporting asset or document anywhere in the archive —
+ * Crafthives, Truspace, Altius Realty, Himalayan Wellness. If any of those are
+ * real, add them back with a logo file.
+ *
+ * DO NOT add a name here without a logo asset or a signed engagement.
+ *
+ * ── AFTER SEEDING ───────────────────────────────────────────────────────────
+ * Records seed without image assets. Upload the PNGs from /public/client-logos/
+ * to each record in Sanity Studio, or wire an asset-upload step into the seed.
+ *
+ * ── NEEDS CONFIRMATION ──────────────────────────────────────────────────────
+ * Industry mapping for entries marked (?) is inferred from the company name or
+ * from which solution page featured the logo. Correct in Studio if wrong — it
+ * only affects filter grouping, not the claim itself.
+ *
+ * `status` is "active" for everything non-flagship because the archive does not
+ * record which engagements have ended. Reclassify in Studio where known; do not
+ * guess.
  */
 
 interface SeedClientLogo {
@@ -15,7 +51,7 @@ interface SeedClientLogo {
 }
 
 export const CLIENT_LOGOS: SeedClientLogo[] = [
-  // ─── Flagship (full case studies) ───
+  // ─── Flagship — published case studies ───
   {
     _id: "logo-wise-market",
     clientName: "Wise Market",
@@ -34,29 +70,51 @@ export const CLIENT_LOGOS: SeedClientLogo[] = [
     clientName: "Mini Leaves",
     industryId: "industry-ecommerce-dtc",
     status: "flagship",
+    website: "https://minileaves.com",
+  },
+  {
+    _id: "logo-invest-in-sharjah",
+    clientName: "Invest in Sharjah",
+    industryId: "industry-professional-services",
+    status: "flagship",
+    website: "https://investinsharjah.ae",
+  },
+  {
+    _id: "logo-homatico",
+    clientName: "Homatico",
+    industryId: "industry-professional-services",
+    status: "flagship",
+  },
+  {
+    _id: "logo-vehiclemall",
+    clientName: "VehicleMall",
+    industryId: "industry-saas-tech",
+    status: "flagship",
+  },
+  {
+    _id: "logo-sky-phonez",
+    clientName: "Sky Phonez",
+    industryId: "industry-ecommerce-dtc",
+    status: "flagship",
   },
 
-  // ─── Active clients ───
-  { _id: "logo-invest-in-sharjah", clientName: "Invest in Sharjah", industryId: "industry-real-estate", status: "active" },
-  { _id: "logo-crafthives", clientName: "Crafthives", industryId: "industry-ecommerce-dtc", status: "active" },
-  { _id: "logo-aishwarya", clientName: "Aishwarya Foods", industryId: "industry-ecommerce-dtc", status: "active" },
-  { _id: "logo-truspace", clientName: "Truspace", industryId: "industry-real-estate", status: "active" },
-  { _id: "logo-altius", clientName: "Altius Realty", industryId: "industry-real-estate", status: "active" },
-  { _id: "logo-himalayan", clientName: "Himalayan Wellness", industryId: "industry-healthcare-wellness", status: "active" },
-  { _id: "logo-greendot", clientName: "GreenDot Health", industryId: "industry-healthcare-wellness", status: "active" },
-  { _id: "logo-northstar", clientName: "Northstar Education", industryId: "industry-edtech-education", status: "active" },
-  { _id: "logo-bridge", clientName: "Bridge Learning", industryId: "industry-edtech-education", status: "active" },
-  { _id: "logo-axis", clientName: "Axis Legal", industryId: "industry-professional-services", status: "active" },
-  { _id: "logo-meridian", clientName: "Meridian Advisory", industryId: "industry-professional-services", status: "active" },
-  { _id: "logo-cloudkey", clientName: "CloudKey", industryId: "industry-saas-tech", status: "active" },
-
-  // ─── Past clients ───
-  { _id: "logo-flowboard", clientName: "Flowboard", industryId: "industry-saas-tech", status: "past" },
-  { _id: "logo-vector", clientName: "Vector Tech", industryId: "industry-saas-tech", status: "past" },
-  { _id: "logo-sapphire", clientName: "Sapphire Realty", industryId: "industry-real-estate", status: "past" },
-  { _id: "logo-bloomwell", clientName: "Bloomwell", industryId: "industry-healthcare-wellness", status: "past" },
-  { _id: "logo-paragon", clientName: "Paragon Education", industryId: "industry-edtech-education", status: "past" },
-  { _id: "logo-keystone", clientName: "Keystone Legal", industryId: "industry-professional-services", status: "past" },
-  { _id: "logo-veridia", clientName: "Veridia D2C", industryId: "industry-ecommerce-dtc", status: "past" },
-  { _id: "logo-trinity", clientName: "Trinity Capital", industryId: "industry-professional-services", status: "past" },
+  // ─── Active — logo asset on file, no published case study yet ───
+  { _id: "logo-prohance", clientName: "Prohance", industryId: "industry-saas-tech", status: "active" },
+  { _id: "logo-empuls", clientName: "Empuls", industryId: "industry-saas-tech", status: "active" },
+  { _id: "logo-fixstars", clientName: "Fixstars", industryId: "industry-saas-tech", status: "active" },
+  { _id: "logo-tristar-online", clientName: "Tristar Online", industryId: "industry-ecommerce-dtc", status: "active" },
+  { _id: "logo-aishwarya-interiors", clientName: "Aishwarya Interiors", industryId: "industry-real-estate", status: "active" },
+  { _id: "logo-twenty-one-finance", clientName: "21 Finance", industryId: "industry-professional-services", status: "active" }, // (?) fintech — no fintech industry defined
+  { _id: "logo-learncab", clientName: "LearnCab", industryId: "industry-edtech-education", status: "active" },
+  { _id: "logo-ivehiclevalue", clientName: "iVehicleValue", industryId: "industry-saas-tech", status: "active" },
+  { _id: "logo-bsg", clientName: "BSG", industryId: "industry-professional-services", status: "active" }, // BizSetupGlobal — accounting & compliance
+  { _id: "logo-my-keto-co", clientName: "My Keto Co", industryId: "industry-ecommerce-dtc", status: "active" },
+  { _id: "logo-lucky-white-goods", clientName: "Lucky White Goods", industryId: "industry-ecommerce-dtc", status: "active" },
+  { _id: "logo-nakshatech", clientName: "Nakshatech", industryId: "industry-saas-tech", status: "active" }, // (?)
+  { _id: "logo-ace-online", clientName: "Ace Online", industryId: "industry-edtech-education", status: "active" }, // (?)
+  { _id: "logo-eagledrift", clientName: "EagleDrift", industryId: "industry-saas-tech", status: "active" }, // (?)
+  { _id: "logo-ignite", clientName: "Ignite", industryId: "industry-professional-services", status: "active" }, // (?)
+  { _id: "logo-jp-parking-yard", clientName: "JP Parking Yard", industryId: "industry-professional-services", status: "active" }, // (?) featured on local-search
+  { _id: "logo-tansi-fintech", clientName: "Tansi Fintech", industryId: "industry-professional-services", status: "active" }, // (?)
+  { _id: "logo-pacer", clientName: "Pacer", industryId: "industry-ecommerce-dtc", status: "active" }, // (?) featured on influencer-partnerships
 ];
