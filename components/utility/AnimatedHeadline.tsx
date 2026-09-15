@@ -64,6 +64,37 @@ export function AnimatedHeadline({
    */
   const [hydrated, setHydrated] = React.useState(false);
   const [revealed, setRevealed] = React.useState(false);
+  /**
+   * ── THE "St" BUG — FIXED 15 SEP 2026 ──────────────────────────────────────
+   *
+   * SYMPTOM, observed live on the Vercel preview: the homepage H1 rendered as
+   * a giant empty yellow block containing the two letters "St". Two characters
+   * revealed, forty-nine invisible, permanently.
+   *
+   * CAUSE: the reveal is a per-character CSS transition with a staggered
+   * transition-delay of `i * stagger`. At 28ms across a 51-character headline
+   * the last character does not begin until 1,428ms, and finishes at ~2,230ms.
+   * A CSS transition only runs if the element is actually being rendered and
+   * composited — so if the tab is backgrounded, the compositor throttles, or
+   * the browser is busy during that 2.2-second window, characters whose delay
+   * elapsed while hidden simply never transition. There was no state that
+   * unconditionally asserted the finished appearance; `revealed` only STARTS
+   * the chain, it does not guarantee it completes.
+   *
+   * The existing guards were all about the animation never STARTING (observer
+   * never fires, reduced motion). None of them covered it starting and then
+   * not finishing — which produces a headline that is worse than no animation
+   * and worse than no headline, because it looks like the site is broken.
+   *
+   * FIX: `settled` drops the transitions entirely and pins every character to
+   * its final state. It is set by whichever comes first — the full animation
+   * window elapsing, or the document being hidden at any point. Once settled,
+   * the headline cannot be left partially rendered by anything.
+   *
+   * Same principle as the AnimatedNumber fix: the animation is a flourish, the
+   * text is the content, and when they conflict the content wins.
+   */
+  const [settled, setSettled] = React.useState(false);
 
   React.useEffect(() => {
     const el = ref.current;
@@ -79,6 +110,8 @@ export function AnimatedHeadline({
 
     if (prefersReducedMotion || alreadyInView || !el) {
       setRevealed(true);
+      // Reduced motion should not leave transitions armed at all.
+      if (prefersReducedMotion) setSettled(true);
       return;
     }
 
@@ -109,6 +142,41 @@ export function AnimatedHeadline({
     };
   }, []);
 
+  /**
+   * Settle guard. Runs independently of the reveal logic above so it cannot be
+   * skipped by any path through it.
+   *
+   * The timeout is the full animation window plus a second of slack: the last
+   * character's delay (chars × stagger) plus its duration. After that the
+   * animation is over by definition, so pinning the final state can only fix a
+   * stall, never interrupt a legitimate reveal.
+   */
+  const charCount = children.replace(/\s/g, "").length;
+
+  React.useEffect(() => {
+    const total = charCount * stagger + duration + 1000;
+    const done = window.setTimeout(() => {
+      setRevealed(true);
+      setSettled(true);
+    }, total);
+
+    // A hidden document cannot composite transitions. Anything mid-chain when
+    // the tab goes away will not resume correctly, so finish it immediately.
+    const onHide = () => {
+      if (document.hidden) {
+        setRevealed(true);
+        setSettled(true);
+      }
+    };
+    document.addEventListener("visibilitychange", onHide);
+    if (document.hidden) onHide();
+
+    return () => {
+      window.clearTimeout(done);
+      document.removeEventListener("visibilitychange", onHide);
+    };
+  }, [charCount, stagger, duration]);
+
   // Visible unless we have deliberately hidden it and not yet revealed it.
   const visible = !hydrated || revealed;
 
@@ -134,9 +202,15 @@ export function AnimatedHeadline({
               key={`c-${i}`}
               style={{
                 display: "inline-block",
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(0.35em)",
-                transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${i * stagger}ms, transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${i * stagger}ms`,
+                // Once settled, the final state is asserted unconditionally and
+                // the transition is removed — a stalled character cannot stay
+                // stalled. See the `settled` note at the top of this component.
+                opacity: settled || visible ? 1 : 0,
+                transform:
+                  settled || visible ? "translateY(0)" : "translateY(0.35em)",
+                transition: settled
+                  ? "none"
+                  : `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${i * stagger}ms, transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${i * stagger}ms`,
               }}
             >
               {ch}
