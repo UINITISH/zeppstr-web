@@ -108,7 +108,7 @@ if [[ "$CHANGED" == "0" ]]; then
   git log --oneline "origin/$BRANCH..HEAD"
   print -P "\nPush these to origin/$BRANCH? [y/N] "
   read -r REPLY
-  [[ "$REPLY" =~ ^[Yy]$ ]] || { print -P "\n%F{yellow}Stopped. Nothing pushed.%f"; print "Press Return."; read; exit 0 }
+  [[ "$REPLY" =~ ^[Yy]$ ]] || { print -P "\n%F{yellow}Stopped. Nothing pushed.%f"; print "Press Return."; read; exit 0; }
 
   if ! git push origin "$BRANCH"; then
     print -P "\n%F{red}✗ PUSH FAILED.%f Send Claude the output.\n"
@@ -126,7 +126,7 @@ git status --short | head -40
 print -P "\n$CHANGED files changed.\n"
 print -P "Commit and push to origin/$BRANCH? [y/N] "
 read -r REPLY
-[[ "$REPLY" =~ ^[Yy]$ ]] || { print -P "\n%F{yellow}Stopped. Nothing pushed.%f"; print "Press Return."; read; exit 0 }
+[[ "$REPLY" =~ ^[Yy]$ ]] || { print -P "\n%F{yellow}Stopped. Nothing pushed.%f"; print "Press Return."; read; exit 0; }
 
 if ! git add -A; then
   print -P "\n%F{red}✗ git add failed.%f Send Claude the output.\n"
