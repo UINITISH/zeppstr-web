@@ -76,11 +76,42 @@ print -P "\n%F{green}✓ Build passed.%f\n"
 print -P "%F{cyan}[3/4] What will be committed%f"
 CHANGED=$(git status --porcelain | wc -l | tr -d ' ')
 
+# A clean tree does NOT mean there is nothing to push.
+#
+# This previously exited here whenever `git status` was empty, on the assumption
+# that a clean tree meant an earlier run had already pushed. That is wrong when
+# the work was committed but never pushed — which is exactly what happens when
+# Claude commits for you (it cannot push; it has no GitHub credentials and is
+# not permitted to enter any). The script would seed, build, then quietly stop
+# one step short of the thing you ran it for.
+#
+# So: if the tree is clean, check whether the local branch is ahead of the
+# remote, and if it is, skip straight to the push.
+UNPUSHED=$(git rev-list --count "origin/$BRANCH..HEAD" 2>/dev/null || echo 0)
+
 if [[ "$CHANGED" == "0" ]]; then
-  print -P "%F{yellow}Nothing to commit — the working tree is clean.%f"
-  print -P "An earlier run probably already pushed this.\n"
-  git log --oneline -3
-  print -P "\nPress Return to close."; read; exit 0
+  if [[ "$UNPUSHED" == "0" ]]; then
+    print -P "%F{yellow}Nothing to commit and nothing to push — everything is already on GitHub.%f\n"
+    git log --oneline -3
+    print -P "\nPress Return to close."; read; exit 0
+  fi
+
+  print -P "%F{yellow}Working tree is clean, but $UNPUSHED commit(s) have not reached GitHub yet:%f\n"
+  git log --oneline "origin/$BRANCH..HEAD"
+  print -P "\nPush these to origin/$BRANCH? [y/N] "
+  read -r REPLY
+  [[ "$REPLY" =~ ^[Yy]$ ]] || { print -P "\n%F{yellow}Stopped. Nothing pushed.%f"; print "Press Return."; read; exit 0 }
+
+  if ! git push origin "$BRANCH"; then
+    print -P "\n%F{red}✗ PUSH FAILED.%f Send Claude the output.\n"
+    print -P "Press Return to close."; read; exit 1
+  fi
+
+  print -P "\n%F{green}✓ Pushed to origin/$BRANCH.%f"
+  print -P "Vercel builds automatically from this branch — the preview URL appears"
+  print -P "on the pull request at https://github.com/UINITISH/zeppstr-web/pull/1"
+  print -P "within a couple of minutes.\n"
+  print -P "Press Return to close."; read; exit 0
 fi
 
 git status --short | head -40
