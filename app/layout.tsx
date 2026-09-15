@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@/lib/analytics/Analytics";
+import { WhatsAppButton } from "@/components/utility/WhatsAppButton";
+import { LiveChat } from "@/components/utility/LiveChat";
 import { organizationLd, websiteLd } from "@/lib/seo/jsonld";
 import "@/styles/globals.css";
 
@@ -112,6 +114,14 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        {/* Contact floats, site-wide.
+            WhatsApp sits bottom-LEFT and the chat widget bottom-RIGHT — not a
+            style choice: Tawk.to and Crisp both pin their own launcher to the
+            bottom-right and neither reliably allows moving it on a free tier,
+            so anything else would overlap. LiveChat renders nothing until an
+            env var is set, so the right corner stays empty until then. */}
+        <WhatsAppButton />
+        <LiveChat />
       </body>
     </html>
   );
