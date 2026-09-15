@@ -20,7 +20,7 @@ export function ManifestoBlock({ eyebrow, headline, body, link }: ManifestoBlock
           {eyebrow}
         </p>
 
-        <h2 className="font-extralight tracking-[-0.03em] text-[clamp(48px,8vw,128px)] leading-[0.92] mb-16 md:mb-20 max-w-[16ch]">
+        <h2 className="font-extralight tracking-[-0.03em] text-display-stat leading-[0.92] mb-16 md:mb-20 max-w-[16ch]">
           {headline}
         </h2>
 

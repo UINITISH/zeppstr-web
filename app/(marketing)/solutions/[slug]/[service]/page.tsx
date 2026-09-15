@@ -122,7 +122,7 @@ export default async function SubServicePage({
         {/* What's included */}
         {subService.whatsIncluded && (
           <section className="container-reading py-16 border-t border-rule">
-            <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-8">
+            <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-8">
               What&rsquo;s included
             </h2>
             <PortableText value={subService.whatsIncluded} />
@@ -132,7 +132,7 @@ export default async function SubServicePage({
         {/* Methodology */}
         {subService.methodology && (
           <section className="container-reading py-16 border-t border-rule">
-            <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-8">
+            <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-8">
               How we deliver
             </h2>
             <PortableText value={subService.methodology} />
@@ -144,7 +144,7 @@ export default async function SubServicePage({
           <section className="container-layout py-20 border-t border-rule">
             <div className="mb-10">
               <p className="eyebrow mb-4">Outcome</p>
-              <h2 className="font-display font-extralight text-display-lg text-ink-headline tracking-tight">
+              <h2 className="font-display font-light text-display-lg text-ink-headline tracking-tight">
                 Where this practice has delivered.
               </h2>
             </div>

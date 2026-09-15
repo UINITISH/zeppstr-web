@@ -35,7 +35,27 @@
 
 export const CASE_STUDY_IMAGES: Record<string, string> = {
   // Real screenshots on file. Everything else falls through to /work-thumb.
+  //
+  // ── FIXED 11 SEP 2026 ─────────────────────────────────────────────────────
+  // Only mini-leaves was mapped here, while eight genuine screenshots were
+  // sitting unused in /public/case-screenshots. Three of them match live case
+  // studies, so three case studies were rendering a generated fallback while
+  // their real screenshot sat on disk one line away from being used.
   "mini-leaves": "/case-screenshots/mini-leaves.jpg",
+  "tru-aquapolis": "/case-screenshots/tru-aquapolis.jpg",
+  "wise-market": "/case-screenshots/wise-market.jpg",
+
+  // ── UNMAPPED SCREENSHOTS ──────────────────────────────────────────────────
+  // Also on disk, with no case study to attach to:
+  //   aishwarya-interiors · empuls · fixstars · prohance · tristar-online
+  //
+  // These are real client screenshots. They are not referenced anywhere because
+  // no case study exists for those clients yet. Two options when one is written:
+  // add the slug here, or upload to Sanity `heroImage`, which takes precedence.
+  //
+  // Still missing a real image: homatico · vehiclemall · sky-phonez ·
+  // invest-in-sharjah. Screenshot the client's own site at 1600px wide, save as
+  // /public/case-screenshots/<slug>.jpg, add the line here. Nothing else needed.
 };
 
 export function getCaseStudyImage(slug: string): string | null {

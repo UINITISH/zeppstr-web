@@ -83,7 +83,7 @@ export default async function SolutionPage({
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[16ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[16ch] text-balance mb-8">
                   {solution.name}
                 </h1>
 
@@ -95,7 +95,7 @@ export default async function SolutionPage({
 
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                  className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                 >
                   <span>Apply for a diagnostic</span>
                   <span aria-hidden="true">→</span>
@@ -130,7 +130,7 @@ export default async function SolutionPage({
                     className="group relative flex items-center justify-center h-[100px] md:h-[120px] px-6 md:px-8 border-r border-b border-ink-headline/10 transition-colors duration-hover hover:bg-bg-secondary"
                   >
                     <Image
-                      src={`/client-logos/${logo.file}`}
+                      src={`/client-logos/v3/${logo.file}`}
                       alt={`${logo.name} — Zeppstr client`}
                       width={140}
                       height={60}
@@ -177,7 +177,7 @@ export default async function SolutionPage({
                   </p>
                   <h2
                     id="deliverables-heading"
-                    className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
+                    className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
                   >
                     What you actually{" "}
                     <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -214,7 +214,7 @@ export default async function SolutionPage({
                         aria-hidden="true"
                         className="block w-4 h-4 bg-brand-yellow mb-7"
                       />
-                      <h3 className="font-display font-bold text-[clamp(34px,4.5vw,64px)] text-ink-headline tracking-[-0.025em] leading-[1.02] mb-3 max-w-[16ch]">
+                      <h3 className="font-display font-bold text-display-lg text-ink-headline tracking-[-0.025em] leading-[1.02] mb-3 max-w-[16ch]">
                         {practice.deliverables[0].name}
                       </h3>
                       {practice.deliverables[0].format && (
@@ -267,7 +267,7 @@ export default async function SolutionPage({
 
                         <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mb-5" />
 
-                        <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-3 max-w-[22ch]">
+                        <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-3 max-w-[22ch]">
                           {d.name}
                         </h3>
 
@@ -288,6 +288,76 @@ export default async function SolutionPage({
           </section>
         )}
 
+        {/* ─── 4b. CRAFT — what actually gets produced ───
+            Sits deliberately after the deliverables block and before the
+            service list. The deliverables describe a system; this describes the
+            output. A reader who only scans headings should still come away
+            knowing we run shoots, go on location and staff on-ground work. */}
+        {practice?.craft && practice.craft.length > 0 && (
+          <section
+            className="bg-bg-secondary border-b border-ink-headline/10"
+            aria-labelledby="craft-heading"
+          >
+            <div className="container-layout py-24 md:py-32">
+              <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20">
+                <div className="md:col-span-7">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
+                    What we make
+                  </p>
+                  <h2
+                    id="craft-heading"
+                    className="font-display font-light tracking-[-0.025em] text-display-lg text-ink-headline max-w-[24ch] text-balance"
+                  >
+                    Strategy is half of it. This is the other half.
+                  </h2>
+                </div>
+                <p className="md:col-span-5 font-body text-body text-ink-muted leading-relaxed">
+                  Crews, cameras, locations, editors and people standing in a
+                  room with your customers. Produced in-house, which is why the
+                  creative and the media plan are not two separate arguments.
+                </p>
+              </div>
+
+              <div className="border-t border-ink-headline/15">
+                {practice.craft.map((block, i) => (
+                  <div
+                    key={block.label}
+                    className="grid md:grid-cols-12 gap-x-8 gap-y-5 border-b border-ink-headline/15 py-10 md:py-12"
+                  >
+                    <div className="md:col-span-5">
+                      <div className="flex items-baseline gap-4 mb-4">
+                        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
+                          0{i + 1}
+                        </span>
+                        <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.015em] leading-[1.15]">
+                          {block.label}
+                        </h3>
+                      </div>
+                      <p className="font-body text-body text-ink-body leading-relaxed max-w-[44ch]">
+                        {block.lede}
+                      </p>
+                    </div>
+                    <ul className="md:col-span-7 space-y-3.5 md:pt-1">
+                      {block.outputs.map((o) => (
+                        <li
+                          key={o}
+                          className="relative pl-5 font-body text-body-sm text-ink-body leading-relaxed"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-[0.6em] block w-2 h-[2px] bg-brand-yellow"
+                          />
+                          {o}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ─── 5. SERVICES — sub-services list ─── */}
         {solution.services && solution.services.length > 0 && (
           <section
@@ -301,7 +371,7 @@ export default async function SolutionPage({
                 </p>
                 <h2
                   id="services-list-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   {solution.services.length} services.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -326,7 +396,7 @@ export default async function SolutionPage({
                       </div>
                       <div className="md:col-span-5">
                         <span aria-hidden="true" className="block w-2.5 h-2.5 bg-brand-yellow mb-4" />
-                        <h3 className="font-display font-bold text-[clamp(24px,2.6vw,38px)] text-ink-headline tracking-[-0.02em] leading-[1.1] group-hover:text-ink-headline/70 transition-colors">
+                        <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.1] group-hover:text-ink-headline/70 transition-colors">
                           {service.name}
                         </h3>
                       </div>
@@ -369,7 +439,7 @@ export default async function SolutionPage({
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   How we{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -383,10 +453,10 @@ export default async function SolutionPage({
                 {practice.processSteps.map((step, i) => (
                   <li key={step.title} className="relative">
                     <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mb-7" />
-                    <p className="font-display font-extralight text-[clamp(56px,5.5vw,80px)] text-ink-headline leading-none tracking-[-0.03em] mb-6">
+                    <p className="font-display font-extralight text-display-stat text-ink-headline leading-none tracking-[-0.03em] mb-6">
                       {String(i + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="font-display font-light text-[clamp(24px,2.2vw,32px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                    <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                       {step.title}
                     </h3>
                     <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
@@ -423,7 +493,7 @@ export default async function SolutionPage({
                 </p>
                 <h2
                   id="practice-numbers-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(44px,7vw,104px)] text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
                 >
                   Numbers we can{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -442,10 +512,10 @@ export default async function SolutionPage({
                     } md:pr-10 border-b md:border-b-0 border-ink-headline/15`}
                   >
                     <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mb-6" />
-                    <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                    <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                       {n.figure}
                     </p>
-                    <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                    <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                       {n.metric}
                     </p>
                     <p className="font-body text-body text-ink-body leading-[1.5] max-w-[34ch]">
@@ -474,7 +544,7 @@ export default async function SolutionPage({
                 </p>
                 <h2
                   id="solution-cases-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance mb-6"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance mb-6"
                 >
                   What this practice has{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -534,7 +604,7 @@ export default async function SolutionPage({
                 </p>
                 <h2
                   id="faq-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   What you might want to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -551,7 +621,7 @@ export default async function SolutionPage({
                     className="group border-b border-ink-headline/15 py-6"
                   >
                     <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                      <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                         {faq.question}
                       </h3>
                       <span
@@ -578,7 +648,7 @@ export default async function SolutionPage({
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
               Build a{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 system
@@ -597,7 +667,7 @@ export default async function SolutionPage({
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for a diagnostic →
                 </Link>

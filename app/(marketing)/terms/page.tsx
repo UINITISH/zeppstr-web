@@ -47,7 +47,7 @@ export default function TermsPage() {
         <section className="container-layout pb-24 md:pb-32">
           <div className="max-w-[64ch] space-y-10 font-body text-body text-ink-body leading-relaxed">
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Scope
               </h2>
               <p>
@@ -59,7 +59,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Our content
               </h2>
               <p>
@@ -71,7 +71,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Client names and trade marks
               </h2>
               <p>
@@ -92,7 +92,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Results and figures
               </h2>
               <p>
@@ -105,7 +105,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 No advice
               </h2>
               <p>
@@ -117,7 +117,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Third-party links
               </h2>
               <p>
@@ -127,7 +127,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Limitation of liability
               </h2>
               <p>
@@ -139,7 +139,7 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Governing law
               </h2>
               <p>

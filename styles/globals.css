@@ -32,6 +32,20 @@
 
   /* Motion */
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Layout ───────────────────────────────────────────────────────────────
+     Height of the sticky global nav.
+
+     Anything that pins itself beneath the nav must offset by this, not by a
+     hand-measured pixel value. Before this existed the mega-menu dropdown used
+     top-[76px] and the Insights filter bar used top-[85px] — two different
+     guesses at the same measurement, so one of them was always wrong and the
+     filter bar left a 9px gap the page scrolled through.
+
+     Derived from GlobalNav: py-5 (20px top + 20px bottom) around a 30px
+     wordmark and a 38px CTA button, so 40 + 38 = 78px.
+     Change this if the nav padding or the button size changes. */
+  --nav-h: 78px;
 }
 
 @layer base {

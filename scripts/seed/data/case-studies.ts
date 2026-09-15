@@ -55,13 +55,42 @@ const META: SeedCaseStudy[] = [
       "solution-performance-media",
       "solution-experience-engineering",
     ],
-    headlineMetric: "₹34 Cr+ qualified pipeline on ₹39.7L media",
-    headlineTimeframe: "90 days · 85× media-to-pipeline",
-    publishedAt: "2026-06-05T09:00:00Z",
+    /**
+     * ── FIGURES UPDATED 11 SEP 2026 ─────────────────────────────────────────
+     *
+     * Supersedes the 90-day pipeline framing (₹39.7L → ₹34 Cr). This is the
+     * full Jan–Aug 2026 engagement, and these are closed sales rather than
+     * pipeline.
+     *
+     * Confirmed by the founder:
+     *   Media spend      ₹1.4 Cr        (Meta + Google, Jan–Aug 2026)
+     *   Leads generated  6,000+         → ₹2,333 per lead
+     *   Qualified        70%+           → ~4,200 after screening
+     *   Units closed     75             → 1.8% close rate on qualified
+     *   Average ticket   ₹2.5 Cr
+     *   Sales value      ₹187.5 Cr      (75 × ₹2.5 Cr)
+     *   Open pipeline    ₹50–60 Cr
+     *
+     * The headline is deliberately "closed from leads we generated" and not
+     * "we generated ₹187.5 Cr". Zeppstr ran acquisition and qualification;
+     * TRU's own sales team closed. Claiming the whole chain is what makes
+     * agency case studies unbelievable, and 134× needs every bit of
+     * credibility it can get.
+     *
+     * The per-lead and close-rate figures are what make the headline land.
+     * Do not drop them from the page to save space — they are the arithmetic
+     * a sceptical reader needs in order to accept the top-line number.
+     *
+     * Client agreed to publication of the figures; underlying CRM data is
+     * under NDA and must not be reproduced, quoted or screenshotted.
+     */
+    headlineMetric: "₹187.5 Cr closed from leads we generated",
+    headlineTimeframe: "Jan–Aug 2026 · ₹1.4 Cr media · 75 units",
+    publishedAt: "2026-09-11T09:00:00Z",
     markdownFile: "tru-aquapolis.md",
-    seoTitle: "Tru Aquapolis — ₹34 Cr Pipeline on ₹39.7L Media | Zeppstr",
+    seoTitle: "Tru Aquapolis — 75 Units Sold on ₹1.4 Cr of Media | Zeppstr",
     seoDescription:
-      "How a paused, untracked ad account became 1,690 qualified enquiries and ₹34 Cr+ of pipeline in 90 days — at ₹2,348 per in-market luxury buyer in East Bengaluru.",
+      "6,000+ leads at ₹2,333 each, 70% qualified, 75 units closed at ₹2.5 Cr average — how eight months of Meta and Google media produced ₹187.5 Cr in closed sales.",
   },
   {
     _id: "case-study-homatico",

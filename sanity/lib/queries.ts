@@ -389,3 +389,56 @@ export const sitemapQuery = groq`
   "articles": *[_type == "article" && ${NOT_WITHHELD}]{ "slug": slug.current, publishedAt }
 }
 `;
+
+// ─────────────────────────────────────────────
+// QUOTES / TESTIMONIALS
+// ─────────────────────────────────────────────
+
+/**
+ * All testimonials, for the homepage and About page testimonial sections.
+ *
+ * Ordered by _id rather than by a manual order field so the output is stable
+ * between builds — a testimonial block that reshuffles on every deploy looks
+ * like a bug. If editorial order becomes important, add an `order` number to
+ * the quote schema and sort on that instead of renaming documents.
+ *
+ * `relatedCaseStudy` is dereferenced so a testimonial can link to the work it
+ * refers to. It is optional: two of the four current quotes have no case study.
+ */
+/**
+ * ── ALLOWLIST, NOT A WILDCARD ───────────────────────────────────────────────
+ * This query names the four quote documents it will return. It does NOT ask
+ * Sanity for "all quotes", and that is deliberate.
+ *
+ * WHY: an earlier seed wrote fabricated testimonials into the dataset —
+ * "Sales Director, TRU Aquapolis", a "Co-Founder, Wise Market" quote claiming
+ * 67x growth. Those were deleted from scripts/seed/data/quotes.ts but the
+ * DOCUMENTS were never deleted from Sanity, so they are still sitting in the
+ * production dataset. A wildcard query published them straight back onto the
+ * homepage.
+ *
+ * Seed data and dataset contents are not the same thing. Anything that renders
+ * a claim attributed to a named client must be an allowlist, so that stale or
+ * unknown documents fail closed rather than fail visible.
+ *
+ * To add a testimonial: add it to scripts/seed/data/quotes.ts AND add its _id
+ * here. Both, or it will not appear.
+ */
+export const TESTIMONIAL_IDS = [
+  "quote-mini-leaves-founder",
+  "quote-homatico-founder",
+  "quote-mohammed-asif",
+  "quote-pankaj-singhal",
+] as const;
+
+export const allQuotesQuery = groq`
+  *[_type == "quote" && _id in ${JSON.stringify([...TESTIMONIAL_IDS])} && defined(quoteText)] {
+    _id,
+    _type,
+    quoteText,
+    attributionName,
+    attributionTitle,
+    attributionCompany,
+    "relatedCaseStudySlug": *[_type == "caseStudy" && references(^._id)][0].slug.current
+  }
+`;

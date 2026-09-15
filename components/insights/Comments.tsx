@@ -76,7 +76,7 @@ export function Comments({ articleId, comments, className }: CommentsProps) {
   return (
     <section id="comments" className={cn("", className)}>
       <div className="flex items-baseline justify-between gap-4 mb-8">
-        <h2 className="font-display font-extralight text-display-sm text-ink-headline tracking-tight">
+        <h2 className="font-display font-light text-display-sm text-ink-headline tracking-tight">
           Discussion
         </h2>
         <span className="font-body text-body-sm text-ink-muted">

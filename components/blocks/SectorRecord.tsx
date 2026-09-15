@@ -73,7 +73,7 @@ export function SectorRecord() {
               id="sector-record-heading"
               /* text-white is explicit: a global heading rule sets a dark ink
                  colour that wins over the section's inherited colour. */
-              className="font-display font-extralight tracking-[-0.025em] text-[clamp(32px,4.5vw,60px)] leading-[1.05] max-w-[22ch] text-balance text-white"
+              className="font-display font-extralight tracking-[-0.025em] text-display-lg leading-[1.05] max-w-[22ch] text-balance text-white"
             >
               Four developer accounts. Two markets. The same rebuild.
             </h2>
@@ -95,7 +95,7 @@ export function SectorRecord() {
                 {s.label}
               </dt>
               <dd>
-                <span className="block font-display font-extralight text-[clamp(26px,2.6vw,38px)] leading-[1.05] tracking-[-0.02em] mb-4">
+                <span className="block font-display font-extralight text-display-md leading-[1.05] tracking-[-0.02em] mb-4">
                   {s.value}
                 </span>
                 <span className="block font-body text-body-sm text-white/60 leading-relaxed max-w-[32ch]">

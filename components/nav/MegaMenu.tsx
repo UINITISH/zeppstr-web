@@ -26,15 +26,15 @@ interface MegaMenuProps {
 export function MegaMenu({ solutions, industries }: MegaMenuProps) {
   return (
     <NavigationMenu.Root className="relative hidden md:flex">
-      <NavigationMenu.List className="flex items-center gap-9">
+      <NavigationMenu.List className="flex items-center gap-7">
         {/* Solutions */}
         <NavigationMenu.Item>
           <NavigationMenu.Trigger
             className={cn(
-              "font-body text-body-sm text-brand-blue font-normal",
+              "font-body text-body-sm text-ink-headline font-medium tracking-[-0.005em]",
               "flex items-center gap-1",
-              "hover:opacity-70 transition-opacity duration-hover",
-              "data-[state=open]:opacity-70",
+              "hover:text-brand-blue transition-colors duration-hover",
+              "data-[state=open]:text-brand-blue",
               "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue rounded"
             )}
           >
@@ -43,7 +43,7 @@ export function MegaMenu({ solutions, industries }: MegaMenuProps) {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content
             className={cn(
-              "fixed left-1/2 -translate-x-1/2 top-[76px] w-[1100px] max-w-[calc(100vw-3rem)]",
+              "fixed left-1/2 -translate-x-1/2 top-[var(--nav-h)] w-[1100px] max-w-[calc(100vw-3rem)]",
               "bg-bg-primary border border-rule rounded-lg shadow-2xl",
               "p-8",
               "data-[motion=from-start]:animate-in data-[motion=from-end]:animate-in",
@@ -58,10 +58,10 @@ export function MegaMenu({ solutions, industries }: MegaMenuProps) {
         <NavigationMenu.Item>
           <NavigationMenu.Trigger
             className={cn(
-              "font-body text-body-sm text-brand-blue font-normal",
+              "font-body text-body-sm text-ink-headline font-medium tracking-[-0.005em]",
               "flex items-center gap-1",
-              "hover:opacity-70 transition-opacity duration-hover",
-              "data-[state=open]:opacity-70",
+              "hover:text-brand-blue transition-colors duration-hover",
+              "data-[state=open]:text-brand-blue",
               "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue rounded"
             )}
           >
@@ -70,7 +70,7 @@ export function MegaMenu({ solutions, industries }: MegaMenuProps) {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content
             className={cn(
-              "fixed left-1/2 -translate-x-1/2 top-[76px] w-[800px] max-w-[calc(100vw-3rem)]",
+              "fixed left-1/2 -translate-x-1/2 top-[var(--nav-h)] w-[800px] max-w-[calc(100vw-3rem)]",
               "bg-bg-primary border border-rule rounded-lg shadow-2xl",
               "p-8"
             )}
@@ -86,8 +86,8 @@ export function MegaMenu({ solutions, industries }: MegaMenuProps) {
               <Link
                 href={item.href}
                 className={cn(
-                  "font-body text-body-sm text-brand-blue font-normal",
-                  "hover:opacity-70 transition-opacity duration-hover",
+                  "font-body text-body-sm text-ink-headline font-medium tracking-[-0.005em]",
+                  "hover:text-brand-blue transition-colors duration-hover",
                   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue rounded"
                 )}
               >
@@ -113,6 +113,37 @@ const SIMPLE_NAV_ITEMS = [
 // ─────────────────────────────────────────────
 // Solutions content: 5 columns — editorial treatment
 // ─────────────────────────────────────────────
+
+
+/**
+ * Menu taglines, overriding whatever Sanity holds.
+ *
+ * Two reasons this is local rather than seeded:
+ *
+ * 1. ALIGNMENT. The five columns share a horizontal rule above the service
+ *    list. The rule sat wherever each tagline happened to end, so a shorter
+ *    line pushed one column's rule up and made that column look unfinished
+ *    next to its neighbours — which is exactly what was happening to
+ *    Performance Media. The block below is now a fixed height, and these lines
+ *    are written to a consistent length so they fill it.
+ *
+ * 2. It renders immediately. Editing the seed changes nothing until the seed is
+ *    re-run against Sanity.
+ *
+ * Any solution not listed here falls back to its Sanity tagline.
+ */
+const MENU_TAGLINES: Record<string, string> = {
+  "performance-media":
+    "Paid that reports to revenue, not to dashboards — bought against a real definition of a qualified lead.",
+  "growth-strategy-advisory":
+    "Strategy before tactics. Growth treated as a system to be built, not a campaign to be run.",
+  "organic-growth":
+    "Where search becomes a compounding asset rather than a service line you rent each month.",
+  "experience-engineering":
+    "The site is the salesperson. Measured, rebuilt and instrumented to behave like one.",
+  "brand-engagement-lifecycle":
+    "From awareness to advocacy — brand, content, film and lifecycle owned as one practice.",
+};
 
 function SolutionsContent({ solutions }: { solutions: SolutionWithServices[] }) {
   return (
@@ -153,11 +184,16 @@ function SolutionsContent({ solutions }: { solutions: SolutionWithServices[] }) 
               <h3 className="relative inline-block font-display font-bold text-[17px] leading-[1.2] tracking-[-0.01em] text-ink-headline group-hover/col:text-ink-headline transition-colors duration-hover after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-0.5 after:bg-brand-yellow after:scale-x-0 after:origin-left group-hover/col:after:scale-x-100 after:transition-transform after:duration-hover">
                 {solution.name}
               </h3>
-              {solution.tagline && (
-                <p className="font-body text-[12px] text-ink-muted mt-1.5 leading-[1.4] max-w-[22ch]">
-                  {solution.tagline}
-                </p>
-              )}
+              {/* min-h keeps the rule below aligned across all five columns
+                  whatever the copy length. Without it the shortest tagline
+                  lifted its column's divider and broke the row. */}
+              <div className="min-h-[52px] mt-1.5">
+                {(MENU_TAGLINES[solution.slug.current] ?? solution.tagline) && (
+                  <p className="font-body text-[12px] text-ink-muted leading-[1.4] max-w-[24ch]">
+                    {MENU_TAGLINES[solution.slug.current] ?? solution.tagline}
+                  </p>
+                )}
+              </div>
             </Link>
 
             {/* Sub-services list */}

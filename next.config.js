@@ -52,6 +52,10 @@ const nextConfig = {
       { protocol: "https", hostname: "cdn.sanity.io" },
       // Royalty-free placeholder case-study images (replaceable with real photos)
       { protocol: "https", hostname: "images.unsplash.com" },
+      // Article category photography (Magnific / Freepik). This is a bridge:
+      // see the note in lib/insights/category-image.ts. Once the files are
+      // downloaded into /public/insights-cover/ this entry can go.
+      { protocol: "https", hostname: "img.magnific.com" },
     ],
   },
   async redirects() {

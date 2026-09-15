@@ -114,7 +114,7 @@ function buildComponents(
         <h2
           id={headingIds[(value as { _key?: string })?._key ?? ""]}
           className={cn(
-            "scroll-mt-28 font-display font-extralight text-display-md text-ink-headline mb-6 tracking-tight",
+            "scroll-mt-28 font-display font-light text-display-md text-ink-headline mb-6 tracking-tight",
             sectionMarkers ? "mt-0" : "mt-16"
           )}
         >

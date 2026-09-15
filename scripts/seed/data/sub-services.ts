@@ -422,4 +422,49 @@ export const SUB_SERVICES: SeedSubService[] = [
     seoDescription:
       "Influencer and creator partnerships — strategy, sourcing, briefs, contracting, and measurement. Selected by narrative fit rather than follower count.",
   },
+  /**
+   * ── LINKED 15 SEP 2026 ─────────────────────────────────────────────────────
+   * Both of these already had a full page file in the repo but no entry here,
+   * which meant they existed as routes and were reachable from nowhere: not the
+   * mega-menu, not the practice page's service list, not the sitemap. Two
+   * finished pages nobody could find.
+   *
+   * They are now seeded like every other sub-service. NOTE: the mega-menu and
+   * the practice pages read this list from Sanity, so these two stay invisible
+   * until the seed is run against the dataset.
+   */
+  {
+    _id: "subservice-demand-generation",
+    name: "Demand Generation",
+    slug: "demand-generation",
+    parentSolutionId: "solution-performance-media",
+    legacyName: "Lead Generation Campaigns",
+    tagline: "For categories where the search demand does not exist yet.",
+    whatsIncluded: paragraphsToPt([
+      "Awareness built deliberately so it later shows up as branded search. For a new project, a new product, or a category with no established search volume, paid search has nothing to capture — demand generation creates the thing search later harvests.",
+    ]),
+    methodology: paragraphsToPt([
+      "Measured on assisted conversions and branded search volume rather than last-click, and sequenced ahead of the search campaign. Skipping this step is why a search campaign gets blamed for a problem it cannot solve.",
+    ]),
+    seoTitle: "Demand Generation | Building Search Demand That Does Not Exist Yet",
+    seoDescription:
+      "Demand generation for new projects and categories with no established search volume — awareness built so it later shows up as branded search, measured on assisted conversions rather than last-click.",
+  },
+  {
+    _id: "subservice-experience-design",
+    name: "Experience Design",
+    slug: "experience-design",
+    parentSolutionId: "solution-experience-engineering",
+    legacyName: "UI/UX Design Services",
+    tagline: "Interface design judged on what it converts, not on how it looks.",
+    whatsIncluded: paragraphsToPt([
+      "Interface and journey design for the pages that carry revenue — landing pages, product and category templates, enquiry and checkout flows. Designed against the decision the visitor is trying to make rather than against a moodboard.",
+    ]),
+    methodology: paragraphsToPt([
+      "Design decisions are argued from research and tested after launch. A page that looks better and converts worse has failed, and we report it that way.",
+    ]),
+    seoTitle: "Experience Design | UI/UX Built to Convert",
+    seoDescription:
+      "Interface and journey design for the pages that carry revenue — argued from research, tested after launch, and judged on conversion rather than appearance.",
+  },
 ];

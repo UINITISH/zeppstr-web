@@ -51,7 +51,7 @@ export function CTABanner({
         )}
         <h2
           className={cn(
-            "font-display font-extralight text-display-lg tracking-tight mb-6",
+            "font-display font-light text-display-lg tracking-tight mb-6",
             isYellow ? "text-ink-headline" : "text-white"
           )}
         >

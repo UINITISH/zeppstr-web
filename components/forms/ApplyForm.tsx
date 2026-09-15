@@ -489,7 +489,7 @@ function ProgressIndicator({ currentStep }: { currentStep: number }) {
 
 function Legend({ children }: { children: React.ReactNode }) {
   return (
-    <legend className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-2">
+    <legend className="font-display font-light text-display-md text-ink-headline tracking-tight mb-2">
       {children}
     </legend>
   );

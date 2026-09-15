@@ -74,44 +74,34 @@ export default async function InsightsHubPage({ searchParams }: InsightsHubPageP
     <>
       <GlobalNav />
       <main>
-        {/* ── Hero ───────────────────────────────── */}
+        {/* ── Header ─────────────────────────────────
+            The full-height hero here was removed 11 Sep 2026 at the founder's
+            request. It pushed the first article below the fold on a laptop,
+            which is the wrong trade for an index page — people arrive here to
+            find something to read, not to be introduced to the section.
+
+            The newsletter capture that lived in this block has moved to the
+            mid-scroll break, where it already had a slot. Its subscriber-count
+            line ("Read by 2,400+ founders and growth leads") was dropped rather
+            than moved: nobody has been able to point to where that figure came
+            from, and an unverifiable number is exactly what the rest of this
+            site argues against. Put it back once it can be sourced. */}
         <section className="border-b border-rule">
-          <div className="container-layout pt-16 md:pt-24 pb-12">
-            <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-end">
-              <div>
-                <p className="eyebrow mb-6">Insights</p>
-                <h1 className="font-display font-extralight tracking-tight text-display-xl text-ink-headline mb-6 max-w-[16ch]">
-                  Field notes on growth structure.
-                </h1>
-                <p className="font-body text-body-lg text-ink-body max-w-[58ch] leading-relaxed">
-                  How multi-channel marketing actually compounds — written from inside the
-                  work, not from the outside looking in. One practical, opinionated essay
-                  every other Thursday.
-                </p>
-              </div>
-              <div className="lg:pb-2">
-                <div className="rounded-lg border border-rule bg-bg-secondary p-6">
-                  <p className="font-body text-eyebrow font-medium uppercase text-brand-blue mb-3">
-                    The Brief
-                  </p>
-                  <p className="font-body text-body-sm text-ink-body leading-relaxed mb-5">
-                    Get each essay the morning it ships. No roundups, no link dumps.
-                  </p>
-                  <NewsletterInline
-                    source="insights-hub-hero"
-                    stacked
-                  />
-                  <p className="font-body text-body-sm text-ink-muted mt-4">
-                    Read by 2,400+ founders and growth leads.
-                  </p>
-                </div>
-              </div>
+          <div className="container-layout pt-12 md:pt-16 pb-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+              <h1 className="font-display font-light tracking-tight text-display-lg text-ink-headline">
+                Insights
+              </h1>
+              <p className="font-body text-body text-ink-muted max-w-[46ch]">
+                Field notes on how growth actually compounds — written from
+                inside the work.
+              </p>
             </div>
           </div>
         </section>
 
         {/* ── Filter ─────────────────────────────── */}
-        <section className="sticky top-[85px] z-30 bg-bg-primary/95 backdrop-blur border-b border-rule">
+        <section className="sticky top-[var(--nav-h)] z-30 bg-bg-primary/95 backdrop-blur border-b border-rule">
           <div className="container-layout py-4 overflow-x-auto">
             <InsightsFilter
               categories={categoriesWithCounts}
@@ -192,7 +182,7 @@ export default async function InsightsHubPage({ searchParams }: InsightsHubPageP
         <section id="newsletter" className="bg-bg-secondary py-20 md:py-24">
           <div className="container-layout max-w-[680px] mx-auto text-center">
             <p className="eyebrow mb-6">The Brief</p>
-            <h2 className="font-display font-extralight tracking-tight text-display-lg text-ink-headline mb-6">
+            <h2 className="font-display font-light tracking-tight text-display-lg text-ink-headline mb-6">
               One essay. Every other Thursday.
             </h2>
             <p className="font-body text-body-lg text-ink-body mb-10 max-w-[55ch] mx-auto leading-relaxed">

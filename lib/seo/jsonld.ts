@@ -41,29 +41,54 @@ export function organizationLd() {
       postalCode: "560102",
       addressCountry: "IN",
     },
+    /**
+     * Only mailboxes and numbers confirmed by the founder, 11 Sep 2026.
+     *
+     * press@zeppstr.com and partnerships@zeppstr.com were removed — they were
+     * never real mailboxes. Structured data is read by search engines and AI
+     * assistants and surfaced directly to users, so an invented address here
+     * routes enquiries into a void with no bounce to warn anyone.
+     *
+     * Telephone corrected from +91-90488-26468 (origin unknown) to the main
+     * line. Keep this in step with app/(marketing)/contact/page.tsx.
+     */
     contactPoint: [
       {
         "@type": "ContactPoint",
         contactType: "customer support",
         email: "nitish@zeppstr.com",
-        telephone: "+91-90488-26468",
+        telephone: "+91-72592-93335",
+        availableLanguage: ["en", "hi"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+          ],
+          opens: "10:00",
+          closes: "19:00",
+        },
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: "digital@zeppstr.com",
         availableLanguage: ["en", "hi"],
       },
-      {
-        "@type": "ContactPoint",
-        contactType: "press",
-        email: "press@zeppstr.com",
-      },
-      {
-        "@type": "ContactPoint",
-        contactType: "partnerships",
-        email: "partnerships@zeppstr.com",
-      },
     ],
+    /**
+     * `sameAs` must list profiles that actually resolve.
+     *
+     * The LinkedIn slug was /company/zeppstr, which 404s. Replaced with the
+     * standard slug for "Zeppstr Growth Media" — verify once before launch.
+     */
     sameAs: [
-      "https://www.linkedin.com/company/zeppstr",
+      "https://www.linkedin.com/company/zeppstr-growth-media/",
       "https://www.youtube.com/@zeppstr",
-      "https://instagram.com/zeppstr",
+      "https://www.instagram.com/zeppstr/",
       "https://www.facebook.com/people/Zeppstr/100092439014712/",
       "https://www.quora.com/profile/Zeppstr",
     ],

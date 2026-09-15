@@ -37,7 +37,7 @@ export function CaseStudyMetrics({ data }: { data: CaseStudyMetrics }) {
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted mb-4">
                 {s.label}
               </p>
-              <p className="font-display font-extralight text-[clamp(28px,3vw,40px)] leading-none text-ink-headline">
+              <p className="font-display font-extralight text-display-md leading-none text-ink-headline">
                 {s.after}
               </p>
               <p className="font-body text-body-sm text-ink-muted mt-2">

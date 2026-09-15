@@ -50,7 +50,7 @@ export default function PrivacyPage() {
         <section className="container-layout pb-24 md:pb-32">
           <div className="max-w-[64ch] space-y-10 font-body text-body text-ink-body leading-relaxed">
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Who we are
               </h2>
               <p>
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 What we collect
               </h2>
               <p className="mb-4">
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Analytics
               </h2>
               <p>
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Who processes your data
               </h2>
               <p className="mb-4">
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 How long we keep it
               </h2>
               <p>
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Your rights
               </h2>
               <p>
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-display font-light text-[clamp(20px,1.7vw,26px)] text-ink-headline mb-4">
+              <h2 className="font-display font-light text-display-sm text-ink-headline mb-4">
                 Contact
               </h2>
               <p>

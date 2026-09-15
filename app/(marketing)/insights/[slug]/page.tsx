@@ -149,7 +149,7 @@ export default async function ArticlePage({
 
           <div className="max-w-[62ch]">
             <p className="eyebrow mb-5">{categoryLabel}</p>
-            <h1 className="font-display font-extralight tracking-tight text-display-lg text-ink-headline mb-6">
+            <h1 className="font-display font-light tracking-tight text-display-lg text-ink-headline mb-6">
               {article.title}
             </h1>
             {article.excerpt && (

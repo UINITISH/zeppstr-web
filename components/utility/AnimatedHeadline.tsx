@@ -39,25 +39,78 @@ export function AnimatedHeadline({
   highlightLeadingWords = 0,
 }: AnimatedHeadlineProps) {
   const ref = React.useRef<HTMLElement>(null);
-  const [visible, setVisible] = React.useState(false);
+
+  /**
+   * ── FAIL-VISIBLE, NOT FAIL-BLANK ──────────────────────────────────────────
+   *
+   * This previously initialised to `false`, so every character rendered at
+   * opacity 0 until an IntersectionObserver fired at a 0.2 threshold. When that
+   * observer did not fire — a headline taller than the viewport, a throttled
+   * background tab, reduced-motion settings, a hydration hiccup — the text
+   * simply never appeared. On the homepage that produced a large empty yellow
+   * block, because the highlight wrapper has its own background and stayed
+   * visible while the words inside it did not.
+   *
+   * Headline copy must not depend on JavaScript to be readable. So:
+   *
+   *   - Server render and first paint are VISIBLE. Nothing is hidden until we
+   *     know we can animate and then reveal.
+   *   - The hidden state is only entered on the client, after mount, and only
+   *     when the element is genuinely below the fold.
+   *   - Three independent paths set it visible again: the observer firing, a
+   *     1.2s failsafe timer, and prefers-reduced-motion.
+   *
+   * Worst case the animation is skipped. The text is always there.
+   */
+  const [hydrated, setHydrated] = React.useState(false);
+  const [revealed, setRevealed] = React.useState(false);
 
   React.useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+    // Anything already on screen, or a user who has asked for less motion,
+    // skips the animation entirely and stays visible.
+    const alreadyInView =
+      el && el.getBoundingClientRect().top < window.innerHeight;
+
+    if (prefersReducedMotion || alreadyInView || !el) {
+      setRevealed(true);
+      return;
+    }
+
+    // Only now is it safe to hide, because we know it is off screen.
+    setHydrated(true);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            setVisible(true);
+            setRevealed(true);
             observer.disconnect();
           }
         });
       },
-      { threshold: 0.2 }
+      // threshold 0 — any sliver counts. The old 0.2 could never be met by an
+      // element taller than five times the viewport.
+      { threshold: 0, rootMargin: "0px 0px -10% 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Failsafe: if the observer has not fired within 1.2s, show the text anyway.
+    const failsafe = window.setTimeout(() => setRevealed(true), 1200);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(failsafe);
+    };
   }, []);
+
+  // Visible unless we have deliberately hidden it and not yet revealed it.
+  const visible = !hydrated || revealed;
 
   // Split into words (preserving the words but losing the spaces — we re-insert with whitespace)
   const words = children.split(" ");

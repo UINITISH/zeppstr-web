@@ -15,7 +15,7 @@ export function ThesisBlock({ eyebrow, headline, body, link }: ThesisBlockProps)
   return (
     <section className="container-reading py-32 text-center">
       <p className="eyebrow mb-6">{eyebrow}</p>
-      <h2 className="font-extralight text-display-lg text-ink-headline mb-8 tracking-tight">
+      <h2 className="font-light text-display-lg text-ink-headline mb-8 tracking-tight">
         {headline}
       </h2>
       {body.map((para, i) => (

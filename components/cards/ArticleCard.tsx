@@ -3,8 +3,11 @@ import Image from "next/image";
 import { cn } from "@/lib/cn";
 import type { Article } from "@/sanity/lib/types";
 import { sanityImageProps } from "@/sanity/lib/image";
+import { getCategoryImage, getCategoryImageMeta } from "@/lib/insights/category-image";
 import { CATEGORY_LABELS } from "@/lib/insights/article";
-import { ArticleCover } from "@/components/insights/ArticleCover";
+// ArticleCover is no longer rendered on-page — see the note above. It is kept
+// as a component because /insights-cover/[slug] still generates social share
+// images from the same design, where a title card is the right thing.
 
 interface ArticleCardProps {
   article: Pick<
@@ -19,14 +22,25 @@ interface ArticleCardProps {
 /**
  * Article Card — /insights index, home teaser, and the related-reading rail.
  *
- * Falls back to the generated /insights-cover/<slug> art when an article has no
- * uploaded heroImage, so the grid never renders a hole. Uploading a real image
- * in Sanity overrides it with no code change.
+ * Image resolution order:
+ *   1. the article's own uploaded heroImage in Sanity;
+ *   2. the licensed category photograph (lib/insights/category-image.ts).
+ *
+ * It used to fall back to /insights-cover/<slug> — the article title set in
+ * type on a navy gradient. Thirty of those in one grid was thirty near-identical
+ * dark rectangles restating a headline that is already printed in real text
+ * directly underneath the card. That route still exists and is still used for
+ * social share images, where a title card is exactly right; it is just no
+ * longer used on-page.
  */
 export function ArticleCard({ article, variant = "default", className }: ArticleCardProps) {
   const uploaded = article.heroImage
     ? sanityImageProps(article.heroImage, { width: 960, height: 600 })
     : null;
+
+  // Category photograph, used whenever the article has no image of its own.
+  const categoryPhoto = getCategoryImage(article.category, article.slug.current);
+  const categoryPhotoAlt = getCategoryImageMeta(article.category, article.slug.current).title;
 
   const categoryLabel = CATEGORY_LABELS[article.category] ?? article.category;
   const date = article.publishedAt ? new Date(article.publishedAt) : null;
@@ -88,14 +102,19 @@ export function ArticleCard({ article, variant = "default", className }: Article
                 className="object-cover transition-transform duration-page ease-smooth group-hover:scale-[1.03]"
               />
             ) : (
-              <div className="absolute inset-0 transition-transform duration-page ease-smooth group-hover:scale-[1.03]">
-                <ArticleCover title={article.title} category={article.category} />
-              </div>
+              <Image
+                src={categoryPhoto}
+                alt={categoryPhotoAlt}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-page ease-smooth group-hover:scale-[1.03]"
+              />
             )}
           </div>
           <div>
             {meta}
-            <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-4 group-hover:text-brand-blue transition-colors duration-hover">
+            <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-4 group-hover:text-brand-blue transition-colors duration-hover">
               {article.title}
             </h2>
             {article.excerpt && (
@@ -124,9 +143,13 @@ export function ArticleCard({ article, variant = "default", className }: Article
             className="object-cover transition-transform duration-page ease-smooth group-hover:scale-105"
           />
         ) : (
-          <div className="absolute inset-0 transition-transform duration-page ease-smooth group-hover:scale-105">
-            <ArticleCover title={article.title} category={article.category} />
-          </div>
+          <Image
+            src={categoryPhoto}
+            alt={categoryPhotoAlt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-cover transition-transform duration-page ease-smooth group-hover:scale-105"
+          />
         )}
       </div>
       {meta}

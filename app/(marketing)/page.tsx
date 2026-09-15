@@ -7,6 +7,8 @@ import { ClientLogosWall } from "@/components/blocks/ClientLogosWall";
 import { ResultsStrip } from "@/components/blocks/ResultsStrip";
 import { ManifestoBlock } from "@/components/blocks/ManifestoBlock";
 import { MethodologyFlow } from "@/components/blocks/MethodologyFlow";
+import { Testimonials } from "@/components/blocks/Testimonials";
+import { TESTIMONIALS } from "@/lib/testimonials";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 import { Footer } from "@/components/nav/Footer";
@@ -20,6 +22,15 @@ import type { Solution, CaseStudy, Article, Industry } from "@/sanity/lib/types"
 
 // Home inherits the root default title/description; only the canonical is
 // set here so the homepage self-references correctly.
+/**
+ * ISR — revalidate every 60s.
+ *
+ * Without this the page is built once and only changes on a redeploy, which
+ * means editing content in Sanity (or re-running the seed) appeared to do
+ * nothing. Matches the insights routes, which already did this.
+ */
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
@@ -40,9 +51,20 @@ type CaseStudyListItem = Pick<CaseStudy, "_id" | "clientName" | "slug"> &
 // Static featured brands — render as Selected Work tiles even without
 // full case study pages. Mapped to the 6 canonical industries so they
 // don't fragment the filter row.
+// ── SCOPE LINES, NOT METRICS ────────────────────────────────────────────────
+// These six clients have no published outcome figure, so their row in the work
+// index used to render an empty middle column — the grid looked half-filled.
+//
+// The fix is a scope line describing what the engagement was about, drawn from
+// the written diagnosis in deliverables/content/case-studies/<slug>.md. It is
+// NOT a result and must never be dressed up as one: no numbers, no "grew",
+// no "increased". When a client agrees to publish a figure, replace the line
+// with a real headlineMetric and move them into the metric treatment.
 const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   {
     _id: "static-prohance",
+    headlineMetric: "Positioned against the surveillance objection",
+    headlineTimeframe: "compliance-led messaging · enterprise proof",
     clientName: "Prohance",
     slug: { _type: "slug", current: "prohance" },
     industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { _type: "slug", current: "saas" } },
@@ -52,6 +74,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   },
   {
     _id: "static-21finance",
+    headlineMetric: "Category and messaging work in consumer fintech",
+    headlineTimeframe: "positioning · owned channels",
     clientName: "21 Finance",
     slug: { _type: "slug", current: "21-finance" },
     industry: { _id: "ind-professional-services", name: "Professional Services", slug: { _type: "slug", current: "professional-services" } },
@@ -60,6 +84,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   },
   {
     _id: "static-empuls",
+    headlineMetric: "An all-in-one platform sold into a point-solution market",
+    headlineTimeframe: "displacement sale · six-stakeholder committee",
     clientName: "Empuls",
     slug: { _type: "slug", current: "empuls" },
     industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { _type: "slug", current: "saas" } },
@@ -69,6 +95,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   },
   {
     _id: "static-aishwarya-interiors",
+    headlineMetric: "Local search and enquiry capture for a studio practice",
+    headlineTimeframe: "organic · lead qualification",
     clientName: "Aishwarya Interiors",
     slug: { _type: "slug", current: "aishwarya-interiors" },
     industry: { _id: "ind-real-estate", name: "Real Estate", slug: { _type: "slug", current: "real-estate" } },
@@ -78,6 +106,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   },
   {
     _id: "static-fixstars",
+    headlineMetric: "Technical marketing for engineers who distrust marketing",
+    headlineTimeframe: "bilingual JP/EN · webinar-led demand",
     clientName: "Fixstars",
     slug: { _type: "slug", current: "fixstars" },
     industry: { _id: "ind-saas", name: "SaaS / Tech", slug: { _type: "slug", current: "saas" } },
@@ -87,6 +117,8 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
   },
   {
     _id: "static-tristar-online",
+    headlineMetric: "Winning the SKUs Amazon deprioritises",
+    headlineTimeframe: "multi-category retail · long-tail SEO",
     clientName: "Tristar Online",
     slug: { _type: "slug", current: "tristar-online" },
     industry: { _id: "ind-ecom", name: "E-commerce / D2C", slug: { _type: "slug", current: "ecommerce" } },
@@ -132,8 +164,37 @@ export default async function HomePage() {
         <GridOverlay />
         {/* ─── 1. HERO — one idea, oversized ─── */}
         <HeroPrimary
-          headline="Strategic growth planning for ambitious businesses."
-          subhead="Zeppstr is the strategic growth partner for ambitious businesses. We build the system underneath your marketing — so every channel, every campaign, every rupee compounds."
+          /**
+           * ── HEADLINE REPLACED 15 SEP 2026 ──────────────────────────────────
+           *
+           * WAS: "Strategic growth planning for ambitious businesses."
+           *
+           * That is a category description, not a claim. Every word in it is
+           * one a competitor would also use, and none of it commits to
+           * anything a reader could disagree with — which means none of it is
+           * worth reading. It also duplicated the old subhead almost verbatim
+           * (fixed separately), so the top of the site said nothing twice.
+           *
+           * The replacement is contrarian and specific: it states a position
+           * a prospect can push back on, and it is the exact argument the POV
+           * section immediately below the fold then makes ("Growth stalls. The
+           * reflex is to add —"). The hero now sets up the page instead of
+           * introducing the company.
+           *
+           * If you want the old line back it is one string. But be clear about
+           * the trade: the old line is safe and says nothing; this one takes a
+           * position and will lose the readers who disagree with it. For a
+           * firm that turns down most inbound work, losing those readers early
+           * is the point.
+           */
+          headline="Your channels aren't the problem. What's underneath them is."
+          /* REWRITTEN 15 SEP 2026. The previous subhead opened "Zeppstr is the
+             strategic growth partner for ambitious businesses" — a near-verbatim
+             restatement of the headline directly above it. The first two
+             sentences on the site said the same thing twice, which spends the
+             most valuable paragraph on the site saying nothing new. This version
+             makes the argument the rest of the page then evidences. */
+          subhead="Most growth stalls are architecture problems, not channel problems. We rebuild the layer beneath your marketing — positioning, measurement, conversion — so every channel, every campaign, every rupee compounds instead of competing."
           ctaPrimary={{ label: "View Selected Work", href: "/work" }}
           ctaSecondary={{ label: "Apply for a diagnostic", href: "/book-consultation" }}
         />
@@ -149,7 +210,7 @@ export default async function HomePage() {
                 </p>
               </div>
               <div className="md:col-span-10">
-                <p className="font-display font-extralight text-[clamp(28px,4.5vw,68px)] text-ink-headline leading-[1.08] tracking-[-0.02em] max-w-[28ch]">
+                <p className="font-display font-extralight text-display-lg text-ink-headline leading-[1.08] tracking-[-0.02em] max-w-[28ch]">
                   Growth stalls. The reflex is to add — another agency, another platform, another channel.{" "}
                   <span className="text-ink-muted">
                     The constraint was never the channels.
@@ -173,7 +234,7 @@ export default async function HomePage() {
               </p>
               <h2
                 id="work-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(44px,7vw,104px)] text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
               >
                 Same playbook.{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">Outsized</span>{" "}
@@ -201,6 +262,13 @@ export default async function HomePage() {
           link={{ label: "Read the full POV", href: "/about/our-pov" }}
         />
 
+        {/* ─── 5b. TESTIMONIALS — client words, verbatim ───
+            Placed after the manifesto and before the methodology on purpose:
+            the manifesto is the loudest claim on the page, and the cheapest way
+            to earn it back is to hand the next section to somebody else.
+            Renders nothing if Sanity has no quotes. */}
+        <Testimonials quotes={TESTIMONIALS} />
+
         {/* ─── 6. METHODOLOGY — Diagnose → Architect → Deploy → Operate ─── */}
         <MethodologyFlow />
 
@@ -214,7 +282,7 @@ export default async function HomePage() {
                 </p>
                 <h2
                   id="services-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(44px,6.5vw,96px)] text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
                 >
                   Five practices. Built to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">compound</span>{" "}
@@ -251,7 +319,7 @@ export default async function HomePage() {
                         aria-hidden="true"
                         className="block w-2.5 h-2.5 bg-brand-yellow mb-4"
                       />
-                      <h3 className="font-display font-bold text-[clamp(28px,3.2vw,46px)] text-ink-headline tracking-[-0.02em] leading-[1.05] group-hover:text-ink-headline/70 transition-colors">
+                      <h3 className="font-display font-bold text-display-lg text-ink-headline tracking-[-0.02em] leading-[1.05] group-hover:text-ink-headline/70 transition-colors">
                         {s.name}
                       </h3>
                     </div>
@@ -297,7 +365,7 @@ export default async function HomePage() {
                   </p>
                   <h2
                     id="insights-heading"
-                    className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[14ch] text-balance"
+                    className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[14ch] text-balance"
                   >
                     Notes from{" "}
                     <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">inside</span>{" "}
@@ -325,12 +393,15 @@ export default async function HomePage() {
 
         {/* ─── 8. CTA — emerald full-bleed (brand block: green bg + white text + yellow CTA) ─── */}
         <section className="relative z-10 bg-emerald-900 text-white">
-          <div className="container-layout py-32 md:py-48">
+          {/* py was 32/48. At 48 the band ran ~700px tall with a 200px void
+              between the button and the footer, which is what made the CTA and
+              the footer look like one continuous green section. */}
+          <div className="container-layout py-24 md:py-32">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 mb-12">
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[20ch] mb-14 md:mb-18 text-white text-balance">
               Build a{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 system
@@ -347,7 +418,7 @@ export default async function HomePage() {
               <div className="md:col-span-6 flex md:items-end md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for a diagnostic →
                 </Link>
