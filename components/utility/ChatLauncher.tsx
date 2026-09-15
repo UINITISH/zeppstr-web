@@ -97,17 +97,59 @@ export function ChatLauncher() {
   }, [msgs, typing]);
 
   /**
-   * Append a node's messages with a short pause between them.
+   * ── THE OUT-OF-ORDER TRANSCRIPT BUG — FIXED 15 SEP 2026 ───────────────────
    *
-   * The delay is 380ms per line, not a realistic "typing" simulation. Long
-   * fake typing indicators are a dark pattern — they imply a person is
-   * composing a reply. This is just enough stagger that three messages do not
-   * land as one wall of text.
+   * Caught on the deployed build by clicking two options in quick succession.
+   * The transcript came out as:
+   *
+   *     "What brings you here?"
+   *     [user] I'm looking for a specific service
+   *     [user] Paid media
+   *     "Which one is closest?"          ← belongs to the PREVIOUS node
+   *
+   * and the Performance Media reply never appeared at all.
+   *
+   * CAUSE: emit() scheduled one setTimeout per line and nothing cancelled them
+   * when the visitor moved on. A superseded node's messages kept firing, landed
+   * after the newer user bubble, and raced the current node's own timeouts.
+   * The faster someone clicks, the more scrambled it gets — and a visitor who
+   * knows what they want clicks fast, so this hit the most engaged users
+   * hardest.
+   *
+   * FIX: a monotonically increasing generation ref. Every emit claims the next
+   * generation; a queued callback appends only if its generation is still the
+   * current one. Superseded messages are discarded rather than delivered late.
+   * Timer ids are also tracked so they can be cleared on unmount.
+   *
+   * ── ON THE DELAY ITSELF ───────────────────────────────────────────────────
+   * 380ms per line, and deliberately not a realistic typing simulation. Long
+   * fake typing indicators imply a person is composing a reply, which this
+   * widget has already said it is not. This is only enough stagger that three
+   * messages do not land as one wall of text.
    */
+  const generation = React.useRef(0);
+  const timers = React.useRef<number[]>([]);
+
+  React.useEffect(
+    () => () => {
+      timers.current.forEach((t) => window.clearTimeout(t));
+    },
+    []
+  );
+
   function emit(n: ChatNode) {
+    const gen = ++generation.current;
     setTyping(true);
+
+    if (n.say.length === 0) {
+      setTyping(false);
+      return;
+    }
+
     n.say.forEach((text, i) => {
-      window.setTimeout(() => {
+      const id = window.setTimeout(() => {
+        // Superseded — the visitor has already moved to another node.
+        if (generation.current !== gen) return;
         setMsgs((m) => [...m, { from: "bot", text }]);
         if (i === n.say.length - 1) {
           if (n.links?.length) {
@@ -116,18 +158,27 @@ export function ChatLauncher() {
           setTyping(false);
         }
       }, 380 * (i + 1));
+      timers.current.push(id);
     });
-    if (n.say.length === 0) setTyping(false);
   }
 
   function choose(label: string, next: string) {
     const target = CHAT_FLOW[next];
     if (!target) return;
+
+    // Claim a generation immediately, before the 260ms gap, so any messages
+    // still queued from the previous node are invalidated the moment the
+    // visitor clicks rather than 260ms later.
+    generation.current += 1;
+    setTyping(false);
+
     setMsgs((m) => [...m, { from: "user", text: label }]);
     setTrail((t) => [...t, label]);
     setNodeId(next);
     setError(null);
-    window.setTimeout(() => emit(target), 260);
+
+    const id = window.setTimeout(() => emit(target), 260);
+    timers.current.push(id);
   }
 
   async function submitLead(e: React.FormEvent) {
