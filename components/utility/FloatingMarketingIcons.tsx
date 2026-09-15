@@ -1,15 +1,35 @@
 /**
- * Ambient floating marketing icons — perimeter frame layout, simplified.
+ * Ambient floating marketing icons — perimeter frame layout.
  *
- * Layout follows the user's sketch:
- *   • LEFT edge — clean vertical line at 4% left (4 icons, evenly spaced)
+ * Layout:
+ *   • LEFT edge — vertical line in the outer margin (4 icons, evenly spaced)
  *   • TOP row — horizontal line above content (4 icons across)
- *   • RIGHT edge — below yellow firm card (2 icons)
- *   • BOTTOM row — horizontal line below content (3 icons)
+ *   • RIGHT edge — outer margin (2 icons)
+ *   • BOTTOM row — horizontal line below content (2 icons)
  *
- * Center stays clear. Each icon drifts (float-a/b/c) AND pulses
- * (opacity 0.25 ↔ 0.75). Hidden on mobile.
+ * Centre stays clear. Each icon drifts (float-a/b/c) AND pulses
+ * (opacity 0.25 ↔ 0.75), per the keyframes in styles/globals.css. Both are
+ * disabled under prefers-reduced-motion. Hidden on mobile.
+ *
+ * ── TONE ────────────────────────────────────────────────────────────────────
+ * Added 15 Sep 2026. These were built for the original white hero: an ink
+ * border on a translucent white bubble. The homepage hero is now full-bleed
+ * emerald, where that treatment renders as a near-invisible grey smudge.
+ *
+ * `tone="dark"` swaps to a white hairline on a barely-there white wash, which
+ * is the same idea inverted — a drawn bubble rather than a filled one. The
+ * light tone is unchanged and stays the default, so any other surface still
+ * using this component is unaffected.
+ *
+ * ── POSITIONING NOTE ────────────────────────────────────────────────────────
+ * Percentages are relative to the hero section, and the hero is no longer a
+ * full-viewport block — it is ~940px including the proof rail at the bottom.
+ * The old bottom row sat at top:93%, which now lands on top of the proof rail
+ * figures. Bottom icons moved up to 74% and pulled to the outer margins so the
+ * rail stays clean. If the hero's height changes materially, re-check these.
  */
+
+type Tone = "light" | "dark";
 
 interface IconBubbleProps {
   top: string;
@@ -18,6 +38,7 @@ interface IconBubbleProps {
   size?: number;
   delay?: number;
   variant?: "a" | "b" | "c";
+  tone?: Tone;
   children: React.ReactNode;
 }
 
@@ -28,8 +49,14 @@ function IconBubble({
   size = 48,
   delay = 0,
   variant = "a",
+  tone = "light",
   children,
 }: IconBubbleProps) {
+  const skin =
+    tone === "dark"
+      ? "border-white/25 bg-white/[0.04] text-white"
+      : "border-ink-headline/20 bg-bg-primary/50 text-ink-headline";
+
   return (
     <div
       className={`absolute float-${variant}`}
@@ -39,10 +66,13 @@ function IconBubble({
         right,
         width: size,
         height: size,
+        // Two delays: one for the drift keyframes, one for the pulse.
         animationDelay: `${delay}s, ${delay * 0.7}s`,
       }}
     >
-      <div className="w-full h-full rounded-full border border-ink-headline/20 bg-bg-primary/50 backdrop-blur-[2px] flex items-center justify-center text-ink-headline">
+      <div
+        className={`w-full h-full rounded-full border backdrop-blur-[2px] flex items-center justify-center ${skin}`}
+      >
         {children}
       </div>
     </div>
@@ -131,53 +161,56 @@ const Link = () => (
 
 // ─── Layout ───
 
-export function FloatingMarketingIcons() {
+export function FloatingMarketingIcons({ tone = "light" }: { tone?: Tone }) {
+  const t = tone;
   return (
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block"
     >
-      {/* ── LEFT EDGE: clean vertical line at 4% left, 4 icons evenly spaced ── */}
-      <IconBubble top="22%" left="4%" size={48} variant="a" delay={0}>
+      {/* ── LEFT EDGE: vertical line in the outer margin ── */}
+      <IconBubble tone={t} top="20%" left="3%" size={48} variant="a" delay={0}>
         <Target />
       </IconBubble>
-      <IconBubble top="42%" left="4%" size={48} variant="b" delay={1.4}>
+      <IconBubble tone={t} top="38%" left="3%" size={48} variant="b" delay={1.4}>
         <Search />
       </IconBubble>
-      <IconBubble top="62%" left="4%" size={48} variant="c" delay={2.8}>
+      <IconBubble tone={t} top="56%" left="3%" size={48} variant="c" delay={2.8}>
         <Email />
       </IconBubble>
-      <IconBubble top="82%" left="4%" size={48} variant="a" delay={4.2}>
+      <IconBubble tone={t} top="74%" left="3%" size={48} variant="a" delay={4.2}>
         <Hashtag />
       </IconBubble>
 
-      {/* ── TOP ROW: 4 icons across the top edge above content ── */}
-      <IconBubble top="5%" left="14%" size={44} variant="b" delay={0.6}>
+      {/* ── TOP ROW: across the top edge, above the headline ── */}
+      <IconBubble tone={t} top="5%" left="15%" size={44} variant="b" delay={0.6}>
         <Chart />
       </IconBubble>
-      <IconBubble top="5%" left="38%" size={44} variant="c" delay={1.8}>
+      <IconBubble tone={t} top="4%" left="39%" size={44} variant="c" delay={1.8}>
         <Lightbulb />
       </IconBubble>
-      <IconBubble top="5%" left="62%" size={44} variant="a" delay={3.0}>
+      <IconBubble tone={t} top="5%" left="63%" size={44} variant="a" delay={3.0}>
         <Sparkle />
       </IconBubble>
-      <IconBubble top="5%" right="4%" size={44} variant="b" delay={4.5}>
+      <IconBubble tone={t} top="5%" right="3%" size={44} variant="b" delay={4.5}>
         <Star />
       </IconBubble>
 
-      {/* ── RIGHT EDGE: below yellow firm card ── */}
-      <IconBubble top="62%" right="4%" size={48} variant="c" delay={2.0}>
+      {/* ── RIGHT EDGE: outer margin, clear of the diagram ── */}
+      <IconBubble tone={t} top="40%" right="3%" size={48} variant="c" delay={2.0}>
         <Trending />
       </IconBubble>
-      <IconBubble top="82%" right="4%" size={48} variant="a" delay={3.4}>
+      <IconBubble tone={t} top="60%" right="3%" size={48} variant="a" delay={3.4}>
         <Link />
       </IconBubble>
 
-      {/* ── BOTTOM ROW: 3 icons in horizontal line below content ── */}
-      <IconBubble top="93%" left="22%" size={44} variant="b" delay={2.2}>
+      {/* ── BOTTOM: pulled into the outer margins so the proof rail stays
+             clean. These used to sit at top:93% and left:22%/46%, which on the
+             current hero lands directly on the rail figures. ── */}
+      <IconBubble tone={t} top="88%" left="9%" size={44} variant="b" delay={2.2}>
         <Funnel />
       </IconBubble>
-      <IconBubble top="93%" left="46%" size={44} variant="c" delay={3.6}>
+      <IconBubble tone={t} top="88%" right="9%" size={44} variant="c" delay={3.6}>
         <Globe />
       </IconBubble>
     </div>

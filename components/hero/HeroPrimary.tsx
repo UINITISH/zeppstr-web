@@ -2,9 +2,7 @@ import Link from "next/link";
 import { AnimatedNumber } from "@/components/utility/AnimatedNumber";
 import { AnimatedHeadline } from "@/components/utility/AnimatedHeadline";
 import { CompoundingVectors } from "@/components/utility/CompoundingVectors";
-// Removed from the hero — see note at the foot of the block comment below.
-// Re-add <FloatingMarketingIcons /> as the first child of <section> to restore.
-// import { FloatingMarketingIcons } from "@/components/utility/FloatingMarketingIcons";
+import { FloatingMarketingIcons } from "@/components/utility/FloatingMarketingIcons";
 
 interface CTA {
   label: string;
@@ -53,10 +51,12 @@ interface HeroPrimaryProps {
  *    would also use. Highlighting is emphasis; emphasis on a commodity phrase
  *    is wasted.
  *
- * The decorative FloatingMarketingIcons were also removed. Faint clip-art
- * glyphs drifting through the margins are the one un-disciplined element on an
- * otherwise severe page, and they sit directly behind the headline. The import
- * is left in place, commented, so this is one line to reverse if you disagree.
+ * FloatingMarketingIcons: removed in the first pass, then restored on 15 Sep
+ * at Vikas's request, in a dark tone. I had argued they were the one
+ * un-disciplined element on an otherwise severe page. He wants the ambient
+ * movement, and on a dark hero they are far less obtrusive than they were on
+ * white — they read as drawn marks in the margin rather than clip-art. Fair
+ * call; the page keeps its character and gains some warmth.
  */
 export function HeroPrimary({
   eyebrow,
@@ -67,6 +67,14 @@ export function HeroPrimary({
 }: HeroPrimaryProps) {
   return (
     <section className="relative bg-bg-inverse text-white overflow-hidden">
+      {/* Ambient marketing doodles, restored 15 Sep 2026 at Vikas's request.
+          Same drift + pulse animation as before (float-a/b/c in globals.css);
+          `tone="dark"` swaps the ink-on-white bubble for a white hairline so
+          they read on emerald instead of vanishing into it. Positioned in the
+          outer margins and clear of the proof rail — see the layout note in
+          that component. */}
+      <FloatingMarketingIcons tone="dark" />
+
       {/* Hairline drafting grid — the same drafting language as the diagrams,
           at very low contrast so it reads as paper texture, not decoration. */}
       <div
