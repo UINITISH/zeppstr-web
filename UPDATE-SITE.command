@@ -87,6 +87,14 @@ CHANGED=$(git status --porcelain | wc -l | tr -d ' ')
 #
 # So: if the tree is clean, check whether the local branch is ahead of the
 # remote, and if it is, skip straight to the push.
+#
+# Refresh the remote-tracking ref first, or the count below is measured against
+# whatever this machine last saw — which can be days stale and would report
+# "nothing to push" incorrectly. Fetch is read-only on a public repo and needs
+# no credentials, so a failure here is not fatal; fall through with the ref we
+# already have.
+git fetch --quiet origin "$BRANCH" 2>/dev/null || true
+
 UNPUSHED=$(git rev-list --count "origin/$BRANCH..HEAD" 2>/dev/null || echo 0)
 
 if [[ "$CHANGED" == "0" ]]; then
