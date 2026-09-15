@@ -1,12 +1,16 @@
 "use client";
 
 import Script from "next/script";
+import { ChatLauncher } from "@/components/utility/ChatLauncher";
 
 /**
  * Live chat widget loader — bottom-right.
  *
- * Supports Tawk.to and Crisp. Whichever env var is set wins; if neither is
- * set this renders nothing at all and the site is completely unaffected.
+ * Supports Tawk.to and Crisp. Whichever env var is set wins. If NEITHER is
+ * set, this falls back to ChatLauncher — an in-house routed contact panel
+ * that needs no account, sets no cookies and involves no third party. The
+ * corner is therefore never empty, and adding a vendor ID later swaps the
+ * real widget in automatically with no code change.
  *
  * ── HOW TO SWITCH IT ON ─────────────────────────────────────────────────────
  *
@@ -94,7 +98,19 @@ export function LiveChat() {
     );
   }
 
-  // Neither configured — render nothing. Deliberately silent: a placeholder
-  // bubble that does not open would be worse than an absent one.
-  return null;
+  /**
+   * Neither vendor configured — fall back to the in-house contact panel.
+   *
+   * This used to `return null`, which left the bottom-right corner empty until
+   * an account existed. That is correct behaviour for a widget loader and
+   * useless behaviour for a website: the corner sat empty, and the only thing
+   * a visitor could do was WhatsApp.
+   *
+   * ChatLauncher is not a chatbot and does not imitate one — it is a routed
+   * contact panel that works with no third-party account, no cookies and no
+   * data processor. When a Tawk or Crisp ID is added above, the real widget
+   * takes that corner and this stops rendering automatically. No code change,
+   * no leftover duplicate launcher.
+   */
+  return <ChatLauncher />;
 }

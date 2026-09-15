@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { whatsappHref } from "@/lib/contact-channels";
 
 /**
  * Floating WhatsApp button — bottom-left.
@@ -41,16 +42,6 @@ import * as React from "react";
  * whoever picks up, and nobody bothers deleting it.
  */
 
-/** wa.me format: country code, no +, no spaces. +91 72909 27926 */
-const WHATSAPP_NUMBER = "917290927926";
-
-function waHref(): string {
-  const page =
-    typeof window !== "undefined" ? window.location.pathname : "/";
-  const msg = `Hi Zeppstr — I was reading ${page} on your site and had a question.`;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-}
-
 export function WhatsAppButton() {
   /**
    * Deferred mount. Two reasons:
@@ -70,7 +61,7 @@ export function WhatsAppButton() {
 
   return (
     <a
-      href={waHref()}
+      href={whatsappHref()}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message Zeppstr on WhatsApp"
