@@ -13,9 +13,14 @@ import * as React from "react";
  *   - Long-tail expansion
  *   - Remarketing
  *
- * Each segment is labeled with its % outside the disc. The center shows
- * total spend + ROAS multiplier. Drafting aesthetic — corner ticks, mono
- * labels, hairline rules. Hover a segment to lift it forward.
+ * Each segment is labelled with its % outside the disc. The centre shows the
+ * whole budget at rest and the hovered segment's own share on hover.
+ *
+ * The percentages are a MODEL of how a disciplined account splits budget, not
+ * any client's actual allocation, and the diagram says so on its face. Do not
+ * add a ROAS or revenue figure here unless it is published on this site with
+ * the client named — a number in the hub of a hero graphic reads as a claim
+ * whatever the surrounding copy says.
  */
 
 type Segment = {
@@ -262,66 +267,104 @@ export function SpendAllocationDial({ className = "" }: { className?: string }) 
           strokeOpacity="0.55"
           strokeWidth="1"
         />
-        <text
-          x={CX}
-          y={CY - 16}
-          fontFamily="var(--font-mono), ui-monospace, monospace"
-          fontSize="7"
-          fill="#0A102F"
-          fillOpacity="0.55"
-          letterSpacing="1.5"
-          textAnchor="middle"
-        >
-          TOTAL SPEND
-        </text>
-        <text
-          x={CX}
-          y={CY - 2}
-          fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
-          fontSize="16"
-          fontWeight="600"
-          fill="#0A102F"
-          textAnchor="middle"
-          letterSpacing="-0.5"
-        >
-          100%
-        </text>
-        {/* ROAS marker */}
-        <line
-          x1={CX - 22}
-          y1={CY + 8}
-          x2={CX + 22}
-          y2={CY + 8}
-          stroke="#0A102F"
-          strokeOpacity="0.18"
-          strokeWidth="1"
-        />
-        <text
-          x={CX}
-          y={CY + 20}
-          fontFamily="var(--font-mono), ui-monospace, monospace"
-          fontSize="7"
-          fill="#0A102F"
-          fillOpacity="0.55"
-          letterSpacing="1.5"
-          textAnchor="middle"
-        >
-          ROAS
-        </text>
-        <text
-          x={CX}
-          y={CY + 34}
-          fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
-          fontSize="20"
-          fontWeight="300"
-          fill="#FFD031"
-          stroke="#0A102F"
-          strokeWidth="0.5"
-          textAnchor="middle"
-          letterSpacing="-0.5"
-        >
-          4.2×
-        </text>
+        {/* ── CENTRE HUB — RESPONDS TO HOVER ─────────────────────────────
+            Pre-launch QA: the caption under the chart says "hover any bucket",
+            and hovering did update that caption — but not the centre, which is
+            where anyone actually looks. Reading it as broken was the correct
+            reading.
+
+            ── THE ROAS FIGURE IS GONE ──────────────────────────────────────
+            The hub used to read "ROAS 4.2x". That figure appears nowhere in
+            case-study-metrics.ts, traces to no published engagement, and was
+            sitting in 20px type on a hero graphic where it reads as a claim.
+            It is the same class of problem as the "93% of online experiences"
+            statistic removed from five Insights posts in this pass, and it is
+            worse for being on a service page.
+
+            The allocation percentages are a MODEL of how a disciplined account
+            splits budget, not a client's actual split — so the dial now says
+            that on its face, the same way CompoundingVectors and ValueSpread
+            do. If a real, published allocation ever exists, it can replace
+            this and the caption can change with it. */}
+        {hovered === null ? (
+          <>
+            <text
+              x={CX}
+              y={CY - 10}
+              fontFamily="var(--font-mono), ui-monospace, monospace"
+              fontSize="7"
+              fill="#0A102F"
+              fillOpacity="0.55"
+              letterSpacing="1.5"
+              textAnchor="middle"
+            >
+              ALLOCATION
+            </text>
+            <text
+              x={CX}
+              y={CY + 10}
+              fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
+              fontSize="20"
+              fontWeight="600"
+              fill="#0A102F"
+              textAnchor="middle"
+              letterSpacing="-0.5"
+            >
+              100%
+            </text>
+            <text
+              x={CX}
+              y={CY + 26}
+              fontFamily="var(--font-mono), ui-monospace, monospace"
+              fontSize="6.5"
+              fill="#0A102F"
+              fillOpacity="0.4"
+              letterSpacing="1.2"
+              textAnchor="middle"
+            >
+              OF PAID BUDGET
+            </text>
+          </>
+        ) : (
+          <>
+            <text
+              x={CX}
+              y={CY - 10}
+              fontFamily="var(--font-mono), ui-monospace, monospace"
+              fontSize="7"
+              fill="#0A102F"
+              fillOpacity="0.55"
+              letterSpacing="1.5"
+              textAnchor="middle"
+            >
+              {SEGMENTS[hovered].short}
+            </text>
+            <text
+              x={CX}
+              y={CY + 10}
+              fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
+              fontSize="20"
+              fontWeight="600"
+              fill="#0A102F"
+              textAnchor="middle"
+              letterSpacing="-0.5"
+            >
+              {SEGMENTS[hovered].pct}%
+            </text>
+            <text
+              x={CX}
+              y={CY + 26}
+              fontFamily="var(--font-mono), ui-monospace, monospace"
+              fontSize="6.5"
+              fill="#0A102F"
+              fillOpacity="0.4"
+              letterSpacing="1.2"
+              textAnchor="middle"
+            >
+              OF PAID BUDGET
+            </text>
+          </>
+        )}
 
         {/* Footer labels */}
         <text
@@ -334,7 +377,7 @@ export function SpendAllocationDial({ className = "" }: { className?: string }) 
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
-          BUY INTENT · NOT TRAFFIC
+          ILLUSTRATIVE SPLIT — NOT A CLIENT ACCOUNT
         </text>
         <text
           x="428"
@@ -347,7 +390,7 @@ export function SpendAllocationDial({ className = "" }: { className?: string }) 
           letterSpacing="1.8"
           textAnchor="end"
         >
-          ZEPPSTR · PAID
+          BUY INTENT · NOT TRAFFIC
         </text>
       </svg>
 

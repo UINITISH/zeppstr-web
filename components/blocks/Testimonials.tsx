@@ -144,18 +144,36 @@ export function Testimonials({
                       .filter(Boolean)
                       .join(" · ")}
                   </span>
-                  {q.relatedCaseStudySlug && (
-                    <Link
-                      href={`/work/${q.relatedCaseStudySlug}`}
-                      className={`mt-3 inline-block font-mono text-[10px] uppercase tracking-[0.18em] border-b pb-0.5 transition-colors ${
-                        dark
-                          ? "text-white/70 border-white/40 hover:text-white hover:border-brand-yellow"
-                          : "text-ink-headline border-ink-headline/40 hover:text-brand-blue hover:border-brand-yellow"
-                      }`}
-                    >
-                      Read the work &rarr;
-                    </Link>
-                  )}
+                  {/* ── RESERVED SLOT, NOT A CONDITIONAL ELEMENT ───────────
+                      Pre-launch QA: two of the four cards carried a company
+                      name and a "Read the work" link and two did not, so the
+                      row read as half-finished.
+
+                      The data is correct and is not the problem. Mohammed Asif
+                      and Pankaj Singhal are signed with a name and "Founder"
+                      and NOTHING ELSE in the source deck — there is no company
+                      to add, and inventing one to square up a layout would be
+                      exactly the kind of small fabrication this site has spent
+                      weeks removing.
+
+                      So the slot is always rendered and always the same height.
+                      Cards with a case study get a link; cards without get
+                      empty space of identical size. The row is even, and no
+                      data was invented to make it so. */}
+                  <div className="mt-3 min-h-[22px]">
+                    {q.relatedCaseStudySlug && (
+                      <Link
+                        href={`/work/${q.relatedCaseStudySlug}`}
+                        className={`inline-block font-mono text-[10px] uppercase tracking-[0.18em] border-b pb-0.5 transition-colors ${
+                          dark
+                            ? "text-white/70 border-white/40 hover:text-white hover:border-brand-yellow"
+                            : "text-ink-headline border-ink-headline/40 hover:text-brand-blue hover:border-brand-yellow"
+                        }`}
+                      >
+                        Read the work &rarr;
+                      </Link>
+                    )}
+                  </div>
                 </footer>
               </blockquote>
             </li>

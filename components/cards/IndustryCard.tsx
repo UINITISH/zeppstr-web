@@ -88,17 +88,30 @@ export function IndustryCard({ industry, className }: IndustryCardProps) {
           </p>
         )}
 
-        {/* Published proof, where it exists. Absent on four of six categories
-            by design — see CATEGORY_PROOF above. */}
+        {/* ── PROOF LINE — PRESENT ON TWO OF SIX, BY DESIGN ──────────────────
+            Pre-launch QA flagged the grid as looking unfinished because four
+            cards lacked the stat the other two carry.
+
+            The stat is only on Real Estate and E-commerce because those are
+            the only two categories with a published, nameable client result.
+            That is stated outright in this page's own FAQ two screens down, so
+            backfilling the other four with invented figures would contradict
+            the page as well as the site's whole position.
+
+            What changed instead is the TREATMENT. It used to be a bordered
+            band — a visually distinct section that was conspicuously missing
+            from four cards. It is now set inline, in the same rhythm as the
+            hero claim above it, so a card carrying one reads as having an
+            extra sentence rather than an extra module. A card without it no
+            longer looks like a card with a hole in it.
+
+            Add a row to CATEGORY_PROOF the moment a category earns one. Do not
+            add a placeholder. */}
         {proof && (
-          <div className="mt-5 pt-4 border-t border-ink-headline/10">
-            <p className="font-display font-light text-display-xs text-ink-headline leading-tight">
-              {proof.figure}
-            </p>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
-              {proof.note}
-            </p>
-          </div>
+          <p className="mt-4 font-body text-body-sm text-ink-headline leading-snug">
+            <span className="font-medium">{proof.figure}</span>
+            <span className="text-ink-muted"> — {proof.note}</span>
+          </p>
         )}
 
         <span className="mt-auto pt-4 font-body font-medium text-body-sm text-brand-blue inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-hover">
