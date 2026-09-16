@@ -52,9 +52,8 @@ When working in conjunction, SEO and SEM can reinforce each other's impact. For 
 
 By combining these strategies, you can increase your website's visibility in both organic search results and paid ads, improving your chances of attracting qualified traffic and maximizing your online marketing efforts.
 
-|  |  |
+| **SEO** | **SEM** |
 | :-: | :-: |
-| \*\*SEO\*\* | \*\*SEM\*\* |
 | Focuses on optimizing website and content for organic search engine rankings | Utilizes paid marketing tactics to increase website visibility on search engine results pages (SERPs) |
 | Drives targeted organic traffic to the website | Drives immediate traffic to the website |
 | Long-term strategy | Can provide immediate results |

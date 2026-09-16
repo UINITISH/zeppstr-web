@@ -7,6 +7,7 @@ import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { Button } from "@/components/ui/Button";
 import { PortableText } from "@/components/article/PortableText";
+import { indefiniteArticle } from "@/lib/indefinite-article";
 import { CaseStudyCard } from "@/components/cards/CaseStudyCard";
 import { FAQAccordion } from "@/components/blocks/FAQAccordion";
 import { CTABanner } from "@/components/blocks/CTABanner";
@@ -78,7 +79,20 @@ export default async function IndustryPage({
    * is not ours to flatten, so the name is used as written.
    */
 
-  const article = /^[AEIOU]/i.test(industry.name) ? "an" : "a";
+  /**
+   * The article has to agree with how the name is SPOKEN, not spelled.
+   *
+   * A plain vowel test gets "an EdTech" right and "a SaaS" wrong — S is a
+   * consonant but "SaaS" is said "sass", so it takes "a". Conversely "an MBA",
+   * "an SEO audit": consonant letters whose names begin with a vowel sound.
+   *
+   * So: if the first word is an all-caps acronym that is read letter by letter,
+   * use the sound of that first letter. Otherwise fall back to the spelling.
+   * Current industry names — Real Estate, E-commerce / D2C, SaaS / Tech,
+   * Healthcare & Wellness, EdTech & Education, Professional Services — are all
+   * handled correctly by this. Check any new one by reading it aloud.
+   */
+  const article = indefiniteArticle(industry.name);
 
   return (
     <>
@@ -269,8 +283,14 @@ export default async function IndustryPage({
         <CTABanner
           eyebrow="Engage"
           heading={`Running a ${industry.name} business?`}
-          subhead={`Apply for an ${industry.name} Diagnostic. We'll review your channel mix, conversion funnel, and the structure underneath your marketing.`}
-          primary={{ label: `Apply for an ${industry.name} Diagnostic`, href: "/book-consultation" }}
+          /* WAS: a hardcoded "an" in both strings, producing "Apply for an
+             Real Estate Diagnostic" on four of six pages. `article` was
+             already computed above and already used correctly by the hero CTA
+             — the footer simply never got wired to it. Caught in pre-launch QA
+             on 16 Sep, after an earlier pass that fixed only the hero and did
+             not grep for other call sites. */
+          subhead={`Apply for ${article} ${industry.name} diagnostic. We'll review your channel mix, conversion funnel, and the structure underneath your marketing.`}
+          primary={{ label: `Apply for ${article} ${industry.name} diagnostic`, href: "/book-consultation" }}
           secondary={{ label: "Or just say hi", href: "/contact" }}
         />
       </main>

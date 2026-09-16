@@ -32,11 +32,11 @@ By employing effective on-page **SEO strategies**, you can:
   - Increase the likelihood of higher search engine rankings
   - Establish your website as a reliable source of information in your industry
 
-Now that you understand the importance of on-page SEO, let's dive into the on-page SEO checklist and explore the best practices for optimizing your website\!
+Now that you understand the importance of on-page SEO, let's dive into the on-page SEO checklist and explore the best practices for optimizing your website!
 
 ## **Conduct Thorough Keyword Research**
 
-https://www.youtube.com/watch?v=imsyg1wRa\_Y
+https://www.youtube.com/watch?v=imsyg1wRa_Y
 
 Keyword research forms the foundation of successful on-page SEO. By understanding the relevant keywords and phrases that your target audience is searching for, you can strategically optimize your content to attract more organic traffic.
 
@@ -174,9 +174,8 @@ Your server response time affects how quickly a web page is delivered to users. 
 
 Browser caching allows web browsers to store static elements of a page, such as images and stylesheets, so they don't need to be reloaded every time a user visits your website. Set an appropriate caching policy to maximize the benefits of browser caching.
 
-|  |  |
+| **Technique** | **Impact on Loading Speed** |
 | :-: | :-: |
-| \*\*Technique\*\* | \*\*Impact on Loading Speed\*\* |
 | Minimize HTTP Requests | Reduces the number of round trips to load a page |
 | Optimize Image Sizes | Reduces the size of web page elements |
 | Enable Compression | Reduces file sizes for quicker downloads |
@@ -211,9 +210,8 @@ Regularly test your website's mobile version across different devices and screen
 
 By following these on-page optimization techniques, you can create a mobile-responsive website that provides an excellent user experience and improves your website's ranking in mobile search results.
 
-|  |  |
+| **Benefits of Mobile Responsiveness** | **Actions** |
 | :-: | :-: |
-| \*\*Benefits of Mobile Responsiveness\*\* | \*\*Actions\*\* |
 | Improved user experience | Implement responsive web design |
 | Higher conversion rates | Optimize page loading speed |
 | Increased mobile traffic | Use mobile-friendly navigation |
