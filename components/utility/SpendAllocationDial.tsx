@@ -379,19 +379,6 @@ export function SpendAllocationDial({ className = "" }: { className?: string }) 
         >
           ILLUSTRATIVE SPLIT — NOT A CLIENT ACCOUNT
         </text>
-        <text
-          x="428"
-          y="424"
-          fontFamily="var(--font-mono), ui-monospace, monospace"
-          fontSize="9"
-          fontWeight="500"
-          fill="#0A102F"
-          fillOpacity="0.5"
-          letterSpacing="1.8"
-          textAnchor="end"
-        >
-          BUY INTENT · NOT TRAFFIC
-        </text>
       </svg>
 
       <p className="mt-4 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
