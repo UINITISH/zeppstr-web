@@ -232,11 +232,11 @@ const PRACTICE_NUMBERS = [
     client: "Post-launch standard",
   },
   {
-    figure: "10×",
-    metric: "Ship-speed after foundation",
+    figure: "3",
+    metric: "Production applications on one engine",
     detail:
-      "Once the component system, CMS, and CI are built, new surfaces ship in days &mdash; not quarters.",
-    client: "Across the practice",
+      "Valuation, auction and custody, shipped on mobile and desktop against a shared valuation engine — so a car is appraised once and never re-entered.",
+    client: "VehicleMall",
   },
   {
     figure: "3 years",

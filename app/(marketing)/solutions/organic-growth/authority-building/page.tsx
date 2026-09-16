@@ -228,11 +228,11 @@ const PRACTICE_NUMBERS = [
     client: "Standard scope",
   },
   {
-    figure: "×10",
-    metric: "Authority multiplier",
+    figure: "Concentration",
+    metric: "A few real citations beat a long list",
     detail:
-      "Weight a T1 citation carries vs a T4 aggregator. Concentration matters more than count.",
-    client: "Tier weight",
+      "One placement a human would actually click is worth more than a page of directory listings. We do not publish a multiplier for this, because the weighting is Google's and is not disclosed.",
+    client: "Zeppstr — how we judge a link",
   },
   {
     figure: "12 mo",

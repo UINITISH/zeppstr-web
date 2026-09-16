@@ -203,8 +203,8 @@ const PRACTICE_NUMBERS = [
     figure: "70 / 30",
     metric: "Flows vs Campaigns",
     detail:
-      "The revenue split we target. Most programs arrive at the inverse — 20% flows, 80% campaigns.",
-    client: "Across the practice",
+      "The revenue split we build towards: automated flows doing the heavy lifting, broadcast campaigns on top. Most programmes we inherit are the other way round.",
+    client: "Zeppstr — what we build to",
   },
   {
     figure: "18+",

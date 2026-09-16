@@ -144,25 +144,25 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "47",
-    metric: "Touchpoints in the average system",
+    figure: "Every surface",
+    metric: "Documented, not just the logo sheet",
     detail:
-      "Most brand books document four. Most operating systems need closer to fifty.",
-    client: "Standard build",
+      "A brand book that covers the mark and two lockups leaves every other surface to be invented on the fly — ad formats, email, sales decks, packaging, the site. Those are where the brand is actually seen.",
+    client: "Zeppstr — scope of the system",
   },
   {
-    figure: "−38%",
-    metric: "Drop in creative production time",
+    figure: "One toolkit",
+    metric: "Paid, lifecycle and sales stop re-making the same asset",
     detail:
-      "Once the application toolkit ships, every downstream team — paid, lifecycle, sales — moves faster.",
-    client: "Multi-brand consumer operator",
+      "The deliverable is the application system, not the logo. Once it ships, downstream teams build from it instead of reinterpreting the brand each time.",
+    client: "Zeppstr — what we deliver",
   },
   {
-    figure: "9 / 10",
-    metric: "Engagements are rebuilds",
+    figure: "Rebuild",
+    metric: "The usual starting point, not a blank page",
     detail:
-      "Most businesses already have an identity. It just isn&rsquo;t operating. We come in when paid, lifecycle, and sales each have their own version of the brand.",
-    client: "Across the practice",
+      "Most businesses already have an identity. It just isn&rsquo;t operating. We come in when paid, lifecycle and sales each have their own version of the brand.",
+    client: "Zeppstr — engagement model",
   },
 ];
 

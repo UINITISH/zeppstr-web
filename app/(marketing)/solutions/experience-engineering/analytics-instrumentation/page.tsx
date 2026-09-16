@@ -214,18 +214,18 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "87%",
-    metric: "Event-coverage gap",
+    figure: "0 vs 147",
+    metric: "What the platform saw vs what the CRM held",
     detail:
-      "Average gap between what teams think they track and what they actually capture, found on first audit.",
-    client: "Across the practice",
+      "Same month, two scoreboards. The ad account recorded zero conversions while 147 real enquiries sat in the CRM. Nothing downstream of that number was trustworthy until it was fixed.",
+    client: "Tru Aquapolis",
   },
   {
     figure: "5 → 1",
     metric: "Sources of truth",
     detail:
       "Most clients arrive with five tools each claiming different numbers. Target state is one warehouse, every tool downstream.",
-    client: "Standard outcome",
+    client: "Zeppstr — target state",
   },
   {
     figure: "3 / 12",

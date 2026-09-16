@@ -279,11 +279,11 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "70%+",
-    metric: "Local clicks in Map Pack",
+    figure: "Top three",
+    metric: "The Map Pack is the whole game",
     detail:
-      "The share of local search traffic that lands in the top three results. Page 1 below it captures the rest, divided among ten listings.",
-    client: "Industry benchmark",
+      "Local intent concentrates in the three map results above the organic listings. Ranking fourth on a local query is not a smaller win — it is usually no win at all.",
+    client: "Zeppstr — where we focus",
   },
   {
     figure: "24 hr",

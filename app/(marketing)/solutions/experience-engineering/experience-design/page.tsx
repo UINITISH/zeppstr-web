@@ -220,18 +220,18 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "−42%",
-    metric: "Time-to-task on rebuilt surfaces",
+    figure: "Time-to-task",
+    metric: "The metric we design against",
     detail:
-      "Median reduction in time-to-complete for primary tasks after experience redesign.",
-    client: "B2B SaaS product",
+      "How long the primary job takes, measured before and after, on the client's own baseline. We do not publish a cross-client average because the tasks are not comparable.",
+    client: "Zeppstr — how we measure",
   },
   {
     figure: "1 system",
     metric: "Across product · marketing · sales",
     detail:
       "One source of truth across every surface. Most clients arrive with three diverging systems.",
-    client: "Standard outcome",
+    client: "Zeppstr — target state",
   },
   {
     figure: "6 / 12",

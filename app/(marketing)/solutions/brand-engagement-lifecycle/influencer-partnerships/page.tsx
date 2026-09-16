@@ -104,7 +104,7 @@ const STACK_LAYERS = [
     name: "Rights",
     format: "18-month usage · Exclusivity · Bonus",
     description:
-      "Standard 18-month rights baseline (industry default is 90 days), category exclusivity windows, and performance bonus tied to attributed revenue.",
+      "An 18-month rights baseline as standard rather than the short window most creator deals default to, category exclusivity windows, and a performance bonus tied to attributed revenue.",
   },
   {
     name: "Distribution",
@@ -156,18 +156,18 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "4.2×",
-    metric: "Conversion-per-impression",
+    figure: "Owned",
+    metric: "Creative you keep, not impressions you rent",
     detail:
-      "Creator-led creative vs equivalent-spend paid social, measured against control.",
-    client: "Mini Leaves — DTC consumer",
+      "The measurable asset is the usage rights: creator-led work that can run as paid media long after the post itself has stopped being served.",
+    client: "Zeppstr — what we negotiate for",
   },
   {
     figure: "18 months",
     metric: "Usage rights baseline",
     detail:
-      "Standard rights window we negotiate. Industry default is 30–90 days.",
-    client: "Across the practice",
+      "The usage window we negotiate as standard, so creative that performs can keep running as paid media rather than expiring the month it was posted.",
+    client: "Zeppstr standard",
   },
   {
     figure: "1 + 3 + 8",

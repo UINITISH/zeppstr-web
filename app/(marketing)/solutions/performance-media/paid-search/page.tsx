@@ -36,7 +36,7 @@ const FEATURED_LOGOS = [
 // HERO STATS — 3 punchy facts
 const HERO_STATS = [
   { figure: "4.2×", label: "Standard ROAS target" },
-  { figure: "−32%", label: "CPC after account rebuild" },
+  { figure: "₹2,169", label: "Best-campaign cost per lead · Tru Aquapolis" },
   { figure: "5 buckets", label: "Spend split by intent" },
 ];
 
@@ -275,14 +275,14 @@ const PRACTICE_NUMBERS = [
     metric: "Standard ROAS target",
     detail:
       "The blended ROAS we build to. Higher on Brand and Remarketing; lower (but acceptable) on Conquest and Long-tail.",
-    client: "Across the practice",
+    client: "Zeppstr — what we build to",
   },
   {
-    figure: "−32%",
-    metric: "CPC reduction · post-rebuild",
+    figure: "147",
+    metric: "Conversions the platform missed",
     detail:
-      "Typical drop in cost-per-click after account architecture and Quality Score work. Same positions, less spend.",
-    client: "Standard outcome",
+      "In a month the ad account reported zero. Smart Bidding had been optimising against nothing. Found at instrumentation, before any spend moved.",
+    client: "Tru Aquapolis",
   },
   {
     figure: "5",

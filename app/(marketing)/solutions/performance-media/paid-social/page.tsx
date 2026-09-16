@@ -271,18 +271,18 @@ const PRACTICE_NUMBERS = [
     client: "Testing discipline",
   },
   {
-    figure: "1 in 5",
-    metric: "Tests that win",
+    figure: "33 → 2",
+    metric: "Creatives tested, creatives that survived",
     detail:
-      "Industry-realistic win rate. The 4 that lose are the work, not the failure. Each loss informs the next concept.",
-    client: "Across the practice",
+      "Thirty-three Meta concepts tested; two carried the account. The thirty-one that lost are the work, not the failure — retiring them is what the budget is actually buying.",
+    client: "Tru Aquapolis",
   },
   {
-    figure: "4–6×",
-    metric: "ROAS · top winners",
+    figure: "Concentration",
+    metric: "A handful of assets carry the account",
     detail:
-      "What the 20% of creatives that drive 80% of revenue look like. The math justifies the throughput.",
-    client: "Peak creative tier",
+      "Return is never spread evenly across creative. On Tru Aquapolis, 86% of Meta leads came from five assets out of thirty-three. Throughput exists to find those five.",
+    client: "Tru Aquapolis",
   },
 ];
 

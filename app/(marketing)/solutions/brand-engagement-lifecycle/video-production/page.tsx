@@ -207,15 +207,15 @@ const PRACTICE_NUMBERS = [
     figure: "₹62K",
     metric: "Cost per deployable asset",
     detail:
-      "Effective per-asset cost when ₹10L shoot produces 16 cuts. Industry baseline: ₹3L+ per cut.",
-    client: "Cost amortization",
+      "Effective per-asset cost once a single shoot day is planned to produce sixteen cuts rather than one hero film. The saving is in the planning, not the day rate.",
+    client: "Zeppstr — how we budget a shoot",
   },
   {
     figure: "90 days",
     metric: "Supply per shoot",
     detail:
       "One shoot day produces a full quarter of paid, social, and lifecycle supply &mdash; without a re-shoot.",
-    client: "DTC consumer · Real estate",
+    client: "Zeppstr — production model",
   },
 ];
 

@@ -225,11 +225,11 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "200%",
-    metric: "Top end of offer-tier lift",
+    figure: "0.5% → 3%+",
+    metric: "Site conversion rate",
     detail:
-      "Range of conversion lift seen when the offer itself moves. Color changes rarely exceed 3%.",
-    client: "Across the practice",
+      "A six-fold move, sustained across multiple cohorts. It came from the offer and the journey, not from button colours.",
+    client: "Mini Leaves",
   },
   {
     figure: "4 / qtr",
@@ -239,11 +239,11 @@ const PRACTICE_NUMBERS = [
     client: "Discipline of the practice",
   },
   {
-    figure: "78%",
-    metric: "Win rate at right tier",
+    figure: "Powered",
+    metric: "Every test sized before it runs",
     detail:
-      "When tests are run at offer or flow tier with sound spec, ~78% produce a measurable, lasting lift.",
-    client: "Internal benchmark",
+      "An underpowered test produces a confident wrong answer that then gets rolled out everywhere. We size for the effect we are willing to act on, and we report the tests that lose.",
+    client: "Zeppstr — testing discipline",
   },
 ];
 

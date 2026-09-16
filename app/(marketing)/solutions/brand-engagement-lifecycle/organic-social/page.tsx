@@ -230,18 +230,18 @@ const PRACTICE_NUMBERS = [
     client: "Standard build",
   },
   {
-    figure: "4×",
-    metric: "Engagement per post",
+    figure: "Formats",
+    metric: "Repeatable formats beat one-off posts",
     detail:
-      "Format-led posts vs ad-hoc posts on the same account, measured at 12-month mark.",
-    client: "B2B SaaS client",
+      "A named format can be briefed, batched and improved. An ad-hoc post starts from nothing every time and cannot be judged against anything.",
+    client: "Zeppstr — operating model",
   },
   {
-    figure: "−60%",
-    metric: "Production time",
+    figure: "Hours",
+    metric: "Brief to scheduled, once the lane is built",
     detail:
-      "Once the production lane is built, brief-to-scheduled drops from days to hours.",
-    client: "Across the practice",
+      "The lane is the deliverable: templates, approvals and a standing shoot cadence. Before it exists the same post takes days, most of which is waiting.",
+    client: "Zeppstr — operating model",
   },
 ];
 
