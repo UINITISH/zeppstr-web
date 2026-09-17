@@ -84,12 +84,12 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Bid for revenue.",
-    body: "Not clicks. Not position. Every bid decision is a revenue decision &mdash; modelled, tested, owned. The platform&rsquo;s auto-bid optimises for the platform; we optimise for the P&amp;L.",
+    body: "Not clicks. Not position. Every bid decision is a revenue decision — modelled, tested, owned. The platform’s auto-bid optimises for the platform; we optimise for the P&L.",
   },
   {
     n: "02",
     title: "Account architecture &gt; bid management.",
-    body: "A well-structured account with average bidding beats a chaotic account with brilliant bidding every time. We fix the structure first &mdash; ad groups, match types, negatives, landing pages &mdash; before touching the bid lever.",
+    body: "A well-structured account with average bidding beats a chaotic account with brilliant bidding every time. We fix the structure first — ad groups, match types, negatives, landing pages — before touching the bid lever.",
   },
   {
     n: "03",
@@ -155,7 +155,7 @@ const PAID_CATALOG = [
     ],
   },
   {
-    category: "Bid &amp; Budget Strategy",
+    category: "Bid & Budget Strategy",
     items: [
       "Bucket-level budget allocation",
       "Bid strategy per intent type",
@@ -164,7 +164,7 @@ const PAID_CATALOG = [
     ],
   },
   {
-    category: "Creative &amp; Copy",
+    category: "Creative & Copy",
     items: [
       "Ad copy testing framework",
       "Sitelinks · callouts · structured snippets",
@@ -177,7 +177,7 @@ const PAID_CATALOG = [
     items: [
       "Intent-matched landing pages",
       "Message-match audit",
-      "Form &amp; checkout friction review",
+      "Form & checkout friction review",
       "Mobile-first surface check",
     ],
   },
@@ -186,12 +186,12 @@ const PAID_CATALOG = [
     items: [
       "QS audit · component breakdown",
       "CTR diagnostics · uplift plan",
-      "Relevance &amp; LP experience fixes",
+      "Relevance & LP experience fixes",
       "Historical QS rehabilitation",
     ],
   },
   {
-    category: "Measurement &amp; Attribution",
+    category: "Measurement & Attribution",
     items: [
       "Cross-channel attribution model",
       "Cohort ROAS · not last-click",
@@ -213,7 +213,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Structure Layer",
     format: "Campaigns · Ad groups · Match types · Negatives",
     description:
-      "The account chassis. Tight ad groups, disciplined match types, comprehensive negative-keyword library. The single biggest determinant of QS &mdash; and of every cost downstream.",
+      "The account chassis. Tight ad groups, disciplined match types, comprehensive negative-keyword library. The single biggest determinant of QS — and of every cost downstream.",
   },
   {
     name: "Creative Layer",
@@ -225,13 +225,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Landing Layer",
     format: "LP per intent · Message match · Friction",
     description:
-      "The page the click lands on. Message-match with the ad. Friction removed. Mobile-first. The layer most accounts under-spec &mdash; and the one CRO compounds with.",
+      "The page the click lands on. Message-match with the ad. Friction removed. Mobile-first. The layer most accounts under-spec — and the one CRO compounds with.",
   },
   {
     name: "Measurement Layer",
     format: "Cohort ROAS · Attribution · Holdout",
     description:
-      "Cohort-level ROAS, not platform-reported. Multi-touch attribution backed by an identity layer. Holdout tests for incrementality. The platform won&rsquo;t mark its own homework.",
+      "Cohort-level ROAS, not platform-reported. Multi-touch attribution backed by an identity layer. Holdout tests for incrementality. The platform won’t mark its own homework.",
   },
 ];
 
@@ -248,14 +248,14 @@ const PROCESS_PHASES = [
     body: "Ad groups re-architected by intent. Match types disciplined. Negative-keyword library installed. The chassis fixed before bids are touched.",
   },
   {
-    title: "Creative &amp; LP",
+    title: "Creative & LP",
     duration: "Week 5–6",
     body: "Ad copy variants live. Landing pages aligned to intent. Brand and non-brand split into distinct surfaces. QS starts climbing.",
   },
   {
     title: "Bid Strategy",
     duration: "Week 7–8",
-    body: "Bid strategy per bucket configured. Day-parting and device modifiers tuned. Auto-bid governance set. Now we lift the bid lever &mdash; on a sound structure.",
+    body: "Bid strategy per bucket configured. Day-parting and device modifiers tuned. Auto-bid governance set. Now we lift the bid lever — on a sound structure.",
   },
   {
     title: "Measurement Lock",
@@ -263,7 +263,7 @@ const PROCESS_PHASES = [
     body: "Cohort attribution operational. Holdout cells running. Weekly reporting templated. Decisions get made from cohort ROAS, not platform reports.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 11+",
     body: "Weekly cell-level review. Wasted-spend buckets shut as they appear. New tests prioritised. The account compounds instead of bleeding.",
   },
@@ -312,32 +312,32 @@ const FAQS = [
   {
     question: "Do you do Performance Max?",
     answer:
-      "Yes &mdash; but rarely as the primary spend bucket. PMax is good for spillover and remarketing surfaces; it&rsquo;s a poor fit for intent-led campaigns where keyword visibility and creative control matter. We use it deliberately, not by default.",
+      "Yes — but rarely as the primary spend bucket. PMax is good for spillover and remarketing surfaces; it’s a poor fit for intent-led campaigns where keyword visibility and creative control matter. We use it deliberately, not by default.",
   },
   {
     question: "How quickly do you cut wasted spend?",
     answer:
-      "Week 1&ndash;2. The audit surfaces it; the rebuild closes it. Most accounts have 15&ndash;30% of spend going to terms that have never converted or to broad-match queries chasing the wrong intent.",
+      "Week 1–2. The audit surfaces it; the rebuild closes it. Most accounts have 15–30% of spend going to terms that have never converted or to broad-match queries chasing the wrong intent.",
   },
   {
     question: "Will you take over our existing account?",
     answer:
-      "Yes &mdash; manager access, full read-write. We typically run it for the first quarter, then either continue operating or hand off to your team with the playbook. Your account; your access never leaves your control.",
+      "Yes — manager access, full read-write. We typically run it for the first quarter, then either continue operating or hand off to your team with the playbook. Your account; your access never leaves your control.",
   },
   {
-    question: "What about Google&rsquo;s auto-bid strategies?",
+    question: "What about Google’s auto-bid strategies?",
     answer:
-      "We use them where they belong &mdash; remarketing, mature campaigns with conversion data, brand defense. We don&rsquo;t use them on cold non-brand campaigns where the algorithm has nothing to optimise against.",
+      "We use them where they belong — remarketing, mature campaigns with conversion data, brand defense. We don’t use them on cold non-brand campaigns where the algorithm has nothing to optimise against.",
   },
   {
     question: "How do you measure incrementality?",
     answer:
-      "Holdout cells, geo-tests, and modeled lift against control. Platform-reported conversions overstate paid&rsquo;s contribution by 20&ndash;40% in our experience. We measure incremental revenue, not credited conversions.",
+      "Holdout cells, geo-tests, and modeled lift against control. Platform-reported conversions overstate paid’s contribution by 20–40% in our experience. We measure incremental revenue, not credited conversions.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Paid Search programs start at ₹4L/month for accounts spending under ₹20L/month, scaling with managed spend. Minimum 6 months. Quoted post-audit. We don&rsquo;t charge % of spend &mdash; that aligns nobody.",
+      "Paid Search programs start at ₹4L/month for accounts spending under ₹20L/month, scaling with managed spend. Minimum 6 months. Quoted post-audit. We don’t charge % of spend — that aligns nobody.",
   },
 ];
 
@@ -404,8 +404,8 @@ export default function PaidSearchPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
-                  Paid search built as a portfolio &mdash; Brand, Non-brand,
-                  Conquest, Long-tail, Remarketing &mdash; each with its own
+                  Paid search built as a portfolio — Brand, Non-brand,
+                  Conquest, Long-tail, Remarketing — each with its own
                   bid logic, ROAS expectation, and creative.
                 </p>
 
@@ -475,7 +475,7 @@ export default function PaidSearchPage() {
                   <span className="inline-block w-1.5 h-1.5 bg-brand-yellow mr-2 align-middle" />
                   Climb deliberately
                   <br />
-                  Don&rsquo;t over-bid
+                  Don’t over-bid
                 </p>
               </div>
             </div>
@@ -900,7 +900,7 @@ export default function PaidSearchPage() {
               id="paid-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Accounts we&rsquo;ve rebuilt
+              Accounts we’ve rebuilt
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -1003,7 +1003,7 @@ export default function PaidSearchPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -1019,7 +1019,7 @@ export default function PaidSearchPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1066,9 +1066,9 @@ export default function PaidSearchPage() {
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid account audit. We pull your spend split,
-                  your QS distribution, your wasted cells &mdash; live on the
-                  call &mdash; and scope the 90-day rebuild. Refunded if
-                  we&rsquo;re not the right fit.
+                  your QS distribution, your wasted cells — live on the
+                  call — and scope the 90-day rebuild. Refunded if
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

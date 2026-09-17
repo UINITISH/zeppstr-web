@@ -51,7 +51,7 @@ const SYSTEM_LAYERS = [
     name: "Color System",
     format: "Brand · Action · Status · Surface · Ink",
     description:
-      "Semantic, not decorative. Every hex has a job — what it means, where it goes, and which channel it&rsquo;s tested for contrast on.",
+      "Semantic, not decorative. Every hex has a job — what it means, where it goes, and which channel it’s tested for contrast on.",
   },
   {
     name: "Voice Doc",
@@ -61,7 +61,7 @@ const SYSTEM_LAYERS = [
   },
   {
     name: "Motion + Photography",
-    format: "Direction · Reference · Don&rsquo;ts",
+    format: "Direction · Reference · Don’ts",
     description:
       "How the identity moves and what it depicts. Motion primitives, photography direction, and a no-go list that ends the stock-photo era.",
   },
@@ -99,12 +99,12 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Voice is a behavior.",
-    body: "A tone-of-voice paragraph doesn&rsquo;t change how anyone writes. Named voice modes and sentence-level examples do.",
+    body: "A tone-of-voice paragraph doesn’t change how anyone writes. Named voice modes and sentence-level examples do.",
   },
   {
     n: "04",
-    title: "If a junior can&rsquo;t ship from it, it failed.",
-    body: "The test for a brand operating system isn&rsquo;t whether the founders approve it. It&rsquo;s whether a new designer can produce on-brand work in week one.",
+    title: "If a junior can’t ship from it, it failed.",
+    body: "The test for a brand operating system isn’t whether the founders approve it. It’s whether a new designer can produce on-brand work in week one.",
   },
 ];
 
@@ -161,7 +161,7 @@ const PRACTICE_NUMBERS = [
     figure: "Rebuild",
     metric: "The usual starting point, not a blank page",
     detail:
-      "Most businesses already have an identity. It just isn&rsquo;t operating. We come in when paid, lifecycle and sales each have their own version of the brand.",
+      "Most businesses already have an identity. It just isn’t operating. We come in when paid, lifecycle and sales each have their own version of the brand.",
     client: "Zeppstr — engagement model",
   },
 ];
@@ -270,7 +270,7 @@ export default function BrandIdentityPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  They optimize for how the brand looks in a deck &mdash; not
+                  They optimize for how the brand looks in a deck — not
                   how it performs in a paid ad, a checkout page, or a sales
                   call. We design for the second one.
                 </p>
@@ -323,7 +323,7 @@ export default function BrandIdentityPage() {
                 </h2>
                 <p className="font-body text-body text-white/75 leading-[1.6] max-w-[40ch]">
                   Seven symptoms we look for in the audit. Nod at two and
-                  you&rsquo;re likely paying a tax on every paid impression
+                  you’re likely paying a tax on every paid impression
                   downstream.
                 </p>
               </div>
@@ -541,7 +541,7 @@ export default function BrandIdentityPage() {
               id="brand-identity-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Identities we&rsquo;ve built and rebuilt
+              Identities we’ve built and rebuilt
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -646,7 +646,7 @@ export default function BrandIdentityPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -662,7 +662,7 @@ export default function BrandIdentityPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -707,7 +707,7 @@ export default function BrandIdentityPage() {
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid identity audit. Refunded in full if
-                  we&rsquo;re not the right fit. Three slots a quarter, by
+                  we’re not the right fit. Three slots a quarter, by
                   intention.
                 </p>
               </div>

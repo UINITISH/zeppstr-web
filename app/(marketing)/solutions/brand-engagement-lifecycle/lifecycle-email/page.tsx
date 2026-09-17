@@ -45,17 +45,17 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Email is owned. Act like it.",
-    body: "It&rsquo;s the one channel no algorithm can throttle. Most brands treat it like rented social. We treat it like the second-most valuable asset the business has.",
+    body: "It’s the one channel no algorithm can throttle. Most brands treat it like rented social. We treat it like the second-most valuable asset the business has.",
   },
   {
     n: "02",
     title: "Flows compound. Campaigns decay.",
-    body: "A campaign earns once and dies. A flow earns every time a customer hits its trigger &mdash; for years. Most programs do the inverse of what they should.",
+    body: "A campaign earns once and dies. A flow earns every time a customer hits its trigger — for years. Most programs do the inverse of what they should.",
   },
   {
     n: "03",
     title: "Send less. Send when it matters.",
-    body: "Fewer sends, better triggered. We&rsquo;ve cut send volume 60% and increased revenue. The list thanks you. The inbox provider thanks you. Revenue thanks you.",
+    body: "Fewer sends, better triggered. We’ve cut send volume 60% and increased revenue. The list thanks you. The inbox provider thanks you. Revenue thanks you.",
   },
   {
     n: "04",
@@ -135,7 +135,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Segmentation Layer",
     format: "RFM · Behavioral cohorts · Predictive",
     description:
-      "Recency-frequency-monetary cohorts, plus behavioral and predictive segments. Segments are the audience &mdash; flows are the trigger.",
+      "Recency-frequency-monetary cohorts, plus behavioral and predictive segments. Segments are the audience — flows are the trigger.",
   },
   {
     name: "Flow Layer",
@@ -320,7 +320,7 @@ export default function LifecycleEmailPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   Treat it like one. We build lifecycle as a state machine
-                  &mdash; automated flows for every meaningful customer state,
+                  — automated flows for every meaningful customer state,
                   measured against revenue, not open rates.
                 </p>
 
@@ -725,7 +725,7 @@ export default function LifecycleEmailPage() {
               id="lifecycle-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve built lifecycle programs for
+              Brands we’ve built lifecycle programs for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -829,7 +829,7 @@ export default function LifecycleEmailPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -845,7 +845,7 @@ export default function LifecycleEmailPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -891,7 +891,7 @@ export default function LifecycleEmailPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid lifecycle audit. We pull your last 90 days of
                   sends, score your flow library, and map the revenue gap.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

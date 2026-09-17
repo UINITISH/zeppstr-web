@@ -85,7 +85,7 @@ const PRINCIPLES = [
   {
     n: "04",
     title: "Kill fast. Double winners.",
-    body: "A creative that hasn&rsquo;t found product-market fit by Day 5 won&rsquo;t. Retire it. A creative beating ROAS targets gets fresh variants, more spend, and protection from fatigue.",
+    body: "A creative that hasn’t found product-market fit by Day 5 won’t. Retire it. A creative beating ROAS targets gets fresh variants, more spend, and protection from fatigue.",
   },
 ];
 
@@ -172,7 +172,7 @@ const PAID_SOCIAL_CATALOG = [
     items: [
       "Cohort ROAS · not platform",
       "Creative-level attribution",
-      "Saturation &amp; fatigue tracking",
+      "Saturation & fatigue tracking",
       "Cross-channel incrementality",
     ],
   },
@@ -193,7 +193,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Creative Layer",
     format: "Production line · 30+ creatives / month",
     description:
-      "Where the work actually happens. A briefed, produced, shipped, measured creative pipeline that treats throughput as the strategic asset &mdash; not the cost.",
+      "Where the work actually happens. A briefed, produced, shipped, measured creative pipeline that treats throughput as the strategic asset — not the cost.",
   },
   {
     name: "Testing Layer",
@@ -211,20 +211,20 @@ const ARCHITECTURE_LAYERS = [
     name: "Platform Layer",
     format: "Meta · TikTok · LinkedIn · YouTube",
     description:
-      "Native by platform. Same brand, different surface logic. Reels formats for Meta, vertical native for TikTok, longform thought leadership for LinkedIn &mdash; never cross-posted.",
+      "Native by platform. Same brand, different surface logic. Reels formats for Meta, vertical native for TikTok, longform thought leadership for LinkedIn — never cross-posted.",
   },
   {
     name: "Measurement Layer",
     format: "Cohort ROAS · Creative attribution · Incrementality",
     description:
-      "Platform-reported ROAS overstates paid&rsquo;s contribution by 30&ndash;60%. We measure cohort lift, holdout-tested incremental revenue, and creative-level attribution.",
+      "Platform-reported ROAS overstates paid’s contribution by 30–60%. We measure cohort lift, holdout-tested incremental revenue, and creative-level attribution.",
   },
 ];
 
 // 6 process phases — 12 weeks
 const PROCESS_PHASES = [
   {
-    title: "Audit &amp; Inventory",
+    title: "Audit & Inventory",
     duration: "Week 1–2",
     body: "Creative decay map, audience overlap, pixel integrity, attribution baseline. The leak points scored before any new creative is briefed.",
   },
@@ -249,7 +249,7 @@ const PROCESS_PHASES = [
     body: "Cohort attribution operational. Holdout cells running. Incrementality measured. Decisions get made from cohort lift, not platform reports.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 11+",
     body: "Weekly creative review. Monthly performance readout. Quarterly platform-mix rebalance. The account runs on cadence, not heroics.",
   },
@@ -267,7 +267,7 @@ const PRACTICE_NUMBERS = [
     figure: "Day 5",
     metric: "Cull threshold",
     detail:
-      "If a creative hasn&rsquo;t hit signal by Day 5, it won&rsquo;t. Retired without sentiment, slot opened for the next test.",
+      "If a creative hasn’t hit signal by Day 5, it won’t. Retired without sentiment, slot opened for the next test.",
     client: "Testing discipline",
   },
   {
@@ -298,7 +298,7 @@ const FAQS = [
   {
     question: "Do you produce the creative or just buy media?",
     answer:
-      "We produce. Concept, brief, script, edit, ship. We don&rsquo;t outsource the most leveraged part of paid social to a separate agency &mdash; the creative team and the media team share a Slack channel and a dashboard.",
+      "We produce. Concept, brief, script, edit, ship. We don’t outsource the most leveraged part of paid social to a separate agency — the creative team and the media team share a Slack channel and a dashboard.",
   },
   {
     question: "How do you decide which platforms to run on?",
@@ -308,17 +308,17 @@ const FAQS = [
   {
     question: "Will Advantage+ / Performance Max replace creative work?",
     answer:
-      "No. Algorithmic placement decisions improved; algorithmic creative still under-performs human-led creative at every account size we&rsquo;ve measured. The platform automates the parts that don&rsquo;t matter.",
+      "No. Algorithmic placement decisions improved; algorithmic creative still under-performs human-led creative at every account size we’ve measured. The platform automates the parts that don’t matter.",
   },
   {
     question: "What if we already have a brand book and locked visual guidelines?",
     answer:
-      "We work within them &mdash; mostly. Brand books designed for owned channels often choke paid social creative (too polished, too brand-forward). We&rsquo;ll either negotiate a paid-social addendum or run the creative tier explicitly outside brand for testing.",
+      "We work within them — mostly. Brand books designed for owned channels often choke paid social creative (too polished, too brand-forward). We’ll either negotiate a paid-social addendum or run the creative tier explicitly outside brand for testing.",
   },
   {
     question: "How do you handle creative fatigue at scale?",
     answer:
-      "Rolling refresh cadence (typically 6&ndash;10 weeks per winner), variant-on-winner production, and saturation tracking per audience cohort. Winners get protected before they decay, not after.",
+      "Rolling refresh cadence (typically 6–10 weeks per winner), variant-on-winner production, and saturation tracking per audience cohort. Winners get protected before they decay, not after.",
   },
   {
     question: "What does it cost?",
@@ -391,7 +391,7 @@ export default function PaidSocialPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
                   Paid social is 70% creative, 20% targeting, 10% bidding. We
-                  run it as a production line &mdash; native, tested at volume,
+                  run it as a production line — native, tested at volume,
                   killed fast, winners doubled.
                 </p>
 
@@ -887,7 +887,7 @@ export default function PaidSocialPage() {
               id="social-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve scaled on paid social
+              Brands we’ve scaled on paid social
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -990,7 +990,7 @@ export default function PaidSocialPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -1006,7 +1006,7 @@ export default function PaidSocialPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1054,8 +1054,8 @@ export default function PaidSocialPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid creative audit. We pull your creative
                   inventory, your fatigue map, your win-rate distribution
-                  &mdash; live on the call &mdash; and scope the production
-                  line to lift it. Refunded if we&rsquo;re not the right fit.
+                  — live on the call — and scope the production
+                  line to lift it. Refunded if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

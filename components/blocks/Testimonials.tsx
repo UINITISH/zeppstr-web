@@ -99,7 +99,7 @@ export function Testimonials({
               dark ? "text-white/60" : "text-ink-muted"
             }`}
           >
-            Reproduced as written &mdash; including the ones signed by a company
+            Reproduced as written — including the ones signed by a company
             rather than a person.
           </p>
         </div>
@@ -121,7 +121,7 @@ export function Testimonials({
                     dark ? "text-white/85" : "text-ink-body"
                   }`}
                 >
-                  &ldquo;{q.quoteText}&rdquo;
+                  “{q.quoteText}”
                 </p>
                 <footer
                   className={`mt-6 pt-4 border-t ${
@@ -191,7 +191,7 @@ export function Testimonials({
         >
           We publish testimonials clients have given us in writing. Several of
           the engagements we are proudest of sit under NDAs and are not
-          represented here at all &mdash; we will put you on a call with those
+          represented here at all — we will put you on a call with those
           clients instead.
         </p>
       </div>

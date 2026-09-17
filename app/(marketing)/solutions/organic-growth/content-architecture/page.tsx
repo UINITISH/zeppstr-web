@@ -70,7 +70,7 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Topic &gt; article.",
-    body: "The unit isn&rsquo;t the article. It&rsquo;s the topic territory &mdash; one pillar plus 8&ndash;12 supporting articles plus the internal-link discipline between them. Anything else is publishing without architecture.",
+    body: "The unit isn’t the article. It’s the topic territory — one pillar plus 8–12 supporting articles plus the internal-link discipline between them. Anything else is publishing without architecture.",
   },
   {
     n: "02",
@@ -80,7 +80,7 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Compounding &gt; novelty.",
-    body: "An article published once and never touched is a depreciating asset. An architected cluster updated quarterly compounds for years. We refresh the library; we don&rsquo;t fill it.",
+    body: "An article published once and never touched is a depreciating asset. An architected cluster updated quarterly compounds for years. We refresh the library; we don’t fill it.",
   },
   {
     n: "04",
@@ -103,7 +103,7 @@ const CONTENT_CATALOG = [
   {
     category: "Pillar Design",
     items: [
-      "Pillar brief &amp; outline",
+      "Pillar brief & outline",
       "Long-form pillar production",
       "Visual asset library",
       "Update cadence · semi-annual",
@@ -115,7 +115,7 @@ const CONTENT_CATALOG = [
       "Cluster gap analysis",
       "Brief library &middot; templated",
       "Production line · sprint cadence",
-      "Editorial review &amp; standards",
+      "Editorial review & standards",
     ],
   },
   {
@@ -131,9 +131,9 @@ const CONTENT_CATALOG = [
     category: "On-Page Authority",
     items: [
       "Schema · structured data",
-      "Heading hierarchy &amp; semantics",
+      "Heading hierarchy & semantics",
       "Featured-snippet engineering",
-      "Image &amp; alt optimisation",
+      "Image & alt optimisation",
     ],
   },
   {
@@ -141,7 +141,7 @@ const CONTENT_CATALOG = [
     items: [
       "Quarterly content review",
       "Refresh prioritisation",
-      "Decay detection &amp; rebuild",
+      "Decay detection & rebuild",
       "Performance reporting · cluster-level",
     ],
   },
@@ -153,13 +153,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Demand Layer",
     format: "Search volume · Intent · Competition",
     description:
-      "Which topic territories have real, defensible demand. Not just keyword volume &mdash; intent quality, conversion fit, and how concentrated the existing competitive landscape is.",
+      "Which topic territories have real, defensible demand. Not just keyword volume — intent quality, conversion fit, and how concentrated the existing competitive landscape is.",
   },
   {
     name: "Hierarchy Layer",
     format: "Pillar → Cluster → Supporting",
     description:
-      "The hierarchy of pages within a territory. Pillar at the top, 8&ndash;12 supporting articles underneath, every page slotted by intent and depth before a word is written.",
+      "The hierarchy of pages within a territory. Pillar at the top, 8–12 supporting articles underneath, every page slotted by intent and depth before a word is written.",
   },
   {
     name: "Production Layer",
@@ -177,7 +177,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Operating Layer",
     format: "Refresh · Decay · Expand",
     description:
-      "Quarterly review of every cluster &mdash; what&rsquo;s decaying gets refreshed, what&rsquo;s stable gets defended, what&rsquo;s won earns the right to expand into adjacent territory.",
+      "Quarterly review of every cluster — what’s decaying gets refreshed, what’s stable gets defended, what’s won earns the right to expand into adjacent territory.",
   },
 ];
 
@@ -191,7 +191,7 @@ const PROCESS_PHASES = [
   {
     title: "Hierarchy Design",
     duration: "Week 3",
-    body: "For each territory: pillar page brief, 8&ndash;12 supporting article briefs, intent mapping, internal-link plan. The blueprint before production.",
+    body: "For each territory: pillar page brief, 8–12 supporting article briefs, intent mapping, internal-link plan. The blueprint before production.",
   },
   {
     title: "Pillar Production",
@@ -201,7 +201,7 @@ const PROCESS_PHASES = [
   {
     title: "Supporting Build",
     duration: "Week 7–10",
-    body: "Supporting articles produced on sprint cadence. Each one briefed, drafted, edited, internally linked. Pages ship in clusters &mdash; never as one-offs.",
+    body: "Supporting articles produced on sprint cadence. Each one briefed, drafted, edited, internally linked. Pages ship in clusters — never as one-offs.",
   },
   {
     title: "Link Graph",
@@ -209,7 +209,7 @@ const PROCESS_PHASES = [
     body: "Final internal-link audit. Every required link in place. Anchor text variations applied. Cross-cluster bridges verified.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 12+",
     body: "Quarterly review begins. Decaying pages refreshed, winning clusters defended, adjacent territories scoped. The library compounds instead of accumulating.",
   },
@@ -227,7 +227,7 @@ const PRACTICE_NUMBERS = [
     figure: "80%+",
     metric: "Top-3 capture · owned topic",
     detail:
-      "The threshold for &ldquo;owned&rdquo; coverage state &mdash; ranking top-3 for 80%+ of the territory&rsquo;s relevant search demand.",
+      "The threshold for “owned” coverage state — ranking top-3 for 80%+ of the territory’s relevant search demand.",
     client: "Ownership bar",
   },
   {
@@ -251,27 +251,27 @@ const FAQS = [
   {
     question: "Why not just publish more articles?",
     answer:
-      "Most teams publish more articles for years and never rank for the topics they care about. Architecture &mdash; pillar + supporting + internal linking &mdash; is what converts content effort into ranking power. Volume without architecture is a content treadmill.",
+      "Most teams publish more articles for years and never rank for the topics they care about. Architecture — pillar + supporting + internal linking — is what converts content effort into ranking power. Volume without architecture is a content treadmill.",
   },
   {
     question: "We already have a content library. Do we start over?",
     answer:
-      "Almost never. The audit usually surfaces 30&ndash;60% of existing articles that can be slotted into clusters with light edits. We rebuild the architecture around what&rsquo;s already there, then fill the gaps.",
+      "Almost never. The audit usually surfaces 30–60% of existing articles that can be slotted into clusters with light edits. We rebuild the architecture around what’s already there, then fill the gaps.",
   },
   {
     question: "How long until we rank?",
     answer:
-      "Pillar pages on lower-competition territories: 3&ndash;6 months. Owned-state (top-3 on 80%+ of demand): 9&ndash;18 months. The compounding from clusters is real but not fast &mdash; which is why this isn&rsquo;t a 90-day engagement.",
+      "Pillar pages on lower-competition territories: 3–6 months. Owned-state (top-3 on 80%+ of demand): 9–18 months. The compounding from clusters is real but not fast — which is why this isn’t a 90-day engagement.",
   },
   {
     question: "Who writes the content?",
     answer:
-      "We brief and edit; you write or we provide writers. The brief is the discipline; the writing is the execution. We won&rsquo;t cargo-cult voice &mdash; founder or subject-matter expert involvement makes the work better.",
+      "We brief and edit; you write or we provide writers. The brief is the discipline; the writing is the execution. We won’t cargo-cult voice — founder or subject-matter expert involvement makes the work better.",
   },
   {
     question: "What about AI content?",
     answer:
-      "AI-drafted, human-edited, fact-checked, voice-aligned &mdash; yes, for some classes of content. AI-generated, published-as-is, indistinguishable from competitors &mdash; no. The architecture matters more than the writing tool.",
+      "AI-drafted, human-edited, fact-checked, voice-aligned — yes, for some classes of content. AI-generated, published-as-is, indistinguishable from competitors — no. The architecture matters more than the writing tool.",
   },
   {
     question: "What does it cost?",
@@ -343,8 +343,8 @@ export default function ContentArchitecturePage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We build topic clusters &mdash; pillar pages, supporting
-                  articles, and the internal-link graph between them &mdash;
+                  We build topic clusters — pillar pages, supporting
+                  articles, and the internal-link graph between them —
                   so content compounds instead of accumulating.
                 </p>
 
@@ -480,7 +480,7 @@ export default function ContentArchitecturePage() {
             </ol>
 
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-8">
-              Most teams live at &ldquo;Fragmented.&rdquo; The work is climbing two more rungs.
+              Most teams live at “Fragmented.” The work is climbing two more rungs.
             </p>
           </div>
         </section>
@@ -748,7 +748,7 @@ export default function ContentArchitecturePage() {
               id="content-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve architected content for
+              Brands we’ve architected content for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -853,7 +853,7 @@ export default function ContentArchitecturePage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -869,7 +869,7 @@ export default function ContentArchitecturePage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -916,7 +916,7 @@ export default function ContentArchitecturePage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid content audit. We score your existing
                   coverage, identify the territories you should own, and map
-                  the path to ownership. Refunded in full if we&rsquo;re not
+                  the path to ownership. Refunded in full if we’re not
                   the right fit.
                 </p>
               </div>

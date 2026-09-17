@@ -121,7 +121,7 @@ export default async function SolutionPage({
                 id="practice-logos-heading"
                 className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
               >
-                Brands we&rsquo;ve built this practice for
+                Brands we’ve built this practice for
               </p>
               <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
                 {practice.featuredLogos.map((logo) => (
@@ -553,7 +553,7 @@ export default async function SolutionPage({
                   .
                 </h2>
                 <p className="font-body text-body-lg text-ink-body max-w-[58ch] leading-[1.55]">
-                  The same architecture, applied across categories &mdash; outsized in each.
+                  The same architecture, applied across categories — outsized in each.
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 md:gap-y-16">
@@ -598,7 +598,7 @@ export default async function SolutionPage({
             aria-labelledby="faq-heading"
           >
             <div className="container-layout py-24 md:py-32">
-              <div className="mb-16 md:mb-20">
+              <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                   FAQ
                 </p>
@@ -614,7 +614,7 @@ export default async function SolutionPage({
                 </h2>
               </div>
 
-              <div className="max-w-[64ch] border-t border-ink-headline/15">
+              <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
                 {practice.faqs.map((faq) => (
                   <details
                     key={faq.question}
@@ -660,7 +660,7 @@ export default async function SolutionPage({
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   Twelve partners a year, by intention. We start with a 45-minute
-                  paid diagnostic &mdash; refunded in full if we&rsquo;re not the
+                  paid diagnostic — refunded in full if we’re not the
                   right fit for each other.
                 </p>
               </div>

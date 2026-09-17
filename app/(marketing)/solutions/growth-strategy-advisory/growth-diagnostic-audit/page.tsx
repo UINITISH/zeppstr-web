@@ -38,7 +38,7 @@ const FEATURED_LOGOS = [
 const DESCENT = [
   {
     label: "Reported symptom",
-    text: "&ldquo;Revenue is down 18% this quarter.&rdquo;",
+    text: "“Revenue is down 18% this quarter.”",
     sub: "What the founder says in the kickoff call.",
   },
   {
@@ -63,7 +63,7 @@ const DESCENT = [
   },
   {
     label: "Diagnosis",
-    text: "Paid is paying for traffic the brand already had. Revenue isn&rsquo;t down — paid spend is up, against itself.",
+    text: "Paid is paying for traffic the brand already had. Revenue isn’t down — paid spend is up, against itself.",
     sub: "→ 90-day plan: pause generic search, redirect to demand-gen, exclude brand terms.",
     isDiagnosis: true,
   },
@@ -74,12 +74,12 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Diagnosis is the work.",
-    body: "Not an opening for a longer engagement. Not a sales deck disguised as analysis. The written diagnostic is the deliverable &mdash; whether or not you ever work with us again.",
+    body: "Not an opening for a longer engagement. Not a sales deck disguised as analysis. The written diagnostic is the deliverable — whether or not you ever work with us again.",
   },
   {
     n: "02",
     title: "Symptom &ne; diagnosis.",
-    body: "&ldquo;Conversion is down&rdquo; is a symptom. &ldquo;Brand promise mismatch with paid creative&rdquo; is a diagnosis. We don&rsquo;t prescribe until we&rsquo;ve descended through the symptom to the actual cause.",
+    body: "“Conversion is down” is a symptom. “Brand promise mismatch with paid creative” is a diagnosis. We don’t prescribe until we’ve descended through the symptom to the actual cause.",
   },
   {
     n: "03",
@@ -89,7 +89,7 @@ const PRINCIPLES = [
   {
     n: "04",
     title: "Refundable, by design.",
-    body: "If the diagnostic doesn&rsquo;t name something you didn&rsquo;t already know, we refund it. The bar isn&rsquo;t &ldquo;the work was done.&rdquo; The bar is &ldquo;you learned something.&rdquo;",
+    body: "If the diagnostic doesn’t name something you didn’t already know, we refund it. The bar isn’t “the work was done.” The bar is “you learned something.”",
   },
 ];
 
@@ -157,7 +157,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Intake Layer",
     format: "Kickoff · stakeholder interviews · access",
     description:
-      "Founder interview, leadership round, customer call sampling, tool access provisioned. The questions we&rsquo;ll descend through, written before any data is touched.",
+      "Founder interview, leadership round, customer call sampling, tool access provisioned. The questions we’ll descend through, written before any data is touched.",
   },
   {
     name: "Evidence Layer",
@@ -169,13 +169,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Descent Layer",
     format: "Symptom → Cause · 4–6 layers deep",
     description:
-      "Each finding traced from reported symptom through 4&ndash;6 layers of inquiry to its underlying cause. Documented step-by-step so the diagnosis can be argued with, not just received.",
+      "Each finding traced from reported symptom through 4–6 layers of inquiry to its underlying cause. Documented step-by-step so the diagnosis can be argued with, not just received.",
   },
   {
     name: "Diagnosis Layer",
     format: "Findings · Severity · Confidence",
     description:
-      "Each finding written up with severity, evidence, confidence interval, and a clear &ldquo;so what.&rdquo; This is the document you forward to the board.",
+      "Each finding written up with severity, evidence, confidence interval, and a clear “so what.” This is the document you forward to the board.",
   },
   {
     name: "Plan Layer",
@@ -205,7 +205,7 @@ const PROCESS_PHASES = [
   {
     title: "Drafting",
     duration: "Week 4–5",
-    body: "Written diagnostic drafted. Reviewed internally for argumentative clarity &mdash; if it doesn&rsquo;t survive an internal challenge, it doesn&rsquo;t ship.",
+    body: "Written diagnostic drafted. Reviewed internally for argumentative clarity — if it doesn’t survive an internal challenge, it doesn’t ship.",
   },
   {
     title: "Readout",
@@ -215,7 +215,7 @@ const PROCESS_PHASES = [
   {
     title: "Final + Refund Window",
     duration: "Week 6",
-    body: "Final document delivered. If it didn&rsquo;t name something you didn&rsquo;t already know, we refund. The bar is learning &mdash; not delivery.",
+    body: "Final document delivered. If it didn’t name something you didn’t already know, we refund. The bar is learning — not delivery.",
   },
 ];
 
@@ -231,14 +231,14 @@ const PRACTICE_NUMBERS = [
     figure: "4–6 wks",
     metric: "End-to-end cycle",
     detail:
-      "Intake to delivered document. Compressed deliberately &mdash; if it takes longer, the diagnosis has stopped being timely.",
+      "Intake to delivered document. Compressed deliberately — if it takes longer, the diagnosis has stopped being timely.",
     client: "Standard cycle",
   },
   {
     figure: "100%",
     metric: "Refundable",
     detail:
-      "If the diagnostic doesn&rsquo;t name something you didn&rsquo;t already know, we refund. The bar is learning, not delivery.",
+      "If the diagnostic doesn’t name something you didn’t already know, we refund. The bar is learning, not delivery.",
     client: "Refund clause",
   },
 ];
@@ -255,12 +255,12 @@ const FAQS = [
   {
     question: "Is this the same as the diagnostic on the home page?",
     answer:
-      "No. The 45-minute paid diagnostic on the home page is a triage call &mdash; useful for fit and pointing at the right practice. This is the full written growth diagnostic &mdash; six weeks of work, ₹4L&ndash;6L, a 30&ndash;50 page document, refundable.",
+      "No. The 45-minute paid diagnostic on the home page is a triage call — useful for fit and pointing at the right practice. This is the full written growth diagnostic — six weeks of work, ₹4L–6L, a 30–50 page document, refundable.",
   },
   {
     question: "Will you upsell us into a longer engagement?",
     answer:
-      "Sometimes the right next step is one of our practices &mdash; sometimes it&rsquo;s a hire we recommend, an agency consolidation, or just &ldquo;here&rsquo;s the 90-day plan, go execute.&rdquo; The diagnostic is the work. What comes next is a separate decision.",
+      "Sometimes the right next step is one of our practices — sometimes it’s a hire we recommend, an agency consolidation, or just “here’s the 90-day plan, go execute.” The diagnostic is the work. What comes next is a separate decision.",
   },
   {
     question: "Who actually does the diagnostic?",
@@ -270,17 +270,17 @@ const FAQS = [
   {
     question: "Can you do this without a lot of internal data?",
     answer:
-      "Yes &mdash; but the depth scales with what&rsquo;s accessible. We&rsquo;ll tell you up front what coverage we can realistically achieve. We won&rsquo;t fake confidence we don&rsquo;t have.",
+      "Yes — but the depth scales with what’s accessible. We’ll tell you up front what coverage we can realistically achieve. We won’t fake confidence we don’t have.",
   },
   {
     question: "What if we already have an internal marketing team?",
     answer:
-      "Most clients do. The diagnostic is often more valuable then &mdash; an outside read with no internal politics, no career incentives, no roadmap to defend. Many teams have asked for one specifically because they couldn&rsquo;t make the case internally.",
+      "Most clients do. The diagnostic is often more valuable then — an outside read with no internal politics, no career incentives, no roadmap to defend. Many teams have asked for one specifically because they couldn’t make the case internally.",
   },
   {
     question: "What does it cost?",
     answer:
-      "₹4L&ndash;6L for the full written growth diagnostic, depending on company complexity. Six weeks end-to-end. Refundable if it doesn&rsquo;t name something you didn&rsquo;t already know.",
+      "₹4L–6L for the full written growth diagnostic, depending on company complexity. Six weeks end-to-end. Refundable if it doesn’t name something you didn’t already know.",
   },
 ];
 
@@ -349,7 +349,7 @@ export default function GrowthDiagnosticAuditPage() {
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   A written growth diagnostic, six weeks end-to-end, readable
                   in thirty minutes, actionable on Monday morning. Refundable
-                  if it doesn&rsquo;t name something you didn&rsquo;t already
+                  if it doesn’t name something you didn’t already
                   know.
                 </p>
 
@@ -739,7 +739,7 @@ export default function GrowthDiagnosticAuditPage() {
               id="diagnostic-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Companies we&rsquo;ve diagnosed
+              Companies we’ve diagnosed
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -844,7 +844,7 @@ export default function GrowthDiagnosticAuditPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -860,7 +860,7 @@ export default function GrowthDiagnosticAuditPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -905,9 +905,9 @@ export default function GrowthDiagnosticAuditPage() {
             <div className="grid md:grid-cols-12 gap-8 md:gap-16 pt-10 border-t border-white/15 items-center">
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
-                  Six weeks. A 30&ndash;50 page written diagnostic plus a 90-day
-                  plan. Refundable if it doesn&rsquo;t name something you
-                  didn&rsquo;t already know.
+                  Six weeks. A 30–50 page written diagnostic plus a 90-day
+                  plan. Refundable if it doesn’t name something you
+                  didn’t already know.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

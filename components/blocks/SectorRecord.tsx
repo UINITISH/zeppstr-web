@@ -81,7 +81,7 @@ export function SectorRecord() {
           <div className="md:col-span-4">
             <p className="font-body text-body text-white/70 leading-relaxed">
               These engagements were delivered under third-party agreements that
-              don&rsquo;t permit us to name the developers. The numbers are pooled
+              don’t permit us to name the developers. The numbers are pooled
               and reported in aggregate for that reason — and because a single
               anonymised project is rarely anonymous to anyone in the sector.
             </p>
@@ -109,9 +109,9 @@ export function SectorRecord() {
         <p className="mt-16 pt-8 border-t border-white/10 font-body text-body-sm text-white/50 max-w-[70ch]">
           Aggregate of four residential developer engagements in Bengaluru and
           Dubai, 8–12 months each. Figures are media-operations metrics taken from
-          platform reporting. We don&rsquo;t publish attributed revenue or ROI
+          platform reporting. We don’t publish attributed revenue or ROI
           multiples for this work — booking revenue depends on sales-team
-          execution and inventory we don&rsquo;t control, and any number we quoted
+          execution and inventory we don’t control, and any number we quoted
           would be ours to claim rather than ours to prove.
         </p>
       </div>

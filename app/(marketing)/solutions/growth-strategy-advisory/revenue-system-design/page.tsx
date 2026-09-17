@@ -61,7 +61,7 @@ const FIVE_LEVERS = [
     lever: "Repeat rate",
     move: "+10%",
     effect: "LTV · compounding",
-    note: "Each cohort earns more. Lifecycle&rsquo;s job.",
+    note: "Each cohort earns more. Lifecycle’s job.",
   },
   {
     n: "05",
@@ -82,17 +82,17 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "Five levers, designed together.",
-    body: "Traffic, conversion, AOV, repeat, referral. Most teams pull one or two. We design all five at once so the math compounds &mdash; the difference between 10% and 60% on the same effort.",
+    body: "Traffic, conversion, AOV, repeat, referral. Most teams pull one or two. We design all five at once so the math compounds — the difference between 10% and 60% on the same effort.",
   },
   {
     n: "03",
     title: "One blueprint, ten outputs.",
-    body: "The revenue system design produces the paid plan, content plan, lifecycle plan, sales playbook, measurement spec, and so on. Every downstream practice runs from one source &mdash; not from a different map per team.",
+    body: "The revenue system design produces the paid plan, content plan, lifecycle plan, sales playbook, measurement spec, and so on. Every downstream practice runs from one source — not from a different map per team.",
   },
   {
     n: "04",
     title: "Designed to loop.",
-    body: "Acquired customers should become acquisition channel via retention, advocacy, and referral. A revenue system without the loop is a pipeline. With the loop, it&rsquo;s an engine.",
+    body: "Acquired customers should become acquisition channel via retention, advocacy, and referral. A revenue system without the loop is a pipeline. With the loop, it’s an engine.",
   },
 ];
 
@@ -172,7 +172,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Wiring Layer",
     format: "Stages · Components · Connections",
     description:
-      "The actual blueprint &mdash; five stages, named components per stage, the connections between them. The thing you can put on a wall.",
+      "The actual blueprint — five stages, named components per stage, the connections between them. The thing you can put on a wall.",
   },
   {
     name: "Output Layer",
@@ -198,7 +198,7 @@ const PROCESS_PHASES = [
   {
     title: "Math + Evidence",
     duration: "Week 2–3",
-    body: "Unit economics modelled. Cohort behaviour pulled. CAC payback, LTV, NRR, repeat rate &mdash; the baseline numbers the system has to move.",
+    body: "Unit economics modelled. Cohort behaviour pulled. CAC payback, LTV, NRR, repeat rate — the baseline numbers the system has to move.",
   },
   {
     title: "Wiring Design",
@@ -208,12 +208,12 @@ const PROCESS_PHASES = [
   {
     title: "Output Drafting",
     duration: "Week 7–9",
-    body: "Ten downstream documents produced &mdash; paid plan, content plan, lifecycle plan, sales playbook, and the rest. Each in production-ready form.",
+    body: "Ten downstream documents produced — paid plan, content plan, lifecycle plan, sales playbook, and the rest. Each in production-ready form.",
   },
   {
     title: "Operating Plan",
     duration: "Week 10–11",
-    body: "Owners assigned, cadence defined, KPIs locked. The plan for how the system gets operated &mdash; not just designed.",
+    body: "Owners assigned, cadence defined, KPIs locked. The plan for how the system gets operated — not just designed.",
   },
   {
     title: "Hand-off + Governance",
@@ -227,21 +227,21 @@ const PRACTICE_NUMBERS = [
     figure: "1 → 10",
     metric: "One blueprint, ten outputs",
     detail:
-      "The design produces ten downstream plans &mdash; paid, content, lifecycle, sales, measurement, hiring, and more.",
+      "The design produces ten downstream plans — paid, content, lifecycle, sales, measurement, hiring, and more.",
     client: "Standard deliverable",
   },
   {
     figure: "5 levers",
     metric: "Designed together",
     detail:
-      "Traffic, conversion, AOV, repeat, referral &mdash; designed as one system. Combined +5% on each = +63% revenue.",
+      "Traffic, conversion, AOV, repeat, referral — designed as one system. Combined +5% on each = +63% revenue.",
     client: "Compound math",
   },
   {
     figure: "8–12 wks",
     metric: "End-to-end cycle",
     detail:
-      "From question lock to operating plan. Faster and the math hasn&rsquo;t been done. Longer and the team has moved on.",
+      "From question lock to operating plan. Faster and the math hasn’t been done. Longer and the team has moved on.",
     client: "Standard cycle",
   },
 ];
@@ -258,12 +258,12 @@ const FAQS = [
   {
     question: "How is this different from a strategy deck?",
     answer:
-      "Strategy decks describe; revenue system designs prescribe. The blueprint names every stage, every component, every owner, every KPI. It&rsquo;s the document the paid team operates from, not a PowerPoint you forward and forget.",
+      "Strategy decks describe; revenue system designs prescribe. The blueprint names every stage, every component, every owner, every KPI. It’s the document the paid team operates from, not a PowerPoint you forward and forget.",
   },
   {
     question: "Do we need this if we already have a marketing plan?",
     answer:
-      "Most &ldquo;marketing plans&rdquo; are channel plans &mdash; what we&rsquo;ll do on paid, what we&rsquo;ll do on content. A revenue system design sits underneath those, defining how the channels connect, how they hand off, and how they compound. If your channels are working in isolation, you need this.",
+      "Most “marketing plans” are channel plans — what we’ll do on paid, what we’ll do on content. A revenue system design sits underneath those, defining how the channels connect, how they hand off, and how they compound. If your channels are working in isolation, you need this.",
   },
   {
     question: "Who needs to be in the room?",
@@ -273,17 +273,17 @@ const FAQS = [
   {
     question: "Can you execute the system after designing it?",
     answer:
-      "Yes &mdash; through the parent practice. Or we hand it off to your team with the operating plan and stay on as governance. The design isn&rsquo;t conditional on us executing.",
+      "Yes — through the parent practice. Or we hand it off to your team with the operating plan and stay on as governance. The design isn’t conditional on us executing.",
   },
   {
     question: "What if our unit economics are bad?",
     answer:
-      "Then the system design becomes a turnaround plan. The math layer surfaces the leak; the wiring layer shows where the fix lives; the output layer prescribes what to do. We&rsquo;ll tell you if the underlying business doesn&rsquo;t support the system you want.",
+      "Then the system design becomes a turnaround plan. The math layer surfaces the leak; the wiring layer shows where the fix lives; the output layer prescribes what to do. We’ll tell you if the underlying business doesn’t support the system you want.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Revenue System Design engagements run ₹12L&ndash;18L for the 8&ndash;12 week cycle, depending on company complexity. Annual operating plan + governance from ₹4L/month.",
+      "Revenue System Design engagements run ₹12L–18L for the 8–12 week cycle, depending on company complexity. Annual operating plan + governance from ₹4L/month.",
   },
 ];
 
@@ -350,8 +350,8 @@ export default function RevenueSystemDesignPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We blueprint the full revenue system &mdash; acquire,
-                  convert, activate, retain, expand &mdash; so every downstream
+                  We blueprint the full revenue system — acquire,
+                  convert, activate, retain, expand — so every downstream
                   team operates from one map, not five.
                 </p>
 
@@ -457,7 +457,7 @@ export default function RevenueSystemDesignPage() {
                   All five &middot; +5% each
                 </p>
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/55 mt-2">
-                  Same total effort as &ldquo;+10% on traffic alone&rdquo;
+                  Same total effort as “+10% on traffic alone”
                 </p>
               </div>
               <div className="md:col-span-3">
@@ -739,7 +739,7 @@ export default function RevenueSystemDesignPage() {
               id="revenue-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Revenue systems we&rsquo;ve designed
+              Revenue systems we’ve designed
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -844,7 +844,7 @@ export default function RevenueSystemDesignPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -860,7 +860,7 @@ export default function RevenueSystemDesignPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -907,7 +907,7 @@ export default function RevenueSystemDesignPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   Eight to twelve weeks. One blueprint. Ten downstream
                   documents. Every team operating from the same map. Refundable
-                  if it doesn&rsquo;t change how you make the next decision.
+                  if it doesn’t change how you make the next decision.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

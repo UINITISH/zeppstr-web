@@ -115,7 +115,7 @@ export default function CareersPage() {
             This page is written to put people off as much as to attract them.
             The work is senior-weight, the accounts are few and deep, and every
             number that leaves the building has to be defensible. If that reads
-            as a constraint rather than a pitch, good &mdash; it is both.
+            as a constraint rather than a pitch, good — it is both.
           </p>
         </section>
 
@@ -163,7 +163,7 @@ export default function CareersPage() {
                     We are not going to list invented roles to look like we are
                     hiring. What is true is that the client list is capped and
                     grows a few engagements a year, and when it does we hire
-                    ahead of the work rather than after it &mdash; almost always
+                    ahead of the work rather than after it — almost always
                     from people who wrote to us before there was a vacancy.
                   </p>
                   <p className="font-body text-body text-ink-body leading-relaxed max-w-[62ch]">

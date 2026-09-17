@@ -44,12 +44,12 @@ const HERO_STATS = [
 const TWO_JOBS = {
   rows: [
     {
-      attribute: "Who you&rsquo;re reaching",
+      attribute: "Who you’re reaching",
       creation: "95% of buyers · not in-market yet",
       capture: "5% of buyers · in-market this week",
     },
     {
-      attribute: "What you&rsquo;re building",
+      attribute: "What you’re building",
       creation: "Awareness · category authority · trust",
       capture: "Form fills · MQLs · pipeline-this-quarter",
     },
@@ -64,7 +64,7 @@ const TWO_JOBS = {
       capture: "Paid search · retargeting · gated content",
     },
     {
-      attribute: "Today&rsquo;s budget",
+      attribute: "Today’s budget",
       creation: "~20% (most teams)",
       capture: "~80% (most teams)",
     },
@@ -81,22 +81,22 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "95% above. 5% below.",
-    body: "Only 5% of buyers are in-market in any window. The other 95% will buy in the next 6&ndash;18 months. The 95% is where pipeline gets created. The 5% is where it gets captured.",
+    body: "Only 5% of buyers are in-market in any window. The other 95% will buy in the next 6–18 months. The 95% is where pipeline gets created. The 5% is where it gets captured.",
   },
   {
     n: "02",
     title: "Creation compounds. Capture decays.",
-    body: "Spend on capture flatlines at the audience size you&rsquo;ve already saturated. Spend on creation grows the audience the capture engine has to draw from &mdash; for years.",
+    body: "Spend on capture flatlines at the audience size you’ve already saturated. Spend on creation grows the audience the capture engine has to draw from — for years.",
   },
   {
     n: "03",
     title: "Dark social is the new search.",
-    body: "Buyers research in DMs, Slack channels, LinkedIn comments, podcast episodes &mdash; not Google. None of that touches your CRM. The pipeline shows up branded; the source stays invisible.",
+    body: "Buyers research in DMs, Slack channels, LinkedIn comments, podcast episodes — not Google. None of that touches your CRM. The pipeline shows up branded; the source stays invisible.",
   },
   {
     n: "04",
     title: "MQLs lie about source.",
-    body: "&ldquo;Direct&rdquo; and &ldquo;organic search&rdquo; are the labels CRMs put on demand that was created elsewhere. We measure pipeline-by-cohort, not credit-by-last-touch.",
+    body: "“Direct” and “organic search” are the labels CRMs put on demand that was created elsewhere. We measure pipeline-by-cohort, not credit-by-last-touch.",
   },
 ];
 
@@ -146,9 +146,9 @@ const DEMAND_CATALOG = [
     category: "Creation Channels",
     items: [
       "LinkedIn organic · founder-led",
-      "Podcast tour &amp; production",
-      "Long-form research &amp; reports",
-      "PR &amp; analyst relations",
+      "Podcast tour & production",
+      "Long-form research & reports",
+      "PR & analyst relations",
     ],
   },
   {
@@ -157,20 +157,20 @@ const DEMAND_CATALOG = [
       "Paid search · intent-led",
       "Retargeting cohorts",
       "Gated content · lead magnets",
-      "Form &amp; friction optimisation",
+      "Form & friction optimisation",
     ],
   },
   {
     category: "Audience Architecture",
     items: [
       "ICP segment definition",
-      "Account list build &amp; tier",
+      "Account list build & tier",
       "Buyer-committee mapping",
-      "Cohort &amp; sequence design",
+      "Cohort & sequence design",
     ],
   },
   {
-    category: "Content &amp; Narrative",
+    category: "Content & Narrative",
     items: [
       "Category-defining POV",
       "Editorial calendar",
@@ -184,7 +184,7 @@ const DEMAND_CATALOG = [
       "Pipeline source decomposition",
       "Self-reported attribution survey",
       "Branded-search lift tracking",
-      "Cohort &amp; vintage analysis",
+      "Cohort & vintage analysis",
     ],
   },
   {
@@ -204,13 +204,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Audience Layer",
     format: "ICP · Accounts · Buyer committee",
     description:
-      "Who you&rsquo;re reaching. ICP segments defined, account tiers ranked, buyer committees mapped. The cohort behind every channel decision downstream.",
+      "Who you’re reaching. ICP segments defined, account tiers ranked, buyer committees mapped. The cohort behind every channel decision downstream.",
   },
   {
     name: "Creation Layer",
     format: "LinkedIn · Podcast · Long-form · PR",
     description:
-      "The 95% engine. Sustained presence in the surfaces buyers research in &mdash; even when they&rsquo;re not buying. Built on cadence, not bursts.",
+      "The 95% engine. Sustained presence in the surfaces buyers research in — even when they’re not buying. Built on cadence, not bursts.",
   },
   {
     name: "Capture Layer",
@@ -222,7 +222,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Handoff Layer",
     format: "MQL → SQL · SDR cadence · CRM hygiene",
     description:
-      "Where pipeline lives or dies. MQL definition, scoring, SDR cadence, CRM hygiene. The layer most agencies ignore because it sits beyond &ldquo;marketing.&rdquo;",
+      "Where pipeline lives or dies. MQL definition, scoring, SDR cadence, CRM hygiene. The layer most agencies ignore because it sits beyond “marketing.”",
   },
   {
     name: "Measurement Layer",
@@ -242,7 +242,7 @@ const PROCESS_PHASES = [
   {
     title: "Creation Stand-up",
     duration: "Week 3–4",
-    body: "LinkedIn organic cadence live. Podcast tour scoped. Long-form research drafted. The 95% engine starts producing &mdash; before anyone expects ROI from it.",
+    body: "LinkedIn organic cadence live. Podcast tour scoped. Long-form research drafted. The 95% engine starts producing — before anyone expects ROI from it.",
   },
   {
     title: "Capture Rebuild",
@@ -252,7 +252,7 @@ const PROCESS_PHASES = [
   {
     title: "Handoff Fix",
     duration: "Week 7–8",
-    body: "MQL definition tightened. SDR cadence rebuilt. CRM hygiene enforced. The layer most pipeline dies in &mdash; fixed before the volume scales.",
+    body: "MQL definition tightened. SDR cadence rebuilt. CRM hygiene enforced. The layer most pipeline dies in — fixed before the volume scales.",
   },
   {
     title: "Measurement Lock",
@@ -260,9 +260,9 @@ const PROCESS_PHASES = [
     body: "Self-reported source survey live on every form. Branded-search lift tracked weekly. Cohort dashboard operational. Decisions get made from cohort lift, not last-touch.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 11+",
-    body: "Weekly channel review. Monthly pipeline readout. Quarterly creation-vs-capture rebalance. The compounding starts visible in month 4&ndash;6.",
+    body: "Weekly channel review. Monthly pipeline readout. Quarterly creation-vs-capture rebalance. The compounding starts visible in month 4–6.",
   },
 ];
 
@@ -285,14 +285,14 @@ const PRACTICE_NUMBERS = [
     figure: "Cohort",
     metric: "Attribution unit",
     detail:
-      "Not last-click. Cohort + self-reported source + branded-search lift. The only honest way to measure creation&rsquo;s contribution.",
+      "Not last-click. Cohort + self-reported source + branded-search lift. The only honest way to measure creation’s contribution.",
     client: "Measurement standard",
   },
   {
     figure: "Weekly",
     metric: "Channel review cadence",
     detail:
-      "Every channel reviewed weekly against its specific KPI &mdash; creation channels on reach + branded lift; capture channels on CPL + cohort yield.",
+      "Every channel reviewed weekly against its specific KPI — creation channels on reach + branded lift; capture channels on CPL + cohort yield.",
     client: "Operating rhythm",
   },
 ];
@@ -309,7 +309,7 @@ const FAQS = [
   {
     question: "Will you commit to a CPL or MQL number?",
     answer:
-      "On capture, yes &mdash; per channel, post-audit. On creation, no. CPL on creation is the wrong metric &mdash; LinkedIn organic doesn&rsquo;t produce form fills, it produces branded search 9 months later. We commit to the creation KPIs that actually matter (reach, share-of-voice, branded lift) instead.",
+      "On capture, yes — per channel, post-audit. On creation, no. CPL on creation is the wrong metric — LinkedIn organic doesn’t produce form fills, it produces branded search 9 months later. We commit to the creation KPIs that actually matter (reach, share-of-voice, branded lift) instead.",
   },
   {
     question: "How do you measure dark social?",
@@ -317,9 +317,9 @@ const FAQS = [
       "Layered. Self-reported source on every form. Branded search lift weekly. LinkedIn engagement signals. Sales calls referencing podcast episodes or LinkedIn posts. None of these is perfect alone; together they tell the truth that last-touch hides.",
   },
   {
-    question: "What if our team can&rsquo;t produce on LinkedIn?",
+    question: "What if our team can’t produce on LinkedIn?",
     answer:
-      "Most can&rsquo;t at first. We ghost-write with the founder, train the team on the format, run an editorial cadence, then transition production back to in-house by month 6&ndash;9. The asset is the audience; the founder is the voice.",
+      "Most can’t at first. We ghost-write with the founder, train the team on the format, run an editorial cadence, then transition production back to in-house by month 6–9. The asset is the audience; the founder is the voice.",
   },
   {
     question: "Do we need to be on every channel?",
@@ -329,12 +329,12 @@ const FAQS = [
   {
     question: "What about ABM?",
     answer:
-      "ABM is a way of running the audience layer &mdash; not a separate practice. If account-targeted is the right fit, ABM tactics live inside both the creation and capture engines. We don&rsquo;t treat it as a standalone product.",
+      "ABM is a way of running the audience layer — not a separate practice. If account-targeted is the right fit, ABM tactics live inside both the creation and capture engines. We don’t treat it as a standalone product.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Demand programs start at ₹8L/month for B2B SaaS at growth stage, scaling with creation channel breadth and capture spend managed. 12-month minimum &mdash; the math doesn&rsquo;t work shorter. Quoted post-audit.",
+      "Demand programs start at ₹8L/month for B2B SaaS at growth stage, scaling with creation channel breadth and capture spend managed. 12-month minimum — the math doesn’t work shorter. Quoted post-audit.",
   },
 ];
 
@@ -401,8 +401,8 @@ export default function DemandGenerationPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
-                  Two-funnel demand programs &mdash; creation (the 95% that
-                  compounds) and capture (the 5% that converts) &mdash;
+                  Two-funnel demand programs — creation (the 95% that
+                  compounds) and capture (the 5% that converts) —
                   operated as one system, measured by cohort, not last-touch.
                 </p>
 
@@ -525,7 +525,7 @@ export default function DemandGenerationPage() {
             </ol>
 
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-8">
-              Same channel can&rsquo;t serve both jobs. We staff them as
+              Same channel can’t serve both jobs. We staff them as
               separate workstreams, then operate them as one system.
             </p>
           </div>
@@ -871,7 +871,7 @@ export default function DemandGenerationPage() {
               id="demand-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Companies we&rsquo;ve run demand for
+              Companies we’ve run demand for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -974,7 +974,7 @@ export default function DemandGenerationPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -990,7 +990,7 @@ export default function DemandGenerationPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1039,7 +1039,7 @@ export default function DemandGenerationPage() {
                   A 45-minute paid demand audit. We split your spend into
                   creation vs capture, name the channels each is
                   under-investing in, and scope the 12-month rebalance.
-                  Refunded if we&rsquo;re not the right fit.
+                  Refunded if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

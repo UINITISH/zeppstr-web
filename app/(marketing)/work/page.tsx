@@ -71,7 +71,7 @@ export default async function WorkHubPage() {
                 <div className="flex items-center gap-4 mb-8">
                   <span aria-hidden="true" className="block w-2.5 h-2.5 bg-brand-yellow flex-shrink-0" />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-                    Work &mdash; Client outcomes
+                    Work — Client outcomes
                   </p>
                 </div>
                 {/* Counts derive from the published case studies — the original
@@ -87,7 +87,7 @@ export default async function WorkHubPage() {
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   When marketing structure is built right, the channels start
                   compounding. Each story below is the system we built and the
-                  numbers it produced &mdash; not the campaign that happened to
+                  numbers it produced — not the campaign that happened to
                   land.
                 </p>
                 <div className="flex flex-wrap items-center gap-4">

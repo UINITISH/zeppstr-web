@@ -54,7 +54,7 @@ export default function PrivacyPage() {
                 Who we are
               </h2>
               <p>
-                Zeppstr Growth Media (&ldquo;Zeppstr&rdquo;, &ldquo;we&rdquo;)
+                Zeppstr Growth Media (“Zeppstr”, “we”)
                 is a digital marketing consultancy based in Bengaluru, India. This
                 policy covers personal data collected through zeppstr.com.
               </p>

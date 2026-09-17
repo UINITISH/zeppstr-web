@@ -55,12 +55,12 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "The brief is the production plan.",
-    body: "We don&rsquo;t write a brief, then write a treatment, then write a shot list. Brief, treatment, and shot list are the same document &mdash; written before the location scout.",
+    body: "We don’t write a brief, then write a treatment, then write a shot list. Brief, treatment, and shot list are the same document — written before the location scout.",
   },
   {
     n: "03",
     title: "Own the source. Edit forever.",
-    body: "Raw footage, project files, and rights stay with you. Three months later when you need a new cut for a campaign, the source is in your drive &mdash; not in someone else&rsquo;s archive.",
+    body: "Raw footage, project files, and rights stay with you. Three months later when you need a new cut for a campaign, the source is in your drive — not in someone else’s archive.",
   },
   {
     n: "04",
@@ -133,13 +133,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Strategy & Audience",
     format: "Brief · Positioning · Distribution plan",
     description:
-      "Who&rsquo;s the audience, what channel does this serve, what does success look like in numbers. Locked before treatment.",
+      "Who’s the audience, what channel does this serve, what does success look like in numbers. Locked before treatment.",
   },
   {
     name: "Production Plan",
     format: "Treatment · Shot list · Cast · Location",
     description:
-      "Treatment, shot list, talent, location, equipment, schedule &mdash; one document, not five. Designed to produce 16 assets, not one film.",
+      "Treatment, shot list, talent, location, equipment, schedule — one document, not five. Designed to produce 16 assets, not one film.",
   },
   {
     name: "Capture",
@@ -151,7 +151,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Edit & Cut",
     format: "Master · Derivatives · Variants",
     description:
-      "Master cut first. Then the 15 derivatives &mdash; cut-downs, verticals, stills, sales clips &mdash; assembled from the same source in parallel.",
+      "Master cut first. Then the 15 derivatives — cut-downs, verticals, stills, sales clips — assembled from the same source in parallel.",
   },
   {
     name: "Distribution & Measurement",
@@ -176,7 +176,7 @@ const PROCESS_PHASES = [
   {
     title: "Pre-production",
     duration: "Week 3",
-    body: "Location lock, cast confirm, crew booked, props sorted, schedule signed. Shoot day is calm because pre-production wasn&rsquo;t.",
+    body: "Location lock, cast confirm, crew booked, props sorted, schedule signed. Shoot day is calm because pre-production wasn’t.",
   },
   {
     title: "Shoot",
@@ -214,7 +214,7 @@ const PRACTICE_NUMBERS = [
     figure: "90 days",
     metric: "Supply per shoot",
     detail:
-      "One shoot day produces a full quarter of paid, social, and lifecycle supply &mdash; without a re-shoot.",
+      "One shoot day produces a full quarter of paid, social, and lifecycle supply — without a re-shoot.",
     client: "Zeppstr — production model",
   },
 ];
@@ -231,22 +231,22 @@ const FAQS = [
   {
     question: "Do you have an in-house crew or do you book?",
     answer:
-      "Both. A core in-house production lead plus a roster of vetted directors, DPs, editors, and post houses we&rsquo;ve worked with for years. Scope of the brief decides who&rsquo;s on the call sheet.",
+      "Both. A core in-house production lead plus a roster of vetted directors, DPs, editors, and post houses we’ve worked with for years. Scope of the brief decides who’s on the call sheet.",
   },
   {
     question: "Who owns the rights to the footage?",
     answer:
-      "You do. Raw footage, project files, music licenses, and talent releases are all assigned to you on delivery. Three months later when you need a new cut, the source is in your drive &mdash; not in someone else&rsquo;s archive.",
+      "You do. Raw footage, project files, music licenses, and talent releases are all assigned to you on delivery. Three months later when you need a new cut, the source is in your drive — not in someone else’s archive.",
   },
   {
     question: "Can you do a one-off film, not a quarterly program?",
     answer:
-      "Yes, but it&rsquo;s rarely the efficient move. A one-off hero film at ₹15L produces one asset. The same shoot day, briefed differently, produces sixteen. We&rsquo;ll usually advise the latter.",
+      "Yes, but it’s rarely the efficient move. A one-off hero film at ₹15L produces one asset. The same shoot day, briefed differently, produces sixteen. We’ll usually advise the latter.",
   },
   {
     question: "Do you handle on-camera talent, or do we bring it?",
     answer:
-      "Both. Founder-led is common (and often the highest-converting). We can also cast professional talent, customer talent, or hybrid &mdash; whichever the audience and channel call for.",
+      "Both. Founder-led is common (and often the highest-converting). We can also cast professional talent, customer talent, or hybrid — whichever the audience and channel call for.",
   },
   {
     question: "How fast can you turn around a shoot?",
@@ -324,7 +324,7 @@ export default function VideoProductionPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   One shoot day. Sixteen deployable assets. Ninety days of
-                  supply across paid, social, sales, and lifecycle &mdash; and
+                  supply across paid, social, sales, and lifecycle — and
                   the rights stay with you.
                 </p>
 
@@ -715,7 +715,7 @@ export default function VideoProductionPage() {
               id="video-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve produced video for
+              Brands we’ve produced video for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -820,7 +820,7 @@ export default function VideoProductionPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -836,7 +836,7 @@ export default function VideoProductionPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -883,7 +883,7 @@ export default function VideoProductionPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid production audit. We score your current
                   asset library, your shoot-to-cut ratio, and the supply gap.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

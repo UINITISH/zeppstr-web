@@ -64,7 +64,6 @@ const CLIENTS: Client[] = [
   { name: "Pacer", file: "pacer.png" },
   { name: "Prohance", file: "prohance.png" },
   { name: "Sky Phonez", file: "sky-phonez.png" },
-  { name: "Tansi Fintech", file: "tansi-fintech.png" },
   { name: "Tristar Online", file: "tristar-online.png" },
   { name: "Twenty One Finance", file: "twenty-one-finance.png" },
   { name: "VehicleMall", file: "vehiclemall.png" },
@@ -78,7 +77,6 @@ const CLIENTS: Client[] = [
   { name: "Invest in Sharjah", file: "invest-in-sharjah.png" },
   { name: "FWC", file: "fwc-dark.png" },
   { name: "Magtik Lighting", file: "magtik-lighting-dark.png" },
-  { name: "Scageon", file: "scageon-dark.png" },
   { name: "Pohewala", file: "pohewala-2018.png" },
 ];
 
@@ -114,20 +112,32 @@ export function ClientLogosWall() {
           </div>
         </div>
 
-        {/* Logo grid — hairline cells, monochrome default, color on hover */}
-        {/* 2 / 4 / 8 columns. There are 32 logos, and 32 divides evenly by all
-            three — so no breakpoint leaves a ragged half-empty final row. The
-            previous 2/3/4/6 ladder left two orphans hanging under a full grid
-            at desktop, which is the kind of detail that makes a considered page
-            look unfinished. Adding or removing a client means re-checking this:
-            the count wants to stay a multiple of 8. */}
+        {/* Logo grid — hairline cells, monochrome default, colour on hover */}
+        {/* 2 / 3 / 6 columns, and 30 logos.
+            CHANGED 17 SEP 2026 from 2/4/8 at Vikas's request — eight across
+            rendered each mark too small to read, which defeats the point of a
+            logo wall.
+
+            THE COUNT HAS TO MATCH THE COLUMNS. 30 divides evenly by 2, 3 and 6,
+            so no breakpoint leaves a ragged final row. At 32 logos a six-column
+            grid would strand two on their own line, which is exactly the
+            unfinished look this grid was rebuilt to avoid.
+
+            Two were dropped to get from 32 to 30, chosen on how they render
+            rather than by who they are: Scageon (aspect ratio 7.56 — a hairline
+            wordmark that reads as a stray rule at this size) and Tansi Fintech
+            (a small mark that greys out almost completely under the wall's
+            default desaturation). Both are still in lib/client-logo.ts and
+            still appear wherever they are legible.
+
+            Adding a client means adding six, or swapping one in. */}
         {/* Cells are now cards rather than bare grid squares. The hairline
             grid alone gave the logos nothing to sit against — transparent PNGs
             of very different weights floating in white space read as unfinished
             regardless of how clean the artwork is. A card with a hairline and a
             soft shadow gives every logo the same footprint and a defined edge,
             which is what makes a logo wall look deliberate. */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
           {CLIENTS.map((client) => (
             <div
               key={client.file}

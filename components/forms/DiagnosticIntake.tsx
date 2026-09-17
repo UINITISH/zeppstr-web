@@ -768,7 +768,7 @@ function ConfirmationScreen({
           Received
         </p>
         <h1 className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.05] mb-10 max-w-[20ch] text-balance">
-          We&rsquo;ve got it.{" "}
+          We’ve got it.{" "}
           <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
             Report
           </span>{" "}
@@ -776,7 +776,7 @@ function ConfirmationScreen({
         </h1>
         <p className="font-body text-body-lg text-ink-body leading-[1.6] max-w-[58ch] mb-6">
           Your intake is in our system. A member of the Zeppstr team will read it
-          against the patterns we&rsquo;ve seen across 300+ businesses and send your
+          against the patterns we’ve seen across 300+ businesses and send your
           preliminary read to <strong className="text-ink-headline">{email}</strong> within 24 hours — usually faster.
         </p>
         <p className="font-body text-body text-ink-body leading-[1.6] max-w-[58ch] mb-12">

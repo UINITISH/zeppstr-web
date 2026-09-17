@@ -47,7 +47,7 @@ const LEVERAGE_TIERS = [
     n: "04",
     tier: "Positioning",
     lift: "+20 – 80%",
-    work: "Who it&rsquo;s for and what it replaces.",
+    work: "Who it’s for and what it replaces.",
     examples: "Audience reframe · category swap · hero promise",
   },
   {
@@ -87,8 +87,8 @@ const PRINCIPLES = [
   },
   {
     n: "03",
-    title: "If you can&rsquo;t measure it, you can&rsquo;t ship it.",
-    body: "No test goes live without sample size, MDE, sample-ratio-mismatch checks, and a pre-registered hypothesis. Tests &ldquo;won&rdquo; on noise are not wins.",
+    title: "If you can’t measure it, you can’t ship it.",
+    body: "No test goes live without sample size, MDE, sample-ratio-mismatch checks, and a pre-registered hypothesis. Tests “won” on noise are not wins.",
   },
   {
     n: "04",
@@ -179,13 +179,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Analysis Layer",
     format: "Stats · Segments · Replays",
     description:
-      "Statistical significance with SRM check, segment-level stability, qualitative replay review. A &ldquo;winner&rdquo; that fails any one is held for rerun.",
+      "Statistical significance with SRM check, segment-level stability, qualitative replay review. A “winner” that fails any one is held for rerun.",
   },
   {
     name: "Decision Layer",
     format: "Ship · Kill · Iterate",
     description:
-      "Wins shipped to 100% and 90-day decay-monitored. Losses documented (most losses are knowledge). Inconclusive runs iterated or killed &mdash; not extended forever.",
+      "Wins shipped to 100% and 90-day decay-monitored. Losses documented (most losses are knowledge). Inconclusive runs iterated or killed — not extended forever.",
   },
 ];
 
@@ -235,7 +235,7 @@ const PRACTICE_NUMBERS = [
     figure: "4 / qtr",
     metric: "Tests we ship per quarter",
     detail:
-      "Deliberately low cadence. Industry &ldquo;always-on&rdquo; programs ship 20+ shallow tests that compound to nothing.",
+      "Deliberately low cadence. Industry “always-on” programs ship 20+ shallow tests that compound to nothing.",
     client: "Discipline of the practice",
   },
   {
@@ -257,29 +257,29 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Why only 4 tests a quarter? Doesn&rsquo;t velocity matter?",
+    question: "Why only 4 tests a quarter? Doesn’t velocity matter?",
     answer:
-      "Velocity matters when the underlying hypotheses are strong. Most &ldquo;always-on&rdquo; programs ship shallow tests that don&rsquo;t move the business, then look busy on a dashboard. We&rsquo;d rather ship four tests that produce four real decisions than forty that produce noise.",
+      "Velocity matters when the underlying hypotheses are strong. Most “always-on” programs ship shallow tests that don’t move the business, then look busy on a dashboard. We’d rather ship four tests that produce four real decisions than forty that produce noise.",
   },
   {
     question: "What testing platform do you use?",
     answer:
-      "VWO, Optimizely, Convert, or your existing tool. The platform doesn&rsquo;t make a meaningful difference. The hypothesis quality, spec discipline, and analysis rigor do.",
+      "VWO, Optimizely, Convert, or your existing tool. The platform doesn’t make a meaningful difference. The hypothesis quality, spec discipline, and analysis rigor do.",
   },
   {
     question: "Can you work without our engineering team?",
     answer:
-      "For surface tests (copy, layout, design), yes &mdash; client-side via the testing tool. For flow rebuilds and offer changes, no &mdash; those need engineering. The audit will scope which work needs engineering vs which doesn&rsquo;t.",
+      "For surface tests (copy, layout, design), yes — client-side via the testing tool. For flow rebuilds and offer changes, no — those need engineering. The audit will scope which work needs engineering vs which doesn’t.",
   },
   {
     question: "What if our traffic is too low for statistical significance?",
     answer:
-      "Common. Below ~50K monthly sessions, classical A/B testing is shaky. We&rsquo;ll either focus on offer / positioning / flow rebuilds (no test needed) or use Bayesian methods and segment-stable wins. We don&rsquo;t fake significance.",
+      "Common. Below ~50K monthly sessions, classical A/B testing is shaky. We’ll either focus on offer / positioning / flow rebuilds (no test needed) or use Bayesian methods and segment-stable wins. We don’t fake significance.",
   },
   {
     question: "Do you do conversion copywriting?",
     answer:
-      "Yes &mdash; though copy is tier 02 in our leverage hierarchy. We&rsquo;ll do it when it&rsquo;s the right move. We won&rsquo;t default to it when offer or flow is the actual lever.",
+      "Yes — though copy is tier 02 in our leverage hierarchy. We’ll do it when it’s the right move. We won’t default to it when offer or flow is the actual lever.",
   },
   {
     question: "What does it cost?",
@@ -351,9 +351,9 @@ export default function ConversionOptimizationPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  Color doesn&rsquo;t move CAC. Offer does. Positioning does.
+                  Color doesn’t move CAC. Offer does. Positioning does.
                   Flow does. We work the leverage hierarchy in the right order
-                  &mdash; not the easy one.
+                  — not the easy one.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
@@ -745,7 +745,7 @@ export default function ConversionOptimizationPage() {
               id="cro-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve optimized conversion for
+              Brands we’ve optimized conversion for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -850,7 +850,7 @@ export default function ConversionOptimizationPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -866,7 +866,7 @@ export default function ConversionOptimizationPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -913,8 +913,8 @@ export default function ConversionOptimizationPage() {
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid CRO audit. We score your funnel, your test
-                  backlog, and the tier you&rsquo;re actually testing at.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  backlog, and the tier you’re actually testing at.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

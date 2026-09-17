@@ -36,27 +36,27 @@ const FEATURED_LOGOS = [
 // SAID vs SAW — 5 contrast pairs of stated preference vs observed behavior
 const SAID_VS_SAW = [
   {
-    said: "&ldquo;I&rsquo;d love a dark mode.&rdquo;",
+    said: "“I’d love a dark mode.”",
     saw: "2% of users toggle dark mode when offered.",
     lesson: "Stated preference ≠ revealed preference.",
   },
   {
-    said: "&ldquo;The pricing page is the problem.&rdquo;",
+    said: "“The pricing page is the problem.”",
     saw: "92% of churned users never visited it.",
     lesson: "The complaint is often a proxy for something earlier.",
   },
   {
-    said: "&ldquo;Onboarding is too long.&rdquo;",
+    said: "“Onboarding is too long.”",
     saw: "Users who completed it had 4× the retention.",
-    lesson: "Friction isn&rsquo;t always cost. Sometimes it&rsquo;s qualification.",
+    lesson: "Friction isn’t always cost. Sometimes it’s qualification.",
   },
   {
-    said: "&ldquo;I want more features.&rdquo;",
+    said: "“I want more features.”",
     saw: "Most users used 4 of the 32 already shipped.",
     lesson: "Roadmaps built from interviews build feature bloat.",
   },
   {
-    said: "&ldquo;Email is too noisy.&rdquo;",
+    said: "“Email is too noisy.”",
     saw: "Open rate on the 3rd email was 41%.",
     lesson: "What people say they want is rarely what they engage with.",
   },
@@ -72,17 +72,17 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "Every question has its own method.",
-    body: "&ldquo;What do they want?&rdquo; needs interviews. &ldquo;Will they pay for it?&rdquo; needs a price-tested landing page. &ldquo;Can they find it?&rdquo; needs a tree test. Picking the wrong method produces the wrong answer with high confidence.",
+    body: "“What do they want?” needs interviews. “Will they pay for it?” needs a price-tested landing page. “Can they find it?” needs a tree test. Picking the wrong method produces the wrong answer with high confidence.",
   },
   {
     n: "03",
     title: "Research without a decision is theater.",
-    body: "Every research engagement starts with the decision it&rsquo;ll inform. No decision in scope, no research. The deliverable isn&rsquo;t a report &mdash; it&rsquo;s a decision documented with evidence.",
+    body: "Every research engagement starts with the decision it’ll inform. No decision in scope, no research. The deliverable isn’t a report — it’s a decision documented with evidence.",
   },
   {
     n: "04",
     title: "Sample size of zero is still zero.",
-    body: "Best instinct beats no research. But no research beats research dressed up to look bigger than it is. We&rsquo;d rather ship 5 quality sessions than 100 noisy ones.",
+    body: "Best instinct beats no research. But no research beats research dressed up to look bigger than it is. We’d rather ship 5 quality sessions than 100 noisy ones.",
   },
 ];
 
@@ -156,7 +156,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Method Layer",
     format: "Right method · Right cohort · Right depth",
     description:
-      "The matched method, the cohort that can actually answer it, the depth required. Picked from the matrix &mdash; not from the agency that&rsquo;s available.",
+      "The matched method, the cohort that can actually answer it, the depth required. Picked from the matrix — not from the agency that’s available.",
   },
   {
     name: "Recruit Layer",
@@ -183,7 +183,7 @@ const PROCESS_PHASES = [
   {
     title: "Question Framing",
     duration: "Week 1",
-    body: "What decision is this informing? What&rsquo;s the riskiest assumption? Written question brief signed off before recruitment starts.",
+    body: "What decision is this informing? What’s the riskiest assumption? Written question brief signed off before recruitment starts.",
   },
   {
     title: "Method Design",
@@ -208,7 +208,7 @@ const PROCESS_PHASES = [
   {
     title: "Decision Log",
     duration: "Week 6+",
-    body: "Decision documented with the evidence behind it. Filed in the decision log so the next quarter&rsquo;s research builds on this one, not from scratch.",
+    body: "Decision documented with the evidence behind it. Filed in the decision log so the next quarter’s research builds on this one, not from scratch.",
   },
 ];
 
@@ -217,7 +217,7 @@ const PRACTICE_NUMBERS = [
     figure: "4 / qtr",
     metric: "Discovery cycles run",
     detail:
-      "Four scoped research cycles per quarter. Each answers one decision, not &ldquo;general user understanding.&rdquo;",
+      "Four scoped research cycles per quarter. Each answers one decision, not “general user understanding.”",
     client: "Standard cadence",
   },
   {
@@ -246,9 +246,9 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Aren&rsquo;t five users enough?",
+    question: "Aren’t five users enough?",
     answer:
-      "For surface usability issues, yes &mdash; the Nielsen rule still mostly holds. For generative discovery, prioritisation, or pricing, no. The method decides the sample, not the budget.",
+      "For surface usability issues, yes — the Nielsen rule still mostly holds. For generative discovery, prioritisation, or pricing, no. The method decides the sample, not the budget.",
   },
   {
     question: "Do you do quant or qual?",
@@ -258,17 +258,17 @@ const FAQS = [
   {
     question: "Will users actually tell us the truth?",
     answer:
-      "Sometimes. More often they&rsquo;ll tell you a version of the truth shaped by what they think you want to hear. That&rsquo;s why we observe behaviour as much as we ask. The matrix exists exactly for this gap.",
+      "Sometimes. More often they’ll tell you a version of the truth shaped by what they think you want to hear. That’s why we observe behaviour as much as we ask. The matrix exists exactly for this gap.",
   },
   {
     question: "Can we do continuous discovery without a research team?",
     answer:
-      "Yes. The point of continuous discovery is to make it lightweight enough that product managers and designers can run it. We&rsquo;ll set up the rhythm and tooling, then hand off &mdash; or stay on as governance.",
+      "Yes. The point of continuous discovery is to make it lightweight enough that product managers and designers can run it. We’ll set up the rhythm and tooling, then hand off — or stay on as governance.",
   },
   {
     question: "What if leadership wants a survey of 1,000 users for everything?",
     answer:
-      "We&rsquo;ll explain why that&rsquo;s the wrong method for most product questions, and what the right method is. If they still want it, we&rsquo;ll run the survey &mdash; and the right method alongside &mdash; and let the data adjudicate.",
+      "We’ll explain why that’s the wrong method for most product questions, and what the right method is. If they still want it, we’ll run the survey — and the right method alongside — and let the data adjudicate.",
   },
   {
     question: "What does it cost?",
@@ -340,7 +340,7 @@ export default function UXResearchPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We run research as decision infrastructure &mdash; every
+                  We run research as decision infrastructure — every
                   product, design, and marketing call backed by behaviour, not
                   opinion. The right method for the right question.
                 </p>
@@ -713,7 +713,7 @@ export default function UXResearchPage() {
               id="research-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve researched for
+              Brands we’ve researched for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -818,7 +818,7 @@ export default function UXResearchPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -834,7 +834,7 @@ export default function UXResearchPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -883,7 +883,7 @@ export default function UXResearchPage() {
                   A 45-minute paid research audit. We score your current
                   research practice, your decision-log discipline, and the
                   evidence gap on your highest-risk assumptions. Refunded in
-                  full if we&rsquo;re not the right fit.
+                  full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

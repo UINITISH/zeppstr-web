@@ -164,7 +164,7 @@ export default async function SolutionsHubPage() {
                 <div className="flex items-center gap-4 mb-7">
                   <span aria-hidden="true" className="block w-2.5 h-2.5 bg-brand-yellow flex-shrink-0" />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-                    Solutions &mdash; Five practices
+                    Solutions — Five practices
                   </p>
                 </div>
                 <h1 className="font-light tracking-[-0.03em] text-display-xl text-ink-headline mb-7 max-w-[18ch] text-balance">
@@ -230,7 +230,7 @@ export default async function SolutionsHubPage() {
                   Most people pick the wrong one.
                 </h3>
                 <p className="font-body text-body text-white/75 leading-relaxed max-w-[40ch]">
-                  That is not a criticism &mdash; the channel that feels broken
+                  That is not a criticism — the channel that feels broken
                   is usually downstream of the one that is. The diagnostic
                   exists to answer this in writing before you commit budget.
                 </p>
@@ -276,7 +276,7 @@ export default async function SolutionsHubPage() {
                 >
                   <div className="grid md:grid-cols-12 gap-y-4 gap-x-8">
                     <p className="md:col-span-4 font-display font-light text-display-sm text-ink-headline tracking-[-0.015em] leading-[1.15]">
-                      &ldquo;{row.symptom}&rdquo;
+                      “{row.symptom}”
                     </p>
                     <div className="md:col-span-5">
                       <p className="font-body text-body text-ink-body leading-relaxed">
@@ -354,8 +354,8 @@ export default async function SolutionsHubPage() {
                 <p className="mt-6 font-body text-body text-white/75 leading-relaxed max-w-[46ch]">
                   TRU Aquapolis, January to August 2026. Meta and Google
                   generated the leads; we segregated and qualified them before
-                  they reached the client&rsquo;s sales team, who closed every one
-                  of the 75 units. We do not claim the close &mdash; we claim the
+                  they reached the client’s sales team, who closed every one
+                  of the 75 units. We do not claim the close — we claim the
                   pipeline it came from.
                 </p>
                 <Link

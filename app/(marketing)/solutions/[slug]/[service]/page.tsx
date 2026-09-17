@@ -123,7 +123,7 @@ export default async function SubServicePage({
         {subService.whatsIncluded && (
           <section className="container-reading py-16 border-t border-rule">
             <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-8">
-              What&rsquo;s included
+              What’s included
             </h2>
             <PortableText value={subService.whatsIncluded} />
           </section>

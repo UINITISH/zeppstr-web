@@ -91,7 +91,7 @@ export function NewsletterInline({
         aria-live="polite"
       >
         <p className="font-body font-medium text-body text-ink-headline">
-          You&rsquo;re on the list.
+          You’re on the list.
         </p>
         <p className="font-body text-body-sm text-ink-muted mt-1">
           The next essay lands in your inbox on the next publishing Thursday.

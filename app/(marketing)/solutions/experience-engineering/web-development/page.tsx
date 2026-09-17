@@ -78,22 +78,22 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Performance is a marketing metric.",
-    body: "Every 100ms of latency costs measurable conversion. The Lighthouse score is a marketing KPI, not an engineering trophy &mdash; treated as such, the site stops being a leak point.",
+    body: "Every 100ms of latency costs measurable conversion. The Lighthouse score is a marketing KPI, not an engineering trophy — treated as such, the site stops being a leak point.",
   },
   {
     n: "02",
     title: "Build for the slow phone on the bad network.",
-    body: "Median user is on mobile, on cellular, on a three-year-old device. We build for that user. If the site is great on a M3 MacBook over fibre, that&rsquo;s an accident, not a baseline.",
+    body: "Median user is on mobile, on cellular, on a three-year-old device. We build for that user. If the site is great on a M3 MacBook over fibre, that’s an accident, not a baseline.",
   },
   {
     n: "03",
     title: "Boring tech, well-applied.",
-    body: "Next.js + Sanity + Vercel + Tailwind, applied with care, beats whatever framework is on the front page of Hacker News this week. We ship infrastructure that survives three years &mdash; not portfolio pieces.",
+    body: "Next.js + Sanity + Vercel + Tailwind, applied with care, beats whatever framework is on the front page of Hacker News this week. We ship infrastructure that survives three years — not portfolio pieces.",
   },
   {
     n: "04",
     title: "Ship infra, not artifacts.",
-    body: "A site that&rsquo;s a Figma export pinned to a CMS is debt. A codebase with design tokens, component library, instrumentation, and CI is infrastructure that compounds with every campaign downstream.",
+    body: "A site that’s a Figma export pinned to a CMS is debt. A codebase with design tokens, component library, instrumentation, and CI is infrastructure that compounds with every campaign downstream.",
   },
 ];
 
@@ -167,7 +167,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Framework",
     format: "Next.js · Astro · SvelteKit",
     description:
-      "App-router Next.js for product-heavy surfaces, Astro for content-heavy editorial. Picked per surface &mdash; not based on what we built last time.",
+      "App-router Next.js for product-heavy surfaces, Astro for content-heavy editorial. Picked per surface — not based on what we built last time.",
   },
   {
     name: "Data / CMS",
@@ -185,7 +185,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Deploy · CI",
     format: "GitHub · Preview · Production",
     description:
-      "Preview deploy per PR. CI runs lint, type, test, Lighthouse, accessibility. Production deploys via promote &mdash; not via branch merge.",
+      "Preview deploy per PR. CI runs lint, type, test, Lighthouse, accessibility. Production deploys via promote — not via branch merge.",
   },
 ];
 
@@ -228,7 +228,7 @@ const PRACTICE_NUMBERS = [
     figure: "98+",
     metric: "Lighthouse Performance",
     detail:
-      "Baseline we ship to. On real users, on mobile, on cellular &mdash; not on a lab machine.",
+      "Baseline we ship to. On real users, on mobile, on cellular — not on a lab machine.",
     client: "Post-launch standard",
   },
   {
@@ -259,12 +259,12 @@ const FAQS = [
   {
     question: "What stack do you use?",
     answer:
-      "Default: Next.js (App Router) + Sanity + Tailwind + Vercel. Astro for editorial-heavy sites. We pick per surface &mdash; not from a template &mdash; and we don&rsquo;t change the stack to look modern in a portfolio piece.",
+      "Default: Next.js (App Router) + Sanity + Tailwind + Vercel. Astro for editorial-heavy sites. We pick per surface — not from a template — and we don’t change the stack to look modern in a portfolio piece.",
   },
   {
     question: "Can you work with our existing WordPress / Webflow / Shopify?",
     answer:
-      "Yes. We&rsquo;ll audit before recommending. WordPress is fine for editorial-only sites with low traffic. Webflow is fine when the design surface is the product. Shopify is fine for commerce until it isn&rsquo;t. We&rsquo;ll say so honestly.",
+      "Yes. We’ll audit before recommending. WordPress is fine for editorial-only sites with low traffic. Webflow is fine when the design surface is the product. Shopify is fine for commerce until it isn’t. We’ll say so honestly.",
   },
   {
     question: "Do you handle hosting and ops, or hand it off?",
@@ -274,12 +274,12 @@ const FAQS = [
   {
     question: "How do you handle SEO equity during a rebuild?",
     answer:
-      "Redirect mapping is a first-class deliverable, not an afterthought. We audit every existing URL, map to the new structure, ship 301s with the launch, and monitor index health for 90 days post-launch. SEO equity doesn&rsquo;t leak on our launches.",
+      "Redirect mapping is a first-class deliverable, not an afterthought. We audit every existing URL, map to the new structure, ship 301s with the launch, and monitor index health for 90 days post-launch. SEO equity doesn’t leak on our launches.",
   },
   {
     question: "What about A/B testing and personalization?",
     answer:
-      "Built in. Edge middleware for personalization, Vercel / Optimizely / VWO for A/B. The infrastructure assumes you&rsquo;ll want to test; you don&rsquo;t have to re-platform six months later.",
+      "Built in. Edge middleware for personalization, Vercel / Optimizely / VWO for A/B. The infrastructure assumes you’ll want to test; you don’t have to re-platform six months later.",
   },
   {
     question: "What does it cost?",
@@ -458,7 +458,7 @@ export default function WebDevelopmentPage() {
             </ol>
 
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-8">
-              Miss one and we don&rsquo;t ship. The thresholds aren&rsquo;t aspirational.
+              Miss one and we don’t ship. The thresholds aren’t aspirational.
             </p>
           </div>
         </section>
@@ -723,7 +723,7 @@ export default function WebDevelopmentPage() {
               id="webdev-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Sites we&rsquo;ve engineered
+              Sites we’ve engineered
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -828,7 +828,7 @@ export default function WebDevelopmentPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -844,7 +844,7 @@ export default function WebDevelopmentPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -891,7 +891,7 @@ export default function WebDevelopmentPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid build audit. We score your performance, your
                   ship velocity, and the debt the site is accruing each
-                  quarter. Refunded in full if we&rsquo;re not the right fit.
+                  quarter. Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

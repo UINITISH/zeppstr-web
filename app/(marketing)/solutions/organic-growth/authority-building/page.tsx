@@ -74,7 +74,7 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Earned first, leveraged second.",
-    body: "Authority can&rsquo;t be bought into existence. It has to be earned in publications that wouldn&rsquo;t take money for it. Once earned, every other channel &mdash; paid, lifecycle, sales &mdash; gets to leverage it.",
+    body: "Authority can’t be bought into existence. It has to be earned in publications that wouldn’t take money for it. Once earned, every other channel — paid, lifecycle, sales — gets to leverage it.",
   },
   {
     n: "02",
@@ -84,12 +84,12 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Source &gt; placement.",
-    body: "Becoming the source other people cite when they don&rsquo;t have to beats placing 100 articles in publications that nobody reads. Source-of-truth is the asset; the article is the receipt.",
+    body: "Becoming the source other people cite when they don’t have to beats placing 100 articles in publications that nobody reads. Source-of-truth is the asset; the article is the receipt.",
   },
   {
     n: "04",
     title: "Real publications, real journalists.",
-    body: "We don&rsquo;t guest-post on networks, don&rsquo;t buy from link sellers, don&rsquo;t use PR distribution as a substitute for relationships. The work is slower. The authority compounds.",
+    body: "We don’t guest-post on networks, don’t buy from link sellers, don’t use PR distribution as a substitute for relationships. The work is slower. The authority compounds.",
   },
 ];
 
@@ -134,7 +134,7 @@ const EARNED_MEDIA_CATALOG = [
   {
     category: "Paid Placement, Done Well",
     items: [
-      "Native &amp; sponsored editorial",
+      "Native & sponsored editorial",
       "Premium podcast sponsorships",
       "Vetted media partnerships",
       "Industry-report co-publishing",
@@ -157,13 +157,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Audience Layer",
     format: "Beat reporters · Vertical media · Aggregators",
     description:
-      "Who actually decides what your category gets cited as. Reporters, editors, podcasters, newsletter writers &mdash; the human layer that earns the citation. Mapped, not assumed.",
+      "Who actually decides what your category gets cited as. Reporters, editors, podcasters, newsletter writers — the human layer that earns the citation. Mapped, not assumed.",
   },
   {
     name: "Source Layer",
     format: "Research · POV · Expert · Data",
     description:
-      "What we have that they want. Original research, sharp POV, expert sources, internal data &mdash; the assets that make us the source instead of the supplicant.",
+      "What we have that they want. Original research, sharp POV, expert sources, internal data — the assets that make us the source instead of the supplicant.",
   },
   {
     name: "Outreach Layer",
@@ -175,7 +175,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Placement Layer",
     format: "Citations · Quotes · Profiles · Co-published",
     description:
-      "What comes back. A citation in a beat reporter&rsquo;s piece. A quote in a feature. A co-published industry report. Tracked, archived, measured.",
+      "What comes back. A citation in a beat reporter’s piece. A quote in a feature. A co-published industry report. Tracked, archived, measured.",
   },
   {
     name: "Leverage Layer",
@@ -205,7 +205,7 @@ const PROCESS_PHASES = [
   {
     title: "Outreach Cadence",
     duration: "Week 7–9",
-    body: "Targeted pitches go out per beat reporter. Long-term relationship cadence established &mdash; introductions before asks.",
+    body: "Targeted pitches go out per beat reporter. Long-term relationship cadence established — introductions before asks.",
   },
   {
     title: "Placement & Capture",
@@ -238,7 +238,7 @@ const PRACTICE_NUMBERS = [
     figure: "12 mo",
     metric: "Minimum engagement",
     detail:
-      "Relationships compound. We don&rsquo;t take 90-day pilots in this practice &mdash; the math doesn&rsquo;t work for either side.",
+      "Relationships compound. We don’t take 90-day pilots in this practice — the math doesn’t work for either side.",
     client: "Engagement floor",
   },
 ];
@@ -253,9 +253,9 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Isn&rsquo;t this just PR with a different name?",
+    question: "Isn’t this just PR with a different name?",
     answer:
-      "PR is the broader category &mdash; we&rsquo;re a specific cut of it focused on earning the kind of citations that move SEO authority, sales trust, and category positioning. We don&rsquo;t do crisis comms, internal comms, or event press.",
+      "PR is the broader category — we’re a specific cut of it focused on earning the kind of citations that move SEO authority, sales trust, and category positioning. We don’t do crisis comms, internal comms, or event press.",
   },
   {
     question: "Do you guarantee placements?",
@@ -265,17 +265,17 @@ const FAQS = [
   {
     question: "How is this different from link-building agencies?",
     answer:
-      "Link-building optimizes for the URL. We optimize for the citation &mdash; the sentence that frames you as the source. Citations rank. Links accumulate. Most link-building moves the wrong number.",
+      "Link-building optimizes for the URL. We optimize for the citation — the sentence that frames you as the source. Citations rank. Links accumulate. Most link-building moves the wrong number.",
   },
   {
     question: "Will you do paid placements?",
     answer:
-      "Sometimes. Native editorial in real publications, podcast sponsorships, industry-report co-publishing &mdash; yes. Sponsored backlinks dressed up as editorial, pay-to-play awards, blog network buys &mdash; no.",
+      "Sometimes. Native editorial in real publications, podcast sponsorships, industry-report co-publishing — yes. Sponsored backlinks dressed up as editorial, pay-to-play awards, blog network buys — no.",
   },
   {
     question: "How long until we see results?",
     answer:
-      "First placements typically land in months 3&ndash;4. The compounding starts around month 6 (one citation makes the next easier). The real authority lift shows up around month 12 &mdash; which is why we don&rsquo;t take shorter engagements.",
+      "First placements typically land in months 3–4. The compounding starts around month 6 (one citation makes the next easier). The real authority lift shows up around month 12 — which is why we don’t take shorter engagements.",
   },
   {
     question: "What does it cost?",
@@ -347,8 +347,8 @@ export default function AuthorityBuildingPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  Authority isn&rsquo;t bought. It&rsquo;s earned in
-                  publications that wouldn&rsquo;t take money for it &mdash;
+                  Authority isn’t bought. It’s earned in
+                  publications that wouldn’t take money for it —
                   then leveraged across paid, lifecycle, and sales for the rest
                   of the year.
                 </p>
@@ -756,7 +756,7 @@ export default function AuthorityBuildingPage() {
               id="authority-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve earned citations for
+              Brands we’ve earned citations for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -861,7 +861,7 @@ export default function AuthorityBuildingPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -877,7 +877,7 @@ export default function AuthorityBuildingPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -925,8 +925,8 @@ export default function AuthorityBuildingPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid authority audit. We score your current
                   citation graph, your source assets, and the publications you
-                  should be in &mdash; but aren&rsquo;t. Refunded in full if
-                  we&rsquo;re not the right fit.
+                  should be in — but aren’t. Refunded in full if
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

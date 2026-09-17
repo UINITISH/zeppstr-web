@@ -65,7 +65,7 @@ const OWNS = [
 const DOESNT_OWN = [
   {
     item: "Daily execution",
-    sub: "Email sends, ad campaigns, social posts. That&rsquo;s the team. Or the agency. Not the fractional CMO.",
+    sub: "Email sends, ad campaigns, social posts. That’s the team. Or the agency. Not the fractional CMO.",
   },
   {
     item: "Vendor seat-warming",
@@ -73,19 +73,19 @@ const DOESNT_OWN = [
   },
   {
     item: "Strategy theatre",
-    sub: "Decks that don&rsquo;t turn into operating decisions. Strategy without operating ownership is consulting.",
+    sub: "Decks that don’t turn into operating decisions. Strategy without operating ownership is consulting.",
   },
   {
     item: "Forever",
-    sub: "12&ndash;24 month engagement, with succession built in. The goal is hiring a full-time replacement when scale demands.",
+    sub: "12–24 month engagement, with succession built in. The goal is hiring a full-time replacement when scale demands.",
   },
   {
-    item: "Other people&rsquo;s P&Ls",
-    sub: "Sales is sales&rsquo;s. Product is product&rsquo;s. We collaborate; we don&rsquo;t take over.",
+    item: "Other people’s P&Ls",
+    sub: "Sales is sales’s. Product is product’s. We collaborate; we don’t take over.",
   },
   {
     item: "Politics",
-    sub: "We work for the company, not the founder&rsquo;s favourite stakeholder. Honest feedback is the job.",
+    sub: "We work for the company, not the founder’s favourite stakeholder. Honest feedback is the job.",
   },
 ];
 
@@ -94,22 +94,22 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Operator, not advisor.",
-    body: "Advisors give opinions. Operators make calls. We make calls &mdash; on hiring, vendor selection, budget, and channel mix. The accountability is non-negotiable.",
+    body: "Advisors give opinions. Operators make calls. We make calls — on hiring, vendor selection, budget, and channel mix. The accountability is non-negotiable.",
   },
   {
     n: "02",
     title: "Accountable to the number.",
-    body: "Hired against a measurable outcome &mdash; pipeline, revenue, MQL, retention &mdash; not against &ldquo;strategic thinking.&rdquo; If the number doesn&rsquo;t move, the engagement doesn&rsquo;t renew.",
+    body: "Hired against a measurable outcome — pipeline, revenue, MQL, retention — not against “strategic thinking.” If the number doesn’t move, the engagement doesn’t renew.",
   },
   {
     n: "03",
     title: "Embedded, not parachuted.",
-    body: "Two days a week, in your team&rsquo;s Slack, on your team&rsquo;s calendar, at your team&rsquo;s standups. Not a quarterly off-site. Operating presence is the asset.",
+    body: "Two days a week, in your team’s Slack, on your team’s calendar, at your team’s standups. Not a quarterly off-site. Operating presence is the asset.",
   },
   {
     n: "04",
     title: "Succession from day one.",
-    body: "The engagement plans its own end. We&rsquo;re hiring a full-time CMO or director by month 12&ndash;24 in most cases. Working ourselves out of the role is the goal.",
+    body: "The engagement plans its own end. We’re hiring a full-time CMO or director by month 12–24 in most cases. Working ourselves out of the role is the goal.",
   },
 ];
 
@@ -189,19 +189,19 @@ const ARCHITECTURE_LAYERS = [
     name: "Team Layer",
     format: "Reports · Collaborates · Coaches",
     description:
-      "Direct reports (typically 2&ndash;5 marketing leads). Cross-functional collaboration with sales, product, finance. Coaching relationship with the founder.",
+      "Direct reports (typically 2–5 marketing leads). Cross-functional collaboration with sales, product, finance. Coaching relationship with the founder.",
   },
   {
     name: "Reporting Layer",
     format: "Exec deck · Board readout",
     description:
-      "Marketing&rsquo;s seat at the executive table. Standardized monthly readout. Marketing section of the board deck owned end-to-end.",
+      "Marketing’s seat at the executive table. Standardized monthly readout. Marketing section of the board deck owned end-to-end.",
   },
   {
     name: "Exit Layer",
     format: "Succession · Hiring · Handoff",
     description:
-      "From month 6, the succession plan is being built. By month 12&ndash;24, the engagement is wrapping into a full-time hire we&rsquo;ve helped recruit.",
+      "From month 6, the succession plan is being built. By month 12–24, the engagement is wrapping into a full-time hire we’ve helped recruit.",
   },
 ];
 
@@ -215,7 +215,7 @@ const PROCESS_PHASES = [
   {
     title: "Diagnostic",
     duration: "Month 1",
-    body: "Written marketing diagnostic — what&rsquo;s working, what&rsquo;s leaking, what&rsquo;s missing. Presented to the exec team. The honest read most founders haven&rsquo;t had.",
+    body: "Written marketing diagnostic — what’s working, what’s leaking, what’s missing. Presented to the exec team. The honest read most founders haven’t had.",
   },
   {
     title: "90-Day Plan",
@@ -235,7 +235,7 @@ const PROCESS_PHASES = [
   {
     title: "Succession",
     duration: "Month 9–18",
-    body: "Full-time CMO / Director hired and handed off to &mdash; with us as co-hiring partner. The engagement ends successfully when we&rsquo;re no longer needed.",
+    body: "Full-time CMO / Director hired and handed off to — with us as co-hiring partner. The engagement ends successfully when we’re no longer needed.",
   },
 ];
 
@@ -251,7 +251,7 @@ const PRACTICE_NUMBERS = [
     figure: "12+ months",
     metric: "Minimum engagement",
     detail:
-      "Brand and operating-model work compounds. We don&rsquo;t take 90-day pilots in this practice.",
+      "Brand and operating-model work compounds. We don’t take 90-day pilots in this practice.",
     client: "Engagement floor",
   },
   {
@@ -275,32 +275,32 @@ const FAQS = [
   {
     question: "How is this different from a marketing consultant?",
     answer:
-      "Consultants advise. Fractional CMOs operate. We sit on the leadership team, make hiring calls, own vendor decisions, sign off on quarterly OKRs, and answer to the board for the marketing number. If the engagement ends with a strategy deck and no decisions made, we&rsquo;ve failed.",
+      "Consultants advise. Fractional CMOs operate. We sit on the leadership team, make hiring calls, own vendor decisions, sign off on quarterly OKRs, and answer to the board for the marketing number. If the engagement ends with a strategy deck and no decisions made, we’ve failed.",
   },
   {
     question: "When does a company actually need a fractional CMO?",
     answer:
-      "Typically Series A to Series B, ₹20Cr&ndash;₹150Cr revenue, marketing function that has 2&ndash;8 people but no senior operator. Below that, you need a great marketer, not a CMO. Above, you need a full-time hire.",
+      "Typically Series A to Series B, ₹20Cr–₹150Cr revenue, marketing function that has 2–8 people but no senior operator. Below that, you need a great marketer, not a CMO. Above, you need a full-time hire.",
   },
   {
     question: "Will you actually fire vendors and people if needed?",
     answer:
-      "Yes. That&rsquo;s the job. We do it with care, transparency, and documentation &mdash; but we do it. If the founder&rsquo;s expecting a yes-person, this is the wrong engagement.",
+      "Yes. That’s the job. We do it with care, transparency, and documentation — but we do it. If the founder’s expecting a yes-person, this is the wrong engagement.",
   },
   {
     question: "Can you scale up to 4 days a week if we need more?",
     answer:
-      "Rarely. If the role needs 4+ days a week consistently, that&rsquo;s a full-time CMO &mdash; and we&rsquo;ll help you hire one. Scaling a fractional engagement past 3 days/week is usually a sign the model has run its course.",
+      "Rarely. If the role needs 4+ days a week consistently, that’s a full-time CMO — and we’ll help you hire one. Scaling a fractional engagement past 3 days/week is usually a sign the model has run its course.",
   },
   {
     question: "Who actually does the work?",
     answer:
-      "Strategy, decisions, hiring, board prep, vendor management &mdash; us, directly. Execution &mdash; your team, your agency, or our other practices (organic, performance, lifecycle) if it&rsquo;s the right fit.",
+      "Strategy, decisions, hiring, board prep, vendor management — us, directly. Execution — your team, your agency, or our other practices (organic, performance, lifecycle) if it’s the right fit.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Fractional CMO engagements run ₹6L&ndash;10L/month depending on company size, ownership scope, and weight. Minimum 12 months. Quoted post-onboarding diagnostic.",
+      "Fractional CMO engagements run ₹6L–10L/month depending on company size, ownership scope, and weight. Minimum 12 months. Quoted post-onboarding diagnostic.",
   },
 ];
 
@@ -416,7 +416,7 @@ export default function FractionalMarketingLeadershipPage() {
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                     owns
                   </span>{" "}
-                  &mdash; and what it doesn&rsquo;t.
+                  — and what it doesn’t.
                 </h2>
               </div>
               <div className="md:col-span-3 md:text-right">
@@ -463,7 +463,7 @@ export default function FractionalMarketingLeadershipPage() {
               <div className="bg-emerald-900 p-8 md:p-10">
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/50 mb-8 flex items-center gap-3">
                   <span className="inline-block w-2 h-2 bg-white/30" />
-                  Doesn&rsquo;t own
+                  Doesn’t own
                 </p>
                 <ol className="space-y-7">
                   {DOESNT_OWN.map((row, i) => (
@@ -756,7 +756,7 @@ export default function FractionalMarketingLeadershipPage() {
               id="fractional-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Companies we&rsquo;ve sat at the leadership table for
+              Companies we’ve sat at the leadership table for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -861,7 +861,7 @@ export default function FractionalMarketingLeadershipPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -877,7 +877,7 @@ export default function FractionalMarketingLeadershipPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -925,7 +925,7 @@ export default function FractionalMarketingLeadershipPage() {
                   A 45-minute paid leadership audit. We score your marketing
                   function, the number that needs moving, and whether a
                   fractional CMO is actually what you need. Refunded in full if
-                  we&rsquo;re not the right fit.
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

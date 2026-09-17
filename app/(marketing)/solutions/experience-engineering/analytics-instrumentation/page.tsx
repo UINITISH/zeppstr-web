@@ -39,13 +39,13 @@ const FOUR_LIES = [
   {
     n: "01",
     lie: "Attribution is honest.",
-    why: "Last-click ignores 70% of the journey. Every channel takes credit it didn&rsquo;t earn.",
+    why: "Last-click ignores 70% of the journey. Every channel takes credit it didn’t earn.",
     fix: "Modeled multi-touch attribution backed by a real identity graph.",
   },
   {
     n: "02",
     lie: "Funnel rates are real.",
-    why: "Half of every funnel drop is missing instrumentation, not real abandonment. The numbers look like a problem &mdash; the problem is the schema.",
+    why: "Half of every funnel drop is missing instrumentation, not real abandonment. The numbers look like a problem — the problem is the schema.",
     fix: "Event coverage audit. Schema before dashboards.",
   },
   {
@@ -57,7 +57,7 @@ const FOUR_LIES = [
   {
     n: "04",
     lie: "A/B tests are valid.",
-    why: "No sample-ratio-mismatch detection, no minimum detectable effect, no holdout. The test &ldquo;won&rdquo; on noise.",
+    why: "No sample-ratio-mismatch detection, no minimum detectable effect, no holdout. The test “won” on noise.",
     fix: "Experiment framework with SRM, MDE, and pre-registered hypotheses.",
   },
 ];
@@ -76,8 +76,8 @@ const PRINCIPLES = [
   },
   {
     n: "03",
-    title: "If you can&rsquo;t replay it, you can&rsquo;t trust it.",
-    body: "Raw events stored, immutable. Every dashboard rebuildable from source. If the model breaks, you don&rsquo;t lose history &mdash; you re-derive it.",
+    title: "If you can’t replay it, you can’t trust it.",
+    body: "Raw events stored, immutable. Every dashboard rebuildable from source. If the model breaks, you don’t lose history — you re-derive it.",
   },
   {
     n: "04",
@@ -248,22 +248,22 @@ const FAQS = [
   {
     question: "We already use GA4 / Mixpanel / Amplitude. Do you re-platform us?",
     answer:
-      "Only if the platform is the bottleneck. Most engagements add a warehouse + identity layer behind your existing tools so they finally agree with each other. We don&rsquo;t default to rip-and-replace.",
+      "Only if the platform is the bottleneck. Most engagements add a warehouse + identity layer behind your existing tools so they finally agree with each other. We don’t default to rip-and-replace.",
   },
   {
     question: "Do we need a data team, or do you replace one?",
     answer:
-      "We build the system so a non-specialist team can operate it. If you have a data team, we hand it to them in production-ready form. If you don&rsquo;t, we&rsquo;ll usually advise hiring one analytics engineer by month six.",
+      "We build the system so a non-specialist team can operate it. If you have a data team, we hand it to them in production-ready form. If you don’t, we’ll usually advise hiring one analytics engineer by month six.",
   },
   {
     question: "What if our engineering team is the bottleneck?",
     answer:
-      "Common. The audit usually surfaces this. We&rsquo;ll scope the implementation in chunks engineering can absorb — or bring our own implementation partner in for the SDK + warehouse work.",
+      "Common. The audit usually surfaces this. We’ll scope the implementation in chunks engineering can absorb — or bring our own implementation partner in for the SDK + warehouse work.",
   },
   {
     question: "Where do you stand on GA4?",
     answer:
-      "GA4 is fine as a dashboard tool. It&rsquo;s a poor source of truth — sampled, modeled, and not yours. Use it for board-deck graphs; use your warehouse for decisions.",
+      "GA4 is fine as a dashboard tool. It’s a poor source of truth — sampled, modeled, and not yours. Use it for board-deck graphs; use your warehouse for decisions.",
   },
   {
     question: "How do you handle privacy and consent?",
@@ -332,16 +332,16 @@ export default function AnalyticsInstrumentationPage() {
                 </div>
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
-                  If you can&rsquo;t{" "}
+                  If you can’t{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     trust the number
                   </span>
-                  , don&rsquo;t trust the decision.
+                  , don’t trust the decision.
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   One event spec. One identity model. One warehouse. Every tool
-                  downstream of it &mdash; agreeing, finally, on the same
+                  downstream of it — agreeing, finally, on the same
                   numbers.
                 </p>
 
@@ -417,7 +417,7 @@ export default function AnalyticsInstrumentationPage() {
                       aria-hidden="true"
                       className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 line-through"
                     >
-                      &ldquo;Believed&rdquo;
+                      “Believed”
                     </span>
                   </div>
                   {/* Lie statement */}
@@ -431,7 +431,7 @@ export default function AnalyticsInstrumentationPage() {
                   />
                   {/* Fix */}
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-yellow border-t border-white/15 pt-5 mt-auto">
-                    Fix → {l.fix.replace(/&rsquo;/g, "'")}
+                    Fix → {l.fix.replace(/’/g, "'")}
                   </p>
                 </li>
               ))}
@@ -698,7 +698,7 @@ export default function AnalyticsInstrumentationPage() {
               id="analytics-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve instrumented
+              Brands we’ve instrumented
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -802,7 +802,7 @@ export default function AnalyticsInstrumentationPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -818,7 +818,7 @@ export default function AnalyticsInstrumentationPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -865,7 +865,7 @@ export default function AnalyticsInstrumentationPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid instrumentation audit. We score your event
                   coverage, identity resolution, and source-of-truth count.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

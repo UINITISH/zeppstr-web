@@ -232,7 +232,7 @@ export default async function InsightsHubPage({ searchParams }: InsightsHubPageP
             </h2>
             <p className="font-body text-body-lg text-ink-body mb-10 max-w-[55ch] mx-auto leading-relaxed">
               Practical, opinionated, structured. No marketing platitudes, no roundups, no
-              curated link dumps. The thing we&rsquo;ve actually been wrestling with that
+              curated link dumps. The thing we’ve actually been wrestling with that
               week — written for operators, not other marketers.
             </p>
             <NewsletterInline source="insights-hub" />

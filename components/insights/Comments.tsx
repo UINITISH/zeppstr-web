@@ -133,7 +133,7 @@ export function Comments({ articleId, comments, className }: CommentsProps) {
             Thanks — your comment is in the queue.
           </p>
           <p className="font-body text-body-sm text-ink-muted mt-1">
-            We read every one. It&rsquo;ll appear here once it&rsquo;s approved.
+            We read every one. It’ll appear here once it’s approved.
           </p>
         </div>
       ) : (

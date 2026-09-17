@@ -176,7 +176,7 @@ export function TeamSection() {
               <p className="font-body text-body text-ink-body leading-relaxed max-w-[62ch]">
                 Team profiles are being photographed. Rather than fill this space
                 with stock portraits of people who do not work here, it stays
-                empty until the real ones exist &mdash; which is the same rule
+                empty until the real ones exist — which is the same rule
                 we apply to the numbers elsewhere on this site.
               </p>
               <Link
@@ -196,7 +196,7 @@ export function TeamSection() {
               {/* Visible to the client in review, and the reason the monogram
                   tiles look deliberate rather than broken. Delete this line
                   once portraits are in /public/team/. */}
-              Portraits pending &mdash; monogram tiles are placeholders and swap
+              Portraits pending — monogram tiles are placeholders and swap
               to photography with no layout change.
             </p>
           )}

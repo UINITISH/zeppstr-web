@@ -35,7 +35,7 @@ export function ClientRosterWall({ clients }: ClientRosterWallProps) {
               id="roster-heading"
               className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
             >
-              Names we&rsquo;re proud to publish.
+              Names we’re proud to publish.
             </h2>
           </div>
           <div className="md:col-span-3 md:text-right">

@@ -41,7 +41,7 @@ const SAMPLE_FORMAT = {
     {
       tag: "01 — Hook",
       label: "Headline that names a familiar problem",
-      example: "&ldquo;Why most CAC dashboards lie.&rdquo;",
+      example: "“Why most CAC dashboards lie.”",
     },
     {
       tag: "02 — Frame",
@@ -61,7 +61,7 @@ const SAMPLE_FORMAT = {
     {
       tag: "05 — Payoff",
       label: "The line they screenshot or quote",
-      example: "&ldquo;Stop measuring clicks. Start measuring cohorts.&rdquo;",
+      example: "“Stop measuring clicks. Start measuring cohorts.”",
     },
     {
       tag: "06 — Recur",
@@ -86,12 +86,12 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Build for one platform at a time.",
-    body: "Cross-posting is a tax. We build the format native to one platform first, then adapt &mdash; not the inverse. LinkedIn deserves its own structure.",
+    body: "Cross-posting is a tax. We build the format native to one platform first, then adapt — not the inverse. LinkedIn deserves its own structure.",
   },
   {
     n: "04",
     title: "The audience is the asset.",
-    body: "Follower count is the receipt. Audience &mdash; the people who notice when you post and quote you when you don&rsquo;t &mdash; is the asset. Build for that.",
+    body: "Follower count is the receipt. Audience — the people who notice when you post and quote you when you don’t — is the asset. Build for that.",
   },
 ];
 
@@ -112,7 +112,7 @@ const FORMAT_LIBRARY = [
       "Mechanic-of-the-Week",
       "Mini Course (5-part thread)",
       "How We Do This",
-      "Mistakes We&rsquo;ve Made",
+      "Mistakes We’ve Made",
     ],
   },
   {
@@ -146,7 +146,7 @@ const FORMAT_LIBRARY = [
     category: "Recurring Anchors",
     formats: [
       "Friday Roundup",
-      "Quote We&rsquo;re Sitting With",
+      "Quote We’re Sitting With",
       "Recommendations",
       "Reader Q&A",
     ],
@@ -159,7 +159,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Strategy & Positioning",
     format: "Audience · POV · Voice",
     description:
-      "Who the program is for, what we&rsquo;re known for, how we sound. Locked in writing before a single format is designed.",
+      "Who the program is for, what we’re known for, how we sound. Locked in writing before a single format is designed.",
   },
   {
     name: "Format Library",
@@ -226,7 +226,7 @@ const PRACTICE_NUMBERS = [
     figure: "8–12",
     metric: "Formats in a mature library",
     detail:
-      "The active library we build out. Most clients arrive with one (the founder&rsquo;s ad-hoc thoughts).",
+      "The active library we build out. Most clients arrive with one (the founder’s ad-hoc thoughts).",
     client: "Standard build",
   },
   {
@@ -262,7 +262,7 @@ const FAQS = [
   {
     question: "Why focus on one platform first?",
     answer:
-      "Algorithms reward platform-native structure. A LinkedIn post adapted from a tweet performs like neither. Pick the platform where your audience lives, build native, then adapt. We&rsquo;ll help you pick.",
+      "Algorithms reward platform-native structure. A LinkedIn post adapted from a tweet performs like neither. Pick the platform where your audience lives, build native, then adapt. We’ll help you pick.",
   },
   {
     question: "How much volume should we be posting?",
@@ -270,9 +270,9 @@ const FAQS = [
       "Less than you think. 3–5 high-fit posts per week per platform consistently outperforms daily ad-hoc volume. The lever is fit and recurrence, not frequency.",
   },
   {
-    question: "Do you write for the founder&rsquo;s personal account too?",
+    question: "Do you write for the founder’s personal account too?",
     answer:
-      "Often, yes &mdash; especially in B2B. A founder posting in voice, on a recurring format, with consistent cadence is often a more valuable owned-audience asset than the brand handle.",
+      "Often, yes — especially in B2B. A founder posting in voice, on a recurring format, with consistent cadence is often a more valuable owned-audience asset than the brand handle.",
   },
   {
     question: "How do you measure attribution from organic social?",
@@ -350,7 +350,7 @@ export default function OrganicSocialPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   We build organic social as a format library and editorial
-                  rhythm &mdash; not a content treadmill measured in
+                  rhythm — not a content treadmill measured in
                   posts-per-week.
                 </p>
 
@@ -726,7 +726,7 @@ export default function OrganicSocialPage() {
               id="social-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve built social rhythms for
+              Brands we’ve built social rhythms for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -830,7 +830,7 @@ export default function OrganicSocialPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -846,7 +846,7 @@ export default function OrganicSocialPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -893,7 +893,7 @@ export default function OrganicSocialPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid social audit. We pull your last 90 days of
                   posts, score your format library (usually zero), and map the
-                  audience-asset gap. Refunded in full if we&rsquo;re not the
+                  audience-asset gap. Refunded in full if we’re not the
                   right fit.
                 </p>
               </div>

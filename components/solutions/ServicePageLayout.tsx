@@ -117,7 +117,7 @@ export function ServicePageLayout({
                     className="block w-2.5 h-2.5 bg-brand-yellow flex-shrink-0"
                   />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-                    Service &mdash; {parent.name}
+                    Service — {parent.name}
                   </p>
                 </div>
 
@@ -175,7 +175,7 @@ export function ServicePageLayout({
                     {content.stats.map((stat) => (
                       <li key={stat.label} className="font-body text-body-sm text-ink-muted leading-relaxed">
                         <span className="font-medium text-ink-headline">
-                          {stat.figure} &mdash; {stat.label}.
+                          {stat.figure} — {stat.label}.
                         </span>{" "}
                         {stat.source}
                       </li>
@@ -223,7 +223,7 @@ export function ServicePageLayout({
                 id="included-heading"
                 className="font-display font-light tracking-[-0.025em] text-display-lg text-ink-headline max-w-[22ch] text-balance"
               >
-                What&rsquo;s included.
+                What’s included.
               </h2>
             </div>
 
@@ -341,7 +341,7 @@ export function ServicePageLayout({
                 id="service-logos-heading"
                 className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
               >
-                Brands we&rsquo;ve run this for
+                Brands we’ve run this for
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
                 {logos.map((logo) => (
@@ -417,7 +417,7 @@ export function ServicePageLayout({
             <div className="grid md:grid-cols-12 gap-8 md:gap-16 pt-10 border-t border-white/15">
               <p className="md:col-span-6 font-body text-body-lg text-white/80 leading-[1.5] max-w-[46ch]">
                 Four weeks, a fixed fee, and a written answer on what is actually
-                constraining growth &mdash; including when the answer is that{" "}
+                constraining growth — including when the answer is that{" "}
                 {name.toLowerCase()} is not your constraint.
               </p>
               <div className="md:col-span-6 flex md:items-end md:justify-end">

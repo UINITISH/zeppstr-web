@@ -43,7 +43,7 @@ const HIDDEN_DECISIONS = [
   },
   {
     decision: "Empty states",
-    most: "&ldquo;No results.&rdquo;",
+    most: "“No results.”",
     we: "Path to the next action · live examples",
   },
   {
@@ -78,17 +78,17 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "Defaults are decisions. Pick the right one.",
-    body: "The default option is what 80% of users will accept. Treating defaults as &ldquo;just a placeholder&rdquo; abdicates the most important design decision on the page.",
+    body: "The default option is what 80% of users will accept. Treating defaults as “just a placeholder” abdicates the most important design decision on the page.",
   },
   {
     n: "03",
     title: "Empty states earn the most attention.",
-    body: "First-time users see them. Returning users see them. They&rsquo;re the second-most-visited &ldquo;page&rdquo; in most products. Treat them like the home page, not the cutting-room floor.",
+    body: "First-time users see them. Returning users see them. They’re the second-most-visited “page” in most products. Treat them like the home page, not the cutting-room floor.",
   },
   {
     n: "04",
-    title: "Microcopy is the system&rsquo;s voice.",
-    body: "Button labels, error messages, placeholder text, confirmation prompts. The product talks more through microcopy than through any marketing channel. Don&rsquo;t outsource it.",
+    title: "Microcopy is the system’s voice.",
+    body: "Button labels, error messages, placeholder text, confirmation prompts. The product talks more through microcopy than through any marketing channel. Don’t outsource it.",
   },
 ];
 
@@ -194,7 +194,7 @@ const PROCESS_PHASES = [
   {
     title: "Discovery",
     duration: "Week 3",
-    body: "Customer interviews, sales-call review, journey mapping. The decisions that need to be made &mdash; not just the surfaces that need to be designed.",
+    body: "Customer interviews, sales-call review, journey mapping. The decisions that need to be made — not just the surfaces that need to be designed.",
   },
   {
     title: "Design System",
@@ -204,7 +204,7 @@ const PROCESS_PHASES = [
   {
     title: "Surface Design",
     duration: "Week 7–9",
-    body: "The key surfaces &mdash; signup, dashboard, settings, checkout, whichever apply &mdash; designed against the system. Each surface = templates + decisions.",
+    body: "The key surfaces — signup, dashboard, settings, checkout, whichever apply — designed against the system. Each surface = templates + decisions.",
   },
   {
     title: "Build Handoff",
@@ -237,7 +237,7 @@ const PRACTICE_NUMBERS = [
     figure: "6 / 12",
     metric: "Annual partner slots",
     detail:
-      "Six of twelve partner engagements include experience design &mdash; usually paired with the rest of Experience & Engineering.",
+      "Six of twelve partner engagements include experience design — usually paired with the rest of Experience & Engineering.",
     client: "Selective by design",
   },
 ];
@@ -254,17 +254,17 @@ const FAQS = [
   {
     question: "Do you do product design or marketing design?",
     answer:
-      "Both, usually as one system. Most clients arrive with product and marketing diverged into separate visual languages. We unify them &mdash; same tokens, same components, same voice &mdash; so the brand reads consistently from ad to product onboarding to settings page.",
+      "Both, usually as one system. Most clients arrive with product and marketing diverged into separate visual languages. We unify them — same tokens, same components, same voice — so the brand reads consistently from ad to product onboarding to settings page.",
   },
   {
     question: "Do you work in Figma?",
     answer:
-      "Yes. Figma file: hKLYShm3thswPaSuYw4g8F is our active workspace. Tokens are also exported in code (Style Dictionary / Theo format) so engineering doesn&rsquo;t have to translate from Figma to CSS each time.",
+      "Yes. Figma file: hKLYShm3thswPaSuYw4g8F is our active workspace. Tokens are also exported in code (Style Dictionary / Theo format) so engineering doesn’t have to translate from Figma to CSS each time.",
   },
   {
     question: "What if we have a design system already?",
     answer:
-      "We&rsquo;ll audit it first. Most existing systems are 30% built, 50% drifted, 20% forked. The first move is usually consolidation, not replacement &mdash; we keep what works and rebuild what&rsquo;s broken.",
+      "We’ll audit it first. Most existing systems are 30% built, 50% drifted, 20% forked. The first move is usually consolidation, not replacement — we keep what works and rebuild what’s broken.",
   },
   {
     question: "Can you work with our existing brand or identity?",
@@ -274,7 +274,7 @@ const FAQS = [
   {
     question: "What if we have no in-house design team?",
     answer:
-      "Common. We build the system so a small team (or even a single hire) can operate it. By month six, most clients hire one designer to maintain and extend &mdash; we transition to governance.",
+      "Common. We build the system so a small team (or even a single hire) can operate it. By month six, most clients hire one designer to maintain and extend — we transition to governance.",
   },
   {
     question: "What does it cost?",
@@ -338,7 +338,7 @@ export default function ExperienceDesignPage() {
                 </div>
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[20ch] text-balance mb-8">
-                  Design isn&rsquo;t decoration. It&rsquo;s{" "}
+                  Design isn’t decoration. It’s{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     decision architecture
                   </span>
@@ -347,8 +347,8 @@ export default function ExperienceDesignPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   Every screen encodes hundreds of decisions. We make them on
-                  purpose &mdash; for product, marketing, and sales surfaces
-                  alike &mdash; and we encode them in a system that compounds.
+                  purpose — for product, marketing, and sales surfaces
+                  alike — and we encode them in a system that compounds.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
@@ -720,7 +720,7 @@ export default function ExperienceDesignPage() {
               id="ux-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve designed experience for
+              Brands we’ve designed experience for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -824,7 +824,7 @@ export default function ExperienceDesignPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -840,7 +840,7 @@ export default function ExperienceDesignPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -887,7 +887,7 @@ export default function ExperienceDesignPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid experience audit. We score your design
                   system, your decision quality, and the drift between product,
-                  marketing, and sales. Refunded in full if we&rsquo;re not the
+                  marketing, and sales. Refunded in full if we’re not the
                   right fit.
                 </p>
               </div>

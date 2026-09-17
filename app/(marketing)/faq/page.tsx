@@ -226,7 +226,7 @@ export default function FAQPage() {
               <div className="grid md:grid-cols-12 gap-8 md:gap-16">
                 <div className="md:col-span-4">
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
-                    0{si + 1} &mdash; {section.label}
+                    0{si + 1} — {section.label}
                   </p>
                   <h2
                     id={`${section.id}-heading`}

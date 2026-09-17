@@ -72,17 +72,17 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "Reach is vanity. CPI is the unit.",
-    body: "One million views with no attribution is a media buy that didn&rsquo;t run. Three hundred conversions on a hundred thousand views is a partnership that worked.",
+    body: "One million views with no attribution is a media buy that didn’t run. Three hundred conversions on a hundred thousand views is a partnership that worked.",
   },
   {
     n: "03",
-    title: "We don&rsquo;t pay for posts.",
+    title: "We don’t pay for posts.",
     body: "Deal structure: paid floor + performance bonus + 18-month rights. Same total cost, different incentive alignment. The creator gets paid more when the work performs.",
   },
   {
     n: "04",
     title: "Partnership, not campaign.",
-    body: "A 30-day deal with a creator is a media buy in disguise. A 12-month relationship with three creators is a moat — by deal four, you&rsquo;re paying half and earning twice.",
+    body: "A 30-day deal with a creator is a media buy in disguise. A 12-month relationship with three creators is a moat — by deal four, you’re paying half and earning twice.",
   },
 ];
 
@@ -110,7 +110,7 @@ const STACK_LAYERS = [
     name: "Distribution",
     format: "Creator post + Paid amp + Owned repost",
     description:
-      "The post is the start. Paid amplification on the creator&rsquo;s handle, repost on your owned channels, and conversion-asset rebuild for paid social.",
+      "The post is the start. Paid amplification on the creator’s handle, repost on your owned channels, and conversion-asset rebuild for paid social.",
   },
   {
     name: "Measurement",
@@ -145,7 +145,7 @@ const PROCESS_PHASES = [
   {
     title: "Distribution & Amplification",
     duration: "Week 7–8",
-    body: "Live posts. Paid amplification on the creator&rsquo;s handle. Owned-channel repost. Cuts adapted for paid social and lifecycle email.",
+    body: "Live posts. Paid amplification on the creator’s handle. Owned-channel repost. Cuts adapted for paid social and lifecycle email.",
   },
   {
     title: "Measurement & Renewal",
@@ -215,7 +215,7 @@ const FAQS = [
   {
     question: "What does it cost?",
     answer:
-      "Programs start at ₹12L per quarter for the 12-creator mix (1 anchor + 3 resonance + 8 niche). Excludes creator fees themselves — we negotiate, you pay direct so there&rsquo;s no markup.",
+      "Programs start at ₹12L per quarter for the 12-creator mix (1 anchor + 3 resonance + 8 niche). Excludes creator fees themselves — we negotiate, you pay direct so there’s no markup.",
   },
 ];
 
@@ -282,7 +282,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We build them as growth assets &mdash; discovered, briefed,
+                  We build them as growth assets — discovered, briefed,
                   owned, measured, and indexed against the channels you already
                   run.
                 </p>
@@ -568,7 +568,7 @@ export default function InfluencerCreatorPartnershipPage() {
               id="creator-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve run creator programs for
+              Brands we’ve run creator programs for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -672,7 +672,7 @@ export default function InfluencerCreatorPartnershipPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -688,7 +688,7 @@ export default function InfluencerCreatorPartnershipPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -734,7 +734,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid creator audit. We map your current spend,
                   your owned-channel overlap, and the partnership gaps. Refunded
-                  in full if we&rsquo;re not the right fit.
+                  in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

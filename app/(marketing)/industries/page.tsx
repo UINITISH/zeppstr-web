@@ -128,7 +128,7 @@ export default async function IndustriesHubPage() {
                 <div className="flex items-center gap-4 mb-7">
                   <span aria-hidden="true" className="block w-2.5 h-2.5 bg-brand-yellow flex-shrink-0" />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-                    Industries &mdash; Six categories
+                    Industries — Six categories
                   </p>
                 </div>
                 <h1 className="font-light tracking-[-0.03em] text-display-xl text-ink-headline mb-7 max-w-[19ch] text-balance">
@@ -137,7 +137,7 @@ export default async function IndustriesHubPage() {
                 <p className="font-body text-body-lg text-ink-body max-w-[54ch] leading-[1.6]">
                   Six categories, 300+ businesses served across 10+ countries.
                   Each page below sets out what is structurally broken in that
-                  category and the sequence we run to fix it &mdash; and where
+                  category and the sequence we run to fix it — and where
                   we have a named result, it is there with the spend attached
                   to it.
                 </p>
@@ -196,7 +196,7 @@ export default async function IndustriesHubPage() {
                 </h2>
               </div>
               <p className="md:col-span-5 font-body text-body text-ink-muted leading-relaxed">
-                &ldquo;Industry expertise&rdquo; is usually sold as familiarity
+                “Industry expertise” is usually sold as familiarity
                 with the jargon. The parts that actually matter are these, and
                 they are structural.
               </p>
@@ -286,7 +286,7 @@ export default async function IndustriesHubPage() {
                 </p>
                 <p className="mt-5 font-body text-body text-white/75 leading-relaxed max-w-[46ch]">
                   TRU Aquapolis, January to August 2026. 6,000+ leads, over 70%
-                  qualified at handover, 75 units closed by the client&rsquo;s own
+                  qualified at handover, 75 units closed by the client’s own
                   sales team. The leads were ours; the close was theirs.
                 </p>
                 <Link
@@ -320,7 +320,7 @@ export default async function IndustriesHubPage() {
               The other four categories on this page do not carry headline
               numbers yet. That is deliberate. We publish a figure when the
               client has agreed to it and the arithmetic is ours to defend
-              &mdash; not before.
+              — not before.
             </p>
           </div>
         </section>

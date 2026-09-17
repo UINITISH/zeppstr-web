@@ -131,7 +131,7 @@ export default function TermsPage() {
                 Limitation of liability
               </h2>
               <p>
-                This website is provided on an &ldquo;as is&rdquo; basis. To the
+                This website is provided on an “as is” basis. To the
                 extent permitted by law, Zeppstr Growth Media is not liable for
                 any loss arising from use of, or reliance on, information
                 published here.

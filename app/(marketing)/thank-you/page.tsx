@@ -25,24 +25,24 @@ export default function ThankYouPage() {
             Thanks for applying.
           </h1>
           <p className="font-body text-body-lg text-ink-body max-w-[60ch] mx-auto leading-relaxed">
-            Nitish reads every application personally. You&rsquo;ll hear back within 48 hours.
+            Nitish reads every application personally. You’ll hear back within 48 hours.
           </p>
         </section>
 
         <section className="container-layout pb-16">
           <div className="max-w-[64ch] mx-auto space-y-6 font-body text-body text-ink-body leading-relaxed">
             <p>
-              If we&rsquo;re a fit for the engagement you described, we&rsquo;ll send a
+              If we’re a fit for the engagement you described, we’ll send a
               calendar link for a 30-minute scoping call. The call is exactly that —
-              scoping. We diagnose live what you&rsquo;d want the diagnostic to cover. No
+              scoping. We diagnose live what you’d want the diagnostic to cover. No
               sales deck.
             </p>
             <p>
-              If we&rsquo;re not a fit, we&rsquo;ll tell you why and where we&rsquo;d
+              If we’re not a fit, we’ll tell you why and where we’d
               suggest you look instead. Honest answers are part of how we operate.
             </p>
             <p>
-              In the meantime — feel free to grab a 30-minute window directly if you&rsquo;d
+              In the meantime — feel free to grab a 30-minute window directly if you’d
               prefer to skip the email loop:
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function ThankYouPage() {
         {/* Quiet bottom links */}
         <section className="container-layout py-12 border-t border-rule text-center">
           <p className="font-body text-body-sm text-ink-muted mb-4">
-            While you&rsquo;re here:
+            While you’re here:
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
             <Link

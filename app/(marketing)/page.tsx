@@ -254,11 +254,11 @@ export default async function HomePage() {
           eyebrow="Approach"
           headline={
             <>
-              We don&rsquo;t add channels.{" "}
+              We don’t add channels.{" "}
               <span className="opacity-60">We build the layer above them.</span>
             </>
           }
-          body="Positioning. Journey. Measurement. Conversion. The structural layer beneath every channel &mdash; the difference between growth that compounds and spend that disappears. We rebuild the layer until the channels work because of it, not despite it."
+          body="Positioning. Journey. Measurement. Conversion. The structural layer beneath every channel — the difference between growth that compounds and spend that disappears. We rebuild the layer until the channels work because of it, not despite it."
           link={{ label: "Read the full POV", href: "/about/our-pov" }}
         />
 
@@ -412,7 +412,7 @@ export default async function HomePage() {
             <div className="grid md:grid-cols-12 gap-8 md:gap-16 pt-10 border-t border-white/15">
               <div className="md:col-span-6">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[44ch]">
-                  Twelve partners a year, by intention. We start with a 45-minute paid diagnostic &mdash; refunded in full if we&rsquo;re not the right fit for each other.
+                  Twelve partners a year, by intention. We start with a 45-minute paid diagnostic — refunded in full if we’re not the right fit for each other.
                 </p>
               </div>
               <div className="md:col-span-6 flex md:items-end md:justify-end">

@@ -47,7 +47,7 @@ export default function BookConsultationPage() {
                 {/* leading-[1.18] rather than 1.05: a highlighted span needs
                     room for its own padding or it collides with the line above. */}
                 <h1 className="font-bold tracking-[-0.03em] text-display-xl text-ink-headline leading-[1.18] max-w-[18ch] text-balance mb-8">
-                  Tell us where it&rsquo;s leaking. We&rsquo;ll send a preliminary read within{" "}
+                  Tell us where it’s leaking. We’ll send a preliminary read within{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone whitespace-nowrap">
                     24 hours
                   </span>
@@ -55,9 +55,9 @@ export default function BookConsultationPage() {
                 </h1>
                 <p className="font-body text-body-lg text-ink-body leading-[1.6] max-w-[56ch]">
                   Five short steps, about three minutes. We map your situation against the patterns
-                  we&rsquo;ve seen across 300+ businesses and return a written diagnosis to your inbox
-                  within 24 hours. It&rsquo;s yours to keep, even if we never speak again. The
-                  45-minute paid diagnostic comes after — refunded in full if we&rsquo;re not the
+                  we’ve seen across 300+ businesses and return a written diagnosis to your inbox
+                  within 24 hours. It’s yours to keep, even if we never speak again. The
+                  45-minute paid diagnostic comes after — refunded in full if we’re not the
                   right fit for each other.
                 </p>
               </div>

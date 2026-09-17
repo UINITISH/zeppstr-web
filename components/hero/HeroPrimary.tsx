@@ -174,7 +174,7 @@ export function HeroPrimary({
                 {
                   figure: (
                     <>
-                      6&mdash;<AnimatedNumber target={12} duration={1400} />
+                      6—<AnimatedNumber target={12} duration={1400} />
                     </>
                   ),
                   label: "Partner clients per year",

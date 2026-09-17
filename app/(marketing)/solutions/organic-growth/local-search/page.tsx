@@ -36,21 +36,21 @@ const FEATURED_LOGOS = [
 const MAP_PACK_FACTORS = [
   {
     n: "01",
-    factor: "Profile completeness &amp; freshness",
+    factor: "Profile completeness & freshness",
     weight: 88,
     requires: "Every field filled · weekly updates · category accuracy",
     miss: "Most teams set it once and forget",
   },
   {
     n: "02",
-    factor: "Review velocity &amp; recency",
+    factor: "Review velocity & recency",
     weight: 82,
     requires: "Steady inflow · responded to · last 30 days weighted",
     miss: "Reviews stop after launch",
   },
   {
     n: "03",
-    factor: "Proximity &amp; location signals",
+    factor: "Proximity & location signals",
     weight: 76,
     requires: "Service-area accuracy · physical citations · NAP consistency",
     miss: "Old citations contradict the GBP",
@@ -59,7 +59,7 @@ const MAP_PACK_FACTORS = [
     n: "04",
     factor: "Engagement signals",
     weight: 64,
-    requires: "Photos uploaded · posts published · Q&amp;A answered",
+    requires: "Photos uploaded · posts published · Q&A answered",
     miss: "GBP treated as static, not a live channel",
   },
   {
@@ -76,7 +76,7 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Map Pack or nothing.",
-    body: "70% of local clicks land in the top three results. Position four is a 10× drop. We optimise for the three slots that capture the demand &mdash; not Page 1 vanity rankings.",
+    body: "70% of local clicks land in the top three results. Position four is a 10× drop. We optimise for the three slots that capture the demand — not Page 1 vanity rankings.",
   },
   {
     n: "02",
@@ -91,7 +91,7 @@ const PRINCIPLES = [
   {
     n: "04",
     title: "Geo × intent is the unit.",
-    body: "Not rankings. Not traffic. The unit is &ldquo;in the Map Pack for this intent in this location.&rdquo; A 6 × 6 program has 36 coverage cells. Closed one by one.",
+    body: "Not rankings. Not traffic. The unit is “in the Map Pack for this intent in this location.” A 6 × 6 program has 36 coverage cells. Closed one by one.",
   },
 ];
 
@@ -156,10 +156,10 @@ const LOCAL_CATALOG = [
   {
     category: "GBP Profile Discipline",
     items: [
-      "Profile audit &amp; gap close",
-      "Category &amp; attribute strategy",
+      "Profile audit & gap close",
+      "Category & attribute strategy",
       "Weekly post cadence",
-      "Photo &amp; video uploads",
+      "Photo & video uploads",
     ],
   },
   {
@@ -172,9 +172,9 @@ const LOCAL_CATALOG = [
     ],
   },
   {
-    category: "Citation &amp; NAP",
+    category: "Citation & NAP",
     items: [
-      "Citation audit &amp; clean-up",
+      "Citation audit & clean-up",
       "Industry directory submissions",
       "NAP consistency monitoring",
       "Duplicate listing removal",
@@ -215,11 +215,11 @@ const ARCHITECTURE_LAYERS = [
     name: "Profile Layer",
     format: "GBP · directories · industry listings",
     description:
-      "The owned profile real estate &mdash; Google Business Profile, Apple Maps, Bing, industry directories. One per location, maintained as a live channel, not a static listing.",
+      "The owned profile real estate — Google Business Profile, Apple Maps, Bing, industry directories. One per location, maintained as a live channel, not a static listing.",
   },
   {
     name: "Signal Layer",
-    format: "Reviews · photos · posts · Q&amp;A",
+    format: "Reviews · photos · posts · Q&A",
     description:
       "The continuous signals that tell Google the location is alive, engaged, and current. Generated systematically, not opportunistically.",
   },
@@ -233,13 +233,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Citation Layer",
     format: "NAP consistency · directories",
     description:
-      "The off-site references that validate the profile. Name-address-phone consistency across every directory that matters &mdash; conflicting citations dilute the signal.",
+      "The off-site references that validate the profile. Name-address-phone consistency across every directory that matters — conflicting citations dilute the signal.",
   },
   {
     name: "Operating Layer",
     format: "Tracking · reporting · sprint cadence",
     description:
-      "Geo × intent coverage tracked weekly, reported monthly, attacked quarterly. The cells that aren&rsquo;t in the Map Pack become the work.",
+      "Geo × intent coverage tracked weekly, reported monthly, attacked quarterly. The cells that aren’t in the Map Pack become the work.",
   },
 ];
 
@@ -271,7 +271,7 @@ const PROCESS_PHASES = [
     body: "Off-site citations audited and aligned. NAP inconsistencies fixed across every directory that matters. Duplicate listings removed.",
   },
   {
-    title: "Operate &amp; Close Cells",
+    title: "Operate & Close Cells",
     duration: "Week 12+",
     body: "Weekly rank tracking, monthly coverage report, quarterly gap-close sprints. The heatmap turns from gap to Map Pack, cell by cell.",
   },
@@ -296,14 +296,14 @@ const PRACTICE_NUMBERS = [
     figure: "36",
     metric: "Coverage cells per program",
     detail:
-      "A 6-location × 6-intent program is 36 cells. Each one&rsquo;s rank is a separate piece of work. We track all 36 weekly.",
+      "A 6-location × 6-intent program is 36 cells. Each one’s rank is a separate piece of work. We track all 36 weekly.",
     client: "Standard scope",
   },
   {
     figure: "Quarterly",
     metric: "Gap-close sprint cadence",
     detail:
-      "Every quarter we attack the lowest-coverage cells with a focused sprint &mdash; profile depth, review velocity, location-page rebuild.",
+      "Every quarter we attack the lowest-coverage cells with a focused sprint — profile depth, review velocity, location-page rebuild.",
     client: "Operating rhythm",
   },
 ];
@@ -318,24 +318,24 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Do we need this if we&rsquo;re a single-location business?",
+    question: "Do we need this if we’re a single-location business?",
     answer:
-      "Yes &mdash; though the program is lighter. One location still has 5&ndash;15 relevant search intents and 5+ surrounding service areas, which is 25&ndash;75 coverage cells. The discipline scales down; the work doesn&rsquo;t disappear.",
+      "Yes — though the program is lighter. One location still has 5–15 relevant search intents and 5+ surrounding service areas, which is 25–75 coverage cells. The discipline scales down; the work doesn’t disappear.",
   },
   {
     question: "What if we have 50+ locations?",
     answer:
-      "Common &mdash; and where this program earns its keep. The work isn&rsquo;t one strategy applied 50 times; it&rsquo;s 50 instances of the same disciplined operating model. We build the operations team or playbook to scale it.",
+      "Common — and where this program earns its keep. The work isn’t one strategy applied 50 times; it’s 50 instances of the same disciplined operating model. We build the operations team or playbook to scale it.",
   },
   {
     question: "Will you respond to our reviews?",
     answer:
-      "Yes &mdash; with templates approved by you and signed by a real human on your team. Generic AI-generated review responses get noticed (and ignored). Templated-but-human is the sweet spot.",
+      "Yes — with templates approved by you and signed by a real human on your team. Generic AI-generated review responses get noticed (and ignored). Templated-but-human is the sweet spot.",
   },
   {
     question: "How do you handle negative reviews?",
     answer:
-      "There&rsquo;s a playbook: acknowledge within 24 hours, never argue publicly, take it offline, document the resolution. Negative reviews handled well move the trust needle more than another five-star review.",
+      "There’s a playbook: acknowledge within 24 hours, never argue publicly, take it offline, document the resolution. Negative reviews handled well move the trust needle more than another five-star review.",
   },
   {
     question: "What about review-buying schemes?",
@@ -413,7 +413,7 @@ export default function LocalSearchPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
                   Multi-location local search built as a coverage matrix
-                  &mdash; geo × intent, cell by cell. Tracked weekly,
+                  — geo × intent, cell by cell. Tracked weekly,
                   attacked quarterly, ranked where the demand actually lives.
                 </p>
 
@@ -889,7 +889,7 @@ export default function LocalSearchPage() {
               id="local-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve ranked locally
+              Brands we’ve ranked locally
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -994,7 +994,7 @@ export default function LocalSearchPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
@@ -1010,7 +1010,7 @@ export default function LocalSearchPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1059,7 +1059,7 @@ export default function LocalSearchPage() {
                   A 45-minute paid coverage audit. We build your geo × intent
                   heatmap live on the call, name the cells losing demand, and
                   scope the 90-day plan to close them. Refunded if
-                  we&rsquo;re not the right fit.
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">

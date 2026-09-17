@@ -180,7 +180,7 @@ export default async function IndustryPage({
         {industry.whatsBroken && (
           <section className="container-reading py-16 border-t border-rule">
             <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-8">
-              What&rsquo;s broken in most {industry.name} marketing
+              What’s broken in most {industry.name} marketing
             </h2>
             <PortableText value={industry.whatsBroken} />
           </section>
@@ -202,7 +202,7 @@ export default async function IndustryPage({
             <div className="mb-10">
               <p className="eyebrow mb-4">Featured outcome</p>
               <h2 className="font-display font-light text-display-lg text-ink-headline tracking-tight">
-                Where we&rsquo;ve delivered in {industry.name}.
+                Where we’ve delivered in {industry.name}.
               </h2>
             </div>
             <div className="max-w-3xl">
@@ -217,7 +217,7 @@ export default async function IndustryPage({
         {industry.allClientLogos && industry.allClientLogos.length > 0 && (
           <section className="container-layout py-20 border-t border-rule">
             <p className="eyebrow text-center mb-8">
-              Other {industry.name} brands we&rsquo;ve worked with
+              Other {industry.name} brands we’ve worked with
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 opacity-80">
               {industry.allClientLogos.map((client) => {

@@ -141,7 +141,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-4 mb-8">
                   <span aria-hidden="true" className="block w-2.5 h-2.5 bg-brand-yellow flex-shrink-0" />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-                    About &mdash; The firm
+                    About — The firm
                   </p>
                 </div>
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[16ch] text-balance mb-8">
@@ -152,8 +152,8 @@ export default function AboutPage() {
                   .
                 </h1>
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  Zeppstr builds the structural layer beneath marketing &mdash;
-                  positioning, journey, measurement, conversion &mdash; so that
+                  Zeppstr builds the structural layer beneath marketing —
+                  positioning, journey, measurement, conversion — so that
                   every channel a business runs compounds instead of competing.
                   We take on twelve partner clients a year, and we work like an
                   operating partner rather than a vendor.

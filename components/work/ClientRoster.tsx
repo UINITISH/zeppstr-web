@@ -79,12 +79,12 @@ export function ClientRoster() {
             id="client-roster-heading"
             className="md:col-span-7 font-display font-extralight tracking-[-0.025em] text-display-lg leading-[1.08] text-ink-headline max-w-[20ch] text-balance"
           >
-            Clients whose stories we haven&rsquo;t written up yet.
+            Clients whose stories we haven’t written up yet.
           </h2>
           <p className="md:col-span-5 font-body text-body text-ink-muted leading-relaxed">
             We publish a case study when we can show the numbers behind it. These
             engagements are real; the write-ups are still in the queue. Ask us
-            about any of them on a call &mdash; we&rsquo;ll walk you through the
+            about any of them on a call — we’ll walk you through the
             work directly.
           </p>
         </div>
@@ -172,7 +172,7 @@ export function ClientRoster() {
               </span>
             </div>
             <p className="font-display font-light text-display-xs text-ink-headline leading-[1.15] tracking-[-0.01em] group-hover:text-brand-blue transition-colors duration-hover">
-              Start a conversation&nbsp;&rarr;
+              Start a conversation &rarr;
             </p>
             <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
               No pitch &middot; 20 minutes

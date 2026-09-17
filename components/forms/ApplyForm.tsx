@@ -260,7 +260,7 @@ export function ApplyForm() {
           <fieldset className="space-y-6">
             <Legend>Solutions of interest</Legend>
             <p className="font-body text-body-sm text-ink-muted -mt-2">
-              Pick all that apply, or choose &ldquo;Not sure&rdquo; and we&rsquo;ll diagnose for you.
+              Pick all that apply, or choose “Not sure” and we’ll diagnose for you.
             </p>
 
             <Controller
