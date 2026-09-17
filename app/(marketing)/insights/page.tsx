@@ -100,26 +100,71 @@ export default async function InsightsHubPage({ searchParams }: InsightsHubPageP
           </div>
         </section>
 
-        {/* ── Filter ─────────────────────────────── */}
-        <section className="sticky top-[var(--nav-h)] z-30 bg-bg-primary/95 backdrop-blur border-b border-rule">
-          <div className="container-layout py-4 overflow-x-auto">
-            <InsightsFilter
-              categories={categoriesWithCounts}
-              activeCategory={activeCategory}
-            />
-          </div>
-        </section>
+        {/* ── Filter ───────────────────────────────
+            Hidden when there is nothing to filter. With zero articles
+            `categoriesWithCounts` collapses to a single "All 0" pill, and a
+            sticky filter bar offering one empty category above an empty state
+            reads as broken rather than as deliberate. */}
+        {allArticles.length > 0 && (
+          <section className="sticky top-[var(--nav-h)] z-30 bg-bg-primary/95 backdrop-blur border-b border-rule">
+            <div className="container-layout py-4 overflow-x-auto">
+              <InsightsFilter
+                categories={categoriesWithCounts}
+                activeCategory={activeCategory}
+              />
+            </div>
+          </section>
+        )}
 
-        {/* ── Empty state ────────────────────────── */}
+        {/* ── Empty state ──────────────────────────
+            REWRITTEN 17 Sep 2026, because this is now the page's normal
+            condition rather than an edge case.
+
+            Forty-nine bulk-imported filler posts were withdrawn (see
+            PARKED_FILLER in scripts/seed/data/articles.ts). The old copy read
+            "No essays in this category yet" — written for a category filter
+            returning nothing, and misleading when the whole section is empty.
+
+            An empty section is a legitimate state for this site to be in. The
+            alternative was leaving recycled template content one click from
+            case studies that publish revenue with the spend attached, which
+            costs more than an honest gap does. This says that plainly instead
+            of apologising for it. */}
         {articles.length === 0 && (
-          <section className="container-layout py-24 text-center">
-            <p className="font-body text-body-lg text-ink-muted max-w-[50ch] mx-auto">
-              No essays in this category yet — but the next one is in the writing queue.{" "}
-              <Link href="/insights#newsletter" className="text-brand-blue underline">
-                Subscribe to The Brief
-              </Link>{" "}
-              and you&rsquo;ll get it the morning it ships.
-            </p>
+          <section className="container-layout py-24 md:py-32">
+            <div className="max-w-[58ch]">
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
+                Nothing published yet
+              </p>
+              <h2 className="font-display font-light tracking-[-0.025em] text-display-md text-ink-headline mb-6 text-balance">
+                We took the filler down rather than leave it up.
+              </h2>
+              <p className="font-body text-body-lg text-ink-body leading-relaxed mb-5">
+                This section previously carried several dozen imported SEO
+                articles that were not written here and did not say anything we
+                would stand behind. They have been withdrawn.
+              </p>
+              <p className="font-body text-body text-ink-muted leading-relaxed mb-8">
+                What replaces them is being written from live engagement data,
+                held to the same standard as the case studies: every figure
+                traceable to a named client, or it does not go in. That takes
+                longer and produces fewer posts. Both of those are the point.
+              </p>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Link
+                  href="/work"
+                  className="inline-flex font-mono text-[12px] uppercase tracking-[0.18em] text-ink-headline border-b border-ink-headline pb-1 hover:text-ink-headline/60 hover:border-brand-yellow transition-colors"
+                >
+                  Read the case studies instead &rarr;
+                </Link>
+                <Link
+                  href="/insights#newsletter"
+                  className="inline-flex font-mono text-[12px] uppercase tracking-[0.18em] text-ink-muted border-b border-ink-muted/40 pb-1 hover:text-ink-headline hover:border-brand-yellow transition-colors"
+                >
+                  Get the first one by email &rarr;
+                </Link>
+              </div>
+            </div>
           </section>
         )}
 

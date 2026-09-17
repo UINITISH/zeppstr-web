@@ -130,7 +130,45 @@ export const WITHHELD: SeedArticle[] = [
   },
 ];
 
-const META: SeedArticle[] = [
+/**
+ * PARKED — bulk-import filler, withdrawn from publication 17 Sep 2026.
+ *
+ * ── WHY ─────────────────────────────────────────────────────────────────────
+ * All 49 of these arrived in a single scripted import. Every one carries a
+ * publishedAt of 2024-03-02, with timestamps inside a ninety-minute window —
+ * which is the tell. They are recycled template SEO content: "Unlock the
+ * potential of your online store", a generic person-at-a-laptop stock photo on
+ * each, and a voice that is not this firm's.
+ *
+ * Pre-launch QA (16 Sep) rated this High severity and it was right to. The
+ * clean-up pass on 16 Sep fixed the plumbing underneath them — 1,165
+ * backslash-escape corruptions, 107 tables with blank header rows, a
+ * comparison table whose rows were www.example1.com, and the "93% of online
+ * experiences" zombie statistic repeated across five posts. That work was
+ * necessary and it did not address the actual problem, which is that the posts
+ * should not be on this site at all.
+ *
+ * They sit one click from case studies that publish revenue with the media
+ * spend attached. A reader who moves from "Zero conversions on the platform,
+ * 147 in the CRM" to "Unlock the potential of your online store" learns
+ * something about this firm that the Work page cannot undo. For a practice
+ * whose entire position is that it publishes only what it can prove, recycled
+ * filler is not a neutral cost.
+ *
+ * ── NOTHING IS DELETED ──────────────────────────────────────────────────────
+ * The markdown still sits in deliverables/content/insights/ and every entry is
+ * intact below. Move an entry back into META and it republishes on the next
+ * `npm run seed`. To clear them from the live Sanity dataset after this
+ * change:  npm run seed:prune -- --apply
+ *
+ * ── CONSEQUENCE, STATED PLAINLY ─────────────────────────────────────────────
+ * META is now empty, so /insights publishes nothing. The four essays that ARE
+ * in this firm's voice are in WITHHELD above — pulled 19 Aug at the founder's
+ * instruction pending an editorial review of sourcing, one of them because it
+ * reconstructs an identifiable third-party deck. Clearing those is a separate
+ * decision and is not made here.
+ */
+const PARKED_FILLER: SeedArticle[] = [
   {
     _id: "article-technical-seo-website-performance",
     title: "Master Technical SEO for Peak Website Performance",
@@ -863,8 +901,24 @@ const META: SeedArticle[] = [
   },
 ];
 
+/**
+ * PUBLISHED ARTICLES.
+ *
+ * Deliberately empty. See PARKED_FILLER above for why, and WITHHELD for the
+ * four essays that are ready in every respect except a sourcing review.
+ *
+ * Adding one back is a one-line move — but the bar is that it is written in
+ * this firm's voice and every figure in it traces to a named engagement. That
+ * is the same bar the case studies are held to.
+ */
+const META: SeedArticle[] = [];
+
+
 /** Reads each article's markdown and converts the body to Portable Text. */
 export function loadArticles(repoRoot: string) {
+  // PARKED_FILLER is intentionally not mapped — see its note above. Referenced
+  // here so the array is not flagged unused and so its size stays visible.
+  void PARKED_FILLER;
   return META.map((m) => {
     const path = join(repoRoot, CONTENT_ROOT, m.markdownFile);
     const raw = readFileSync(path, "utf-8");
