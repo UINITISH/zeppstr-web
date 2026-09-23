@@ -1,5 +1,6 @@
 import * as React from "react";
 import { CategoryMotif } from "@/components/insights/CategoryMotif";
+import { ArticleDoodle } from "@/components/insights/ArticleDoodle";
 
 /**
  * ArticleDiagram — a drawing of what the article actually argues.
@@ -372,14 +373,34 @@ export function hasArticleDiagram(slug?: string | null): boolean {
 
 export function ArticleDiagram({
   slug,
+  title,
   category,
   className,
 }: {
   slug?: string | null;
+  title?: string | null;
   category?: string | null;
   className?: string;
 }) {
   const Specific = slug ? BY_SLUG[slug] : undefined;
   if (Specific) return <Specific className={className} />;
+
+  /* Everything without a bespoke diagram gets a doodle collage keyed to its
+     own slug and title. This replaced the per-CATEGORY Fallback below, which
+     was the source of "you have used same vector images in all the articles":
+     ten of twelve live pieces are SEO & Search, so ten cards drew one mark.
+
+     Fallback is kept, unrendered, only because it is the last thing that
+     still uses CategoryMotif. If CategoryMotif goes, both go. */
+  if (slug) {
+    return (
+      <ArticleDoodle
+        slug={slug}
+        title={title ?? ""}
+        label={category ? (CATEGORY_TITLES[category] ?? undefined) : undefined}
+        className={className ?? "h-full w-full"}
+      />
+    );
+  }
   return <Fallback category={category} />;
 }

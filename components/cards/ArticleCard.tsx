@@ -109,7 +109,11 @@ export function ArticleCard({ article, variant = "default", className }: Article
                 className="object-cover transition-transform duration-page ease-smooth group-hover:scale-[1.03]"
               />
             ) : (
-              <ArticleDiagram slug={article.slug.current} category={article.category} />
+              <ArticleDiagram
+                slug={article.slug.current}
+                title={article.title}
+                category={article.category}
+              />
             )}
           </div>
           <div>
@@ -143,7 +147,11 @@ export function ArticleCard({ article, variant = "default", className }: Article
             className="object-cover transition-transform duration-page ease-smooth group-hover:scale-105"
           />
         ) : (
-          <ArticleDiagram slug={article.slug.current} category={article.category} />
+          <ArticleDiagram
+            slug={article.slug.current}
+            title={article.title}
+            category={article.category}
+          />
         )}
       </div>
       {meta}

@@ -193,7 +193,11 @@ export default async function ArticlePage({
 
                  ArticleCover is kept in the repo — it is a decent component and
                  the motifs are reusable — but it is no longer the article hero. */
-              <ArticleDiagram slug={article.slug.current} category={article.category} />
+              <ArticleDiagram
+                slug={article.slug.current}
+                title={article.title}
+                category={article.category}
+              />
             )}
           </div>
         </div>

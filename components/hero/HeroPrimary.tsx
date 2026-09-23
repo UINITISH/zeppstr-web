@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AnimatedNumber } from "@/components/utility/AnimatedNumber";
 import { AnimatedHeadline } from "@/components/utility/AnimatedHeadline";
 import { FloatingMarketingIcons } from "@/components/utility/FloatingMarketingIcons";
+import { FoundationSketch } from "@/components/hero/FoundationSketch";
 
 interface CTA {
   label: string;
@@ -240,6 +241,15 @@ export function HeroPrimary({
                 </div>
               ))}
             </div>
+
+            {/* The patch beneath the two figures was empty — Vikas circled it,
+                23 Sep. The headline makes a structural claim ("What's
+                underneath them is") and the subhead names the three layers,
+                and then the page showed nothing. This draws them.
+
+                Deliberately OUR architecture and not a client's funnel, which
+                is the test the RealFunnel version failed. */}
+            <FoundationSketch className="mt-12 hidden lg:block" />
           </aside>
         </div>
 
