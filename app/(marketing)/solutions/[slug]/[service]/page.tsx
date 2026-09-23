@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { Button } from "@/components/ui/Button";
@@ -21,9 +22,25 @@ interface SubServiceWithRelated extends SubService {
 // ─────────────────────────────────────────────
 
 export async function generateStaticParams() {
+  /* {}, { next: { revalidate: 0 } } — this query must NEVER be served from
+     Next's persisted fetch cache.
+
+     23 Sep: 12 filler articles were deleted from Sanity and confirmed gone by
+     the prune, yet the next three builds each emitted 12 /insights/* routes.
+     The articles were genuinely deleted; .next/cache/fetch-cache was replaying
+     a stale 12-slug response for this exact query. Each generated page then
+     correctly fetched null and rendered a 404 shell — so the build produced a
+     dozen empty pages and reported success.
+
+     A generateStaticParams query decides WHICH PAGES EXIST. Caching it means
+     the route list can silently disagree with the content, and on Vercel the
+     build cache persists between deploys, so this ships. Freshness here costs
+     one request per build. */
   const subServices = await sanity.fetch<
     Array<{ slug: { current: string }; parentSolution: { slug: { current: string } } }>
-  >(`*[_type == "subService"]{ slug, parentSolution->{slug} }`);
+  >(`*[_type == "subService"]{ slug, parentSolution->{slug} }`, {}, {
+    next: { revalidate: 0 },
+  });
   return subServices.map((s) => ({
     slug: s.parentSolution.slug.current,
     service: s.slug.current,
@@ -40,10 +57,11 @@ export async function generateMetadata({
     slug: params.service,
   });
   if (!subService) return {};
-  return {
+  return buildMetadata({
     title: subService.seoTitle ?? subService.name,
     description: subService.seoDescription ?? subService.tagline,
-  };
+    path: `/solutions/${params.slug}/${params.service}`,
+  });
 }
 
 // ─────────────────────────────────────────────
@@ -120,8 +138,8 @@ export default async function SubServicePage({
         {/* What's included */}
         {subService.whatsIncluded && (
           <section className="container-reading py-16 border-t border-rule">
-            <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-8">
-              What&rsquo;s included
+            <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-8">
+              What’s included
             </h2>
             <PortableText value={subService.whatsIncluded} />
           </section>
@@ -130,7 +148,7 @@ export default async function SubServicePage({
         {/* Methodology */}
         {subService.methodology && (
           <section className="container-reading py-16 border-t border-rule">
-            <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-8">
+            <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-8">
               How we deliver
             </h2>
             <PortableText value={subService.methodology} />
@@ -142,7 +160,7 @@ export default async function SubServicePage({
           <section className="container-layout py-20 border-t border-rule">
             <div className="mb-10">
               <p className="eyebrow mb-4">Outcome</p>
-              <h2 className="font-display font-extralight text-display-lg text-ink-headline tracking-tight">
+              <h2 className="font-display font-light text-display-lg text-ink-headline tracking-tight">
                 Where this practice has delivered.
               </h2>
             </div>

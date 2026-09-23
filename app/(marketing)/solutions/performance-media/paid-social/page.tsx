@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { CreativeScrollFeed } from "@/components/utility/CreativeScrollFeed";
 // block), hero stats, First 30 Days, Paid Social Catalog, Architecture.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Paid Social — Performance Media | Zeppstr",
   description:
     "Most paid social fails on creative, not targeting. We run paid social as a creative production line — native, tested at volume, killed fast, winners doubled.",
-};
+  path: "/solutions/performance-media/paid-social",
+})
 
 // ─── Content ───
 
@@ -83,7 +85,7 @@ const PRINCIPLES = [
   {
     n: "04",
     title: "Kill fast. Double winners.",
-    body: "A creative that hasn&rsquo;t found product-market fit by Day 5 won&rsquo;t. Retire it. A creative beating ROAS targets gets fresh variants, more spend, and protection from fatigue.",
+    body: "A creative that hasn’t found product-market fit by Day 5 won’t. Retire it. A creative beating ROAS targets gets fresh variants, more spend, and protection from fatigue.",
   },
 ];
 
@@ -170,7 +172,7 @@ const PAID_SOCIAL_CATALOG = [
     items: [
       "Cohort ROAS · not platform",
       "Creative-level attribution",
-      "Saturation &amp; fatigue tracking",
+      "Saturation & fatigue tracking",
       "Cross-channel incrementality",
     ],
   },
@@ -191,7 +193,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Creative Layer",
     format: "Production line · 30+ creatives / month",
     description:
-      "Where the work actually happens. A briefed, produced, shipped, measured creative pipeline that treats throughput as the strategic asset &mdash; not the cost.",
+      "Where the work actually happens. A briefed, produced, shipped, measured creative pipeline that treats throughput as the strategic asset — not the cost.",
   },
   {
     name: "Testing Layer",
@@ -209,20 +211,20 @@ const ARCHITECTURE_LAYERS = [
     name: "Platform Layer",
     format: "Meta · TikTok · LinkedIn · YouTube",
     description:
-      "Native by platform. Same brand, different surface logic. Reels formats for Meta, vertical native for TikTok, longform thought leadership for LinkedIn &mdash; never cross-posted.",
+      "Native by platform. Same brand, different surface logic. Reels formats for Meta, vertical native for TikTok, longform thought leadership for LinkedIn — never cross-posted.",
   },
   {
     name: "Measurement Layer",
     format: "Cohort ROAS · Creative attribution · Incrementality",
     description:
-      "Platform-reported ROAS overstates paid&rsquo;s contribution by 30&ndash;60%. We measure cohort lift, holdout-tested incremental revenue, and creative-level attribution.",
+      "Platform-reported ROAS overstates paid’s contribution by 30–60%. We measure cohort lift, holdout-tested incremental revenue, and creative-level attribution.",
   },
 ];
 
 // 6 process phases — 12 weeks
 const PROCESS_PHASES = [
   {
-    title: "Audit &amp; Inventory",
+    title: "Audit & Inventory",
     duration: "Week 1–2",
     body: "Creative decay map, audience overlap, pixel integrity, attribution baseline. The leak points scored before any new creative is briefed.",
   },
@@ -247,7 +249,7 @@ const PROCESS_PHASES = [
     body: "Cohort attribution operational. Holdout cells running. Incrementality measured. Decisions get made from cohort lift, not platform reports.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 11+",
     body: "Weekly creative review. Monthly performance readout. Quarterly platform-mix rebalance. The account runs on cadence, not heroics.",
   },
@@ -265,22 +267,22 @@ const PRACTICE_NUMBERS = [
     figure: "Day 5",
     metric: "Cull threshold",
     detail:
-      "If a creative hasn&rsquo;t hit signal by Day 5, it won&rsquo;t. Retired without sentiment, slot opened for the next test.",
+      "If a creative hasn’t hit signal by Day 5, it won’t. Retired without sentiment, slot opened for the next test.",
     client: "Testing discipline",
   },
   {
-    figure: "1 in 5",
-    metric: "Tests that win",
+    figure: "33 → 2",
+    metric: "Creatives tested, creatives that survived",
     detail:
-      "Industry-realistic win rate. The 4 that lose are the work, not the failure. Each loss informs the next concept.",
-    client: "Across the practice",
+      "Thirty-three Meta concepts tested; two carried the account. The thirty-one that lost are the work, not the failure — retiring them is what the budget is actually buying.",
+    client: "Tru Aquapolis",
   },
   {
-    figure: "4–6×",
-    metric: "ROAS · top winners",
+    figure: "Concentration",
+    metric: "A handful of assets carry the account",
     detail:
-      "What the 20% of creatives that drive 80% of revenue look like. The math justifies the throughput.",
-    client: "Peak creative tier",
+      "Return is never spread evenly across creative. On Tru Aquapolis, 86% of Meta leads came from five assets out of thirty-three. Throughput exists to find those five.",
+    client: "Tru Aquapolis",
   },
 ];
 
@@ -296,7 +298,7 @@ const FAQS = [
   {
     question: "Do you produce the creative or just buy media?",
     answer:
-      "We produce. Concept, brief, script, edit, ship. We don&rsquo;t outsource the most leveraged part of paid social to a separate agency &mdash; the creative team and the media team share a Slack channel and a dashboard.",
+      "We produce. Concept, brief, script, edit, ship. We don’t outsource the most leveraged part of paid social to a separate agency — the creative team and the media team share a Slack channel and a dashboard.",
   },
   {
     question: "How do you decide which platforms to run on?",
@@ -306,17 +308,17 @@ const FAQS = [
   {
     question: "Will Advantage+ / Performance Max replace creative work?",
     answer:
-      "No. Algorithmic placement decisions improved; algorithmic creative still under-performs human-led creative at every account size we&rsquo;ve measured. The platform automates the parts that don&rsquo;t matter.",
+      "No. Algorithmic placement decisions improved; algorithmic creative still under-performs human-led creative at every account size we’ve measured. The platform automates the parts that don’t matter.",
   },
   {
     question: "What if we already have a brand book and locked visual guidelines?",
     answer:
-      "We work within them &mdash; mostly. Brand books designed for owned channels often choke paid social creative (too polished, too brand-forward). We&rsquo;ll either negotiate a paid-social addendum or run the creative tier explicitly outside brand for testing.",
+      "We work within them — mostly. Brand books designed for owned channels often choke paid social creative (too polished, too brand-forward). We’ll either negotiate a paid-social addendum or run the creative tier explicitly outside brand for testing.",
   },
   {
     question: "How do you handle creative fatigue at scale?",
     answer:
-      "Rolling refresh cadence (typically 6&ndash;10 weeks per winner), variant-on-winner production, and saturation tracking per audience cohort. Winners get protected before they decay, not after.",
+      "Rolling refresh cadence (typically 6–10 weeks per winner), variant-on-winner production, and saturation tracking per audience cohort. Winners get protected before they decay, not after.",
   },
   {
     question: "What does it cost?",
@@ -379,7 +381,7 @@ export default function PaidSocialPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop running ads.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     Produce creative
@@ -389,7 +391,7 @@ export default function PaidSocialPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
                   Paid social is 70% creative, 20% targeting, 10% bidding. We
-                  run it as a production line &mdash; native, tested at volume,
+                  run it as a production line — native, tested at volume,
                   killed fast, winners doubled.
                 </p>
 
@@ -397,7 +399,7 @@ export default function PaidSocialPage() {
                 <div className="grid grid-cols-3 gap-4 md:gap-6 py-6 mb-10 border-y border-ink-headline/15">
                   {HERO_STATS.map((stat, i) => (
                     <div key={i} className={i > 0 ? "md:pl-6 md:border-l border-ink-headline/15" : ""}>
-                      <p className="font-display font-extralight text-[clamp(24px,2.4vw,34px)] text-ink-headline leading-[1.1] tracking-[-0.02em] mb-1">
+                      <p className="font-display font-extralight text-display-md text-ink-headline leading-[1.1] tracking-[-0.02em] mb-1">
                         {stat.figure}
                       </p>
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted leading-[1.4]">
@@ -410,7 +412,7 @@ export default function PaidSocialPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a creative audit</span>
                     <span aria-hidden="true">→</span>
@@ -445,7 +447,7 @@ export default function PaidSocialPage() {
                 </p>
                 <h2
                   id="power-law-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Twenty percent of creative drives{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -494,7 +496,7 @@ export default function PaidSocialPage() {
                     <p
                       className={`font-display ${
                         row.isHero ? "font-bold text-brand-yellow" : "font-light text-white"
-                      } text-[clamp(22px,2vw,30px)] leading-[1.15] tracking-[-0.015em]`}
+                      } text-display-sm leading-[1.15] tracking-[-0.015em]`}
                     >
                       {row.band}
                     </p>
@@ -515,7 +517,7 @@ export default function PaidSocialPage() {
                     <p
                       className={`font-display ${
                         row.isHero ? "font-light text-brand-yellow" : "font-extralight text-white"
-                      } text-[clamp(22px,2.2vw,32px)] leading-[1.1] tracking-[-0.02em]`}
+                      } text-display-sm leading-[1.1] tracking-[-0.02em]`}
                     >
                       {row.pctOfRevenue}
                     </p>
@@ -558,7 +560,7 @@ export default function PaidSocialPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -579,7 +581,7 @@ export default function PaidSocialPage() {
                   </div>
                   <div>
                     <h3
-                      className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
+                      className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
                       dangerouslySetInnerHTML={{ __html: p.title }}
                     />
                     <p
@@ -606,7 +608,7 @@ export default function PaidSocialPage() {
                 </p>
                 <h2
                   id="first-30-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Concrete ground gained{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -640,7 +642,7 @@ export default function PaidSocialPage() {
                     </span>
                   </div>
                   <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mb-4" />
-                  <h3 className="font-display font-bold text-[clamp(20px,1.8vw,26px)] text-ink-headline tracking-[-0.015em] leading-[1.18] mb-5 max-w-[20ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.015em] leading-[1.18] mb-5 max-w-[20ch]">
                     {wk.label}
                   </h3>
                   <ul className="space-y-2 mt-auto">
@@ -682,7 +684,7 @@ export default function PaidSocialPage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -720,7 +722,7 @@ export default function PaidSocialPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -762,7 +764,7 @@ export default function PaidSocialPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -788,7 +790,7 @@ export default function PaidSocialPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -797,7 +799,7 @@ export default function PaidSocialPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -829,7 +831,7 @@ export default function PaidSocialPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Eleven weeks to a{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -855,11 +857,11 @@ export default function PaidSocialPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3
-                    className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
+                    className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
                     dangerouslySetInnerHTML={{ __html: phase.title }}
                   />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -885,7 +887,7 @@ export default function PaidSocialPage() {
               id="social-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve scaled on paid social
+              Brands we’ve scaled on paid social
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -919,7 +921,7 @@ export default function PaidSocialPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the program{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -939,10 +941,10 @@ export default function PaidSocialPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(34px,4vw,56px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-5 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-5 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(17px,1.4vw,22px)] tracking-[-0.005em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-xs tracking-[-0.005em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -988,13 +990,13 @@ export default function PaidSocialPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -1004,7 +1006,7 @@ export default function PaidSocialPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1012,7 +1014,7 @@ export default function PaidSocialPage() {
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <h3
-                      className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]"
+                      className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]"
                       dangerouslySetInnerHTML={{ __html: faq.question }}
                     />
                     <span
@@ -1039,7 +1041,7 @@ export default function PaidSocialPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop boosting posts.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Run a line
@@ -1052,14 +1054,14 @@ export default function PaidSocialPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid creative audit. We pull your creative
                   inventory, your fatigue map, your win-rate distribution
-                  &mdash; live on the call &mdash; and scope the production
-                  line to lift it. Refunded if we&rsquo;re not the right fit.
+                  — live on the call — and scope the production
+                  line to lift it. Refunded if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

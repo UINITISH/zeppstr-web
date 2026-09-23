@@ -39,6 +39,10 @@ export default defineConfig({
             S.listItem()
               .title("Quotes")
               .child(S.documentTypeList("quote").title("Reusable Quotes")),
+            S.divider(),
+            S.listItem()
+              .title("Client Projects (Dashboard)")
+              .child(S.documentTypeList("clientProject").title("Ongoing Client Projects")),
           ]),
     }),
     visionTool(),

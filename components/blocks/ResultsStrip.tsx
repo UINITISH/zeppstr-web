@@ -24,9 +24,30 @@ const RESULTS = [
     client: "Mini Leaves — Indian DTC consumer brand",
   },
   {
-    figure: "22M+",
-    metric: "Demand reach",
-    detail: "Into 3 premium flats sold direct from generated leads",
+    // Was: "22M+ / Demand reach / Into 3 premium flats sold direct from
+    // generated leads". Replaced 19 Aug 2026 for two reasons.
+    //
+    // 1. It contradicted the case study two sections below, which reports
+    //    1,690 qualified enquiries and ₹34 Cr+ of pipeline. Two different
+    //    claims about the same client on the same page, with the weaker one
+    //    appearing first.
+    // 2. "3 premium flats sold direct" is not traceable to any source document
+    //    in the archive. Booking counts depend on the client's sales team and
+    //    inventory, which is not ours to claim — see the editorial standards in
+    //    docs/CHANGELOG-2026-08-05.md.
+    //
+    // UPDATED 11 Sep 2026. The 85× figure above was the 90-day interim, with
+    // pipeline modelled at a 1% close rate. The full Jan–Aug engagement closed
+    // out well ahead of that estimate: ₹1.4 Cr media, 6,000+ leads, 75 units at
+    // a ₹2.5 Cr average = ₹187.5 Cr in *closed* sales, not modelled pipeline.
+    //
+    // "Closed from our leads" rather than "we generated ₹187.5 Cr" — TRU's own
+    // sales team closed every unit, and claiming the whole chain is what makes
+    // numbers this size unbelievable. The case study carries the full funnel
+    // arithmetic so the ratio can be checked.
+    figure: "75 units",
+    metric: "Closed from our leads",
+    detail: "₹1.4 Cr of media → ₹187.5 Cr in closed sales, Jan–Aug 2026",
     client: "Tru Aquapolis — Indian premium real estate",
   },
 ];
@@ -46,7 +67,7 @@ export function ResultsStrip() {
             </p>
             <h2
               id="results-heading"
-              className="font-bold tracking-[-0.025em] text-[clamp(44px,7vw,104px)] text-ink-headline leading-[1.02] max-w-[16ch] text-balance"
+              className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[16ch] text-balance"
             >
               What the{" "}
               <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">system</span>{" "}
@@ -77,12 +98,12 @@ export function ResultsStrip() {
               />
 
               {/* Big numeral */}
-              <p className="font-display font-extralight text-[clamp(64px,9vw,140px)] leading-[0.9] tracking-[-0.04em] text-ink-headline mb-6">
+              <p className="font-display font-extralight text-display-stat leading-[0.9] tracking-[-0.04em] text-ink-headline mb-6">
                 {r.figure}
               </p>
 
               {/* Metric label */}
-              <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+              <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                 {r.metric}
               </p>
 

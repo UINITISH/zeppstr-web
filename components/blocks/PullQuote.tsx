@@ -33,7 +33,7 @@ export function PullQuote({ quote, variant = "large", className }: PullQuoteProp
           variant === "large" ? "text-display-lg leading-tight" : "text-display-sm leading-snug"
         )}
       >
-        &ldquo;{quote.quoteText}&rdquo;
+        “{quote.quoteText}”
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-4">
         {photo && (

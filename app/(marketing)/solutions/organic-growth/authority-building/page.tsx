@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { CitationGraph } from "@/components/utility/CitationGraph";
 // Earned-Media Catalog, Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Authority Building — Organic Growth Practice | Zeppstr",
   description:
-    "Stop building links. Start building citations. Authority isn't bought — it's earned in publications that matter, then leveraged across the rest of the practice.",
-};
+    "Stop building links. Start building citations. Authority isn’t bought — it’s earned in publications that matter, then leveraged across the rest of the practice.",
+  path: "/solutions/organic-growth/authority-building",
+})
 
 // ─── Content ───
 
@@ -72,7 +74,7 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Earned first, leveraged second.",
-    body: "Authority can&rsquo;t be bought into existence. It has to be earned in publications that wouldn&rsquo;t take money for it. Once earned, every other channel &mdash; paid, lifecycle, sales &mdash; gets to leverage it.",
+    body: "Authority can’t be bought into existence. It has to be earned in publications that wouldn’t take money for it. Once earned, every other channel — paid, lifecycle, sales — gets to leverage it.",
   },
   {
     n: "02",
@@ -82,12 +84,12 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Source &gt; placement.",
-    body: "Becoming the source other people cite when they don&rsquo;t have to beats placing 100 articles in publications that nobody reads. Source-of-truth is the asset; the article is the receipt.",
+    body: "Becoming the source other people cite when they don’t have to beats placing 100 articles in publications that nobody reads. Source-of-truth is the asset; the article is the receipt.",
   },
   {
     n: "04",
     title: "Real publications, real journalists.",
-    body: "We don&rsquo;t guest-post on networks, don&rsquo;t buy from link sellers, don&rsquo;t use PR distribution as a substitute for relationships. The work is slower. The authority compounds.",
+    body: "We don’t guest-post on networks, don’t buy from link sellers, don’t use PR distribution as a substitute for relationships. The work is slower. The authority compounds.",
   },
 ];
 
@@ -132,7 +134,7 @@ const EARNED_MEDIA_CATALOG = [
   {
     category: "Paid Placement, Done Well",
     items: [
-      "Native &amp; sponsored editorial",
+      "Native & sponsored editorial",
       "Premium podcast sponsorships",
       "Vetted media partnerships",
       "Industry-report co-publishing",
@@ -155,13 +157,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Audience Layer",
     format: "Beat reporters · Vertical media · Aggregators",
     description:
-      "Who actually decides what your category gets cited as. Reporters, editors, podcasters, newsletter writers &mdash; the human layer that earns the citation. Mapped, not assumed.",
+      "Who actually decides what your category gets cited as. Reporters, editors, podcasters, newsletter writers — the human layer that earns the citation. Mapped, not assumed.",
   },
   {
     name: "Source Layer",
     format: "Research · POV · Expert · Data",
     description:
-      "What we have that they want. Original research, sharp POV, expert sources, internal data &mdash; the assets that make us the source instead of the supplicant.",
+      "What we have that they want. Original research, sharp POV, expert sources, internal data — the assets that make us the source instead of the supplicant.",
   },
   {
     name: "Outreach Layer",
@@ -173,7 +175,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Placement Layer",
     format: "Citations · Quotes · Profiles · Co-published",
     description:
-      "What comes back. A citation in a beat reporter&rsquo;s piece. A quote in a feature. A co-published industry report. Tracked, archived, measured.",
+      "What comes back. A citation in a beat reporter’s piece. A quote in a feature. A co-published industry report. Tracked, archived, measured.",
   },
   {
     name: "Leverage Layer",
@@ -203,7 +205,7 @@ const PROCESS_PHASES = [
   {
     title: "Outreach Cadence",
     duration: "Week 7–9",
-    body: "Targeted pitches go out per beat reporter. Long-term relationship cadence established &mdash; introductions before asks.",
+    body: "Targeted pitches go out per beat reporter. Long-term relationship cadence established — introductions before asks.",
   },
   {
     title: "Placement & Capture",
@@ -226,17 +228,17 @@ const PRACTICE_NUMBERS = [
     client: "Standard scope",
   },
   {
-    figure: "×10",
-    metric: "Authority multiplier",
+    figure: "Concentration",
+    metric: "A few real citations beat a long list",
     detail:
-      "Weight a T1 citation carries vs a T4 aggregator. Concentration matters more than count.",
-    client: "Tier weight",
+      "One placement a human would actually click is worth more than a page of directory listings. We do not publish a multiplier for this, because the weighting is Google's and is not disclosed.",
+    client: "Zeppstr — how we judge a link",
   },
   {
     figure: "12 mo",
     metric: "Minimum engagement",
     detail:
-      "Relationships compound. We don&rsquo;t take 90-day pilots in this practice &mdash; the math doesn&rsquo;t work for either side.",
+      "Relationships compound. We don’t take 90-day pilots in this practice — the math doesn’t work for either side.",
     client: "Engagement floor",
   },
 ];
@@ -251,9 +253,9 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Isn&rsquo;t this just PR with a different name?",
+    question: "Isn’t this just PR with a different name?",
     answer:
-      "PR is the broader category &mdash; we&rsquo;re a specific cut of it focused on earning the kind of citations that move SEO authority, sales trust, and category positioning. We don&rsquo;t do crisis comms, internal comms, or event press.",
+      "PR is the broader category — we’re a specific cut of it focused on earning the kind of citations that move SEO authority, sales trust, and category positioning. We don’t do crisis comms, internal comms, or event press.",
   },
   {
     question: "Do you guarantee placements?",
@@ -263,17 +265,17 @@ const FAQS = [
   {
     question: "How is this different from link-building agencies?",
     answer:
-      "Link-building optimizes for the URL. We optimize for the citation &mdash; the sentence that frames you as the source. Citations rank. Links accumulate. Most link-building moves the wrong number.",
+      "Link-building optimizes for the URL. We optimize for the citation — the sentence that frames you as the source. Citations rank. Links accumulate. Most link-building moves the wrong number.",
   },
   {
     question: "Will you do paid placements?",
     answer:
-      "Sometimes. Native editorial in real publications, podcast sponsorships, industry-report co-publishing &mdash; yes. Sponsored backlinks dressed up as editorial, pay-to-play awards, blog network buys &mdash; no.",
+      "Sometimes. Native editorial in real publications, podcast sponsorships, industry-report co-publishing — yes. Sponsored backlinks dressed up as editorial, pay-to-play awards, blog network buys — no.",
   },
   {
     question: "How long until we see results?",
     answer:
-      "First placements typically land in months 3&ndash;4. The compounding starts around month 6 (one citation makes the next easier). The real authority lift shows up around month 12 &mdash; which is why we don&rsquo;t take shorter engagements.",
+      "First placements typically land in months 3–4. The compounding starts around month 6 (one citation makes the next easier). The real authority lift shows up around month 12 — which is why we don’t take shorter engagements.",
   },
   {
     question: "What does it cost?",
@@ -336,7 +338,7 @@ export default function AuthorityBuildingPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop building links. Start building{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     citations
@@ -345,8 +347,8 @@ export default function AuthorityBuildingPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  Authority isn&rsquo;t bought. It&rsquo;s earned in
-                  publications that wouldn&rsquo;t take money for it &mdash;
+                  Authority isn’t bought. It’s earned in
+                  publications that wouldn’t take money for it —
                   then leveraged across paid, lifecycle, and sales for the rest
                   of the year.
                 </p>
@@ -354,7 +356,7 @@ export default function AuthorityBuildingPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for an authority audit</span>
                     <span aria-hidden="true">→</span>
@@ -389,7 +391,7 @@ export default function AuthorityBuildingPage() {
                 </p>
                 <h2
                   id="hierarchy-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Not every citation is{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -451,7 +453,7 @@ export default function AuthorityBuildingPage() {
                       <p
                         className={`font-display ${
                           isTop ? "font-bold" : "font-light"
-                        } text-[clamp(18px,1.7vw,22px)] text-white leading-[1.25] tracking-[-0.005em]`}
+                        } text-display-xs text-white leading-[1.25] tracking-[-0.005em]`}
                       >
                         {row.label}
                       </p>
@@ -465,7 +467,7 @@ export default function AuthorityBuildingPage() {
                       <p
                         className={`font-display ${
                           isTop ? "font-light text-brand-yellow" : "font-extralight text-white/75"
-                        } text-[clamp(18px,1.8vw,24px)] leading-[1.1] tracking-[-0.01em]`}
+                        } text-display-xs leading-[1.1] tracking-[-0.01em]`}
                       >
                         {row.weight}
                       </p>
@@ -504,7 +506,7 @@ export default function AuthorityBuildingPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -525,7 +527,7 @@ export default function AuthorityBuildingPage() {
                   </div>
                   <div>
                     <h3
-                      className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
+                      className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
                       dangerouslySetInnerHTML={{ __html: p.title }}
                     />
                     <p
@@ -552,7 +554,7 @@ export default function AuthorityBuildingPage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -590,7 +592,7 @@ export default function AuthorityBuildingPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -632,7 +634,7 @@ export default function AuthorityBuildingPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -658,7 +660,7 @@ export default function AuthorityBuildingPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -667,7 +669,7 @@ export default function AuthorityBuildingPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -699,7 +701,7 @@ export default function AuthorityBuildingPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks to first{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -725,10 +727,10 @@ export default function AuthorityBuildingPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -754,7 +756,7 @@ export default function AuthorityBuildingPage() {
               id="authority-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve earned citations for
+              Brands we’ve earned citations for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -788,7 +790,7 @@ export default function AuthorityBuildingPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the practice{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -810,10 +812,10 @@ export default function AuthorityBuildingPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -859,13 +861,13 @@ export default function AuthorityBuildingPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -875,7 +877,7 @@ export default function AuthorityBuildingPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -883,7 +885,7 @@ export default function AuthorityBuildingPage() {
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <h3
-                      className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]"
+                      className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]"
                       dangerouslySetInnerHTML={{ __html: faq.question }}
                     />
                     <span
@@ -910,7 +912,7 @@ export default function AuthorityBuildingPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop being a vendor.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Become the source
@@ -923,14 +925,14 @@ export default function AuthorityBuildingPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid authority audit. We score your current
                   citation graph, your source assets, and the publications you
-                  should be in &mdash; but aren&rsquo;t. Refunded in full if
-                  we&rsquo;re not the right fit.
+                  should be in — but aren’t. Refunded in full if
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

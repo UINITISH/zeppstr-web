@@ -53,11 +53,11 @@ export function TrustStrip({ label, stats }: TrustStripProps) {
                   />
                 )}
 
-                <div className="font-display font-extralight text-[clamp(48px,5vw,72px)] leading-[0.95] tracking-[-0.02em] text-ink-headline mb-1">
+                <div className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.02em] text-ink-headline mb-1">
                   <span className="font-medium text-ink-headline">{stat.accent}</span>
                 </div>
                 {stat.after && (
-                  <div className="font-display font-extralight text-display-md leading-[1.1] tracking-[-0.01em] text-brand-blue mb-6">
+                  <div className="font-display font-light text-display-md leading-[1.1] tracking-[-0.01em] text-brand-blue mb-6">
                     {stat.after}
                   </div>
                 )}

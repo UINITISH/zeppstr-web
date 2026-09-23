@@ -3,34 +3,62 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { logoBox, INTAKE_LOGO } from "@/lib/logo-optical";
 
 // Client logos shown alongside the intake form. Uses the same files as
 // the home page Logos Wall — 24 brands curated for relevance.
+/**
+ * Trust strip on the intake form.
+ *
+ * ── REBUILT 15 SEP 2026 ─────────────────────────────────────────────────────
+ * Two problems with the previous list:
+ *
+ * 1. It predated the nine logos supplied on 13 Sep and so was missing every
+ *    one of them — including Tru Aquapolis and Invest in Sharjah, the two
+ *    clients whose results are quoted in the caption directly beneath this
+ *    grid. The form cited outcomes for brands whose marks were not on display.
+ *
+ * 2. Twenty-three logos in a four-column grid left a final row of three,
+ *    which reads as unfinished on the page where we are asking a stranger for
+ *    their contact details. Now twenty — five clean rows of four.
+ *
+ * ── SELECTION ───────────────────────────────────────────────────────────────
+ * This is the trust strip, not the full roster (that is the 32-logo wall on
+ * the homepage). Chosen for: the brands the caption names, international
+ * spread, and marks that survive being rendered small. Deliberately omitted —
+ * Scageon (aspect ratio 7.56; at this cell size it is a hairline and reads as
+ * a stray rule), plus a handful of very low-contrast marks that render as grey
+ * smudges at 46px.
+ *
+ * KEEP THE COUNT A MULTIPLE OF FOUR. Adding one logo means adding four, or
+ * moving one out.
+ */
 const LOGOS = [
+  // Named in the caption below this grid
   "wise-market.png",
   "mini-leaves.png",
-  "tristar-online.png",
-  "prestige-group.png",
-  "aishwarya-interiors.png",
+  "tru-aquapolis.png",
+  // International
+  "invest-in-sharjah.png",
+  "truglobal.png",
+  "leverage-edu.png",
+  "moonwalk.png",
+  "pohewala-2018.png",
+  // SaaS / tech
   "empuls.png",
   "fixstars.png",
   "prohance.png",
+  "learncab.png",
+  // Consumer / retail
   "my-keto-co.png",
   "lucky-white-goods.png",
   "sky-phonez.png",
-  "homatico.png",
-  "pacer.png",
-  "ignite.png",
+  "tristar-online.png",
+  // Services / finance / automotive
   "twenty-one-finance.png",
-  "tansi-fintech.png",
-  "learncab.png",
+  "pacer.png",
   "ace-online.png",
-  "bsg.png",
-  "nakshatech.png",
   "vehiclemall.png",
-  "ivehiclevalue.png",
-  "jp-parking-yard.png",
-  "eagledrift.png",
 ];
 
 /**
@@ -234,7 +262,7 @@ export function DiagnosticIntake() {
                 <span className="inline-block w-2 h-2 bg-brand-yellow mr-2 align-middle" />
                 Trusted by
               </p>
-              <h3 className="font-bold tracking-[-0.02em] text-[clamp(20px,1.8vw,26px)] text-ink-headline leading-[1.2] mb-8 max-w-[24ch]">
+              <h3 className="font-bold tracking-[-0.02em] text-display-sm text-ink-headline leading-[1.2] mb-8 max-w-[24ch]">
                 300+ businesses across 10+ countries — a few you may know.
               </h3>
 
@@ -246,11 +274,16 @@ export function DiagnosticIntake() {
                     className="relative flex items-center justify-center h-[80px] xl:h-[88px] px-3 border-r border-b border-ink-headline/10 bg-bg-primary"
                   >
                     <Image
-                      src={`/client-logos/${file}`}
+                      src={`/client-logos/v3/${file}`}
                       alt=""
                       width={120}
                       height={48}
-                      className="max-h-[60%] max-w-[80%] w-auto object-contain"
+                      /* Optical area sizing — see lib/logo-optical.ts. The
+                         percentage caps here sized each mark to the cell, so a
+                         wordmark and a square crest came out at wildly
+                         different ink weight in the same strip. */
+                      style={logoBox(file, INTAKE_LOGO)}
+                      className="w-auto h-auto object-contain"
                       sizes="120px"
                     />
                   </div>
@@ -259,8 +292,9 @@ export function DiagnosticIntake() {
 
               <p className="mt-8 font-body text-body-sm text-ink-muted leading-relaxed max-w-[44ch]">
                 Wise Market grew AUD 40K → AUD 2.7M in six months. Mini Leaves
-                moved from 0.5% conversion to 3%+. Tru Aquapolis turned 22M+ views
-                into closed flats. The same architecture, applied across categories.
+                moved from 0.5% conversion to 3%+. Tru Aquapolis sold 75
+                apartments — ₹187.5 Cr — from ₹1.4 Cr of media. The same
+                architecture, applied across categories.
               </p>
             </div>
           </aside>
@@ -274,7 +308,7 @@ export function DiagnosticIntake() {
             >
               {/* Top row — title + step counter side-by-side, single-line title */}
               <div className="flex items-baseline justify-between gap-6 mb-3">
-                <h2 className="font-bold tracking-[-0.02em] text-[clamp(20px,2.2vw,30px)] text-ink-headline leading-[1.1] whitespace-nowrap">
+                <h2 className="font-bold tracking-[-0.02em] text-display-sm text-ink-headline leading-[1.1] whitespace-nowrap">
                   {step === 0 && "Let’s start with you."}
                   {step === 1 && "Tell us about your business."}
                   {step === 2 && "Where does it leak?"}
@@ -708,7 +742,7 @@ function LoadingScreen() {
     <div className="container-layout pt-20 md:pt-28 pb-40">
       <div className="max-w-[720px] mx-auto text-center">
         <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mx-auto mb-8 animate-pulse" />
-        <h1 className="font-bold tracking-[-0.025em] text-[clamp(32px,4.5vw,56px)] text-ink-headline leading-[1.1] mb-6">
+        <h1 className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.1] mb-6">
           Filing your intake.
         </h1>
         <p className="font-body text-body-lg text-ink-body leading-[1.55]">
@@ -733,8 +767,8 @@ function ConfirmationScreen({
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-muted mb-5">
           Received
         </p>
-        <h1 className="font-bold tracking-[-0.025em] text-[clamp(36px,5.5vw,72px)] text-ink-headline leading-[1.05] mb-10 max-w-[20ch] text-balance">
-          We&rsquo;ve got it.{" "}
+        <h1 className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.05] mb-10 max-w-[20ch] text-balance">
+          We’ve got it.{" "}
           <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
             Report
           </span>{" "}
@@ -742,7 +776,7 @@ function ConfirmationScreen({
         </h1>
         <p className="font-body text-body-lg text-ink-body leading-[1.6] max-w-[58ch] mb-6">
           Your intake is in our system. A member of the Zeppstr team will read it
-          against the patterns we&rsquo;ve seen across 300+ businesses and send your
+          against the patterns we’ve seen across 300+ businesses and send your
           preliminary read to <strong className="text-ink-headline">{email}</strong> within 24 hours — usually faster.
         </p>
         <p className="font-body text-body text-ink-body leading-[1.6] max-w-[58ch] mb-12">
@@ -773,7 +807,7 @@ function ConfirmationScreen({
         <div className="flex flex-wrap items-center gap-6">
           <Link
             href="/work"
-            className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(16px,1.2vw,20px)] px-7 py-3.5 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+            className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-7 py-3.5 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
           >
             <span>See selected work</span>
             <span aria-hidden="true">→</span>

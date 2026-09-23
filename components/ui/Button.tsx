@@ -8,14 +8,23 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        // Solid yellow with a hard bottom edge — the shadow reads as weight
+        // rather than a glow, which suits the flat editorial system. Do not use
+        // `primary` on a yellow background; use `onYellow` instead.
         primary:
-          "bg-brand-yellow text-[#000] hover:bg-brand-yellow-hover hover:-translate-y-px",
+          "bg-brand-yellow text-[#000] hover:bg-brand-yellow-hover hover:-translate-y-px shadow-[0_2px_0_0_rgba(0,0,0,0.22)] hover:shadow-[0_4px_0_0_rgba(0,0,0,0.28)]",
+        // For CTAs placed ON a yellow panel (CTABanner, DiagnosticIntake).
+        // Yellow-on-yellow has no contrast; emerald is the strongest pairing.
+        onYellow:
+          "bg-emerald-900 text-white hover:bg-ink-headline hover:-translate-y-px shadow-[0_2px_0_0_rgba(0,0,0,0.18)] hover:shadow-[0_4px_0_0_rgba(0,0,0,0.22)]",
         secondary:
-          "text-brand-blue hover:opacity-70 after:content-['_→']",
+          "text-brand-blue underline underline-offset-4 decoration-1 decoration-brand-blue/40 hover:opacity-70 after:content-['_→']",
         ghost:
           "text-ink-headline hover:bg-bg-secondary",
+        // Heavier border than the default hairline so it holds its own as an
+        // action rather than reading as a container.
         outline:
-          "border border-rule text-ink-headline hover:border-ink-headline",
+          "border-[1.5px] border-ink-headline/70 text-ink-headline hover:bg-ink-headline hover:text-white hover:border-ink-headline",
       },
       size: {
         default: "px-[42px] py-[18px] rounded text-button",

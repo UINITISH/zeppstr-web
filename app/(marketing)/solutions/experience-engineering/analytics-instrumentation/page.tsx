@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { DataInstrumentationFlow } from "@/components/utility/DataInstrumentatio
 // Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Analytics & Instrumentation — Experience & Engineering | Zeppstr",
   description:
-    "If you can't trust the number, you can't trust the decision. We build one event spec, one identity model, one warehouse — and every tool downstream of it.",
-};
+    "If you can’t trust the number, you can’t trust the decision. We build one event spec, one identity model, one warehouse — and every tool downstream of it.",
+  path: "/solutions/experience-engineering/analytics-instrumentation",
+})
 
 // ─── Content ───
 
@@ -37,13 +39,13 @@ const FOUR_LIES = [
   {
     n: "01",
     lie: "Attribution is honest.",
-    why: "Last-click ignores 70% of the journey. Every channel takes credit it didn&rsquo;t earn.",
+    why: "Last-click ignores 70% of the journey. Every channel takes credit it didn’t earn.",
     fix: "Modeled multi-touch attribution backed by a real identity graph.",
   },
   {
     n: "02",
     lie: "Funnel rates are real.",
-    why: "Half of every funnel drop is missing instrumentation, not real abandonment. The numbers look like a problem &mdash; the problem is the schema.",
+    why: "Half of every funnel drop is missing instrumentation, not real abandonment. The numbers look like a problem — the problem is the schema.",
     fix: "Event coverage audit. Schema before dashboards.",
   },
   {
@@ -55,7 +57,7 @@ const FOUR_LIES = [
   {
     n: "04",
     lie: "A/B tests are valid.",
-    why: "No sample-ratio-mismatch detection, no minimum detectable effect, no holdout. The test &ldquo;won&rdquo; on noise.",
+    why: "No sample-ratio-mismatch detection, no minimum detectable effect, no holdout. The test “won” on noise.",
     fix: "Experiment framework with SRM, MDE, and pre-registered hypotheses.",
   },
 ];
@@ -74,8 +76,8 @@ const PRINCIPLES = [
   },
   {
     n: "03",
-    title: "If you can&rsquo;t replay it, you can&rsquo;t trust it.",
-    body: "Raw events stored, immutable. Every dashboard rebuildable from source. If the model breaks, you don&rsquo;t lose history &mdash; you re-derive it.",
+    title: "If you can’t replay it, you can’t trust it.",
+    body: "Raw events stored, immutable. Every dashboard rebuildable from source. If the model breaks, you don’t lose history — you re-derive it.",
   },
   {
     n: "04",
@@ -212,18 +214,18 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "87%",
-    metric: "Event-coverage gap",
+    figure: "0 vs 147",
+    metric: "What the platform saw vs what the CRM held",
     detail:
-      "Average gap between what teams think they track and what they actually capture, found on first audit.",
-    client: "Across the practice",
+      "Same month, two scoreboards. The ad account recorded zero conversions while 147 real enquiries sat in the CRM. Nothing downstream of that number was trustworthy until it was fixed.",
+    client: "Tru Aquapolis",
   },
   {
     figure: "5 → 1",
     metric: "Sources of truth",
     detail:
       "Most clients arrive with five tools each claiming different numbers. Target state is one warehouse, every tool downstream.",
-    client: "Standard outcome",
+    client: "Zeppstr — target state",
   },
   {
     figure: "3 / 12",
@@ -246,22 +248,22 @@ const FAQS = [
   {
     question: "We already use GA4 / Mixpanel / Amplitude. Do you re-platform us?",
     answer:
-      "Only if the platform is the bottleneck. Most engagements add a warehouse + identity layer behind your existing tools so they finally agree with each other. We don&rsquo;t default to rip-and-replace.",
+      "Only if the platform is the bottleneck. Most engagements add a warehouse + identity layer behind your existing tools so they finally agree with each other. We don’t default to rip-and-replace.",
   },
   {
     question: "Do we need a data team, or do you replace one?",
     answer:
-      "We build the system so a non-specialist team can operate it. If you have a data team, we hand it to them in production-ready form. If you don&rsquo;t, we&rsquo;ll usually advise hiring one analytics engineer by month six.",
+      "We build the system so a non-specialist team can operate it. If you have a data team, we hand it to them in production-ready form. If you don’t, we’ll usually advise hiring one analytics engineer by month six.",
   },
   {
     question: "What if our engineering team is the bottleneck?",
     answer:
-      "Common. The audit usually surfaces this. We&rsquo;ll scope the implementation in chunks engineering can absorb — or bring our own implementation partner in for the SDK + warehouse work.",
+      "Common. The audit usually surfaces this. We’ll scope the implementation in chunks engineering can absorb — or bring our own implementation partner in for the SDK + warehouse work.",
   },
   {
     question: "Where do you stand on GA4?",
     answer:
-      "GA4 is fine as a dashboard tool. It&rsquo;s a poor source of truth — sampled, modeled, and not yours. Use it for board-deck graphs; use your warehouse for decisions.",
+      "GA4 is fine as a dashboard tool. It’s a poor source of truth — sampled, modeled, and not yours. Use it for board-deck graphs; use your warehouse for decisions.",
   },
   {
     question: "How do you handle privacy and consent?",
@@ -329,24 +331,24 @@ export default function AnalyticsInstrumentationPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
-                  If you can&rsquo;t{" "}
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
+                  If you can’t{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     trust the number
                   </span>
-                  , don&rsquo;t trust the decision.
+                  , don’t trust the decision.
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   One event spec. One identity model. One warehouse. Every tool
-                  downstream of it &mdash; agreeing, finally, on the same
+                  downstream of it — agreeing, finally, on the same
                   numbers.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for an instrumentation audit</span>
                     <span aria-hidden="true">→</span>
@@ -381,7 +383,7 @@ export default function AnalyticsInstrumentationPage() {
                 </p>
                 <h2
                   id="four-lies-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Four lies your{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -415,11 +417,11 @@ export default function AnalyticsInstrumentationPage() {
                       aria-hidden="true"
                       className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 line-through"
                     >
-                      &ldquo;Believed&rdquo;
+                      “Believed”
                     </span>
                   </div>
                   {/* Lie statement */}
-                  <h3 className="font-display font-light text-[clamp(24px,2.4vw,34px)] text-white leading-[1.15] tracking-[-0.01em] mb-5 line-through decoration-brand-yellow/60 decoration-[1px]">
+                  <h3 className="font-display font-light text-display-md text-white leading-[1.15] tracking-[-0.01em] mb-5 line-through decoration-brand-yellow/60 decoration-[1px]">
                     {l.lie}
                   </h3>
                   {/* Why it's a lie */}
@@ -429,7 +431,7 @@ export default function AnalyticsInstrumentationPage() {
                   />
                   {/* Fix */}
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-yellow border-t border-white/15 pt-5 mt-auto">
-                    Fix → {l.fix.replace(/&rsquo;/g, "'")}
+                    Fix → {l.fix.replace(/’/g, "'")}
                   </p>
                 </li>
               ))}
@@ -449,7 +451,7 @@ export default function AnalyticsInstrumentationPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -469,7 +471,7 @@ export default function AnalyticsInstrumentationPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -496,7 +498,7 @@ export default function AnalyticsInstrumentationPage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -534,7 +536,7 @@ export default function AnalyticsInstrumentationPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -576,7 +578,7 @@ export default function AnalyticsInstrumentationPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers between{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -602,7 +604,7 @@ export default function AnalyticsInstrumentationPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -611,7 +613,7 @@ export default function AnalyticsInstrumentationPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -642,7 +644,7 @@ export default function AnalyticsInstrumentationPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks from audit to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -668,10 +670,10 @@ export default function AnalyticsInstrumentationPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -696,7 +698,7 @@ export default function AnalyticsInstrumentationPage() {
               id="analytics-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve instrumented
+              Brands we’ve instrumented
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -730,7 +732,7 @@ export default function AnalyticsInstrumentationPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the audit{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -752,10 +754,10 @@ export default function AnalyticsInstrumentationPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p className="font-body text-body text-ink-body leading-[1.5] max-w-[34ch]">
@@ -800,13 +802,13 @@ export default function AnalyticsInstrumentationPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -816,14 +818,14 @@ export default function AnalyticsInstrumentationPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -850,7 +852,7 @@ export default function AnalyticsInstrumentationPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop debating numbers.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Trust them
@@ -863,13 +865,13 @@ export default function AnalyticsInstrumentationPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid instrumentation audit. We score your event
                   coverage, identity resolution, and source-of-truth count.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

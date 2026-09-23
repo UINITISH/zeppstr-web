@@ -26,7 +26,7 @@ export function FAQAccordion({ faqs, eyebrow, heading, className }: FAQAccordion
           <div className="mb-12 text-center">
             {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
             {heading && (
-              <h2 className="font-display font-extralight text-display-lg text-ink-headline tracking-tight">
+              <h2 className="font-display font-light text-display-lg text-ink-headline tracking-tight">
                 {heading}
               </h2>
             )}

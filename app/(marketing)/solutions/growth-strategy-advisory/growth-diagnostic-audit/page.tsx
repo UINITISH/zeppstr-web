@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { DiagnosticReportCover } from "@/components/utility/DiagnosticReportCove
 // Diagnostic Catalog, Architecture, 4–6 week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Growth Diagnostic & Audit — Growth Strategy & Advisory | Zeppstr",
   description:
-    "Most marketing problems are diagnosis problems. A written growth diagnostic, six weeks end-to-end, readable in thirty minutes, actionable on Monday morning. Refundable if we're wrong.",
-};
+    "Most marketing problems are diagnosis problems. A written growth diagnostic, six weeks end-to-end, readable in thirty minutes, actionable on Monday morning. Refundable if we’re wrong.",
+  path: "/solutions/growth-strategy-advisory/growth-diagnostic-audit",
+})
 
 // ─── Content ───
 
@@ -36,7 +38,7 @@ const FEATURED_LOGOS = [
 const DESCENT = [
   {
     label: "Reported symptom",
-    text: "&ldquo;Revenue is down 18% this quarter.&rdquo;",
+    text: "“Revenue is down 18% this quarter.”",
     sub: "What the founder says in the kickoff call.",
   },
   {
@@ -61,7 +63,7 @@ const DESCENT = [
   },
   {
     label: "Diagnosis",
-    text: "Paid is paying for traffic the brand already had. Revenue isn&rsquo;t down — paid spend is up, against itself.",
+    text: "Paid is paying for traffic the brand already had. Revenue isn’t down — paid spend is up, against itself.",
     sub: "→ 90-day plan: pause generic search, redirect to demand-gen, exclude brand terms.",
     isDiagnosis: true,
   },
@@ -72,12 +74,12 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Diagnosis is the work.",
-    body: "Not an opening for a longer engagement. Not a sales deck disguised as analysis. The written diagnostic is the deliverable &mdash; whether or not you ever work with us again.",
+    body: "Not an opening for a longer engagement. Not a sales deck disguised as analysis. The written diagnostic is the deliverable — whether or not you ever work with us again.",
   },
   {
     n: "02",
     title: "Symptom &ne; diagnosis.",
-    body: "&ldquo;Conversion is down&rdquo; is a symptom. &ldquo;Brand promise mismatch with paid creative&rdquo; is a diagnosis. We don&rsquo;t prescribe until we&rsquo;ve descended through the symptom to the actual cause.",
+    body: "“Conversion is down” is a symptom. “Brand promise mismatch with paid creative” is a diagnosis. We don’t prescribe until we’ve descended through the symptom to the actual cause.",
   },
   {
     n: "03",
@@ -87,7 +89,7 @@ const PRINCIPLES = [
   {
     n: "04",
     title: "Refundable, by design.",
-    body: "If the diagnostic doesn&rsquo;t name something you didn&rsquo;t already know, we refund it. The bar isn&rsquo;t &ldquo;the work was done.&rdquo; The bar is &ldquo;you learned something.&rdquo;",
+    body: "If the diagnostic doesn’t name something you didn’t already know, we refund it. The bar isn’t “the work was done.” The bar is “you learned something.”",
   },
 ];
 
@@ -155,7 +157,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Intake Layer",
     format: "Kickoff · stakeholder interviews · access",
     description:
-      "Founder interview, leadership round, customer call sampling, tool access provisioned. The questions we&rsquo;ll descend through, written before any data is touched.",
+      "Founder interview, leadership round, customer call sampling, tool access provisioned. The questions we’ll descend through, written before any data is touched.",
   },
   {
     name: "Evidence Layer",
@@ -167,13 +169,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Descent Layer",
     format: "Symptom → Cause · 4–6 layers deep",
     description:
-      "Each finding traced from reported symptom through 4&ndash;6 layers of inquiry to its underlying cause. Documented step-by-step so the diagnosis can be argued with, not just received.",
+      "Each finding traced from reported symptom through 4–6 layers of inquiry to its underlying cause. Documented step-by-step so the diagnosis can be argued with, not just received.",
   },
   {
     name: "Diagnosis Layer",
     format: "Findings · Severity · Confidence",
     description:
-      "Each finding written up with severity, evidence, confidence interval, and a clear &ldquo;so what.&rdquo; This is the document you forward to the board.",
+      "Each finding written up with severity, evidence, confidence interval, and a clear “so what.” This is the document you forward to the board.",
   },
   {
     name: "Plan Layer",
@@ -203,7 +205,7 @@ const PROCESS_PHASES = [
   {
     title: "Drafting",
     duration: "Week 4–5",
-    body: "Written diagnostic drafted. Reviewed internally for argumentative clarity &mdash; if it doesn&rsquo;t survive an internal challenge, it doesn&rsquo;t ship.",
+    body: "Written diagnostic drafted. Reviewed internally for argumentative clarity — if it doesn’t survive an internal challenge, it doesn’t ship.",
   },
   {
     title: "Readout",
@@ -213,7 +215,7 @@ const PROCESS_PHASES = [
   {
     title: "Final + Refund Window",
     duration: "Week 6",
-    body: "Final document delivered. If it didn&rsquo;t name something you didn&rsquo;t already know, we refund. The bar is learning &mdash; not delivery.",
+    body: "Final document delivered. If it didn’t name something you didn’t already know, we refund. The bar is learning — not delivery.",
   },
 ];
 
@@ -229,14 +231,14 @@ const PRACTICE_NUMBERS = [
     figure: "4–6 wks",
     metric: "End-to-end cycle",
     detail:
-      "Intake to delivered document. Compressed deliberately &mdash; if it takes longer, the diagnosis has stopped being timely.",
+      "Intake to delivered document. Compressed deliberately — if it takes longer, the diagnosis has stopped being timely.",
     client: "Standard cycle",
   },
   {
     figure: "100%",
     metric: "Refundable",
     detail:
-      "If the diagnostic doesn&rsquo;t name something you didn&rsquo;t already know, we refund. The bar is learning, not delivery.",
+      "If the diagnostic doesn’t name something you didn’t already know, we refund. The bar is learning, not delivery.",
     client: "Refund clause",
   },
 ];
@@ -253,12 +255,12 @@ const FAQS = [
   {
     question: "Is this the same as the diagnostic on the home page?",
     answer:
-      "No. The 45-minute paid diagnostic on the home page is a triage call &mdash; useful for fit and pointing at the right practice. This is the full written growth diagnostic &mdash; six weeks of work, ₹4L&ndash;6L, a 30&ndash;50 page document, refundable.",
+      "No. The 45-minute paid diagnostic on the home page is a triage call — useful for fit and pointing at the right practice. This is the full written growth diagnostic — six weeks of work, ₹4L–6L, a 30–50 page document, refundable.",
   },
   {
     question: "Will you upsell us into a longer engagement?",
     answer:
-      "Sometimes the right next step is one of our practices &mdash; sometimes it&rsquo;s a hire we recommend, an agency consolidation, or just &ldquo;here&rsquo;s the 90-day plan, go execute.&rdquo; The diagnostic is the work. What comes next is a separate decision.",
+      "Sometimes the right next step is one of our practices — sometimes it’s a hire we recommend, an agency consolidation, or just “here’s the 90-day plan, go execute.” The diagnostic is the work. What comes next is a separate decision.",
   },
   {
     question: "Who actually does the diagnostic?",
@@ -268,17 +270,17 @@ const FAQS = [
   {
     question: "Can you do this without a lot of internal data?",
     answer:
-      "Yes &mdash; but the depth scales with what&rsquo;s accessible. We&rsquo;ll tell you up front what coverage we can realistically achieve. We won&rsquo;t fake confidence we don&rsquo;t have.",
+      "Yes — but the depth scales with what’s accessible. We’ll tell you up front what coverage we can realistically achieve. We won’t fake confidence we don’t have.",
   },
   {
     question: "What if we already have an internal marketing team?",
     answer:
-      "Most clients do. The diagnostic is often more valuable then &mdash; an outside read with no internal politics, no career incentives, no roadmap to defend. Many teams have asked for one specifically because they couldn&rsquo;t make the case internally.",
+      "Most clients do. The diagnostic is often more valuable then — an outside read with no internal politics, no career incentives, no roadmap to defend. Many teams have asked for one specifically because they couldn’t make the case internally.",
   },
   {
     question: "What does it cost?",
     answer:
-      "₹4L&ndash;6L for the full written growth diagnostic, depending on company complexity. Six weeks end-to-end. Refundable if it doesn&rsquo;t name something you didn&rsquo;t already know.",
+      "₹4L–6L for the full written growth diagnostic, depending on company complexity. Six weeks end-to-end. Refundable if it doesn’t name something you didn’t already know.",
   },
 ];
 
@@ -336,7 +338,7 @@ export default function GrowthDiagnosticAuditPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[20ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[20ch] text-balance mb-8">
                   Most marketing problems are{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     diagnosis
@@ -347,14 +349,14 @@ export default function GrowthDiagnosticAuditPage() {
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   A written growth diagnostic, six weeks end-to-end, readable
                   in thirty minutes, actionable on Monday morning. Refundable
-                  if it doesn&rsquo;t name something you didn&rsquo;t already
+                  if it doesn’t name something you didn’t already
                   know.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a diagnostic</span>
                     <span aria-hidden="true">→</span>
@@ -389,7 +391,7 @@ export default function GrowthDiagnosticAuditPage() {
                 </p>
                 <h2
                   id="descent-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   One symptom.{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -451,8 +453,8 @@ export default function GrowthDiagnosticAuditPage() {
                       <p
                         className={`font-display ${
                           isDiag
-                            ? "font-bold text-[clamp(22px,2.2vw,30px)] text-white"
-                            : "font-light text-[clamp(18px,1.7vw,22px)] text-white/90"
+                            ? "font-bold text-display-sm text-white"
+                            : "font-light text-display-xs text-white/90"
                         } leading-[1.35] tracking-[-0.01em] mb-3`}
                         dangerouslySetInnerHTML={{ __html: step.text }}
                       />
@@ -488,7 +490,7 @@ export default function GrowthDiagnosticAuditPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -508,7 +510,7 @@ export default function GrowthDiagnosticAuditPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -535,7 +537,7 @@ export default function GrowthDiagnosticAuditPage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six domains.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -573,7 +575,7 @@ export default function GrowthDiagnosticAuditPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -615,7 +617,7 @@ export default function GrowthDiagnosticAuditPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -641,7 +643,7 @@ export default function GrowthDiagnosticAuditPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -650,7 +652,7 @@ export default function GrowthDiagnosticAuditPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -682,7 +684,7 @@ export default function GrowthDiagnosticAuditPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Six weeks from intake to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -708,10 +710,10 @@ export default function GrowthDiagnosticAuditPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -737,7 +739,7 @@ export default function GrowthDiagnosticAuditPage() {
               id="diagnostic-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Companies we&rsquo;ve diagnosed
+              Companies we’ve diagnosed
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -771,7 +773,7 @@ export default function GrowthDiagnosticAuditPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the diagnostic{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -793,10 +795,10 @@ export default function GrowthDiagnosticAuditPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -842,13 +844,13 @@ export default function GrowthDiagnosticAuditPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -858,14 +860,14 @@ export default function GrowthDiagnosticAuditPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -892,7 +894,7 @@ export default function GrowthDiagnosticAuditPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop guessing.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Get diagnosed
@@ -903,15 +905,15 @@ export default function GrowthDiagnosticAuditPage() {
             <div className="grid md:grid-cols-12 gap-8 md:gap-16 pt-10 border-t border-white/15 items-center">
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
-                  Six weeks. A 30&ndash;50 page written diagnostic plus a 90-day
-                  plan. Refundable if it doesn&rsquo;t name something you
-                  didn&rsquo;t already know.
+                  Six weeks. A 30–50 page written diagnostic plus a 90-day
+                  plan. Refundable if it doesn’t name something you
+                  didn’t already know.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for a diagnostic →
                 </Link>

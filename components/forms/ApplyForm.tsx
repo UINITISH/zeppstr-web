@@ -93,7 +93,7 @@ export function ApplyForm() {
         const data = await res.json().catch(() => ({}));
         throw new Error(
           data?.message ??
-            "We couldn't submit the application. Please try again, or email nitish@zeppstr.com directly."
+            "We couldn’t submit the application. Please try again, or email nitish@zeppstr.com directly."
         );
       }
 
@@ -260,7 +260,7 @@ export function ApplyForm() {
           <fieldset className="space-y-6">
             <Legend>Solutions of interest</Legend>
             <p className="font-body text-body-sm text-ink-muted -mt-2">
-              Pick all that apply, or choose &ldquo;Not sure&rdquo; and we&rsquo;ll diagnose for you.
+              Pick all that apply, or choose “Not sure” and we’ll diagnose for you.
             </p>
 
             <Controller
@@ -489,7 +489,7 @@ function ProgressIndicator({ currentStep }: { currentStep: number }) {
 
 function Legend({ children }: { children: React.ReactNode }) {
   return (
-    <legend className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-2">
+    <legend className="font-display font-light text-display-md text-ink-headline tracking-tight mb-2">
       {children}
     </legend>
   );

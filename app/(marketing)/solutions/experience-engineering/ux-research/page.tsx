@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { ResearchMethodMatrix } from "@/components/utility/ResearchMethodMatrix"
 // Method Library, Architecture, research-cycle Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "UX Research — Experience & Engineering | Zeppstr",
   description:
     "Stop asking users. Start watching them. We run continuous discovery as decision infrastructure — every product, design, and marketing call backed by behaviour, not opinion.",
-};
+  path: "/solutions/experience-engineering/ux-research",
+})
 
 // ─── Content ───
 
@@ -34,27 +36,27 @@ const FEATURED_LOGOS = [
 // SAID vs SAW — 5 contrast pairs of stated preference vs observed behavior
 const SAID_VS_SAW = [
   {
-    said: "&ldquo;I&rsquo;d love a dark mode.&rdquo;",
+    said: "“I’d love a dark mode.”",
     saw: "2% of users toggle dark mode when offered.",
     lesson: "Stated preference ≠ revealed preference.",
   },
   {
-    said: "&ldquo;The pricing page is the problem.&rdquo;",
+    said: "“The pricing page is the problem.”",
     saw: "92% of churned users never visited it.",
     lesson: "The complaint is often a proxy for something earlier.",
   },
   {
-    said: "&ldquo;Onboarding is too long.&rdquo;",
+    said: "“Onboarding is too long.”",
     saw: "Users who completed it had 4× the retention.",
-    lesson: "Friction isn&rsquo;t always cost. Sometimes it&rsquo;s qualification.",
+    lesson: "Friction isn’t always cost. Sometimes it’s qualification.",
   },
   {
-    said: "&ldquo;I want more features.&rdquo;",
+    said: "“I want more features.”",
     saw: "Most users used 4 of the 32 already shipped.",
     lesson: "Roadmaps built from interviews build feature bloat.",
   },
   {
-    said: "&ldquo;Email is too noisy.&rdquo;",
+    said: "“Email is too noisy.”",
     saw: "Open rate on the 3rd email was 41%.",
     lesson: "What people say they want is rarely what they engage with.",
   },
@@ -70,17 +72,17 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "Every question has its own method.",
-    body: "&ldquo;What do they want?&rdquo; needs interviews. &ldquo;Will they pay for it?&rdquo; needs a price-tested landing page. &ldquo;Can they find it?&rdquo; needs a tree test. Picking the wrong method produces the wrong answer with high confidence.",
+    body: "“What do they want?” needs interviews. “Will they pay for it?” needs a price-tested landing page. “Can they find it?” needs a tree test. Picking the wrong method produces the wrong answer with high confidence.",
   },
   {
     n: "03",
     title: "Research without a decision is theater.",
-    body: "Every research engagement starts with the decision it&rsquo;ll inform. No decision in scope, no research. The deliverable isn&rsquo;t a report &mdash; it&rsquo;s a decision documented with evidence.",
+    body: "Every research engagement starts with the decision it’ll inform. No decision in scope, no research. The deliverable isn’t a report — it’s a decision documented with evidence.",
   },
   {
     n: "04",
     title: "Sample size of zero is still zero.",
-    body: "Best instinct beats no research. But no research beats research dressed up to look bigger than it is. We&rsquo;d rather ship 5 quality sessions than 100 noisy ones.",
+    body: "Best instinct beats no research. But no research beats research dressed up to look bigger than it is. We’d rather ship 5 quality sessions than 100 noisy ones.",
   },
 ];
 
@@ -154,7 +156,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Method Layer",
     format: "Right method · Right cohort · Right depth",
     description:
-      "The matched method, the cohort that can actually answer it, the depth required. Picked from the matrix &mdash; not from the agency that&rsquo;s available.",
+      "The matched method, the cohort that can actually answer it, the depth required. Picked from the matrix — not from the agency that’s available.",
   },
   {
     name: "Recruit Layer",
@@ -181,7 +183,7 @@ const PROCESS_PHASES = [
   {
     title: "Question Framing",
     duration: "Week 1",
-    body: "What decision is this informing? What&rsquo;s the riskiest assumption? Written question brief signed off before recruitment starts.",
+    body: "What decision is this informing? What’s the riskiest assumption? Written question brief signed off before recruitment starts.",
   },
   {
     title: "Method Design",
@@ -206,7 +208,7 @@ const PROCESS_PHASES = [
   {
     title: "Decision Log",
     duration: "Week 6+",
-    body: "Decision documented with the evidence behind it. Filed in the decision log so the next quarter&rsquo;s research builds on this one, not from scratch.",
+    body: "Decision documented with the evidence behind it. Filed in the decision log so the next quarter’s research builds on this one, not from scratch.",
   },
 ];
 
@@ -215,7 +217,7 @@ const PRACTICE_NUMBERS = [
     figure: "4 / qtr",
     metric: "Discovery cycles run",
     detail:
-      "Four scoped research cycles per quarter. Each answers one decision, not &ldquo;general user understanding.&rdquo;",
+      "Four scoped research cycles per quarter. Each answers one decision, not “general user understanding.”",
     client: "Standard cadence",
   },
   {
@@ -244,9 +246,9 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Aren&rsquo;t five users enough?",
+    question: "Aren’t five users enough?",
     answer:
-      "For surface usability issues, yes &mdash; the Nielsen rule still mostly holds. For generative discovery, prioritisation, or pricing, no. The method decides the sample, not the budget.",
+      "For surface usability issues, yes — the Nielsen rule still mostly holds. For generative discovery, prioritisation, or pricing, no. The method decides the sample, not the budget.",
   },
   {
     question: "Do you do quant or qual?",
@@ -256,17 +258,17 @@ const FAQS = [
   {
     question: "Will users actually tell us the truth?",
     answer:
-      "Sometimes. More often they&rsquo;ll tell you a version of the truth shaped by what they think you want to hear. That&rsquo;s why we observe behaviour as much as we ask. The matrix exists exactly for this gap.",
+      "Sometimes. More often they’ll tell you a version of the truth shaped by what they think you want to hear. That’s why we observe behaviour as much as we ask. The matrix exists exactly for this gap.",
   },
   {
     question: "Can we do continuous discovery without a research team?",
     answer:
-      "Yes. The point of continuous discovery is to make it lightweight enough that product managers and designers can run it. We&rsquo;ll set up the rhythm and tooling, then hand off &mdash; or stay on as governance.",
+      "Yes. The point of continuous discovery is to make it lightweight enough that product managers and designers can run it. We’ll set up the rhythm and tooling, then hand off — or stay on as governance.",
   },
   {
     question: "What if leadership wants a survey of 1,000 users for everything?",
     answer:
-      "We&rsquo;ll explain why that&rsquo;s the wrong method for most product questions, and what the right method is. If they still want it, we&rsquo;ll run the survey &mdash; and the right method alongside &mdash; and let the data adjudicate.",
+      "We’ll explain why that’s the wrong method for most product questions, and what the right method is. If they still want it, we’ll run the survey — and the right method alongside — and let the data adjudicate.",
   },
   {
     question: "What does it cost?",
@@ -329,7 +331,7 @@ export default function UXResearchPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop asking users.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     Start watching them
@@ -338,7 +340,7 @@ export default function UXResearchPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We run research as decision infrastructure &mdash; every
+                  We run research as decision infrastructure — every
                   product, design, and marketing call backed by behaviour, not
                   opinion. The right method for the right question.
                 </p>
@@ -346,7 +348,7 @@ export default function UXResearchPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a research audit</span>
                     <span aria-hidden="true">→</span>
@@ -381,7 +383,7 @@ export default function UXResearchPage() {
                 </p>
                 <h2
                   id="said-saw-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   What users{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -416,7 +418,7 @@ export default function UXResearchPage() {
                       Said
                     </p>
                     <p
-                      className="font-display font-light text-[clamp(18px,1.7vw,24px)] text-white/65 leading-[1.35] tracking-[-0.005em] italic"
+                      className="font-display font-light text-display-xs text-white/65 leading-[1.35] tracking-[-0.005em] italic"
                       dangerouslySetInnerHTML={{ __html: p.said }}
                     />
                   </div>
@@ -426,7 +428,7 @@ export default function UXResearchPage() {
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand-yellow mb-2">
                       Saw
                     </p>
-                    <p className="font-display font-light text-[clamp(18px,1.7vw,24px)] text-white leading-[1.35] tracking-[-0.005em]">
+                    <p className="font-display font-light text-display-xs text-white leading-[1.35] tracking-[-0.005em]">
                       {p.saw}
                     </p>
                   </div>
@@ -462,7 +464,7 @@ export default function UXResearchPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -482,7 +484,7 @@ export default function UXResearchPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -509,7 +511,7 @@ export default function UXResearchPage() {
                 </p>
                 <h2
                   id="method-library-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -547,7 +549,7 @@ export default function UXResearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -589,7 +591,7 @@ export default function UXResearchPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -615,7 +617,7 @@ export default function UXResearchPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -624,7 +626,7 @@ export default function UXResearchPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -656,7 +658,7 @@ export default function UXResearchPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Six weeks from question to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -682,10 +684,10 @@ export default function UXResearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -711,7 +713,7 @@ export default function UXResearchPage() {
               id="research-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve researched for
+              Brands we’ve researched for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -745,7 +747,7 @@ export default function UXResearchPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the cycle{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -767,10 +769,10 @@ export default function UXResearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -816,13 +818,13 @@ export default function UXResearchPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -832,7 +834,7 @@ export default function UXResearchPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -840,7 +842,7 @@ export default function UXResearchPage() {
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <h3
-                      className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]"
+                      className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]"
                       dangerouslySetInnerHTML={{ __html: faq.question }}
                     />
                     <span
@@ -867,7 +869,7 @@ export default function UXResearchPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop deciding from opinion.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Decide from evidence
@@ -881,13 +883,13 @@ export default function UXResearchPage() {
                   A 45-minute paid research audit. We score your current
                   research practice, your decision-log discipline, and the
                   evidence gap on your highest-risk assumptions. Refunded in
-                  full if we&rsquo;re not the right fit.
+                  full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

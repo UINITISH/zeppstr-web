@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,17 +13,17 @@ import { LocationCoverageHeatmap } from "@/components/utility/LocationCoverageHe
 // visual weight bars), Local Catalog, Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Local Search — Organic Growth Practice | Zeppstr",
   description:
     "The Map Pack is the SERP. Below it is the consolation prize. We build multi-location local search programs that rank, get reviewed, and convert — across every relevant geo × intent combination.",
-};
+  path: "/solutions/organic-growth/local-search",
+})
 
 // ─── Content ───
 
 const FEATURED_LOGOS = [
   { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
-  { name: "Prestige Group", file: "prestige-group.png" },
   { name: "Aishwarya Interiors", file: "aishwarya-interiors.png" },
   { name: "Sky Phonez", file: "sky-phonez.png" },
   { name: "Tristar Online", file: "tristar-online.png" },
@@ -35,21 +36,21 @@ const FEATURED_LOGOS = [
 const MAP_PACK_FACTORS = [
   {
     n: "01",
-    factor: "Profile completeness &amp; freshness",
+    factor: "Profile completeness & freshness",
     weight: 88,
     requires: "Every field filled · weekly updates · category accuracy",
     miss: "Most teams set it once and forget",
   },
   {
     n: "02",
-    factor: "Review velocity &amp; recency",
+    factor: "Review velocity & recency",
     weight: 82,
     requires: "Steady inflow · responded to · last 30 days weighted",
     miss: "Reviews stop after launch",
   },
   {
     n: "03",
-    factor: "Proximity &amp; location signals",
+    factor: "Proximity & location signals",
     weight: 76,
     requires: "Service-area accuracy · physical citations · NAP consistency",
     miss: "Old citations contradict the GBP",
@@ -58,7 +59,7 @@ const MAP_PACK_FACTORS = [
     n: "04",
     factor: "Engagement signals",
     weight: 64,
-    requires: "Photos uploaded · posts published · Q&amp;A answered",
+    requires: "Photos uploaded · posts published · Q&A answered",
     miss: "GBP treated as static, not a live channel",
   },
   {
@@ -75,7 +76,7 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Map Pack or nothing.",
-    body: "70% of local clicks land in the top three results. Position four is a 10× drop. We optimise for the three slots that capture the demand &mdash; not Page 1 vanity rankings.",
+    body: "70% of local clicks land in the top three results. Position four is a 10× drop. We optimise for the three slots that capture the demand — not Page 1 vanity rankings.",
   },
   {
     n: "02",
@@ -90,7 +91,7 @@ const PRINCIPLES = [
   {
     n: "04",
     title: "Geo × intent is the unit.",
-    body: "Not rankings. Not traffic. The unit is &ldquo;in the Map Pack for this intent in this location.&rdquo; A 6 × 6 program has 36 coverage cells. Closed one by one.",
+    body: "Not rankings. Not traffic. The unit is “in the Map Pack for this intent in this location.” A 6 × 6 program has 36 coverage cells. Closed one by one.",
   },
 ];
 
@@ -155,10 +156,10 @@ const LOCAL_CATALOG = [
   {
     category: "GBP Profile Discipline",
     items: [
-      "Profile audit &amp; gap close",
-      "Category &amp; attribute strategy",
+      "Profile audit & gap close",
+      "Category & attribute strategy",
       "Weekly post cadence",
-      "Photo &amp; video uploads",
+      "Photo & video uploads",
     ],
   },
   {
@@ -171,9 +172,9 @@ const LOCAL_CATALOG = [
     ],
   },
   {
-    category: "Citation &amp; NAP",
+    category: "Citation & NAP",
     items: [
-      "Citation audit &amp; clean-up",
+      "Citation audit & clean-up",
       "Industry directory submissions",
       "NAP consistency monitoring",
       "Duplicate listing removal",
@@ -214,11 +215,11 @@ const ARCHITECTURE_LAYERS = [
     name: "Profile Layer",
     format: "GBP · directories · industry listings",
     description:
-      "The owned profile real estate &mdash; Google Business Profile, Apple Maps, Bing, industry directories. One per location, maintained as a live channel, not a static listing.",
+      "The owned profile real estate — Google Business Profile, Apple Maps, Bing, industry directories. One per location, maintained as a live channel, not a static listing.",
   },
   {
     name: "Signal Layer",
-    format: "Reviews · photos · posts · Q&amp;A",
+    format: "Reviews · photos · posts · Q&A",
     description:
       "The continuous signals that tell Google the location is alive, engaged, and current. Generated systematically, not opportunistically.",
   },
@@ -232,13 +233,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Citation Layer",
     format: "NAP consistency · directories",
     description:
-      "The off-site references that validate the profile. Name-address-phone consistency across every directory that matters &mdash; conflicting citations dilute the signal.",
+      "The off-site references that validate the profile. Name-address-phone consistency across every directory that matters — conflicting citations dilute the signal.",
   },
   {
     name: "Operating Layer",
     format: "Tracking · reporting · sprint cadence",
     description:
-      "Geo × intent coverage tracked weekly, reported monthly, attacked quarterly. The cells that aren&rsquo;t in the Map Pack become the work.",
+      "Geo × intent coverage tracked weekly, reported monthly, attacked quarterly. The cells that aren’t in the Map Pack become the work.",
   },
 ];
 
@@ -270,7 +271,7 @@ const PROCESS_PHASES = [
     body: "Off-site citations audited and aligned. NAP inconsistencies fixed across every directory that matters. Duplicate listings removed.",
   },
   {
-    title: "Operate &amp; Close Cells",
+    title: "Operate & Close Cells",
     duration: "Week 12+",
     body: "Weekly rank tracking, monthly coverage report, quarterly gap-close sprints. The heatmap turns from gap to Map Pack, cell by cell.",
   },
@@ -278,11 +279,11 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "70%+",
-    metric: "Local clicks in Map Pack",
+    figure: "Top three",
+    metric: "The Map Pack is the whole game",
     detail:
-      "The share of local search traffic that lands in the top three results. Page 1 below it captures the rest, divided among ten listings.",
-    client: "Industry benchmark",
+      "Local intent concentrates in the three map results above the organic listings. Ranking fourth on a local query is not a smaller win — it is usually no win at all.",
+    client: "Zeppstr — where we focus",
   },
   {
     figure: "24 hr",
@@ -295,14 +296,14 @@ const PRACTICE_NUMBERS = [
     figure: "36",
     metric: "Coverage cells per program",
     detail:
-      "A 6-location × 6-intent program is 36 cells. Each one&rsquo;s rank is a separate piece of work. We track all 36 weekly.",
+      "A 6-location × 6-intent program is 36 cells. Each one’s rank is a separate piece of work. We track all 36 weekly.",
     client: "Standard scope",
   },
   {
     figure: "Quarterly",
     metric: "Gap-close sprint cadence",
     detail:
-      "Every quarter we attack the lowest-coverage cells with a focused sprint &mdash; profile depth, review velocity, location-page rebuild.",
+      "Every quarter we attack the lowest-coverage cells with a focused sprint — profile depth, review velocity, location-page rebuild.",
     client: "Operating rhythm",
   },
 ];
@@ -317,24 +318,24 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Do we need this if we&rsquo;re a single-location business?",
+    question: "Do we need this if we’re a single-location business?",
     answer:
-      "Yes &mdash; though the program is lighter. One location still has 5&ndash;15 relevant search intents and 5+ surrounding service areas, which is 25&ndash;75 coverage cells. The discipline scales down; the work doesn&rsquo;t disappear.",
+      "Yes — though the program is lighter. One location still has 5–15 relevant search intents and 5+ surrounding service areas, which is 25–75 coverage cells. The discipline scales down; the work doesn’t disappear.",
   },
   {
     question: "What if we have 50+ locations?",
     answer:
-      "Common &mdash; and where this program earns its keep. The work isn&rsquo;t one strategy applied 50 times; it&rsquo;s 50 instances of the same disciplined operating model. We build the operations team or playbook to scale it.",
+      "Common — and where this program earns its keep. The work isn’t one strategy applied 50 times; it’s 50 instances of the same disciplined operating model. We build the operations team or playbook to scale it.",
   },
   {
     question: "Will you respond to our reviews?",
     answer:
-      "Yes &mdash; with templates approved by you and signed by a real human on your team. Generic AI-generated review responses get noticed (and ignored). Templated-but-human is the sweet spot.",
+      "Yes — with templates approved by you and signed by a real human on your team. Generic AI-generated review responses get noticed (and ignored). Templated-but-human is the sweet spot.",
   },
   {
     question: "How do you handle negative reviews?",
     answer:
-      "There&rsquo;s a playbook: acknowledge within 24 hours, never argue publicly, take it offline, document the resolution. Negative reviews handled well move the trust needle more than another five-star review.",
+      "There’s a playbook: acknowledge within 24 hours, never argue publicly, take it offline, document the resolution. Negative reviews handled well move the trust needle more than another five-star review.",
   },
   {
     question: "What about review-buying schemes?",
@@ -402,7 +403,7 @@ export default function LocalSearchPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[16ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[16ch] text-balance mb-8">
                   Win the{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     Map Pack
@@ -412,7 +413,7 @@ export default function LocalSearchPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
                   Multi-location local search built as a coverage matrix
-                  &mdash; geo × intent, cell by cell. Tracked weekly,
+                  — geo × intent, cell by cell. Tracked weekly,
                   attacked quarterly, ranked where the demand actually lives.
                 </p>
 
@@ -420,7 +421,7 @@ export default function LocalSearchPage() {
                 <div className="grid grid-cols-3 gap-4 md:gap-6 py-6 mb-10 border-y border-ink-headline/15">
                   {HERO_STATS.map((stat, i) => (
                     <div key={i} className={i > 0 ? "md:pl-6 md:border-l border-ink-headline/15" : ""}>
-                      <p className="font-display font-extralight text-[clamp(24px,2.4vw,34px)] text-ink-headline leading-[1.1] tracking-[-0.02em] mb-1">
+                      <p className="font-display font-extralight text-display-md text-ink-headline leading-[1.1] tracking-[-0.02em] mb-1">
                         {stat.figure}
                       </p>
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted leading-[1.4]">
@@ -433,7 +434,7 @@ export default function LocalSearchPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a coverage audit</span>
                     <span aria-hidden="true">→</span>
@@ -468,7 +469,7 @@ export default function LocalSearchPage() {
                 </p>
                 <h2
                   id="map-pack-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[26ch] text-balance"
                 >
                   Five factors that decide who{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -499,7 +500,7 @@ export default function LocalSearchPage() {
                     </div>
                     <div className="md:col-span-5">
                       <p
-                        className="font-display font-light text-[clamp(20px,1.9vw,26px)] text-white leading-[1.2] tracking-[-0.005em]"
+                        className="font-display font-light text-display-sm text-white leading-[1.2] tracking-[-0.005em]"
                         dangerouslySetInnerHTML={{ __html: row.factor }}
                       />
                     </div>
@@ -555,7 +556,7 @@ export default function LocalSearchPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -576,7 +577,7 @@ export default function LocalSearchPage() {
                   </div>
                   <div>
                     <h3
-                      className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
+                      className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
                       dangerouslySetInnerHTML={{ __html: p.title }}
                     />
                     <p
@@ -603,7 +604,7 @@ export default function LocalSearchPage() {
                 </p>
                 <h2
                   id="first-30-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Concrete ground gained{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -640,7 +641,7 @@ export default function LocalSearchPage() {
 
                   {/* Yellow accent + week label */}
                   <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mb-4" />
-                  <h3 className="font-display font-bold text-[clamp(20px,1.8vw,26px)] text-ink-headline tracking-[-0.015em] leading-[1.18] mb-5 max-w-[20ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.015em] leading-[1.18] mb-5 max-w-[20ch]">
                     {wk.label}
                   </h3>
 
@@ -684,7 +685,7 @@ export default function LocalSearchPage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -722,7 +723,7 @@ export default function LocalSearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -764,7 +765,7 @@ export default function LocalSearchPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -790,7 +791,7 @@ export default function LocalSearchPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -799,7 +800,7 @@ export default function LocalSearchPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p
@@ -832,7 +833,7 @@ export default function LocalSearchPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks to close{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -858,11 +859,11 @@ export default function LocalSearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3
-                    className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
+                    className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
                     dangerouslySetInnerHTML={{ __html: phase.title }}
                   />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -888,7 +889,7 @@ export default function LocalSearchPage() {
               id="local-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve ranked locally
+              Brands we’ve ranked locally
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -922,7 +923,7 @@ export default function LocalSearchPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the program{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -944,10 +945,10 @@ export default function LocalSearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -993,13 +994,13 @@ export default function LocalSearchPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -1009,7 +1010,7 @@ export default function LocalSearchPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1017,7 +1018,7 @@ export default function LocalSearchPage() {
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <h3
-                      className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]"
+                      className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]"
                       dangerouslySetInnerHTML={{ __html: faq.question }}
                     />
                     <span
@@ -1044,7 +1045,7 @@ export default function LocalSearchPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
               Close the cells.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Take the Pack
@@ -1058,13 +1059,13 @@ export default function LocalSearchPage() {
                   A 45-minute paid coverage audit. We build your geo × intent
                   heatmap live on the call, name the cells losing demand, and
                   scope the 90-day plan to close them. Refunded if
-                  we&rsquo;re not the right fit.
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { WebPerformanceScorecard } from "@/components/utility/WebPerformanceScor
 // Build Library catalog, Architecture stack, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Web Development — Experience & Engineering | Zeppstr",
   description:
     "Most websites are debt. We ship infrastructure. Sites that hit 95+ Lighthouse, ship features in days not quarters, and compound with every campaign downstream.",
-};
+  path: "/solutions/experience-engineering/web-development",
+})
 
 // ─── Content ───
 
@@ -76,22 +78,22 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Performance is a marketing metric.",
-    body: "Every 100ms of latency costs measurable conversion. The Lighthouse score is a marketing KPI, not an engineering trophy &mdash; treated as such, the site stops being a leak point.",
+    body: "Every 100ms of latency costs measurable conversion. The Lighthouse score is a marketing KPI, not an engineering trophy — treated as such, the site stops being a leak point.",
   },
   {
     n: "02",
     title: "Build for the slow phone on the bad network.",
-    body: "Median user is on mobile, on cellular, on a three-year-old device. We build for that user. If the site is great on a M3 MacBook over fibre, that&rsquo;s an accident, not a baseline.",
+    body: "Median user is on mobile, on cellular, on a three-year-old device. We build for that user. If the site is great on a M3 MacBook over fibre, that’s an accident, not a baseline.",
   },
   {
     n: "03",
     title: "Boring tech, well-applied.",
-    body: "Next.js + Sanity + Vercel + Tailwind, applied with care, beats whatever framework is on the front page of Hacker News this week. We ship infrastructure that survives three years &mdash; not portfolio pieces.",
+    body: "Next.js + Sanity + Vercel + Tailwind, applied with care, beats whatever framework is on the front page of Hacker News this week. We ship infrastructure that survives three years — not portfolio pieces.",
   },
   {
     n: "04",
     title: "Ship infra, not artifacts.",
-    body: "A site that&rsquo;s a Figma export pinned to a CMS is debt. A codebase with design tokens, component library, instrumentation, and CI is infrastructure that compounds with every campaign downstream.",
+    body: "A site that’s a Figma export pinned to a CMS is debt. A codebase with design tokens, component library, instrumentation, and CI is infrastructure that compounds with every campaign downstream.",
   },
 ];
 
@@ -165,7 +167,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Framework",
     format: "Next.js · Astro · SvelteKit",
     description:
-      "App-router Next.js for product-heavy surfaces, Astro for content-heavy editorial. Picked per surface &mdash; not based on what we built last time.",
+      "App-router Next.js for product-heavy surfaces, Astro for content-heavy editorial. Picked per surface — not based on what we built last time.",
   },
   {
     name: "Data / CMS",
@@ -183,7 +185,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Deploy · CI",
     format: "GitHub · Preview · Production",
     description:
-      "Preview deploy per PR. CI runs lint, type, test, Lighthouse, accessibility. Production deploys via promote &mdash; not via branch merge.",
+      "Preview deploy per PR. CI runs lint, type, test, Lighthouse, accessibility. Production deploys via promote — not via branch merge.",
   },
 ];
 
@@ -226,15 +228,15 @@ const PRACTICE_NUMBERS = [
     figure: "98+",
     metric: "Lighthouse Performance",
     detail:
-      "Baseline we ship to. On real users, on mobile, on cellular &mdash; not on a lab machine.",
+      "Baseline we ship to. On real users, on mobile, on cellular — not on a lab machine.",
     client: "Post-launch standard",
   },
   {
-    figure: "10×",
-    metric: "Ship-speed after foundation",
+    figure: "3",
+    metric: "Production applications on one engine",
     detail:
-      "Once the component system, CMS, and CI are built, new surfaces ship in days &mdash; not quarters.",
-    client: "Across the practice",
+      "Valuation, auction and custody, shipped on mobile and desktop against a shared valuation engine — so a car is appraised once and never re-entered.",
+    client: "VehicleMall",
   },
   {
     figure: "3 years",
@@ -257,12 +259,12 @@ const FAQS = [
   {
     question: "What stack do you use?",
     answer:
-      "Default: Next.js (App Router) + Sanity + Tailwind + Vercel. Astro for editorial-heavy sites. We pick per surface &mdash; not from a template &mdash; and we don&rsquo;t change the stack to look modern in a portfolio piece.",
+      "Default: Next.js (App Router) + Sanity + Tailwind + Vercel. Astro for editorial-heavy sites. We pick per surface — not from a template — and we don’t change the stack to look modern in a portfolio piece.",
   },
   {
     question: "Can you work with our existing WordPress / Webflow / Shopify?",
     answer:
-      "Yes. We&rsquo;ll audit before recommending. WordPress is fine for editorial-only sites with low traffic. Webflow is fine when the design surface is the product. Shopify is fine for commerce until it isn&rsquo;t. We&rsquo;ll say so honestly.",
+      "Yes. We’ll audit before recommending. WordPress is fine for editorial-only sites with low traffic. Webflow is fine when the design surface is the product. Shopify is fine for commerce until it isn’t. We’ll say so honestly.",
   },
   {
     question: "Do you handle hosting and ops, or hand it off?",
@@ -272,12 +274,12 @@ const FAQS = [
   {
     question: "How do you handle SEO equity during a rebuild?",
     answer:
-      "Redirect mapping is a first-class deliverable, not an afterthought. We audit every existing URL, map to the new structure, ship 301s with the launch, and monitor index health for 90 days post-launch. SEO equity doesn&rsquo;t leak on our launches.",
+      "Redirect mapping is a first-class deliverable, not an afterthought. We audit every existing URL, map to the new structure, ship 301s with the launch, and monitor index health for 90 days post-launch. SEO equity doesn’t leak on our launches.",
   },
   {
     question: "What about A/B testing and personalization?",
     answer:
-      "Built in. Edge middleware for personalization, Vercel / Optimizely / VWO for A/B. The infrastructure assumes you&rsquo;ll want to test; you don&rsquo;t have to re-platform six months later.",
+      "Built in. Edge middleware for personalization, Vercel / Optimizely / VWO for A/B. The infrastructure assumes you’ll want to test; you don’t have to re-platform six months later.",
   },
   {
     question: "What does it cost?",
@@ -340,7 +342,7 @@ export default function WebDevelopmentPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Most websites are{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     debt
@@ -357,7 +359,7 @@ export default function WebDevelopmentPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a build audit</span>
                     <span aria-hidden="true">→</span>
@@ -392,7 +394,7 @@ export default function WebDevelopmentPage() {
                 </p>
                 <h2
                   id="done-bar-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Six numbers a site has to{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -437,7 +439,7 @@ export default function WebDevelopmentPage() {
                     {row.n}
                   </div>
                   <div className="md:col-span-4">
-                    <p className="font-display font-light text-[clamp(20px,1.8vw,26px)] text-white leading-[1.25] tracking-[-0.005em]">
+                    <p className="font-display font-light text-display-sm text-white leading-[1.25] tracking-[-0.005em]">
                       {row.metric}
                     </p>
                   </div>
@@ -447,7 +449,7 @@ export default function WebDevelopmentPage() {
                     </p>
                   </div>
                   <div className="md:col-span-3 md:text-right">
-                    <p className="font-display font-extralight text-[clamp(24px,2.4vw,36px)] text-brand-yellow leading-[1.1] tracking-[-0.02em]">
+                    <p className="font-display font-extralight text-display-md text-brand-yellow leading-[1.1] tracking-[-0.02em]">
                       {row.threshold}
                     </p>
                   </div>
@@ -456,7 +458,7 @@ export default function WebDevelopmentPage() {
             </ol>
 
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-8">
-              Miss one and we don&rsquo;t ship. The thresholds aren&rsquo;t aspirational.
+              Miss one and we don’t ship. The thresholds aren’t aspirational.
             </p>
           </div>
         </section>
@@ -473,7 +475,7 @@ export default function WebDevelopmentPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -493,7 +495,7 @@ export default function WebDevelopmentPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -520,7 +522,7 @@ export default function WebDevelopmentPage() {
                 </p>
                 <h2
                   id="build-library-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six surface types.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -558,7 +560,7 @@ export default function WebDevelopmentPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -600,7 +602,7 @@ export default function WebDevelopmentPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers behind every{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -626,7 +628,7 @@ export default function WebDevelopmentPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -635,7 +637,7 @@ export default function WebDevelopmentPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -666,7 +668,7 @@ export default function WebDevelopmentPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks from architecture to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -692,10 +694,10 @@ export default function WebDevelopmentPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -721,7 +723,7 @@ export default function WebDevelopmentPage() {
               id="webdev-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Sites we&rsquo;ve engineered
+              Sites we’ve engineered
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -755,7 +757,7 @@ export default function WebDevelopmentPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the build{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -777,10 +779,10 @@ export default function WebDevelopmentPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -826,13 +828,13 @@ export default function WebDevelopmentPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -842,14 +844,14 @@ export default function WebDevelopmentPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -876,7 +878,7 @@ export default function WebDevelopmentPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop carrying a debt site.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Ship infrastructure
@@ -889,13 +891,13 @@ export default function WebDevelopmentPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid build audit. We score your performance, your
                   ship velocity, and the debt the site is accruing each
-                  quarter. Refunded in full if we&rsquo;re not the right fit.
+                  quarter. Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

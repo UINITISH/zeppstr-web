@@ -2,12 +2,18 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
+import { getCaseStudyMetrics } from "@/lib/case-study-metrics";
+import { CaseStudyMetrics } from "@/components/case-study/CaseStudyMetrics";
+import { getCaseStudyImage } from "@/lib/case-study-images";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { Button } from "@/components/ui/Button";
 import { PortableText } from "@/components/article/PortableText";
 import { PullQuote } from "@/components/blocks/PullQuote";
 import { CTABanner } from "@/components/blocks/CTABanner";
+import { getCaseVisuals } from "@/lib/case-visuals";
+import { CaseChart } from "@/components/work/CaseCharts";
 import { sanity } from "@/sanity/lib/client";
 import { sanityImageProps } from "@/sanity/lib/image";
 import { caseStudyBySlugQuery } from "@/sanity/lib/queries";
@@ -39,10 +45,11 @@ export async function generateMetadata({
     slug: params.slug,
   });
   if (!cs) return {};
-  return {
+  return buildMetadata({
     title: cs.seoTitle ?? `${cs.clientName} — ${cs.headlineMetric}`,
     description: cs.seoDescription,
-  };
+    path: `/work/${params.slug}`,
+  });
 }
 
 // ─────────────────────────────────────────────
@@ -60,7 +67,12 @@ export default async function CaseStudyPage({
 
   if (!cs) notFound();
 
+  const metrics = getCaseStudyMetrics(params.slug);
+  /* Stat band + chart. Null for any case without published figures, which is
+     the intended state rather than a gap to fill — see lib/case-visuals.ts. */
+  const visuals = getCaseVisuals(params.slug);
   const heroImg = cs.heroImage ? sanityImageProps(cs.heroImage, { width: 1600, height: 900 }) : null;
+  const heroFallback = !cs.heroImage ? getCaseStudyImage(params.slug) : null;
 
   return (
     <>
@@ -103,8 +115,41 @@ export default async function CaseStudyPage({
           )}
         </section>
 
+        {/* ── Stat band ──
+            ADDED 15 SEP 2026. These pages ran ~5,900px of unbroken prose in a
+            single narrow column with no visual break between the hero image
+            and the footer. The strongest figures on the whole site were buried
+            as bullet points inside that prose — a reader skims past "₹0.58 per
+            person reached" in a sentence, and stops on it in 38px type.
+
+            Every figure is lifted from the same page's own narrative; see the
+            sourcing rule at the top of lib/case-visuals.ts. Cases with no hard
+            published numbers (Homatico) render no band at all rather than a
+            band of invented ones. */}
+        {visuals?.stats && visuals.stats.length > 0 && (
+          <section className="container-layout pb-16">
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t border-ink-headline/15 pt-10">
+              {visuals.stats.map((s) => (
+                <div key={s.label}>
+                  <dt className="font-display font-extralight text-display-md text-ink-headline leading-none tracking-[-0.02em]">
+                    {s.value}
+                  </dt>
+                  <dd className="mt-3 font-body text-body-sm text-ink-body leading-snug max-w-[24ch]">
+                    {s.label}
+                    {s.note && (
+                      <span className="block mt-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
+                        {s.note}
+                      </span>
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+
         {/* Hero image */}
-        {heroImg && (
+        {heroImg ? (
           <section className="container-layout pb-16">
             <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-bg-secondary">
               <Image
@@ -119,13 +164,27 @@ export default async function CaseStudyPage({
               />
             </div>
           </section>
-        )}
+        ) : heroFallback ? (
+          <section className="container-layout pb-16">
+            <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-bg-secondary">
+              <Image
+                src={heroFallback}
+                alt={`${cs.clientName} — case study`}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
+          </section>
+        ) : null}
 
         {/* Narrative — long-form reading column */}
         <article className="container-reading py-12 space-y-16">
           {cs.situation && (
             <section>
-              <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-6">
+              <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-6">
                 The situation
               </h2>
               <PortableText value={cs.situation} />
@@ -134,16 +193,45 @@ export default async function CaseStudyPage({
 
           {cs.diagnosis && (
             <section>
-              <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-6">
+              <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-6">
                 The diagnosis
               </h2>
               <PortableText value={cs.diagnosis} />
             </section>
           )}
+        </article>
 
+        {/* ── The chart ──
+            Deliberately placed BETWEEN the diagnosis and what-we-did, and
+            deliberately breaking out of the narrow reading column.
+
+            Position: the diagnosis is where the problem is stated and the next
+            section is where it gets solved, so this is the one point in the
+            page where a reader needs to be convinced the problem was real.
+            Putting it at the top would make it decoration; putting it at the
+            bottom would make it a summary of something they already believe.
+
+            Width: it sits outside <article> because container-reading is
+            ~720px and a comparison at that width is a thumbnail. Breaking the
+            column is also the visual rest the page badly needed — it is the
+            only thing between the hero and the footer that is not a paragraph. */}
+        {visuals?.chart && (
+          <section className="bg-bg-secondary border-y border-ink-headline/10 my-4">
+            <div className="container-layout py-16 md:py-20">
+              {visuals.chartCaption && (
+                <p className="font-body text-body text-ink-body leading-relaxed max-w-[62ch] mb-10">
+                  {visuals.chartCaption}
+                </p>
+              )}
+              <CaseChart chart={visuals.chart} />
+            </div>
+          </section>
+        )}
+
+        <article className="container-reading py-12 space-y-16">
           {cs.whatWeDid && (
             <section>
-              <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-6">
+              <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-6">
                 What we did
               </h2>
               <PortableText value={cs.whatWeDid} />
@@ -152,7 +240,7 @@ export default async function CaseStudyPage({
 
           {cs.results && (
             <section>
-              <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-6">
+              <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-6">
                 What changed
               </h2>
               <PortableText value={cs.results} />
@@ -165,13 +253,16 @@ export default async function CaseStudyPage({
 
           {cs.whatThisProves && (
             <section>
-              <h2 className="font-display font-extralight text-display-md text-ink-headline tracking-tight mb-6">
+              <h2 className="font-display font-light text-display-md text-ink-headline tracking-tight mb-6">
                 What this proves
               </h2>
               <PortableText value={cs.whatThisProves} />
             </section>
           )}
         </article>
+
+        {/* By the numbers — charts (renders when metrics exist for this slug) */}
+        {metrics && <CaseStudyMetrics data={metrics} />}
 
         {/* Solutions deployed */}
         {cs.solutionsUsed && cs.solutionsUsed.length > 0 && (
@@ -196,7 +287,7 @@ export default async function CaseStudyPage({
           eyebrow="Engage"
           heading="Want a system like this for your business?"
           subhead="Apply for a Strategic Diagnostic. Honest assessment, written deliverable, no agency-pitch dressed up as a report."
-          primary={{ label: "Book a Consultation", href: "/book-consultation" }}
+          primary={{ label: "Book a Call", href: "/book-consultation" }}
           secondary={{ label: "See more outcomes", href: "/work" }}
         />
       </main>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { SpendAllocationDial } from "@/components/utility/SpendAllocationDial";
 // hero stats strip, First 30 Days, Paid Catalog, Architecture, Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Paid Search — Performance Media | Zeppstr",
   description:
     "Stop bidding on keywords. Start buying intent. Paid search built as a portfolio — Brand, Non-brand, Conquest, Long-tail, Remarketing — optimised for revenue, not position.",
-};
+  path: "/solutions/performance-media/paid-search",
+})
 
 // ─── Content ───
 
@@ -34,7 +36,7 @@ const FEATURED_LOGOS = [
 // HERO STATS — 3 punchy facts
 const HERO_STATS = [
   { figure: "4.2×", label: "Standard ROAS target" },
-  { figure: "−32%", label: "CPC after account rebuild" },
+  { figure: "₹2,169", label: "Best-campaign cost per lead · Tru Aquapolis" },
   { figure: "5 buckets", label: "Spend split by intent" },
 ];
 
@@ -82,12 +84,12 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Bid for revenue.",
-    body: "Not clicks. Not position. Every bid decision is a revenue decision &mdash; modelled, tested, owned. The platform&rsquo;s auto-bid optimises for the platform; we optimise for the P&amp;L.",
+    body: "Not clicks. Not position. Every bid decision is a revenue decision — modelled, tested, owned. The platform’s auto-bid optimises for the platform; we optimise for the P&L.",
   },
   {
     n: "02",
     title: "Account architecture &gt; bid management.",
-    body: "A well-structured account with average bidding beats a chaotic account with brilliant bidding every time. We fix the structure first &mdash; ad groups, match types, negatives, landing pages &mdash; before touching the bid lever.",
+    body: "A well-structured account with average bidding beats a chaotic account with brilliant bidding every time. We fix the structure first — ad groups, match types, negatives, landing pages — before touching the bid lever.",
   },
   {
     n: "03",
@@ -153,7 +155,7 @@ const PAID_CATALOG = [
     ],
   },
   {
-    category: "Bid &amp; Budget Strategy",
+    category: "Bid & Budget Strategy",
     items: [
       "Bucket-level budget allocation",
       "Bid strategy per intent type",
@@ -162,7 +164,7 @@ const PAID_CATALOG = [
     ],
   },
   {
-    category: "Creative &amp; Copy",
+    category: "Creative & Copy",
     items: [
       "Ad copy testing framework",
       "Sitelinks · callouts · structured snippets",
@@ -175,7 +177,7 @@ const PAID_CATALOG = [
     items: [
       "Intent-matched landing pages",
       "Message-match audit",
-      "Form &amp; checkout friction review",
+      "Form & checkout friction review",
       "Mobile-first surface check",
     ],
   },
@@ -184,12 +186,12 @@ const PAID_CATALOG = [
     items: [
       "QS audit · component breakdown",
       "CTR diagnostics · uplift plan",
-      "Relevance &amp; LP experience fixes",
+      "Relevance & LP experience fixes",
       "Historical QS rehabilitation",
     ],
   },
   {
-    category: "Measurement &amp; Attribution",
+    category: "Measurement & Attribution",
     items: [
       "Cross-channel attribution model",
       "Cohort ROAS · not last-click",
@@ -211,7 +213,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Structure Layer",
     format: "Campaigns · Ad groups · Match types · Negatives",
     description:
-      "The account chassis. Tight ad groups, disciplined match types, comprehensive negative-keyword library. The single biggest determinant of QS &mdash; and of every cost downstream.",
+      "The account chassis. Tight ad groups, disciplined match types, comprehensive negative-keyword library. The single biggest determinant of QS — and of every cost downstream.",
   },
   {
     name: "Creative Layer",
@@ -223,13 +225,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Landing Layer",
     format: "LP per intent · Message match · Friction",
     description:
-      "The page the click lands on. Message-match with the ad. Friction removed. Mobile-first. The layer most accounts under-spec &mdash; and the one CRO compounds with.",
+      "The page the click lands on. Message-match with the ad. Friction removed. Mobile-first. The layer most accounts under-spec — and the one CRO compounds with.",
   },
   {
     name: "Measurement Layer",
     format: "Cohort ROAS · Attribution · Holdout",
     description:
-      "Cohort-level ROAS, not platform-reported. Multi-touch attribution backed by an identity layer. Holdout tests for incrementality. The platform won&rsquo;t mark its own homework.",
+      "Cohort-level ROAS, not platform-reported. Multi-touch attribution backed by an identity layer. Holdout tests for incrementality. The platform won’t mark its own homework.",
   },
 ];
 
@@ -246,14 +248,14 @@ const PROCESS_PHASES = [
     body: "Ad groups re-architected by intent. Match types disciplined. Negative-keyword library installed. The chassis fixed before bids are touched.",
   },
   {
-    title: "Creative &amp; LP",
+    title: "Creative & LP",
     duration: "Week 5–6",
     body: "Ad copy variants live. Landing pages aligned to intent. Brand and non-brand split into distinct surfaces. QS starts climbing.",
   },
   {
     title: "Bid Strategy",
     duration: "Week 7–8",
-    body: "Bid strategy per bucket configured. Day-parting and device modifiers tuned. Auto-bid governance set. Now we lift the bid lever &mdash; on a sound structure.",
+    body: "Bid strategy per bucket configured. Day-parting and device modifiers tuned. Auto-bid governance set. Now we lift the bid lever — on a sound structure.",
   },
   {
     title: "Measurement Lock",
@@ -261,7 +263,7 @@ const PROCESS_PHASES = [
     body: "Cohort attribution operational. Holdout cells running. Weekly reporting templated. Decisions get made from cohort ROAS, not platform reports.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 11+",
     body: "Weekly cell-level review. Wasted-spend buckets shut as they appear. New tests prioritised. The account compounds instead of bleeding.",
   },
@@ -273,14 +275,14 @@ const PRACTICE_NUMBERS = [
     metric: "Standard ROAS target",
     detail:
       "The blended ROAS we build to. Higher on Brand and Remarketing; lower (but acceptable) on Conquest and Long-tail.",
-    client: "Across the practice",
+    client: "Zeppstr — what we build to",
   },
   {
-    figure: "−32%",
-    metric: "CPC reduction · post-rebuild",
+    figure: "147",
+    metric: "Conversions the platform missed",
     detail:
-      "Typical drop in cost-per-click after account architecture and Quality Score work. Same positions, less spend.",
-    client: "Standard outcome",
+      "In a month the ad account reported zero. Smart Bidding had been optimising against nothing. Found at instrumentation, before any spend moved.",
+    client: "Tru Aquapolis",
   },
   {
     figure: "5",
@@ -310,32 +312,32 @@ const FAQS = [
   {
     question: "Do you do Performance Max?",
     answer:
-      "Yes &mdash; but rarely as the primary spend bucket. PMax is good for spillover and remarketing surfaces; it&rsquo;s a poor fit for intent-led campaigns where keyword visibility and creative control matter. We use it deliberately, not by default.",
+      "Yes — but rarely as the primary spend bucket. PMax is good for spillover and remarketing surfaces; it’s a poor fit for intent-led campaigns where keyword visibility and creative control matter. We use it deliberately, not by default.",
   },
   {
     question: "How quickly do you cut wasted spend?",
     answer:
-      "Week 1&ndash;2. The audit surfaces it; the rebuild closes it. Most accounts have 15&ndash;30% of spend going to terms that have never converted or to broad-match queries chasing the wrong intent.",
+      "Week 1–2. The audit surfaces it; the rebuild closes it. Most accounts have 15–30% of spend going to terms that have never converted or to broad-match queries chasing the wrong intent.",
   },
   {
     question: "Will you take over our existing account?",
     answer:
-      "Yes &mdash; manager access, full read-write. We typically run it for the first quarter, then either continue operating or hand off to your team with the playbook. Your account; your access never leaves your control.",
+      "Yes — manager access, full read-write. We typically run it for the first quarter, then either continue operating or hand off to your team with the playbook. Your account; your access never leaves your control.",
   },
   {
-    question: "What about Google&rsquo;s auto-bid strategies?",
+    question: "What about Google’s auto-bid strategies?",
     answer:
-      "We use them where they belong &mdash; remarketing, mature campaigns with conversion data, brand defense. We don&rsquo;t use them on cold non-brand campaigns where the algorithm has nothing to optimise against.",
+      "We use them where they belong — remarketing, mature campaigns with conversion data, brand defense. We don’t use them on cold non-brand campaigns where the algorithm has nothing to optimise against.",
   },
   {
     question: "How do you measure incrementality?",
     answer:
-      "Holdout cells, geo-tests, and modeled lift against control. Platform-reported conversions overstate paid&rsquo;s contribution by 20&ndash;40% in our experience. We measure incremental revenue, not credited conversions.",
+      "Holdout cells, geo-tests, and modeled lift against control. Platform-reported conversions overstate paid’s contribution by 20–40% in our experience. We measure incremental revenue, not credited conversions.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Paid Search programs start at ₹4L/month for accounts spending under ₹20L/month, scaling with managed spend. Minimum 6 months. Quoted post-audit. We don&rsquo;t charge % of spend &mdash; that aligns nobody.",
+      "Paid Search programs start at ₹4L/month for accounts spending under ₹20L/month, scaling with managed spend. Minimum 6 months. Quoted post-audit. We don’t charge % of spend — that aligns nobody.",
   },
 ];
 
@@ -393,7 +395,7 @@ export default function PaidSearchPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop bidding on keywords.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     Buy intent
@@ -402,8 +404,8 @@ export default function PaidSearchPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-8">
-                  Paid search built as a portfolio &mdash; Brand, Non-brand,
-                  Conquest, Long-tail, Remarketing &mdash; each with its own
+                  Paid search built as a portfolio — Brand, Non-brand,
+                  Conquest, Long-tail, Remarketing — each with its own
                   bid logic, ROAS expectation, and creative.
                 </p>
 
@@ -411,7 +413,7 @@ export default function PaidSearchPage() {
                 <div className="grid grid-cols-3 gap-4 md:gap-6 py-6 mb-10 border-y border-ink-headline/15">
                   {HERO_STATS.map((stat, i) => (
                     <div key={i} className={i > 0 ? "md:pl-6 md:border-l border-ink-headline/15" : ""}>
-                      <p className="font-display font-extralight text-[clamp(24px,2.4vw,34px)] text-ink-headline leading-[1.1] tracking-[-0.02em] mb-1">
+                      <p className="font-display font-extralight text-display-md text-ink-headline leading-[1.1] tracking-[-0.02em] mb-1">
                         {stat.figure}
                       </p>
                       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted leading-[1.4]">
@@ -424,7 +426,7 @@ export default function PaidSearchPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for an account audit</span>
                     <span aria-hidden="true">→</span>
@@ -459,7 +461,7 @@ export default function PaidSearchPage() {
                 </p>
                 <h2
                   id="bid-ladder-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[26ch] text-balance"
                 >
                   Five bid rungs. Only{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -473,7 +475,7 @@ export default function PaidSearchPage() {
                   <span className="inline-block w-1.5 h-1.5 bg-brand-yellow mr-2 align-middle" />
                   Climb deliberately
                   <br />
-                  Don&rsquo;t over-bid
+                  Don’t over-bid
                 </p>
               </div>
             </div>
@@ -524,7 +526,7 @@ export default function PaidSearchPage() {
                             : isBad
                               ? "font-light text-white/55"
                               : "font-light text-white"
-                        } text-[clamp(20px,1.9vw,26px)] leading-[1.2] tracking-[-0.01em]`}
+                        } text-display-sm leading-[1.2] tracking-[-0.01em]`}
                       >
                         {row.rung}
                       </p>
@@ -570,7 +572,7 @@ export default function PaidSearchPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -591,7 +593,7 @@ export default function PaidSearchPage() {
                   </div>
                   <div>
                     <h3
-                      className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
+                      className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
                       dangerouslySetInnerHTML={{ __html: p.title }}
                     />
                     <p
@@ -618,7 +620,7 @@ export default function PaidSearchPage() {
                 </p>
                 <h2
                   id="first-30-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Concrete ground gained{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -652,7 +654,7 @@ export default function PaidSearchPage() {
                     </span>
                   </div>
                   <span aria-hidden="true" className="block w-3 h-3 bg-brand-yellow mb-4" />
-                  <h3 className="font-display font-bold text-[clamp(20px,1.8vw,26px)] text-ink-headline tracking-[-0.015em] leading-[1.18] mb-5 max-w-[20ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.015em] leading-[1.18] mb-5 max-w-[20ch]">
                     {wk.label}
                   </h3>
                   <ul className="space-y-2 mt-auto">
@@ -694,7 +696,7 @@ export default function PaidSearchPage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -733,7 +735,7 @@ export default function PaidSearchPage() {
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
                   <h3
-                    className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]"
+                    className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]"
                     dangerouslySetInnerHTML={{ __html: cat.category }}
                   />
                   <ul className="space-y-2 mt-2">
@@ -775,7 +777,7 @@ export default function PaidSearchPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -801,7 +803,7 @@ export default function PaidSearchPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -810,7 +812,7 @@ export default function PaidSearchPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -842,7 +844,7 @@ export default function PaidSearchPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Eleven weeks from audit to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -868,11 +870,11 @@ export default function PaidSearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3
-                    className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
+                    className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
                     dangerouslySetInnerHTML={{ __html: phase.title }}
                   />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -898,7 +900,7 @@ export default function PaidSearchPage() {
               id="paid-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Accounts we&rsquo;ve rebuilt
+              Accounts we’ve rebuilt
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -932,7 +934,7 @@ export default function PaidSearchPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the account{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -952,10 +954,10 @@ export default function PaidSearchPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(34px,4vw,56px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-5 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-5 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(17px,1.4vw,22px)] tracking-[-0.005em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-xs tracking-[-0.005em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -1001,13 +1003,13 @@ export default function PaidSearchPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -1017,7 +1019,7 @@ export default function PaidSearchPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -1025,7 +1027,7 @@ export default function PaidSearchPage() {
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <h3
-                      className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]"
+                      className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]"
                       dangerouslySetInnerHTML={{ __html: faq.question }}
                     />
                     <span
@@ -1052,7 +1054,7 @@ export default function PaidSearchPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop renting position.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Buy ROAS
@@ -1064,15 +1066,15 @@ export default function PaidSearchPage() {
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid account audit. We pull your spend split,
-                  your QS distribution, your wasted cells &mdash; live on the
-                  call &mdash; and scope the 90-day rebuild. Refunded if
-                  we&rsquo;re not the right fit.
+                  your QS distribution, your wasted cells — live on the
+                  call — and scope the 90-day rebuild. Refunded if
+                  we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

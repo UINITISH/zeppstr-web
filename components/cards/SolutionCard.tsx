@@ -21,7 +21,10 @@ export function SolutionCard({ solution, number, className }: SolutionCardProps)
     <Link
       href={`/solutions/${solution.slug.current}`}
       className={cn(
-        "group relative block bg-bg-primary border border-rule rounded-lg",
+        /* h-full + flex: cards in a row had unequal heights because taglines
+           differ in length, so the "Explore the practice" links sat at three
+           different baselines across a row. They now pin to the bottom. */
+        "group relative flex flex-col h-full bg-bg-primary border border-rule rounded-lg",
         "p-7 md:p-8 overflow-hidden",
         "transition-all duration-hover ease-smooth",
         "hover:border-ink-headline hover:-translate-y-1 hover:shadow-[0_12px_40px_-12px_rgba(10,16,47,0.15)]",
@@ -31,9 +34,14 @@ export function SolutionCard({ solution, number, className }: SolutionCardProps)
     >
       {/* Oversized decorative number — bottom-right, very faint */}
       {decorativeNumber && (
+        /* WAS: text-[180px] at -right-4 -bottom-8 inside overflow-hidden.
+           At 180px the numeral was larger than the card was tall, so it was
+           sliced by both the right and bottom borders and rendered as two
+           disconnected grey wedges. A clipped glyph reads as a layout bug, not
+           as a design flourish. Now sized to sit fully inside the card. */
         <span
           aria-hidden="true"
-          className="absolute -right-4 -bottom-8 font-display font-extralight text-[180px] leading-[0.85] tracking-tighter text-ink-headline/[0.04] select-none pointer-events-none transition-colors duration-hover ease-smooth group-hover:text-brand-blue/[0.06]"
+          className="absolute right-5 bottom-3 font-display font-extralight text-[96px] leading-[0.8] tracking-tighter text-ink-headline/[0.05] select-none pointer-events-none transition-colors duration-hover ease-smooth group-hover:text-brand-blue/[0.08]"
         >
           {decorativeNumber}
         </span>
@@ -45,7 +53,7 @@ export function SolutionCard({ solution, number, className }: SolutionCardProps)
         className="absolute top-0 left-0 h-px w-0 bg-brand-blue transition-all duration-page ease-smooth group-hover:w-full"
       />
 
-      <div className="relative">
+      <div className="relative flex flex-col flex-1">
         {number && (
           <div className="font-body text-eyebrow font-semibold text-ink-muted uppercase tracking-[0.12em] mb-5">
             {number}
@@ -59,7 +67,7 @@ export function SolutionCard({ solution, number, className }: SolutionCardProps)
             {solution.tagline}
           </p>
         )}
-        <span className="font-body font-medium text-body-sm text-brand-blue inline-flex items-center gap-1.5 group-hover:gap-3 transition-all duration-hover">
+        <span className="mt-auto font-body font-medium text-body-sm text-brand-blue inline-flex items-center gap-1.5 group-hover:gap-3 transition-all duration-hover">
           Explore the practice
           <span aria-hidden="true">→</span>
         </span>

@@ -55,11 +55,22 @@ export const SOLUTIONS_OF_INTEREST = [
   "Not sure — diagnose for me",
 ] as const;
 
+/**
+ * "How did you hear about us?"
+ *
+ * Worth taking seriously rather than treating as a formality — for a business
+ * with long consideration cycles, self-reported attribution consistently
+ * surfaces sources that last-click analytics never records.
+ *
+ * "DemandForge YouTube" was removed: no such channel exists. The YouTube
+ * channel is @zeppstr.
+ */
 export const HEARD_FROM = [
   "Referral",
-  "DemandForge YouTube",
-  "LinkedIn",
   "Google search",
+  "LinkedIn",
+  "Instagram",
+  "YouTube",
   "Industry publication",
   "Podcast",
   "Other",

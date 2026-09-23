@@ -24,17 +24,109 @@ import type { SanityImage } from "@/sanity/lib/types";
 interface PortableTextProps {
   value: PortableTextBlock[] | undefined;
   className?: string;
+  /**
+   * Map of block `_key` → anchor id. Supplied by the article page so the
+   * sidebar table of contents and the rendered headings agree on ids without
+   * any client-side DOM scraping.
+   */
+  headingIds?: Record<string, string>;
+  /**
+   * Draw a hairline + accent mark above each h2. Long-form articles need the
+   * extra section break; short rich-text fields (solutions, industries) don't.
+   */
+  sectionMarkers?: boolean;
 }
 
-const components: PortableTextComponents = {
+/**
+ * Reconstruct a markdown pipe-table from a text block whose row newlines were
+ * collapsed to spaces during seeding. Strategy: split on "|", count separator
+ * cells (---) to get the column count, drop empties + separators, then chunk.
+ * Returns null when the text isn't a table.
+ */
+const SEP_CELL = /^:?-{2,}:?$/;
+function parsePipeTable(text: string): { headers: string[]; rows: string[][] } | null {
+  if (!text || !text.includes("|") || !/\|\s*:?-{2,}/.test(text)) return null;
+  const cells = text.split("|").map((c) => c.trim());
+  const cols = cells.filter((c) => SEP_CELL.test(c)).length;
+  if (cols < 2) return null;
+  const data = cells.filter((c) => c !== "" && !SEP_CELL.test(c));
+  if (data.length < cols * 2) return null; // need at least a header + one row
+  const headers = data.slice(0, cols);
+  const rows: string[][] = [];
+  for (let i = cols; i + cols <= data.length; i += cols) {
+    rows.push(data.slice(i, i + cols));
+  }
+  return { headers, rows };
+}
+
+function DataTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
+  return (
+    <div className="my-10 overflow-x-auto">
+      <table className="w-full border-collapse text-left">
+        <thead>
+          <tr className="border-b-2 border-ink-headline">
+            {headers.map((h, i) => (
+              <th
+                key={i}
+                className="py-3 pr-6 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-headline whitespace-nowrap"
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, r) => (
+            <tr key={r} className="border-b border-rule">
+              {row.map((cell, c) => (
+                <td
+                  key={c}
+                  className={cn(
+                    "py-3 pr-6 font-body text-body-sm whitespace-nowrap",
+                    c === 0 ? "text-ink-headline font-medium" : "text-ink-body"
+                  )}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function buildComponents(
+  headingIds: Record<string, string>,
+  sectionMarkers: boolean
+): PortableTextComponents {
+  return {
   block: {
-    h2: ({ children }) => (
-      <h2 className="font-display font-extralight text-display-md text-ink-headline mt-16 mb-6 tracking-tight">
-        {children}
-      </h2>
+    h2: ({ children, value }) => (
+      <>
+        {sectionMarkers && (
+          <div aria-hidden="true" className="flex items-center gap-3 mt-16 mb-7">
+            <span className="w-7 h-[3px] bg-brand-yellow shrink-0" />
+            <span className="flex-1 h-px bg-rule" />
+          </div>
+        )}
+        <h2
+          id={headingIds[(value as { _key?: string })?._key ?? ""]}
+          className={cn(
+            "scroll-mt-28 font-display font-light text-display-md text-ink-headline mb-6 tracking-tight",
+            sectionMarkers ? "mt-0" : "mt-16"
+          )}
+        >
+          {children}
+        </h2>
+      </>
     ),
-    h3: ({ children }) => (
-      <h3 className="font-display font-light text-display-sm text-ink-headline mt-12 mb-4 tracking-tight">
+    h3: ({ children, value }) => (
+      <h3
+        id={headingIds[(value as { _key?: string })?._key ?? ""]}
+        className="scroll-mt-28 font-display font-light text-display-sm text-ink-headline mt-12 mb-4 tracking-tight"
+      >
         {children}
       </h3>
     ),
@@ -43,11 +135,18 @@ const components: PortableTextComponents = {
         {children}
       </h4>
     ),
-    normal: ({ children }) => (
-      <p className="font-body text-body-lg text-ink-body leading-relaxed mb-6">
-        {children}
-      </p>
-    ),
+    normal: ({ children, value }) => {
+      const raw = ((value as { children?: { text?: string }[] })?.children ?? [])
+        .map((c) => c.text ?? "")
+        .join("");
+      const table = parsePipeTable(raw);
+      if (table) return <DataTable headers={table.headers} rows={table.rows} />;
+      return (
+        <p className="font-body text-body-lg text-ink-body leading-relaxed mb-6">
+          {children}
+        </p>
+      );
+    },
     blockquote: ({ children }) => (
       <blockquote className="my-10 pl-6 border-l-2 border-brand-yellow font-display font-light text-display-sm text-ink-headline italic">
         {children}
@@ -142,14 +241,23 @@ const components: PortableTextComponents = {
       );
     },
   },
-};
+  };
+}
 
-export function PortableText({ value, className }: PortableTextProps) {
+export function PortableText({
+  value,
+  className,
+  headingIds,
+  sectionMarkers = false,
+}: PortableTextProps) {
   if (!value || value.length === 0) return null;
 
   return (
     <div className={cn("portable-text", className)}>
-      <BasePortableText value={value} components={components} />
+      <BasePortableText
+        value={value}
+        components={buildComponents(headingIds ?? {}, sectionMarkers)}
+      />
     </div>
   );
 }

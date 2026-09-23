@@ -30,3 +30,13 @@ sanity/dist/
 
 # Sentry
 .sentryclirc
+
+# Editor/filesystem artifacts — FUSE leaves these behind when a file is
+# replaced while open. They are stale copies of real source files and must
+# never be committed.
+.fuse_hidden*
+
+# Pre-trim copies of the client logos (originals kept in
+# deliverables/logo-originals/). Anything under /public is served publicly and
+# deployed; these are unreferenced source files and should not ship.
+public/client-logos-original/

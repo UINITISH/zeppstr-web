@@ -17,6 +17,8 @@ type FormValues = z.infer<typeof schema>;
 interface NewsletterInlineProps {
   /** Where the form was rendered, for analytics + downstream segmentation */
   source?: string;
+  /** Stack the input above the button — for narrow sidebar rails. */
+  stacked?: boolean;
   className?: string;
 }
 
@@ -25,7 +27,11 @@ interface NewsletterInlineProps {
  * Posts to /api/newsletter (Week 3 deliverable). Until the route exists,
  * the form gracefully degrades with an optimistic success state.
  */
-export function NewsletterInline({ source = "inline", className }: NewsletterInlineProps) {
+export function NewsletterInline({
+  source = "inline",
+  stacked = false,
+  className,
+}: NewsletterInlineProps) {
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
@@ -77,14 +83,15 @@ export function NewsletterInline({ source = "inline", className }: NewsletterInl
     return (
       <div
         className={cn(
-          "max-w-[440px] mx-auto px-6 py-5 rounded-md border border-rule bg-bg-primary text-center",
+          "px-6 py-5 rounded-md border border-rule bg-bg-primary text-center",
+          stacked ? "w-full" : "max-w-[440px] mx-auto",
           className
         )}
         role="status"
         aria-live="polite"
       >
         <p className="font-body font-medium text-body text-ink-headline">
-          You&rsquo;re on the list.
+          You’re on the list.
         </p>
         <p className="font-body text-body-sm text-ink-muted mt-1">
           The next essay lands in your inbox on the next publishing Thursday.
@@ -97,10 +104,10 @@ export function NewsletterInline({ source = "inline", className }: NewsletterInl
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className={cn("max-w-[460px] mx-auto", className)}
+      className={cn(stacked ? "w-full" : "max-w-[460px] mx-auto", className)}
       aria-label="Subscribe to The Brief newsletter"
     >
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className={cn("flex gap-3", stacked ? "flex-col" : "flex-col sm:flex-row")}>
         <label htmlFor="newsletter-email" className="sr-only">
           Work email
         </label>

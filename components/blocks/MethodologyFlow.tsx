@@ -52,7 +52,7 @@ export function MethodologyFlow() {
           </p>
           <h2
             id="methodology-heading"
-            className="font-bold tracking-[-0.025em] text-[clamp(44px,7vw,104px)] text-ink-headline leading-[1.02] max-w-[18ch] mb-8 text-balance"
+            className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] mb-8 text-balance"
           >
             Diagnose.{" "}
             <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">Architect</span>
@@ -75,12 +75,12 @@ export function MethodologyFlow() {
               />
 
               {/* Big numeral */}
-              <p className="font-display font-extralight text-[clamp(56px,5.5vw,80px)] text-ink-headline leading-none tracking-[-0.03em] mb-6">
+              <p className="font-display font-extralight text-display-stat text-ink-headline leading-none tracking-[-0.03em] mb-6">
                 {step.n}
               </p>
 
               {/* Title */}
-              <h3 className="font-display font-light text-[clamp(24px,2.2vw,32px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+              <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                 {step.title}
               </h3>
 

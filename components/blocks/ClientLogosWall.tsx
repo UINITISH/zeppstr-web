@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { cn } from "@/lib/cn";
+import { logoBox, WALL_LOGO } from "@/lib/logo-optical";
 
 /**
  * ClientLogosWall — editorial 6-column logo grid.
@@ -12,6 +14,35 @@ import Image from "next/image";
  * Hairline dividers between rows/columns mirror the rest of the page system.
  */
 
+/**
+ * ONE TREATMENT FOR EVERY LOGO — no per-client background.
+ *
+ * An earlier version gave the five reversed logos an emerald cell (and then an
+ * emerald chip) so they would not disappear on white. Both versions put a green
+ * patch behind five of thirty-two brands, which is worse than the problem it
+ * solved: the wall stopped reading as one wall.
+ *
+ * The fix went into the artwork instead. FWC, Scageon, Magtik and Pohewala were
+ * supplied as white/reversed files; their near-white pixels have been recoloured
+ * to ink so they are dark artwork like everything else. Brand colours were left
+ * untouched — Magtik keeps its orange bolt, Pohewala its yellow, Sharjah its
+ * gold. Originals: deliverables/logo-originals/ and the uploads folder.
+ *
+ * So there is no `tone` here any more, and there should not be one again. If a
+ * new logo arrives white, recolour the file; do not special-case the cell.
+ */
+/**
+ * PATH VERSION: /client-logos/v3/
+ *
+ * Next caches optimised images by URL, so editing a PNG in place leaves the dev
+ * server and any CDN serving the previous version indefinitely — which during
+ * this work looked exactly like the logos had disappeared. The artwork was
+ * reprocessed (white plates removed, reversed logos recoloured to ink, edge
+ * halos cleared), so the whole set moved to a versioned folder. The v1 files are
+ * still at /client-logos/ and can be deleted once this is deployed and verified.
+ *
+ * If the artwork is ever reprocessed again, bump to v3 rather than overwriting.
+ */
 type Client = { name: string; file: string };
 
 const CLIENTS: Client[] = [
@@ -31,14 +62,22 @@ const CLIENTS: Client[] = [
   { name: "My Keto Co", file: "my-keto-co.png" },
   { name: "Nakshatech", file: "nakshatech.png" },
   { name: "Pacer", file: "pacer.png" },
-  { name: "Prestige Group", file: "prestige-group.png" },
   { name: "Prohance", file: "prohance.png" },
   { name: "Sky Phonez", file: "sky-phonez.png" },
-  { name: "Tansi Fintech", file: "tansi-fintech.png" },
   { name: "Tristar Online", file: "tristar-online.png" },
   { name: "Twenty One Finance", file: "twenty-one-finance.png" },
   { name: "VehicleMall", file: "vehiclemall.png" },
   { name: "Wise Market", file: "wise-market.png" },
+
+  // ── Added 15 Sep 2026, logos supplied directly by Vikas ──
+  { name: "Moonwalk", file: "moonwalk.png" },
+  { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
+  { name: "TruGlobal", file: "truglobal.png" },
+  { name: "Leverage Edu", file: "leverage-edu.png" },
+  { name: "Invest in Sharjah", file: "invest-in-sharjah.png" },
+  { name: "FWC", file: "fwc-dark.png" },
+  { name: "Magtik Lighting", file: "magtik-lighting-dark.png" },
+  { name: "Pohewala", file: "pohewala-2018.png" },
 ];
 
 export function ClientLogosWall() {
@@ -56,7 +95,7 @@ export function ClientLogosWall() {
             </p>
             <h2
               id="client-logos-heading"
-              className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,72px)] text-ink-headline leading-[1.05] max-w-[28ch] text-balance"
+              className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.05] max-w-[28ch] text-balance"
             >
               Different industries, different scales. Same{" "}
               <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">compounding</span>{" "}
@@ -73,25 +112,67 @@ export function ClientLogosWall() {
           </div>
         </div>
 
-        {/* Logo grid — hairline cells, monochrome default, color on hover */}
-        <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        {/* Logo grid — hairline cells, monochrome default, colour on hover */}
+        {/* 2 / 3 / 6 columns, and 30 logos.
+            CHANGED 17 SEP 2026 from 2/4/8 at Vikas's request — eight across
+            rendered each mark too small to read, which defeats the point of a
+            logo wall.
+
+            THE COUNT HAS TO MATCH THE COLUMNS. 30 divides evenly by 2, 3 and 6,
+            so no breakpoint leaves a ragged final row. At 32 logos a six-column
+            grid would strand two on their own line, which is exactly the
+            unfinished look this grid was rebuilt to avoid.
+
+            Two were dropped to get from 32 to 30, chosen on how they render
+            rather than by who they are: Scageon (aspect ratio 7.56 — a hairline
+            wordmark that reads as a stray rule at this size) and Tansi Fintech
+            (a small mark that greys out almost completely under the wall's
+            default desaturation). Both are still in lib/client-logo.ts and
+            still appear wherever they are legible.
+
+            Adding a client means adding six, or swapping one in. */}
+        {/* Cells are now cards rather than bare grid squares. The hairline
+            grid alone gave the logos nothing to sit against — transparent PNGs
+            of very different weights floating in white space read as unfinished
+            regardless of how clean the artwork is. A card with a hairline and a
+            soft shadow gives every logo the same footprint and a defined edge,
+            which is what makes a logo wall look deliberate. */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
           {CLIENTS.map((client) => (
             <div
               key={client.file}
-              className="group relative flex items-center justify-center h-[110px] md:h-[130px] px-6 md:px-8 border-r border-b border-ink-headline/10 transition-colors duration-hover hover:bg-bg-secondary"
+              /* Every cell is white. Reversed logos get a small contained
+                 emerald plate INSIDE the cell rather than a coloured cell,
+                 because colouring whole cells produced a staircase of green
+                 patches wherever those five clients happened to fall in the
+                 6-column flow — it read as a rendering fault rather than a
+                 decision. A contained plate keeps the grid uniform. */
+              className={cn(
+                "group relative flex items-center justify-center",
+                "h-[104px] md:h-[122px] px-4 md:px-5",
+                "bg-white rounded-md border border-ink-headline/10",
+                "shadow-[0_1px_2px_rgba(10,16,47,0.04),0_2px_8px_rgba(10,16,47,0.05)]",
+                "transition-all duration-hover",
+                "hover:-translate-y-0.5 hover:border-ink-headline/20",
+                "hover:shadow-[0_2px_4px_rgba(10,16,47,0.06),0_8px_20px_rgba(10,16,47,0.10)]",
+              )}
             >
               <Image
-                src={`/client-logos/${client.file}`}
+                src={`/client-logos/v3/${client.file}`}
                 alt={`${client.name} — Zeppstr client`}
                 width={160}
                 height={70}
-                className="max-h-[55%] w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-hover"
+                /* Optical area sizing — see lib/logo-optical.ts. Shares the
+                   same target area as the Work-page roster, so a mark is the
+                   same size on the homepage as it is on /work. */
+                style={logoBox(client.file, WALL_LOGO)}
+                className="w-auto h-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-hover"
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
               />
               {/* Yellow underline accent on hover */}
               <span
                 aria-hidden="true"
-                className="absolute left-4 right-4 bottom-0 h-[2px] bg-brand-yellow scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-hover"
+                className="absolute left-4 right-4 bottom-0 h-[2px] rounded-full bg-brand-yellow scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-hover"
               />
             </div>
           ))}

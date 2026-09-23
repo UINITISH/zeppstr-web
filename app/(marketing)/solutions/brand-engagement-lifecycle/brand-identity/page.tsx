@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { BrandIdentitySystem } from "@/components/utility/BrandIdentitySystem";
 // identity-specific symptoms, principles, and process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Brand Identity — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Most identity projects solve the wrong problem. They optimize for how the brand looks in a deck — not how it performs in a paid ad, a checkout page, or a sales call. We design for the second one.",
-};
+  path: "/solutions/brand-engagement-lifecycle/brand-identity",
+})
 
 // ─── Content ───
 
@@ -49,7 +51,7 @@ const SYSTEM_LAYERS = [
     name: "Color System",
     format: "Brand · Action · Status · Surface · Ink",
     description:
-      "Semantic, not decorative. Every hex has a job — what it means, where it goes, and which channel it&rsquo;s tested for contrast on.",
+      "Semantic, not decorative. Every hex has a job — what it means, where it goes, and which channel it’s tested for contrast on.",
   },
   {
     name: "Voice Doc",
@@ -59,7 +61,7 @@ const SYSTEM_LAYERS = [
   },
   {
     name: "Motion + Photography",
-    format: "Direction · Reference · Don&rsquo;ts",
+    format: "Direction · Reference · Don’ts",
     description:
       "How the identity moves and what it depicts. Motion primitives, photography direction, and a no-go list that ends the stock-photo era.",
   },
@@ -97,12 +99,12 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Voice is a behavior.",
-    body: "A tone-of-voice paragraph doesn&rsquo;t change how anyone writes. Named voice modes and sentence-level examples do.",
+    body: "A tone-of-voice paragraph doesn’t change how anyone writes. Named voice modes and sentence-level examples do.",
   },
   {
     n: "04",
-    title: "If a junior can&rsquo;t ship from it, it failed.",
-    body: "The test for a brand operating system isn&rsquo;t whether the founders approve it. It&rsquo;s whether a new designer can produce on-brand work in week one.",
+    title: "If a junior can’t ship from it, it failed.",
+    body: "The test for a brand operating system isn’t whether the founders approve it. It’s whether a new designer can produce on-brand work in week one.",
   },
 ];
 
@@ -111,12 +113,12 @@ const PROCESS_PHASES = [
   {
     title: "Identity Audit",
     duration: "Week 1–2",
-    body: "Every existing identity surface scored for consistency, performance, and decay. Written diagnostic — what's working, what's leaking, what's drifting.",
+    body: "Every existing identity surface scored for consistency, performance, and decay. Written diagnostic — what’s working, what’s leaking, what’s drifting.",
   },
   {
     title: "Positioning Lock",
     duration: "Week 3",
-    body: "One sentence we'll design from. Until this is signed by the founder, no visual work begins. This is the part most agencies skip.",
+    body: "One sentence we’ll design from. Until this is signed by the founder, no visual work begins. This is the part most agencies skip.",
   },
   {
     title: "System Composition",
@@ -126,7 +128,7 @@ const PROCESS_PHASES = [
   {
     title: "Production Build",
     duration: "Week 8–10",
-    body: "Every artifact built in production format. Source files. Design tokens. Code variables. Copy in markdown. No deck that can't be shipped.",
+    body: "Every artifact built in production format. Source files. Design tokens. Code variables. Copy in markdown. No deck that can’t be shipped.",
   },
   {
     title: "Application + Handoff",
@@ -142,25 +144,25 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "47",
-    metric: "Touchpoints in the average system",
+    figure: "Every surface",
+    metric: "Documented, not just the logo sheet",
     detail:
-      "Most brand books document four. Most operating systems need closer to fifty.",
-    client: "Standard build",
+      "A brand book that covers the mark and two lockups leaves every other surface to be invented on the fly — ad formats, email, sales decks, packaging, the site. Those are where the brand is actually seen.",
+    client: "Zeppstr — scope of the system",
   },
   {
-    figure: "−38%",
-    metric: "Drop in creative production time",
+    figure: "One toolkit",
+    metric: "Paid, lifecycle and sales stop re-making the same asset",
     detail:
-      "Once the application toolkit ships, every downstream team — paid, lifecycle, sales — moves faster.",
-    client: "Multi-brand consumer operator",
+      "The deliverable is the application system, not the logo. Once it ships, downstream teams build from it instead of reinterpreting the brand each time.",
+    client: "Zeppstr — what we deliver",
   },
   {
-    figure: "9 / 10",
-    metric: "Engagements are rebuilds",
+    figure: "Rebuild",
+    metric: "The usual starting point, not a blank page",
     detail:
-      "Most businesses already have an identity. It just isn&rsquo;t operating. We come in when paid, lifecycle, and sales each have their own version of the brand.",
-    client: "Across the practice",
+      "Most businesses already have an identity. It just isn’t operating. We come in when paid, lifecycle and sales each have their own version of the brand.",
+    client: "Zeppstr — engagement model",
   },
 ];
 
@@ -181,7 +183,7 @@ const FAQS = [
   {
     question: "Rebrand or new identity — which do you do?",
     answer:
-      "Mostly rebrands. Nine of ten engagements are operators who already have an identity that's stopped operating. We rarely build a brand from a blank canvas.",
+      "Mostly rebrands. Nine of ten engagements are operators who already have an identity that’s stopped operating. We rarely build a brand from a blank canvas.",
   },
   {
     question: "How is this different from hiring a branding agency?",
@@ -201,7 +203,7 @@ const FAQS = [
   {
     question: "What if our team is the bottleneck, not the identity?",
     answer:
-      "The audit will tell us that. If your problem is operating capacity rather than the identity itself, we'll say so — and recommend Lifecycle or Content Operations instead.",
+      "The audit will tell us that. If your problem is operating capacity rather than the identity itself, we’ll say so — and recommend Lifecycle or Content Operations instead.",
   },
 ];
 
@@ -259,7 +261,7 @@ export default function BrandIdentityPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Most identities solve the{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     wrong problem
@@ -268,7 +270,7 @@ export default function BrandIdentityPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  They optimize for how the brand looks in a deck &mdash; not
+                  They optimize for how the brand looks in a deck — not
                   how it performs in a paid ad, a checkout page, or a sales
                   call. We design for the second one.
                 </p>
@@ -276,7 +278,7 @@ export default function BrandIdentityPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for an identity audit</span>
                     <span aria-hidden="true">→</span>
@@ -311,7 +313,7 @@ export default function BrandIdentityPage() {
                 </p>
                 <h2
                   id="symptoms-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,64px)] text-white leading-[1.05] max-w-[16ch] text-balance mb-8"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[16ch] text-balance mb-8"
                 >
                   Is your identity{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -321,7 +323,7 @@ export default function BrandIdentityPage() {
                 </h2>
                 <p className="font-body text-body text-white/75 leading-[1.6] max-w-[40ch]">
                   Seven symptoms we look for in the audit. Nod at two and
-                  you&rsquo;re likely paying a tax on every paid impression
+                  you’re likely paying a tax on every paid impression
                   downstream.
                 </p>
               </div>
@@ -335,7 +337,7 @@ export default function BrandIdentityPage() {
                     <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-brand-yellow w-10">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="font-display font-light text-[clamp(18px,1.6vw,24px)] text-white leading-[1.3] tracking-[-0.005em]">
+                    <p className="font-display font-light text-display-xs text-white leading-[1.3] tracking-[-0.005em]">
                       {symptom}
                     </p>
                   </li>
@@ -357,7 +359,7 @@ export default function BrandIdentityPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -377,7 +379,7 @@ export default function BrandIdentityPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[22ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[22ch]">
                       {p.title}
                     </h3>
                     <p
@@ -404,7 +406,7 @@ export default function BrandIdentityPage() {
                 </p>
                 <h2
                   id="system-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six layers of an identity that{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -445,7 +447,7 @@ export default function BrandIdentityPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2.2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-3 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-3 max-w-[22ch]">
                     {layer.name}
                   </h3>
                   <p
@@ -475,7 +477,7 @@ export default function BrandIdentityPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Twelve weeks from audit to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -502,7 +504,7 @@ export default function BrandIdentityPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -511,7 +513,7 @@ export default function BrandIdentityPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {phase.title}
                     </h3>
                     <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
@@ -539,7 +541,7 @@ export default function BrandIdentityPage() {
               id="brand-identity-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Identities we&rsquo;ve built and rebuilt
+              Identities we’ve built and rebuilt
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -573,7 +575,7 @@ export default function BrandIdentityPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
               >
                 What the work has{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -595,10 +597,10 @@ export default function BrandIdentityPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -644,13 +646,13 @@ export default function BrandIdentityPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -660,14 +662,14 @@ export default function BrandIdentityPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -693,7 +695,7 @@ export default function BrandIdentityPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
               Your identity is{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 leaking
@@ -705,14 +707,14 @@ export default function BrandIdentityPage() {
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid identity audit. Refunded in full if
-                  we&rsquo;re not the right fit. Three slots a quarter, by
+                  we’re not the right fit. Three slots a quarter, by
                   intention.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

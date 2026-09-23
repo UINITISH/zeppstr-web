@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { ProductionAssetTree } from "@/components/utility/ProductionAssetTree";
 // Asset Library catalog, Architecture, quarter-long Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Video Production — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Stop shooting films. Start running a production line. One shoot day, sixteen deployable assets, ninety days of supply — and the rights stay with you.",
-};
+  path: "/solutions/brand-engagement-lifecycle/video-production",
+})
 
 // ─── Content ───
 
@@ -25,7 +27,6 @@ const FEATURED_LOGOS = [
   { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
   { name: "Wise Market", file: "wise-market.png" },
   { name: "Aishwarya Interiors", file: "aishwarya-interiors.png" },
-  { name: "Prestige Group", file: "prestige-group.png" },
   { name: "Tristar Online", file: "tristar-online.png" },
   { name: "My Keto Co", file: "my-keto-co.png" },
   { name: "Lucky White Goods", file: "lucky-white-goods.png" },
@@ -54,12 +55,12 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "The brief is the production plan.",
-    body: "We don&rsquo;t write a brief, then write a treatment, then write a shot list. Brief, treatment, and shot list are the same document &mdash; written before the location scout.",
+    body: "We don’t write a brief, then write a treatment, then write a shot list. Brief, treatment, and shot list are the same document — written before the location scout.",
   },
   {
     n: "03",
     title: "Own the source. Edit forever.",
-    body: "Raw footage, project files, and rights stay with you. Three months later when you need a new cut for a campaign, the source is in your drive &mdash; not in someone else&rsquo;s archive.",
+    body: "Raw footage, project files, and rights stay with you. Three months later when you need a new cut for a campaign, the source is in your drive — not in someone else’s archive.",
   },
   {
     n: "04",
@@ -132,13 +133,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Strategy & Audience",
     format: "Brief · Positioning · Distribution plan",
     description:
-      "Who&rsquo;s the audience, what channel does this serve, what does success look like in numbers. Locked before treatment.",
+      "Who’s the audience, what channel does this serve, what does success look like in numbers. Locked before treatment.",
   },
   {
     name: "Production Plan",
     format: "Treatment · Shot list · Cast · Location",
     description:
-      "Treatment, shot list, talent, location, equipment, schedule &mdash; one document, not five. Designed to produce 16 assets, not one film.",
+      "Treatment, shot list, talent, location, equipment, schedule — one document, not five. Designed to produce 16 assets, not one film.",
   },
   {
     name: "Capture",
@@ -150,7 +151,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Edit & Cut",
     format: "Master · Derivatives · Variants",
     description:
-      "Master cut first. Then the 15 derivatives &mdash; cut-downs, verticals, stills, sales clips &mdash; assembled from the same source in parallel.",
+      "Master cut first. Then the 15 derivatives — cut-downs, verticals, stills, sales clips — assembled from the same source in parallel.",
   },
   {
     name: "Distribution & Measurement",
@@ -175,7 +176,7 @@ const PROCESS_PHASES = [
   {
     title: "Pre-production",
     duration: "Week 3",
-    body: "Location lock, cast confirm, crew booked, props sorted, schedule signed. Shoot day is calm because pre-production wasn&rsquo;t.",
+    body: "Location lock, cast confirm, crew booked, props sorted, schedule signed. Shoot day is calm because pre-production wasn’t.",
   },
   {
     title: "Shoot",
@@ -206,15 +207,15 @@ const PRACTICE_NUMBERS = [
     figure: "₹62K",
     metric: "Cost per deployable asset",
     detail:
-      "Effective per-asset cost when ₹10L shoot produces 16 cuts. Industry baseline: ₹3L+ per cut.",
-    client: "Cost amortization",
+      "Effective per-asset cost once a single shoot day is planned to produce sixteen cuts rather than one hero film. The saving is in the planning, not the day rate.",
+    client: "Zeppstr — how we budget a shoot",
   },
   {
     figure: "90 days",
     metric: "Supply per shoot",
     detail:
-      "One shoot day produces a full quarter of paid, social, and lifecycle supply &mdash; without a re-shoot.",
-    client: "DTC consumer · Real estate",
+      "One shoot day produces a full quarter of paid, social, and lifecycle supply — without a re-shoot.",
+    client: "Zeppstr — production model",
   },
 ];
 
@@ -230,22 +231,22 @@ const FAQS = [
   {
     question: "Do you have an in-house crew or do you book?",
     answer:
-      "Both. A core in-house production lead plus a roster of vetted directors, DPs, editors, and post houses we&rsquo;ve worked with for years. Scope of the brief decides who&rsquo;s on the call sheet.",
+      "Both. A core in-house production lead plus a roster of vetted directors, DPs, editors, and post houses we’ve worked with for years. Scope of the brief decides who’s on the call sheet.",
   },
   {
     question: "Who owns the rights to the footage?",
     answer:
-      "You do. Raw footage, project files, music licenses, and talent releases are all assigned to you on delivery. Three months later when you need a new cut, the source is in your drive &mdash; not in someone else&rsquo;s archive.",
+      "You do. Raw footage, project files, music licenses, and talent releases are all assigned to you on delivery. Three months later when you need a new cut, the source is in your drive — not in someone else’s archive.",
   },
   {
     question: "Can you do a one-off film, not a quarterly program?",
     answer:
-      "Yes, but it&rsquo;s rarely the efficient move. A one-off hero film at ₹15L produces one asset. The same shoot day, briefed differently, produces sixteen. We&rsquo;ll usually advise the latter.",
+      "Yes, but it’s rarely the efficient move. A one-off hero film at ₹15L produces one asset. The same shoot day, briefed differently, produces sixteen. We’ll usually advise the latter.",
   },
   {
     question: "Do you handle on-camera talent, or do we bring it?",
     answer:
-      "Both. Founder-led is common (and often the highest-converting). We can also cast professional talent, customer talent, or hybrid &mdash; whichever the audience and channel call for.",
+      "Both. Founder-led is common (and often the highest-converting). We can also cast professional talent, customer talent, or hybrid — whichever the audience and channel call for.",
   },
   {
     question: "How fast can you turn around a shoot?",
@@ -313,7 +314,7 @@ export default function VideoProductionPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop shooting{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     films
@@ -323,14 +324,14 @@ export default function VideoProductionPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   One shoot day. Sixteen deployable assets. Ninety days of
-                  supply across paid, social, sales, and lifecycle &mdash; and
+                  supply across paid, social, sales, and lifecycle — and
                   the rights stay with you.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a production audit</span>
                     <span aria-hidden="true">→</span>
@@ -365,7 +366,7 @@ export default function VideoProductionPage() {
                 </p>
                 <h2
                   id="output-inventory-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[22ch] text-balance"
                 >
                   One shoot day.{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -387,7 +388,7 @@ export default function VideoProductionPage() {
             {/* Multiplier strip */}
             <div className="grid md:grid-cols-12 gap-6 md:gap-12 py-10 mb-10 border-y border-white/20 items-center">
               <div className="md:col-span-3 text-center md:text-left">
-                <p className="font-display font-extralight text-[clamp(64px,7vw,128px)] text-brand-yellow leading-none tracking-[-0.04em]">
+                <p className="font-display font-extralight text-display-stat text-brand-yellow leading-none tracking-[-0.04em]">
                   01
                 </p>
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 mt-3">
@@ -398,7 +399,7 @@ export default function VideoProductionPage() {
                 ×
               </div>
               <div className="md:col-span-3 text-center md:text-left">
-                <p className="font-display font-extralight text-[clamp(64px,7vw,128px)] text-white leading-none tracking-[-0.04em]">
+                <p className="font-display font-extralight text-display-stat text-white leading-none tracking-[-0.04em]">
                   {TOTAL_ASSETS}
                 </p>
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 mt-3">
@@ -409,7 +410,7 @@ export default function VideoProductionPage() {
                 =
               </div>
               <div className="md:col-span-4 text-center md:text-left">
-                <p className="font-display font-light text-[clamp(28px,3vw,44px)] text-white leading-[1.1] tracking-[-0.02em]">
+                <p className="font-display font-light text-display-md text-white leading-[1.1] tracking-[-0.02em]">
                   ₹62K / asset
                 </p>
                 <p className="font-body text-body-sm text-white/65 leading-[1.5] mt-3 max-w-[34ch]">
@@ -429,11 +430,11 @@ export default function VideoProductionPage() {
                   <div className="md:col-span-1 font-mono text-[11px] uppercase tracking-[0.2em] text-brand-yellow">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <div className="md:col-span-1 font-display font-light text-[clamp(22px,2vw,28px)] text-brand-yellow leading-none tracking-[-0.02em]">
+                  <div className="md:col-span-1 font-display font-light text-display-sm text-brand-yellow leading-none tracking-[-0.02em]">
                     {item.qty}×
                   </div>
                   <div className="md:col-span-4">
-                    <p className="font-display font-light text-[clamp(18px,1.6vw,22px)] text-white leading-[1.3] tracking-[-0.005em]">
+                    <p className="font-display font-light text-display-xs text-white leading-[1.3] tracking-[-0.005em]">
                       {item.asset}
                     </p>
                     <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/50 mt-1">
@@ -466,7 +467,7 @@ export default function VideoProductionPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -486,7 +487,7 @@ export default function VideoProductionPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -513,7 +514,7 @@ export default function VideoProductionPage() {
                 </p>
                 <h2
                   id="asset-library-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -551,7 +552,7 @@ export default function VideoProductionPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -593,7 +594,7 @@ export default function VideoProductionPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -619,7 +620,7 @@ export default function VideoProductionPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -628,7 +629,7 @@ export default function VideoProductionPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -659,7 +660,7 @@ export default function VideoProductionPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   One quarter, end to end.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -685,10 +686,10 @@ export default function VideoProductionPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -714,7 +715,7 @@ export default function VideoProductionPage() {
               id="video-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve produced video for
+              Brands we’ve produced video for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -748,7 +749,7 @@ export default function VideoProductionPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the shoot day{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -770,10 +771,10 @@ export default function VideoProductionPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -819,13 +820,13 @@ export default function VideoProductionPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -835,14 +836,14 @@ export default function VideoProductionPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -869,7 +870,7 @@ export default function VideoProductionPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               One shoot.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 A quarter of supply
@@ -882,13 +883,13 @@ export default function VideoProductionPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid production audit. We score your current
                   asset library, your shoot-to-cut ratio, and the supply gap.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

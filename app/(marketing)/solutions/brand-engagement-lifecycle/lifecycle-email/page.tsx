@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { EmailFlowGraph } from "@/components/utility/EmailFlowGraph";
 // Flow Library catalog, Architecture stack.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Lifecycle & Email Marketing — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Email is the only channel you own. Treat it like one. We build lifecycle as a state machine — automated flows for every meaningful customer state, measured against revenue, not open rates.",
-};
+  path: "/solutions/brand-engagement-lifecycle/lifecycle-email",
+})
 
 // ─── Content ───
 
@@ -43,17 +45,17 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Email is owned. Act like it.",
-    body: "It&rsquo;s the one channel no algorithm can throttle. Most brands treat it like rented social. We treat it like the second-most valuable asset the business has.",
+    body: "It’s the one channel no algorithm can throttle. Most brands treat it like rented social. We treat it like the second-most valuable asset the business has.",
   },
   {
     n: "02",
     title: "Flows compound. Campaigns decay.",
-    body: "A campaign earns once and dies. A flow earns every time a customer hits its trigger &mdash; for years. Most programs do the inverse of what they should.",
+    body: "A campaign earns once and dies. A flow earns every time a customer hits its trigger — for years. Most programs do the inverse of what they should.",
   },
   {
     n: "03",
     title: "Send less. Send when it matters.",
-    body: "Fewer sends, better triggered. We&rsquo;ve cut send volume 60% and increased revenue. The list thanks you. The inbox provider thanks you. Revenue thanks you.",
+    body: "Fewer sends, better triggered. We’ve cut send volume 60% and increased revenue. The list thanks you. The inbox provider thanks you. Revenue thanks you.",
   },
   {
     n: "04",
@@ -133,7 +135,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Segmentation Layer",
     format: "RFM · Behavioral cohorts · Predictive",
     description:
-      "Recency-frequency-monetary cohorts, plus behavioral and predictive segments. Segments are the audience &mdash; flows are the trigger.",
+      "Recency-frequency-monetary cohorts, plus behavioral and predictive segments. Segments are the audience — flows are the trigger.",
   },
   {
     name: "Flow Layer",
@@ -201,8 +203,8 @@ const PRACTICE_NUMBERS = [
     figure: "70 / 30",
     metric: "Flows vs Campaigns",
     detail:
-      "The revenue split we target. Most programs arrive at the inverse — 20% flows, 80% campaigns.",
-    client: "Across the practice",
+      "The revenue split we build towards: automated flows doing the heavy lifting, broadcast campaigns on top. Most programmes we inherit are the other way round.",
+    client: "Zeppstr — what we build to",
   },
   {
     figure: "18+",
@@ -230,7 +232,7 @@ const FAQS = [
   {
     question: "Will sending less actually grow revenue?",
     answer:
-      "Yes, usually. Most lists are over-mailed, under-segmented, and beat down to single-digit open rates. Sending less to better-segmented cohorts compounds. We've cut volume 60% and grown revenue in the same quarter.",
+      "Yes, usually. Most lists are over-mailed, under-segmented, and beat down to single-digit open rates. Sending less to better-segmented cohorts compounds. We’ve cut volume 60% and grown revenue in the same quarter.",
   },
   {
     question: "Do you do SMS, push, and WhatsApp too?",
@@ -308,7 +310,7 @@ export default function LifecycleEmailPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Email is the only channel you{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     own
@@ -318,14 +320,14 @@ export default function LifecycleEmailPage() {
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
                   Treat it like one. We build lifecycle as a state machine
-                  &mdash; automated flows for every meaningful customer state,
+                  — automated flows for every meaningful customer state,
                   measured against revenue, not open rates.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a lifecycle audit</span>
                     <span aria-hidden="true">→</span>
@@ -360,7 +362,7 @@ export default function LifecycleEmailPage() {
                 </p>
                 <h2
                   id="revenue-composition-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[22ch] text-balance"
                 >
                   Most programs earn from{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -392,13 +394,13 @@ export default function LifecycleEmailPage() {
                 </div>
                 <div className="flex w-full h-16 border border-white/25">
                   <div
-                    className="flex items-center justify-center text-ink-headline font-display font-light text-[clamp(20px,1.8vw,28px)] bg-white/30 border-r border-white/25"
+                    className="flex items-center justify-center text-ink-headline font-display font-light text-display-sm bg-white/30 border-r border-white/25"
                     style={{ width: `${REVENUE_COMPOSITION.before.flows}%` }}
                   >
                     {REVENUE_COMPOSITION.before.flows}%
                   </div>
                   <div
-                    className="flex items-center justify-center text-white font-display font-light text-[clamp(20px,1.8vw,28px)]"
+                    className="flex items-center justify-center text-white font-display font-light text-display-sm"
                     style={{
                       width: `${REVENUE_COMPOSITION.before.campaigns}%`,
                     }}
@@ -432,13 +434,13 @@ export default function LifecycleEmailPage() {
                 </div>
                 <div className="flex w-full h-16 border border-brand-yellow">
                   <div
-                    className="flex items-center justify-center text-ink-headline font-display font-light text-[clamp(20px,1.8vw,28px)] bg-brand-yellow border-r border-brand-yellow"
+                    className="flex items-center justify-center text-ink-headline font-display font-light text-display-sm bg-brand-yellow border-r border-brand-yellow"
                     style={{ width: `${REVENUE_COMPOSITION.after.flows}%` }}
                   >
                     {REVENUE_COMPOSITION.after.flows}%
                   </div>
                   <div
-                    className="flex items-center justify-center text-white font-display font-light text-[clamp(20px,1.8vw,28px)] bg-white/10"
+                    className="flex items-center justify-center text-white font-display font-light text-display-sm bg-white/10"
                     style={{
                       width: `${REVENUE_COMPOSITION.after.campaigns}%`,
                     }}
@@ -475,7 +477,7 @@ export default function LifecycleEmailPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -495,7 +497,7 @@ export default function LifecycleEmailPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -522,7 +524,7 @@ export default function LifecycleEmailPage() {
                 </p>
                 <h2
                   id="flow-library-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -560,7 +562,7 @@ export default function LifecycleEmailPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -602,7 +604,7 @@ export default function LifecycleEmailPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers beneath every{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -628,7 +630,7 @@ export default function LifecycleEmailPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -637,7 +639,7 @@ export default function LifecycleEmailPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -669,7 +671,7 @@ export default function LifecycleEmailPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks from audit to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -695,10 +697,10 @@ export default function LifecycleEmailPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -723,7 +725,7 @@ export default function LifecycleEmailPage() {
               id="lifecycle-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve built lifecycle programs for
+              Brands we’ve built lifecycle programs for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -757,7 +759,7 @@ export default function LifecycleEmailPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the program{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -779,10 +781,10 @@ export default function LifecycleEmailPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p className="font-body text-body text-ink-body leading-[1.5] max-w-[34ch]">
@@ -827,13 +829,13 @@ export default function LifecycleEmailPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -843,14 +845,14 @@ export default function LifecycleEmailPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -876,7 +878,7 @@ export default function LifecycleEmailPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Build a lifecycle that{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 earns while you sleep
@@ -889,13 +891,13 @@ export default function LifecycleEmailPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid lifecycle audit. We pull your last 90 days of
                   sends, score your flow library, and map the revenue gap.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

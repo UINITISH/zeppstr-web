@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,11 +13,12 @@ import { TopicTerritoryMap } from "@/components/utility/TopicTerritoryMap";
 // Content Catalog, Architecture, 12-week Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Content Architecture — Organic Growth Practice | Zeppstr",
   description:
     "Stop publishing articles. Start owning topic territories. We build topic clusters — pillar pages, supporting articles, and the internal-link graph between them — so content compounds instead of accumulating.",
-};
+  path: "/solutions/organic-growth/content-architecture",
+})
 
 // ─── Content ───
 
@@ -68,7 +70,7 @@ const PRINCIPLES = [
   {
     n: "01",
     title: "Topic &gt; article.",
-    body: "The unit isn&rsquo;t the article. It&rsquo;s the topic territory &mdash; one pillar plus 8&ndash;12 supporting articles plus the internal-link discipline between them. Anything else is publishing without architecture.",
+    body: "The unit isn’t the article. It’s the topic territory — one pillar plus 8–12 supporting articles plus the internal-link discipline between them. Anything else is publishing without architecture.",
   },
   {
     n: "02",
@@ -78,7 +80,7 @@ const PRINCIPLES = [
   {
     n: "03",
     title: "Compounding &gt; novelty.",
-    body: "An article published once and never touched is a depreciating asset. An architected cluster updated quarterly compounds for years. We refresh the library; we don&rsquo;t fill it.",
+    body: "An article published once and never touched is a depreciating asset. An architected cluster updated quarterly compounds for years. We refresh the library; we don’t fill it.",
   },
   {
     n: "04",
@@ -101,7 +103,7 @@ const CONTENT_CATALOG = [
   {
     category: "Pillar Design",
     items: [
-      "Pillar brief &amp; outline",
+      "Pillar brief & outline",
       "Long-form pillar production",
       "Visual asset library",
       "Update cadence · semi-annual",
@@ -113,7 +115,7 @@ const CONTENT_CATALOG = [
       "Cluster gap analysis",
       "Brief library &middot; templated",
       "Production line · sprint cadence",
-      "Editorial review &amp; standards",
+      "Editorial review & standards",
     ],
   },
   {
@@ -129,9 +131,9 @@ const CONTENT_CATALOG = [
     category: "On-Page Authority",
     items: [
       "Schema · structured data",
-      "Heading hierarchy &amp; semantics",
+      "Heading hierarchy & semantics",
       "Featured-snippet engineering",
-      "Image &amp; alt optimisation",
+      "Image & alt optimisation",
     ],
   },
   {
@@ -139,7 +141,7 @@ const CONTENT_CATALOG = [
     items: [
       "Quarterly content review",
       "Refresh prioritisation",
-      "Decay detection &amp; rebuild",
+      "Decay detection & rebuild",
       "Performance reporting · cluster-level",
     ],
   },
@@ -151,13 +153,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Demand Layer",
     format: "Search volume · Intent · Competition",
     description:
-      "Which topic territories have real, defensible demand. Not just keyword volume &mdash; intent quality, conversion fit, and how concentrated the existing competitive landscape is.",
+      "Which topic territories have real, defensible demand. Not just keyword volume — intent quality, conversion fit, and how concentrated the existing competitive landscape is.",
   },
   {
     name: "Hierarchy Layer",
     format: "Pillar → Cluster → Supporting",
     description:
-      "The hierarchy of pages within a territory. Pillar at the top, 8&ndash;12 supporting articles underneath, every page slotted by intent and depth before a word is written.",
+      "The hierarchy of pages within a territory. Pillar at the top, 8–12 supporting articles underneath, every page slotted by intent and depth before a word is written.",
   },
   {
     name: "Production Layer",
@@ -175,7 +177,7 @@ const ARCHITECTURE_LAYERS = [
     name: "Operating Layer",
     format: "Refresh · Decay · Expand",
     description:
-      "Quarterly review of every cluster &mdash; what&rsquo;s decaying gets refreshed, what&rsquo;s stable gets defended, what&rsquo;s won earns the right to expand into adjacent territory.",
+      "Quarterly review of every cluster — what’s decaying gets refreshed, what’s stable gets defended, what’s won earns the right to expand into adjacent territory.",
   },
 ];
 
@@ -189,7 +191,7 @@ const PROCESS_PHASES = [
   {
     title: "Hierarchy Design",
     duration: "Week 3",
-    body: "For each territory: pillar page brief, 8&ndash;12 supporting article briefs, intent mapping, internal-link plan. The blueprint before production.",
+    body: "For each territory: pillar page brief, 8–12 supporting article briefs, intent mapping, internal-link plan. The blueprint before production.",
   },
   {
     title: "Pillar Production",
@@ -199,7 +201,7 @@ const PROCESS_PHASES = [
   {
     title: "Supporting Build",
     duration: "Week 7–10",
-    body: "Supporting articles produced on sprint cadence. Each one briefed, drafted, edited, internally linked. Pages ship in clusters &mdash; never as one-offs.",
+    body: "Supporting articles produced on sprint cadence. Each one briefed, drafted, edited, internally linked. Pages ship in clusters — never as one-offs.",
   },
   {
     title: "Link Graph",
@@ -207,7 +209,7 @@ const PROCESS_PHASES = [
     body: "Final internal-link audit. Every required link in place. Anchor text variations applied. Cross-cluster bridges verified.",
   },
   {
-    title: "Operate &amp; Compound",
+    title: "Operate & Compound",
     duration: "Week 12+",
     body: "Quarterly review begins. Decaying pages refreshed, winning clusters defended, adjacent territories scoped. The library compounds instead of accumulating.",
   },
@@ -225,7 +227,7 @@ const PRACTICE_NUMBERS = [
     figure: "80%+",
     metric: "Top-3 capture · owned topic",
     detail:
-      "The threshold for &ldquo;owned&rdquo; coverage state &mdash; ranking top-3 for 80%+ of the territory&rsquo;s relevant search demand.",
+      "The threshold for “owned” coverage state — ranking top-3 for 80%+ of the territory’s relevant search demand.",
     client: "Ownership bar",
   },
   {
@@ -249,27 +251,27 @@ const FAQS = [
   {
     question: "Why not just publish more articles?",
     answer:
-      "Most teams publish more articles for years and never rank for the topics they care about. Architecture &mdash; pillar + supporting + internal linking &mdash; is what converts content effort into ranking power. Volume without architecture is a content treadmill.",
+      "Most teams publish more articles for years and never rank for the topics they care about. Architecture — pillar + supporting + internal linking — is what converts content effort into ranking power. Volume without architecture is a content treadmill.",
   },
   {
     question: "We already have a content library. Do we start over?",
     answer:
-      "Almost never. The audit usually surfaces 30&ndash;60% of existing articles that can be slotted into clusters with light edits. We rebuild the architecture around what&rsquo;s already there, then fill the gaps.",
+      "Almost never. The audit usually surfaces 30–60% of existing articles that can be slotted into clusters with light edits. We rebuild the architecture around what’s already there, then fill the gaps.",
   },
   {
     question: "How long until we rank?",
     answer:
-      "Pillar pages on lower-competition territories: 3&ndash;6 months. Owned-state (top-3 on 80%+ of demand): 9&ndash;18 months. The compounding from clusters is real but not fast &mdash; which is why this isn&rsquo;t a 90-day engagement.",
+      "Pillar pages on lower-competition territories: 3–6 months. Owned-state (top-3 on 80%+ of demand): 9–18 months. The compounding from clusters is real but not fast — which is why this isn’t a 90-day engagement.",
   },
   {
     question: "Who writes the content?",
     answer:
-      "We brief and edit; you write or we provide writers. The brief is the discipline; the writing is the execution. We won&rsquo;t cargo-cult voice &mdash; founder or subject-matter expert involvement makes the work better.",
+      "We brief and edit; you write or we provide writers. The brief is the discipline; the writing is the execution. We won’t cargo-cult voice — founder or subject-matter expert involvement makes the work better.",
   },
   {
     question: "What about AI content?",
     answer:
-      "AI-drafted, human-edited, fact-checked, voice-aligned &mdash; yes, for some classes of content. AI-generated, published-as-is, indistinguishable from competitors &mdash; no. The architecture matters more than the writing tool.",
+      "AI-drafted, human-edited, fact-checked, voice-aligned — yes, for some classes of content. AI-generated, published-as-is, indistinguishable from competitors — no. The architecture matters more than the writing tool.",
   },
   {
     question: "What does it cost?",
@@ -332,7 +334,7 @@ export default function ContentArchitecturePage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[20ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[20ch] text-balance mb-8">
                   Stop publishing articles. Own{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     topic territories
@@ -341,15 +343,15 @@ export default function ContentArchitecturePage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We build topic clusters &mdash; pillar pages, supporting
-                  articles, and the internal-link graph between them &mdash;
+                  We build topic clusters — pillar pages, supporting
+                  articles, and the internal-link graph between them —
                   so content compounds instead of accumulating.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a content audit</span>
                     <span aria-hidden="true">→</span>
@@ -384,7 +386,7 @@ export default function ContentArchitecturePage() {
                 </p>
                 <h2
                   id="states-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[26ch] text-balance"
                 >
                   Four states a topic can be in.{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -444,7 +446,7 @@ export default function ContentArchitecturePage() {
                       <p
                         className={`font-display ${
                           isOwned ? "font-bold" : "font-light"
-                        } text-[clamp(20px,1.9vw,26px)] text-white leading-[1.2] tracking-[-0.01em]`}
+                        } text-display-sm text-white leading-[1.2] tracking-[-0.01em]`}
                       >
                         {row.state}
                       </p>
@@ -478,7 +480,7 @@ export default function ContentArchitecturePage() {
             </ol>
 
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 mt-8">
-              Most teams live at &ldquo;Fragmented.&rdquo; The work is climbing two more rungs.
+              Most teams live at “Fragmented.” The work is climbing two more rungs.
             </p>
           </div>
         </section>
@@ -495,7 +497,7 @@ export default function ContentArchitecturePage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -516,7 +518,7 @@ export default function ContentArchitecturePage() {
                   </div>
                   <div>
                     <h3
-                      className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
+                      className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]"
                       dangerouslySetInnerHTML={{ __html: p.title }}
                     />
                     <p
@@ -543,7 +545,7 @@ export default function ContentArchitecturePage() {
                 </p>
                 <h2
                   id="catalog-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -581,7 +583,7 @@ export default function ContentArchitecturePage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -623,7 +625,7 @@ export default function ContentArchitecturePage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -649,7 +651,7 @@ export default function ContentArchitecturePage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -658,7 +660,7 @@ export default function ContentArchitecturePage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -690,7 +692,7 @@ export default function ContentArchitecturePage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks to a first{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -716,11 +718,11 @@ export default function ContentArchitecturePage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
                   <h3
-                    className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
+                    className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3"
                     dangerouslySetInnerHTML={{ __html: phase.title }}
                   />
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -746,7 +748,7 @@ export default function ContentArchitecturePage() {
               id="content-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve architected content for
+              Brands we’ve architected content for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -780,7 +782,7 @@ export default function ContentArchitecturePage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the cluster{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -802,10 +804,10 @@ export default function ContentArchitecturePage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -851,13 +853,13 @@ export default function ContentArchitecturePage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -867,14 +869,14 @@ export default function ContentArchitecturePage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -901,7 +903,7 @@ export default function ContentArchitecturePage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop renting traffic.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Own a territory
@@ -914,14 +916,14 @@ export default function ContentArchitecturePage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid content audit. We score your existing
                   coverage, identify the territories you should own, and map
-                  the path to ownership. Refunded in full if we&rsquo;re not
+                  the path to ownership. Refunded in full if we’re not
                   the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

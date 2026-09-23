@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Accordion from "@radix-ui/react-accordion";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 import type { Solution, Industry, SubService } from "@/sanity/lib/types";
 
@@ -45,7 +46,7 @@ export function MobileDrawer({ solutions, industries }: MobileDrawerProps) {
         />
         <Dialog.Content
           className={cn(
-            "fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-bg-primary",
+            "fixed inset-y-0 right-0 z-[60] w-full max-w-sm bg-bg-primary",
             "shadow-2xl flex flex-col",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right",
@@ -64,12 +65,16 @@ export function MobileDrawer({ solutions, industries }: MobileDrawerProps) {
             <Link
               href="/"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 font-display font-bold text-[20px] text-ink-headline"
+              className="flex items-center"
+              aria-label="Zeppstr — home"
             >
-              <span className="inline-flex items-center justify-center w-[24px] h-[24px] bg-emerald-900 text-white rounded-md text-xs">
-                ↗
-              </span>
-              Zeppstr
+              <Image
+                src="/brand/zeppstr-logo-horizontal.png"
+                alt="Zeppstr"
+                width={1999}
+                height={548}
+                className="h-[26px] w-auto"
+              />
             </Link>
             <Dialog.Close asChild>
               <button
@@ -173,7 +178,7 @@ export function MobileDrawer({ solutions, industries }: MobileDrawerProps) {
               onClick={() => setOpen(false)}
               className="mt-8 inline-flex w-full items-center justify-center bg-brand-yellow text-[#000] font-body font-medium text-button px-[42px] py-[18px] rounded hover:bg-brand-yellow-hover transition-colors"
             >
-              Book Consultation
+              Book a Call
             </Link>
 
             {/* Footer info */}

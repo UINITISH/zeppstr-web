@@ -67,9 +67,10 @@ export const SOLUTIONS = [
     slug: "brand-engagement-lifecycle",
     tagline: "From awareness to advocacy. The full lifecycle, owned.",
     longDescription: paragraphsToPt([
-      "Brand isn't a logo, social isn't likes, and lifecycle isn't a Mailchimp template. We operate the full demand and engagement layer — brand expression, organic and paid social, content, video, lifecycle email and SMS — as one connected practice.",
-      "The job: make sure the audience that finds you, stays engaged. The audience that engages, converts. The audience that converts, comes back.",
-      "When this layer is right, your CAC drops, your LTV rises, and your other channels work harder for less.",
+      "Brand isn't a logo, social isn't likes, and lifecycle isn't a Mailchimp template. We operate the full demand and engagement layer as one connected practice — brand expression, organic and paid social, content, film, on-ground activation, and lifecycle email, SMS and WhatsApp.",
+      "Unusually for a growth firm, we produce the work ourselves. Crews, cameras, locations, editors, and people standing in a room with your customers at a site launch or an expo. That matters less as a credential than as a mechanic: when the team buying the media is the team that shot the creative, a failing ad gets recut on Tuesday instead of re-briefed in a fortnight.",
+      "It also means the footage does not stop at the campaign. Behind-the-scenes capture runs on every shoot day, process content comes off the factory floor or the site, and founder content gets batched — so the feed has something to say in the eleven months a year when there is no campaign running.",
+      "The job is continuity: the audience that finds you stays engaged, the audience that engages converts, the audience that converts comes back. When this layer is right, acquisition costs fall because you are no longer buying every customer twice.",
     ]),
     seoTitle: "Brand, Engagement & Lifecycle | Social, Content, Email",
     seoDescription:

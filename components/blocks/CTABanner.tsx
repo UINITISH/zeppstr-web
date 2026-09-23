@@ -51,7 +51,7 @@ export function CTABanner({
         )}
         <h2
           className={cn(
-            "font-display font-extralight text-display-lg tracking-tight mb-6",
+            "font-display font-light text-display-lg tracking-tight mb-6",
             isYellow ? "text-ink-headline" : "text-white"
           )}
         >
@@ -68,13 +68,19 @@ export function CTABanner({
           </p>
         )}
         <div className="flex flex-wrap items-center justify-center gap-4">
+          {/* Primary CTA is SOLID in both variants.
+              On the yellow banner it was previously `outline` — a thin dark
+              border on yellow, which reads as a secondary action next to the
+              plain-text link beside it. This is the page's main conversion
+              point; it should be the highest-contrast element in the section.
+              Solid emerald on yellow is the strongest pairing in the palette. */}
           <Button
             asChild
-            variant={isYellow ? "outline" : "primary"}
+            variant="primary"
             className={
               isYellow
-                ? "border-ink-headline text-ink-headline hover:bg-emerald-900 hover:text-white hover:border-emerald-900"
-                : "bg-brand-yellow text-ink-headline hover:bg-brand-yellow-hover"
+                ? "bg-emerald-900 text-white hover:bg-ink-headline shadow-[0_2px_0_0_rgba(0,0,0,0.18)] hover:shadow-[0_4px_0_0_rgba(0,0,0,0.22)] hover:-translate-y-px"
+                : "bg-brand-yellow text-ink-headline hover:bg-brand-yellow-hover shadow-[0_2px_0_0_rgba(0,0,0,0.35)] hover:shadow-[0_4px_0_0_rgba(0,0,0,0.4)] hover:-translate-y-px"
             }
           >
             <Link href={primary.href}>{primary.label}</Link>
@@ -82,9 +88,13 @@ export function CTABanner({
           {secondary && (
             <Link
               href={secondary.href}
+              // Underline gives the secondary link an affordance without
+              // competing with the solid primary above it.
               className={cn(
-                "font-body font-medium text-button hover:opacity-70 transition-opacity",
-                isYellow ? "text-ink-headline" : "text-brand-yellow"
+                "font-body font-medium text-button underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity",
+                isYellow
+                  ? "text-ink-headline decoration-ink-headline/40"
+                  : "text-brand-yellow decoration-brand-yellow/40"
               )}
             >
               {secondary.label} →

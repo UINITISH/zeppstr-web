@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { CreatorTierLadder } from "@/components/utility/CreatorTierLadder";
 // uses a Comparison block, Tier system, and Stack rather than Symptoms / Principles / Layers.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Influencer & Creator Partnerships — Brand, Engagement & Lifecycle | Zeppstr",
   description:
     "Most creator programs are media buys in disguise. We build them as growth assets — discovered, briefed, owned, measured, and indexed against the channels you already run.",
-};
+  path: "/solutions/brand-engagement-lifecycle/influencer-partnerships",
+})
 
 // ─── Content ───
 
@@ -43,7 +45,7 @@ const COMPARISON = [
     us: "Pay for performance-indexed assets. Keep the rights for 18 months.",
   },
   {
-    them: "Rent borrowed time on someone else's platform.",
+    them: "Rent borrowed time on someone else’s platform.",
     us: "Build owned media you re-use across paid, lifecycle, and sales.",
   },
   {
@@ -70,17 +72,17 @@ const PRINCIPLES = [
   {
     n: "02",
     title: "Reach is vanity. CPI is the unit.",
-    body: "One million views with no attribution is a media buy that didn&rsquo;t run. Three hundred conversions on a hundred thousand views is a partnership that worked.",
+    body: "One million views with no attribution is a media buy that didn’t run. Three hundred conversions on a hundred thousand views is a partnership that worked.",
   },
   {
     n: "03",
-    title: "We don&rsquo;t pay for posts.",
+    title: "We don’t pay for posts.",
     body: "Deal structure: paid floor + performance bonus + 18-month rights. Same total cost, different incentive alignment. The creator gets paid more when the work performs.",
   },
   {
     n: "04",
     title: "Partnership, not campaign.",
-    body: "A 30-day deal with a creator is a media buy in disguise. A 12-month relationship with three creators is a moat — by deal four, you&rsquo;re paying half and earning twice.",
+    body: "A 30-day deal with a creator is a media buy in disguise. A 12-month relationship with three creators is a moat — by deal four, you’re paying half and earning twice.",
   },
 ];
 
@@ -102,13 +104,13 @@ const STACK_LAYERS = [
     name: "Rights",
     format: "18-month usage · Exclusivity · Bonus",
     description:
-      "Standard 18-month rights baseline (industry default is 90 days), category exclusivity windows, and performance bonus tied to attributed revenue.",
+      "An 18-month rights baseline as standard rather than the short window most creator deals default to, category exclusivity windows, and a performance bonus tied to attributed revenue.",
   },
   {
     name: "Distribution",
     format: "Creator post + Paid amp + Owned repost",
     description:
-      "The post is the start. Paid amplification on the creator&rsquo;s handle, repost on your owned channels, and conversion-asset rebuild for paid social.",
+      "The post is the start. Paid amplification on the creator’s handle, repost on your owned channels, and conversion-asset rebuild for paid social.",
   },
   {
     name: "Measurement",
@@ -143,7 +145,7 @@ const PROCESS_PHASES = [
   {
     title: "Distribution & Amplification",
     duration: "Week 7–8",
-    body: "Live posts. Paid amplification on the creator&rsquo;s handle. Owned-channel repost. Cuts adapted for paid social and lifecycle email.",
+    body: "Live posts. Paid amplification on the creator’s handle. Owned-channel repost. Cuts adapted for paid social and lifecycle email.",
   },
   {
     title: "Measurement & Renewal",
@@ -154,18 +156,18 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "4.2×",
-    metric: "Conversion-per-impression",
+    figure: "Owned",
+    metric: "Creative you keep, not impressions you rent",
     detail:
-      "Creator-led creative vs equivalent-spend paid social, measured against control.",
-    client: "Mini Leaves — DTC consumer",
+      "The measurable asset is the usage rights: creator-led work that can run as paid media long after the post itself has stopped being served.",
+    client: "Zeppstr — what we negotiate for",
   },
   {
     figure: "18 months",
     metric: "Usage rights baseline",
     detail:
-      "Standard rights window we negotiate. Industry default is 30–90 days.",
-    client: "Across the practice",
+      "The usage window we negotiate as standard, so creative that performs can keep running as paid media rather than expiring the month it was posted.",
+    client: "Zeppstr standard",
   },
   {
     figure: "1 + 3 + 8",
@@ -191,7 +193,7 @@ const FAQS = [
       "We do. Discovery is the part most brands underspec, and the part that decides whether the program compounds or stalls. We long-list 80, short-list 20, vet 12.",
   },
   {
-    question: "Flat fee or performance — what's the deal structure?",
+    question: "Flat fee or performance — what’s the deal structure?",
     answer:
       "Both. Paid floor + performance bonus + 18-month rights is the baseline we negotiate against. Same total cost, different incentive alignment — the creator gets paid more when the work performs.",
   },
@@ -203,17 +205,17 @@ const FAQS = [
   {
     question: "Do you handle UGC, affiliate, and employee creators too?",
     answer:
-      "UGC and affiliate sit inside the Resonance and Niche tiers — same operating model, lower production weight. Employee creators are a separate workstream we'll scope if relevant.",
+      "UGC and affiliate sit inside the Resonance and Niche tiers — same operating model, lower production weight. Employee creators are a separate workstream we’ll scope if relevant.",
   },
   {
     question: "What attribution model do you use?",
     answer:
-      "Layered, not single-touch. Coupon code, tracked link, modeled lift against control cohort, and 90-day repeat-purchase. Each layer answers a different question; together they don't lie.",
+      "Layered, not single-touch. Coupon code, tracked link, modeled lift against control cohort, and 90-day repeat-purchase. Each layer answers a different question; together they don’t lie.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Programs start at ₹12L per quarter for the 12-creator mix (1 anchor + 3 resonance + 8 niche). Excludes creator fees themselves — we negotiate, you pay direct so there&rsquo;s no markup.",
+      "Programs start at ₹12L per quarter for the 12-creator mix (1 anchor + 3 resonance + 8 niche). Excludes creator fees themselves — we negotiate, you pay direct so there’s no markup.",
   },
 ];
 
@@ -271,7 +273,7 @@ export default function InfluencerCreatorPartnershipPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Most creator programs are{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     media buys
@@ -280,7 +282,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  We build them as growth assets &mdash; discovered, briefed,
+                  We build them as growth assets — discovered, briefed,
                   owned, measured, and indexed against the channels you already
                   run.
                 </p>
@@ -288,7 +290,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a creator audit</span>
                     <span aria-hidden="true">→</span>
@@ -323,7 +325,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 </p>
                 <h2
                   id="comparison-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[22ch] text-balance"
                 >
                   Same spend.{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -377,7 +379,7 @@ export default function InfluencerCreatorPartnershipPage() {
                     →
                   </div>
                   <div className="md:col-span-5">
-                    <p className="font-display font-light text-[clamp(18px,1.5vw,22px)] text-white leading-[1.4] tracking-[-0.005em]">
+                    <p className="font-display font-light text-display-xs text-white leading-[1.4] tracking-[-0.005em]">
                       {row.us}
                     </p>
                   </div>
@@ -399,7 +401,7 @@ export default function InfluencerCreatorPartnershipPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -419,7 +421,7 @@ export default function InfluencerCreatorPartnershipPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -446,7 +448,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 </p>
                 <h2
                   id="stack-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Five layers between{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -472,7 +474,7 @@ export default function InfluencerCreatorPartnershipPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -481,7 +483,7 @@ export default function InfluencerCreatorPartnershipPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -512,7 +514,7 @@ export default function InfluencerCreatorPartnershipPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Twelve weeks from brief to{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -538,10 +540,10 @@ export default function InfluencerCreatorPartnershipPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -566,7 +568,7 @@ export default function InfluencerCreatorPartnershipPage() {
               id="creator-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve run creator programs for
+              Brands we’ve run creator programs for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -600,7 +602,7 @@ export default function InfluencerCreatorPartnershipPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the program{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -622,10 +624,10 @@ export default function InfluencerCreatorPartnershipPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p className="font-body text-body text-ink-body leading-[1.5] max-w-[34ch]">
@@ -670,13 +672,13 @@ export default function InfluencerCreatorPartnershipPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -686,14 +688,14 @@ export default function InfluencerCreatorPartnershipPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
                   className="group border-b border-ink-headline/15 py-6"
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                    <h3 className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]">
+                    <h3 className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]">
                       {faq.question}
                     </h3>
                     <span
@@ -719,7 +721,7 @@ export default function InfluencerCreatorPartnershipPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Build a creator program that{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 compounds
@@ -732,13 +734,13 @@ export default function InfluencerCreatorPartnershipPage() {
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid creator audit. We map your current spend,
                   your owned-channel overlap, and the partnership gaps. Refunded
-                  in full if we&rsquo;re not the right fit.
+                  in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>

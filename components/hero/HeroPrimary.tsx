@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AnimatedNumber } from "@/components/utility/AnimatedNumber";
 import { AnimatedHeadline } from "@/components/utility/AnimatedHeadline";
 import { FloatingMarketingIcons } from "@/components/utility/FloatingMarketingIcons";
+import { FoundationSketch } from "@/components/hero/FoundationSketch";
 
 interface CTA {
   label: string;
@@ -17,105 +18,301 @@ interface HeroPrimaryProps {
 }
 
 /**
- * Editorial hero — Instrument-disciplined, with two focal points.
+ * Editorial hero — headline and argument left, proof card right.
  *
- * Left: massive extralight headline (the thesis).
- * Right: firm credibility card — two oversized stats (6—12 partner clients,
- *        300+ businesses) with mono labels. Gives the eye a second place to
- *        land without competing with the headline.
+ * ── REBUILT 15 SEP 2026 ─────────────────────────────────────────────────────
+ * Five things were wrong with the previous version, in descending order of how
+ * much they cost:
  *
- * Bottom: editorial rule + supporting subhead + primary CTA + scroll cue.
+ * 1. ctaSecondary WAS NEVER RENDERED. It sits in the props interface and
+ *    app/(marketing)/page.tsx passes "Apply for a diagnostic" into it — the
+ *    paid entry point this entire firm is structured around — and the JSX
+ *    simply never used the prop. The homepage's primary conversion action was
+ *    silently dropped. That is the most expensive bug on the site and it was
+ *    invisible because nothing errors when you ignore a prop.
+ *
+ * 2. The headline was set in `display-stat` (76px), a tier meant for two- and
+ *    three-glyph numerals, not sentences. At 76px an eight-word headline broke
+ *    to three lines and dominated everything below it.
+ *
+ * 3. `min-h-[calc(100vh-80px)]` with `items-center` forced the block to fill
+ *    the viewport whatever its content. On a 1512×795 window that inflated the
+ *    gap between headline and supporting copy to ~180px of empty white, which
+ *    read as a missing element rather than as breathing room.
+ *
+ * 4. The subhead repeated the headline almost verbatim. Headline: "Strategic
+ *    growth planning for ambitious businesses." Subhead, twelve words later:
+ *    "Zeppstr is the strategic growth partner for ambitious businesses." The
+ *    first two sentences on the site were the same sentence twice. Rewritten
+ *    at the call site to make an argument instead.
+ *
+ * 5. `highlightLeadingWords={2}` put the yellow block on "Strategic growth" —
+ *    the two most generic words in the sentence, and the two a competitor
+ *    would also use. Highlighting is emphasis; emphasis on a commodity phrase
+ *    is wasted.
+ *
+ * FloatingMarketingIcons: removed in the first pass, then restored on 15 Sep
+ * at Vikas's request, in a dark tone. I had argued they were the one
+ * un-disciplined element on an otherwise severe page. He wants the ambient
+ * movement, and on a dark hero they are far less obtrusive than they were on
+ * white — they read as drawn marks in the margin rather than clip-art. Fair
+ * call; the page keeps its character and gains some warmth.
  */
 export function HeroPrimary({
+  eyebrow,
   headline,
   subhead,
   ctaPrimary,
   ctaSecondary,
 }: HeroPrimaryProps) {
   return (
-    <section className="relative bg-bg-primary overflow-hidden min-h-[calc(100vh-80px)] flex items-center">
-      <FloatingMarketingIcons />
-      <div className="container-layout pt-12 md:pt-16 pb-10 md:pb-12 relative z-10 w-full">
+    <section className="relative bg-bg-inverse text-white overflow-hidden">
+      {/* Ambient marketing doodles, restored 15 Sep 2026 at Vikas's request.
+          Same drift + pulse animation as before (float-a/b/c in globals.css);
+          `tone="dark"` swaps the ink-on-white bubble for a white hairline so
+          they read on emerald instead of vanishing into it. Positioned in the
+          outer margins and clear of the proof rail — see the layout note in
+          that component. */}
+      <FloatingMarketingIcons tone="dark" />
+
+      {/* Hairline drafting grid — the same drafting language as the diagrams,
+          at very low contrast so it reads as paper texture, not decoration. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #FFF 1px, transparent 1px), linear-gradient(to bottom, #FFF 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+        }}
+      />
+
+      <div className="container-layout pt-16 md:pt-24 pb-0 relative z-10 w-full">
         {/* Top meta strip */}
-        <div className="flex items-center gap-4 mb-6 md:mb-8">
+        <div className="flex items-center gap-4 mb-8 md:mb-10">
           <span
             aria-hidden="true"
             className="block w-2.5 h-2.5 bg-brand-yellow flex-shrink-0"
           />
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-            Strategic growth partner
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
+            {eyebrow ?? "Strategic growth partner"}
           </p>
         </div>
 
-        {/* Main two-column zone — headline left, firm card right */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-12 items-start">
-          {/* Headline — kinetic letter-by-letter reveal (Yellow Slice-style) */}
-          <div className="md:col-span-8">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-start pb-14 md:pb-20">
+          <div className="md:col-span-7">
             <AnimatedHeadline
               as="h1"
               stagger={28}
               duration={800}
-              boldLeadingWords={2}
-              highlightLeadingWords={2}
-              className="font-light tracking-[-0.025em] text-[clamp(48px,6vw,96px)] text-ink-headline leading-[1.1] max-w-[18ch]"
+              boldLeadingWords={4}
+              className="font-light tracking-[-0.03em] text-display-xl text-white leading-[1.06] max-w-[16ch] text-balance"
             >
               {typeof headline === "string"
                 ? headline
-                : "Strategic growth planning for ambitious businesses."}
+                : "Your channels aren't the problem. What's underneath them is."}
             </AnimatedHeadline>
+
+            {subhead && (
+              <p className="mt-7 md:mt-9 font-body text-body-lg text-white/75 leading-[1.6] max-w-[52ch]">
+                {subhead}
+              </p>
+            )}
+
+            <div className="mt-9 md:mt-11 flex flex-wrap items-center gap-x-8 gap-y-5">
+              <Link
+                href={ctaPrimary.href}
+                className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-white transition-colors duration-hover"
+              >
+                <span>{ctaPrimary.label}</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+
+              {ctaSecondary && (
+                <Link
+                  href={ctaSecondary.href}
+                  className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-white border-b border-white/50 pb-1 hover:border-brand-yellow hover:text-brand-yellow transition-colors duration-hover"
+                >
+                  <span>{ctaSecondary.label}</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
+            </div>
           </div>
 
-          {/* Firm card — brand block: green bg + white text */}
-          <aside className="md:col-span-4 hidden md:block relative z-10">
-            <div className="bg-emerald-900 text-white p-6 md:p-8 space-y-6">
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 mb-4">
-                  Engagement model
-                </p>
-                <p className="font-display font-extralight text-[64px] leading-[0.95] tracking-[-0.025em] text-white mb-3">
-                  6—<AnimatedNumber target={12} />
-                </p>
-                <p className="font-body text-body-sm text-white/85 leading-relaxed">
-                  partner clients per year
-                  <br />
-                  <span className="text-white/60">selective by design</span>
-                </p>
-              </div>
+          {/* ── The right column: OUR numbers, not a client's ──
+              Two graphics were tried here and both were wrong.
 
-              <div className="border-t border-white/15 pt-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70 mb-4">
-                  Track record
-                </p>
-                <p className="font-display font-extralight text-[64px] leading-[0.95] tracking-[-0.025em] text-white mb-3">
-                  <AnimatedNumber target={300} />+
-                </p>
-                <p className="font-body text-body-sm text-white/85 leading-relaxed">
-                  businesses across 10+ countries
-                </p>
-              </div>
+              CompoundingVectors (15 Sep) was four hairline arrows rotating
+              from splayed to aligned — a good argument and a bad image.
+              Abstract, perfectly geometric, carrying nothing checkable. Vikas:
+              "looks like proper AI."
+
+              RealFunnel (23 Sep) over-corrected. It showed the complete Tru
+              Aquapolis funnel — their media spend, their leads, their closed
+              revenue — as the hero of OUR homepage. Vikas, correctly: "How can
+              we show a client's funnel on the homepage of our organisation? It
+              does not match."
+
+              He is right and it is worth stating the principle, because it is
+              not obvious: a client's results belong on the CASE STUDY, where
+              they are theirs and the context is complete, and in the proof
+              rail lower down this page where they are clearly attributed and
+              sit alongside two others. Lifting one client's whole funnel into
+              the hero implies it is a house metric. It is not. It is one
+              engagement, and the page already links to it.
+
+              So the right column is the firm's own two numbers — capped
+              capacity and breadth — which is what was here before the diagram
+              experiments and is what Vikas asked to have back. They are the
+              actual differentiators, they are ours to state, and they no
+              longer compete with a graphic for the same corner. */}
+          <aside className="md:col-span-5 hidden md:block md:pt-6">
+            {/* ── The two USP figures ──
+                PROMOTED 15 SEP 2026. These are the firm's actual
+                differentiators — a capped client list and the breadth behind
+                it — and the previous pass demoted them from a card to 34px
+                grey-ish type tucked under the diagram, where they read as a
+                footnote. A USP set smaller than the supporting proof beneath
+                it is a hierarchy error.
+
+                They now get the largest type in the hero after the headline,
+                the brand yellow, a rule that wipes in, and the count-up.
+
+                COLOUR HIERARCHY: these two are yellow; the proof rail below is
+                white. Only one tier of number can be the loudest, and yellow
+                on emerald is the loudest thing this palette can do. When the
+                rail was also yellow, five figures competed and none won. */}
+            <div className="grid grid-cols-2 gap-8">
+              {[
+                {
+                  figure: (
+                    <>
+                      6—<AnimatedNumber target={12} duration={1400} />
+                    </>
+                  ),
+                  label: "Partner clients per year",
+                  note: "Selective by design",
+                  delay: "0ms",
+                },
+                {
+                  figure: (
+                    <>
+                      <AnimatedNumber target={300} duration={1800} />+
+                    </>
+                  ),
+                  label: "Businesses across 10+ countries",
+                  /* NOT a founding year. Nothing in the archive states when
+                     Zeppstr was founded, and "Since 20XX" on a homepage is the
+                     kind of detail a prospect checks against Companies House
+                     or LinkedIn in ten seconds. "Six industries" is already
+                     published on the logo wall lower down this same page. */
+                  note: "Six industries",
+                  delay: "140ms",
+                },
+              ].map((s) => (
+                <div key={s.label} className="flex flex-col h-full">
+                  {/* Accent rule — origin-left so it grows outward rather than
+                      expanding from its own centre. */}
+                  <span
+                    aria-hidden="true"
+                    className="block h-[3px] w-10 bg-brand-yellow origin-left animate-wipe-in mb-5"
+                    style={{ animationDelay: s.delay }}
+                  />
+                  <p
+                    className="font-display font-extralight text-display-stat text-brand-yellow leading-[0.9] tracking-[-0.03em] animate-rise-in"
+                    style={{ animationDelay: s.delay }}
+                  >
+                    {s.figure}
+                  </p>
+                  {/* flex-col + mt-auto rather than a min-height guess.
+                      "Partner clients per year" sets on one line and
+                      "Businesses across 10+ countries" on two, so the mono
+                      notes beneath them landed on different baselines. A fixed
+                      min-h got close but stayed a few pixels out at some
+                      widths; pinning the note to the bottom of an equal-height
+                      cell is exact at every width. */}
+                  <p className="mt-4 font-body text-body-sm text-white leading-snug">
+                    {s.label}
+                  </p>
+                  <p className="mt-auto pt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-white/45">
+                    {s.note}
+                  </p>
+                </div>
+              ))}
             </div>
+
+            {/* The patch beneath the two figures was empty — Vikas circled it,
+                23 Sep. The headline makes a structural claim ("What's
+                underneath them is") and the subhead names the three layers,
+                and then the page showed nothing. This draws them.
+
+                Deliberately OUR architecture and not a client's funnel, which
+                is the test the RealFunnel version failed. */}
+            <FoundationSketch className="mt-12 hidden lg:block" />
           </aside>
         </div>
 
-        {/* Bottom row — supporting line + CTA */}
-        <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end mt-10 md:mt-14 pt-6 border-t border-ink-headline/10">
-          {subhead && (
-            <p className="md:col-span-7 font-body text-body-lg text-ink-body leading-[1.5] max-w-[52ch]">
-              {subhead}
-            </p>
-          )}
+        {/* ── Proof rail ──
+            THE ACTUAL POINT OF THIS REBUILD.
 
-          <div className="md:col-span-5 flex md:justify-end">
+            Three real, published, named client outcomes sitting in the first
+            viewport. Previously a visitor had to scroll past the whole
+            homepage and click into /work before encountering a single number
+            that belonged to a client. The firm's entire positioning is "we
+            only claim what we can prove" — and the proof started two screens
+            below the claim.
+
+            SOURCING: all three are published in full on this site with the
+            spend attached. Tru Aquapolis at /work/tru-aquapolis, Wise Market
+            at /work/wise-market, Mini Leaves at /work/mini-leaves. Each tile
+            links to the case study, which is the whole reason it is safe to
+            put the number here — a figure a reader can click into is a
+            different kind of claim from one they cannot. Do not add a fourth
+            tile for a result that is not written up. */}
+        <div className="border-t border-white/15 grid grid-cols-1 md:grid-cols-3">
+          {[
+            {
+              figure: "₹187.5 Cr",
+              label: "closed from leads we generated",
+              note: "on ₹1.4 Cr of media · Tru Aquapolis",
+              href: "/work/tru-aquapolis",
+            },
+            {
+              figure: "AUD 40K → 2.7M",
+              label: "monthly revenue, six months",
+              note: "Australian e-commerce · Wise Market",
+              href: "/work/wise-market",
+            },
+            {
+              figure: "0.5% → 3%+",
+              label: "site conversion rate",
+              note: "Indian DTC brand · Mini Leaves",
+              href: "/work/mini-leaves",
+            },
+          ].map((p, i) => (
             <Link
-              href={ctaPrimary.href}
-              className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+              key={p.figure}
+              href={p.href}
+              className={`group py-8 md:py-10 md:px-8 first:md:pl-0 border-white/15 ${
+                i > 0 ? "border-t md:border-t-0 md:border-l" : ""
+              } hover:bg-white/[0.04] transition-colors duration-hover`}
             >
-              <span>{ctaPrimary.label}</span>
-              <span aria-hidden="true">→</span>
+              {/* White, not yellow — see the colour-hierarchy note on the USP
+                  stats above. These are supporting evidence for the two
+                  headline claims, so they sit one tier down. */}
+              <p className="font-display font-extralight text-display-md text-white leading-none tracking-[-0.02em] group-hover:text-brand-yellow transition-colors duration-hover">
+                {p.figure}
+              </p>
+              <p className="mt-3 font-body text-body-sm text-white/85 leading-snug">
+                {p.label}
+              </p>
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-white/45 group-hover:text-brand-yellow transition-colors duration-hover">
+                {p.note} →
+              </p>
             </Link>
-          </div>
+          ))}
         </div>
-
       </div>
     </section>
   );

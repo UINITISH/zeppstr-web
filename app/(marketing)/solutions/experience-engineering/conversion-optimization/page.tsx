@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/meta";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { Footer } from "@/components/nav/Footer";
 import { GridOverlay } from "@/components/blocks/GridOverlay";
@@ -12,12 +13,13 @@ import { ConversionLeveragePyramid } from "@/components/utility/ConversionLevera
 // Experiment Library catalog, Architecture, sprint-cadence Process.
 // ─────────────────────────────────────────────
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title:
     "Conversion Optimization — Experience & Engineering | Zeppstr",
   description:
-    "Most CRO teams test buttons. We rebuild flows. Color doesn't move CAC — offer does. We work the leverage hierarchy in the right order, not the easy one.",
-};
+    "Most CRO teams test buttons. We rebuild flows. Color doesn’t move CAC — offer does. We work the leverage hierarchy in the right order, not the easy one.",
+  path: "/solutions/experience-engineering/conversion-optimization",
+})
 
 // ─── Content ───
 
@@ -45,7 +47,7 @@ const LEVERAGE_TIERS = [
     n: "04",
     tier: "Positioning",
     lift: "+20 – 80%",
-    work: "Who it&rsquo;s for and what it replaces.",
+    work: "Who it’s for and what it replaces.",
     examples: "Audience reframe · category swap · hero promise",
   },
   {
@@ -85,8 +87,8 @@ const PRINCIPLES = [
   },
   {
     n: "03",
-    title: "If you can&rsquo;t measure it, you can&rsquo;t ship it.",
-    body: "No test goes live without sample size, MDE, sample-ratio-mismatch checks, and a pre-registered hypothesis. Tests &ldquo;won&rdquo; on noise are not wins.",
+    title: "If you can’t measure it, you can’t ship it.",
+    body: "No test goes live without sample size, MDE, sample-ratio-mismatch checks, and a pre-registered hypothesis. Tests “won” on noise are not wins.",
   },
   {
     n: "04",
@@ -177,13 +179,13 @@ const ARCHITECTURE_LAYERS = [
     name: "Analysis Layer",
     format: "Stats · Segments · Replays",
     description:
-      "Statistical significance with SRM check, segment-level stability, qualitative replay review. A &ldquo;winner&rdquo; that fails any one is held for rerun.",
+      "Statistical significance with SRM check, segment-level stability, qualitative replay review. A “winner” that fails any one is held for rerun.",
   },
   {
     name: "Decision Layer",
     format: "Ship · Kill · Iterate",
     description:
-      "Wins shipped to 100% and 90-day decay-monitored. Losses documented (most losses are knowledge). Inconclusive runs iterated or killed &mdash; not extended forever.",
+      "Wins shipped to 100% and 90-day decay-monitored. Losses documented (most losses are knowledge). Inconclusive runs iterated or killed — not extended forever.",
   },
 ];
 
@@ -223,25 +225,25 @@ const PROCESS_PHASES = [
 
 const PRACTICE_NUMBERS = [
   {
-    figure: "200%",
-    metric: "Top end of offer-tier lift",
+    figure: "0.5% → 3%+",
+    metric: "Site conversion rate",
     detail:
-      "Range of conversion lift seen when the offer itself moves. Color changes rarely exceed 3%.",
-    client: "Across the practice",
+      "A six-fold move, sustained across multiple cohorts. It came from the offer and the journey, not from button colours.",
+    client: "Mini Leaves",
   },
   {
     figure: "4 / qtr",
     metric: "Tests we ship per quarter",
     detail:
-      "Deliberately low cadence. Industry &ldquo;always-on&rdquo; programs ship 20+ shallow tests that compound to nothing.",
+      "Deliberately low cadence. Industry “always-on” programs ship 20+ shallow tests that compound to nothing.",
     client: "Discipline of the practice",
   },
   {
-    figure: "78%",
-    metric: "Win rate at right tier",
+    figure: "Powered",
+    metric: "Every test sized before it runs",
     detail:
-      "When tests are run at offer or flow tier with sound spec, ~78% produce a measurable, lasting lift.",
-    client: "Internal benchmark",
+      "An underpowered test produces a confident wrong answer that then gets rolled out everywhere. We size for the effect we are willing to act on, and we report the tests that lose.",
+    client: "Zeppstr — testing discipline",
   },
 ];
 
@@ -255,29 +257,29 @@ const INDUSTRIES = [
 
 const FAQS = [
   {
-    question: "Why only 4 tests a quarter? Doesn&rsquo;t velocity matter?",
+    question: "Why only 4 tests a quarter? Doesn’t velocity matter?",
     answer:
-      "Velocity matters when the underlying hypotheses are strong. Most &ldquo;always-on&rdquo; programs ship shallow tests that don&rsquo;t move the business, then look busy on a dashboard. We&rsquo;d rather ship four tests that produce four real decisions than forty that produce noise.",
+      "Velocity matters when the underlying hypotheses are strong. Most “always-on” programs ship shallow tests that don’t move the business, then look busy on a dashboard. We’d rather ship four tests that produce four real decisions than forty that produce noise.",
   },
   {
     question: "What testing platform do you use?",
     answer:
-      "VWO, Optimizely, Convert, or your existing tool. The platform doesn&rsquo;t make a meaningful difference. The hypothesis quality, spec discipline, and analysis rigor do.",
+      "VWO, Optimizely, Convert, or your existing tool. The platform doesn’t make a meaningful difference. The hypothesis quality, spec discipline, and analysis rigor do.",
   },
   {
     question: "Can you work without our engineering team?",
     answer:
-      "For surface tests (copy, layout, design), yes &mdash; client-side via the testing tool. For flow rebuilds and offer changes, no &mdash; those need engineering. The audit will scope which work needs engineering vs which doesn&rsquo;t.",
+      "For surface tests (copy, layout, design), yes — client-side via the testing tool. For flow rebuilds and offer changes, no — those need engineering. The audit will scope which work needs engineering vs which doesn’t.",
   },
   {
     question: "What if our traffic is too low for statistical significance?",
     answer:
-      "Common. Below ~50K monthly sessions, classical A/B testing is shaky. We&rsquo;ll either focus on offer / positioning / flow rebuilds (no test needed) or use Bayesian methods and segment-stable wins. We don&rsquo;t fake significance.",
+      "Common. Below ~50K monthly sessions, classical A/B testing is shaky. We’ll either focus on offer / positioning / flow rebuilds (no test needed) or use Bayesian methods and segment-stable wins. We don’t fake significance.",
   },
   {
     question: "Do you do conversion copywriting?",
     answer:
-      "Yes &mdash; though copy is tier 02 in our leverage hierarchy. We&rsquo;ll do it when it&rsquo;s the right move. We won&rsquo;t default to it when offer or flow is the actual lever.",
+      "Yes — though copy is tier 02 in our leverage hierarchy. We’ll do it when it’s the right move. We won’t default to it when offer or flow is the actual lever.",
   },
   {
     question: "What does it cost?",
@@ -340,7 +342,7 @@ export default function ConversionOptimizationPage() {
                   </p>
                 </div>
 
-                <h1 className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.05] max-w-[18ch] text-balance mb-8">
+                <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Most CRO teams test{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
                     buttons
@@ -349,15 +351,15 @@ export default function ConversionOptimizationPage() {
                 </h1>
 
                 <p className="font-body text-body-lg text-ink-body leading-[1.55] max-w-[54ch] mb-10">
-                  Color doesn&rsquo;t move CAC. Offer does. Positioning does.
+                  Color doesn’t move CAC. Offer does. Positioning does.
                   Flow does. We work the leverage hierarchy in the right order
-                  &mdash; not the easy one.
+                  — not the easy one.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
                     href="/book-consultation"
-                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-[clamp(18px,1.4vw,24px)] px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
+                    className="inline-flex items-center gap-3 bg-brand-yellow text-ink-headline font-display font-light text-display-xs px-8 py-4 hover:bg-emerald-900 hover:text-white transition-colors duration-hover"
                   >
                     <span>Apply for a CRO audit</span>
                     <span aria-hidden="true">→</span>
@@ -392,7 +394,7 @@ export default function ConversionOptimizationPage() {
                 </p>
                 <h2
                   id="leverage-math-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(36px,5vw,68px)] text-white leading-[1.05] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Same effort.{" "}
                   <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
@@ -456,7 +458,7 @@ export default function ConversionOptimizationPage() {
                       <p
                         className={`font-display ${
                           isTop ? "font-light text-brand-yellow" : "font-extralight text-white/70"
-                        } text-[clamp(18px,1.8vw,24px)] leading-[1.2] tracking-[-0.01em]`}
+                        } text-display-xs leading-[1.2] tracking-[-0.01em]`}
                       >
                         {row.lift}
                       </p>
@@ -495,7 +497,7 @@ export default function ConversionOptimizationPage() {
               </p>
               <h2
                 id="principles-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -515,7 +517,7 @@ export default function ConversionOptimizationPage() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-[clamp(24px,2.4vw,34px)] text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
+                    <h3 className="font-display font-bold text-display-md text-ink-headline tracking-[-0.02em] leading-[1.12] mb-4 max-w-[24ch]">
                       {p.title}
                     </h3>
                     <p
@@ -542,7 +544,7 @@ export default function ConversionOptimizationPage() {
                 </p>
                 <h2
                   id="experiment-library-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -580,7 +582,7 @@ export default function ConversionOptimizationPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-5"
                   />
-                  <h3 className="font-display font-bold text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
+                  <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-5 max-w-[22ch]">
                     {cat.category}
                   </h3>
                   <ul className="space-y-2 mt-2">
@@ -622,7 +624,7 @@ export default function ConversionOptimizationPage() {
                 </p>
                 <h2
                   id="architecture-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -648,7 +650,7 @@ export default function ConversionOptimizationPage() {
                   className="group grid md:grid-cols-12 gap-6 md:gap-8 py-8 md:py-10 border-b border-ink-headline/15 hover:bg-bg-secondary transition-colors duration-hover -mx-4 px-4 md:-mx-6 md:px-6"
                 >
                   <div className="md:col-span-2">
-                    <p className="font-display font-extralight text-[clamp(40px,4vw,56px)] text-ink-headline leading-none tracking-[-0.03em]">
+                    <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em]">
                       {String(i + 1).padStart(2, "0")}
                     </p>
                   </div>
@@ -657,7 +659,7 @@ export default function ConversionOptimizationPage() {
                       aria-hidden="true"
                       className="block w-2.5 h-2.5 bg-brand-yellow mb-3"
                     />
-                    <h3 className="font-display font-bold text-[clamp(22px,2.2vw,30px)] text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
+                    <h3 className="font-display font-bold text-display-sm text-ink-headline tracking-[-0.02em] leading-[1.15] mb-2">
                       {layer.name}
                     </h3>
                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
@@ -689,7 +691,7 @@ export default function ConversionOptimizationPage() {
                 </p>
                 <h2
                   id="process-heading"
-                  className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
+                  className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Two-week sprints.{" "}
                   <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -715,10 +717,10 @@ export default function ConversionOptimizationPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-7"
                   />
-                  <p className="font-display font-extralight text-[clamp(48px,5vw,72px)] text-ink-headline leading-none tracking-[-0.03em] mb-5">
+                  <p className="font-display font-extralight text-display-lg text-ink-headline leading-none tracking-[-0.03em] mb-5">
                     {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="font-display font-light text-[clamp(22px,2vw,28px)] text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
+                  <h3 className="font-display font-light text-display-sm text-ink-headline tracking-[-0.01em] leading-[1.15] mb-3">
                     {phase.title}
                   </h3>
                   <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-5">
@@ -743,7 +745,7 @@ export default function ConversionOptimizationPage() {
               id="cro-logos-heading"
               className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-10"
             >
-              Brands we&rsquo;ve optimized conversion for
+              Brands we’ve optimized conversion for
             </p>
             <div className="border-t border-l border-ink-headline/10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
               {FEATURED_LOGOS.map((logo) => (
@@ -777,7 +779,7 @@ export default function ConversionOptimizationPage() {
               </p>
               <h2
                 id="practice-numbers-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the program{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -799,10 +801,10 @@ export default function ConversionOptimizationPage() {
                     aria-hidden="true"
                     className="block w-3 h-3 bg-brand-yellow mb-6"
                   />
-                  <p className="font-display font-extralight text-[clamp(40px,5vw,72px)] leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
+                  <p className="font-display font-extralight text-display-lg leading-[0.95] tracking-[-0.03em] text-ink-headline mb-6 break-words">
                     {n.figure}
                   </p>
-                  <p className="font-display font-light text-[clamp(20px,1.6vw,28px)] tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
+                  <p className="font-display font-light text-display-sm tracking-[-0.01em] text-ink-headline leading-[1.2] mb-3">
                     {n.metric}
                   </p>
                   <p
@@ -848,13 +850,13 @@ export default function ConversionOptimizationPage() {
           aria-labelledby="faq-heading"
         >
           <div className="container-layout py-24 md:py-32">
-            <div className="mb-16 md:mb-20">
+            <div className="mb-16 md:mb-20 max-w-[72ch] mx-auto">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-6">
                 FAQ
               </p>
               <h2
                 id="faq-heading"
-                className="font-bold tracking-[-0.025em] text-[clamp(40px,6vw,88px)] text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
+                className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
                 <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
@@ -864,7 +866,7 @@ export default function ConversionOptimizationPage() {
               </h2>
             </div>
 
-            <div className="max-w-[64ch] border-t border-ink-headline/15">
+            <div className="max-w-[72ch] mx-auto border-t border-ink-headline/15">
               {FAQS.map((faq) => (
                 <details
                   key={faq.question}
@@ -872,7 +874,7 @@ export default function ConversionOptimizationPage() {
                 >
                   <summary className="flex items-baseline justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <h3
-                      className="font-display font-bold text-[clamp(18px,1.6vw,22px)] text-ink-headline tracking-[-0.01em] leading-[1.3]"
+                      className="font-display font-bold text-display-xs text-ink-headline tracking-[-0.01em] leading-[1.3]"
                       dangerouslySetInnerHTML={{ __html: faq.question }}
                     />
                     <span
@@ -899,7 +901,7 @@ export default function ConversionOptimizationPage() {
               Engage
             </p>
 
-            <h2 className="font-bold tracking-[-0.025em] text-[clamp(48px,8vw,128px)] leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
+            <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop testing buttons.{" "}
               <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
                 Move the lever
@@ -911,14 +913,14 @@ export default function ConversionOptimizationPage() {
               <div className="md:col-span-7">
                 <p className="font-body text-body-lg text-white/80 leading-[1.5] max-w-[52ch]">
                   A 45-minute paid CRO audit. We score your funnel, your test
-                  backlog, and the tier you&rsquo;re actually testing at.
-                  Refunded in full if we&rsquo;re not the right fit.
+                  backlog, and the tier you’re actually testing at.
+                  Refunded in full if we’re not the right fit.
                 </p>
               </div>
               <div className="md:col-span-5 flex md:justify-end">
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-[clamp(20px,1.6vw,28px)] px-10 py-5 hover:bg-white transition-colors duration-hover"
+                  className="inline-flex items-center justify-center bg-brand-yellow text-emerald-900 font-display font-light text-display-sm px-10 py-5 hover:bg-white transition-colors duration-hover"
                 >
                   Apply for an audit →
                 </Link>
