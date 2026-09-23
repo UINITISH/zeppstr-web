@@ -48,187 +48,120 @@ export interface CategoryImage {
 }
 
 export const CATEGORY_IMAGES: Record<string, CategoryImage[]> = {
+  /**
+   * ── REPLACED 23 SEP 2026 ──────────────────────────────────────────────────
+   * Vikas: "the thumbnail images are all looking similar and generic."
+   *
+   * He was right, and the audit made it obvious. All 28 previous images came
+   * from one genre — people at laptops, people at boardroom tables, people
+   * pointing at charts. Filenames read: "employee-looking-business-analytics",
+   * "business-leader-giving-presentation-his-team", "chief-analyst-holding-
+   * meeting-presentation", "creative-people-sitting-table-boardroom". Seven
+   * categories, one look. A reader scrolling the index saw the same photograph
+   * seven times with different crops.
+   *
+   * These are architecture, shadow, texture and light instead. Three reasons:
+   *   1. They are visually distinct FROM EACH OTHER, which is the actual
+   *      complaint.
+   *   2. They carry no stock-photo cliché. Nobody has ever pointed at a chart.
+   *   3. They sit with the site's drafting language — hairlines, geometry,
+   *      hard light — rather than fighting it.
+   *
+   * Each category has a visual theme so the set reads as deliberate:
+   *   seo-search           structure and facade — what holds a site up
+   *   performance-paid     hard light and precise shadow — targeting
+   *   conversion-experience paths, openings, thresholds
+   *   growth-strategy      construction and scaffolding — building upward
+   *   industry-insights    massing and silhouette — categories at a distance
+   *   email-lifecycle      repetition and sequence — rhythm over time
+   *   social-content       colour and energy, the one bright set
+   *
+   * All are free-licence and none are AI-generated (filtered at search).
+   * No image is reused across categories — checked.
+   */
+
+  // ── Structure and facade ──────────────────────────────────────────────────
   "seo-search": [
-    {
-      stockId: 413435393,
-      title: "Employee looking at business analytics",
-      remote:
-        "https://img.magnific.com/free-photo/employee-looking-business-analytics_482257-115272.jpg",
-    },
-    {
-      stockId: 24376213,
-      title: "Startup employee reviewing analytics charts on a laptop",
-      remote:
-        "https://img.magnific.com/free-photo/shoulder-view-african-american-startup-employee-looking-laptop-screen-with-business-analytics-charts-sitting-desk-close-focus-portable-computer-display-with-sales-results_482257-38698.jpg",
-    },
-    {
-      stockId: 32464790,
-      title: "Analyst working through business charts and research notes",
-      remote:
-        "https://img.magnific.com/free-photo/office-worker-analyzing-business-charts-laptop-using-paperwork-research-information-make-data-report-working-from-home-startup-analysis-with-web-graphs-browsing-internet_482257-50961.jpg",
-    },
-    {
-      stockId: 134363205,
-      title: "Network analyst studying digital commerce progression reports",
-      remote:
-        "https://img.magnific.com/free-photo/network-analyst-studying-digital-commerce-progression-reports_482257-75371.jpg",
-    },
+    { stockId: 10291719, title: "Curved facade of a building in Berlin",
+      remote: "https://img.magnific.com/free-photo/closeup-greyscale-shot-building-with-curvy-twists-berlin-germany_181624-14427.jpg" },
+    { stockId: 8408883, title: "Metallic ribs and glass on a building facade",
+      remote: "https://img.magnific.com/free-photo/horizontal-shot-abstract-buildings-with-white-metallic-ribs-glass-windows_181624-4968.jpg" },
+    { stockId: 4591305, title: "White architectural detail against sky",
+      remote: "https://img.magnific.com/free-photo/white-abstract-architectural-detail-against-blue-sky_23-2148139871.jpg" },
+    { stockId: 13308236, title: "Mirror glass building from below",
+      remote: "https://img.magnific.com/free-photo/low-angle-view-mirror-glass-building_410324-123.jpg" },
   ],
+
+  // ── Hard light, precise shadow ────────────────────────────────────────────
   "performance-paid": [
-    {
-      stockId: 25858318,
-      title: "Research analysis on screen \u2014 statistics, charts and graphs",
-      remote:
-        "https://img.magnific.com/free-photo/businessman-doing-research-analysis-computer-screen-plan-financial-statistics-with-charts-graphs-data-male-employee-working-with-diagram-report-find-sales-profit-e-commerce_482257-40940.jpg",
-    },
-    {
-      stockId: 23408777,
-      title: "Entrepreneur working through rate charts to plan a campaign",
-      remote:
-        "https://img.magnific.com/free-photo/entrepreneur-looking-papers-computer-with-rate-charts-plan-project-presentation-business-man-working-with-data-analysis-information-create-marketing-strategy_482257-36478.jpg",
-    },
-    {
-      stockId: 25858333,
-      title: "Consultant reviewing e-commerce performance statistics",
-      remote:
-        "https://img.magnific.com/free-photo/sales-consultant-using-e-commerce-statistics-computer-monitor-develop-financial-growth-business-development-manager-working-with-data-analysis-diagrams-research-tripod-shot_482257-40942.jpg",
-    },
-    {
-      stockId: 18044703,
-      title: "Performance reporting \u2014 charts and visual graphics",
-      remote:
-        "https://img.magnific.com/free-photo/business-chart-visual-graphics-report-concept_53876-132304.jpg",
-    },
+    { stockId: 5792349, title: "Perpendicular shadow lines on concrete",
+      remote: "https://img.magnific.com/free-photo/perpendicular-shadow-lines-concrete-wall_122409-34.jpg" },
+    { stockId: 426436300, title: "Light and shadow stripes from blinds",
+      remote: "https://img.magnific.com/free-photo/monochromatic-light-shadow-stripes-from-blinds_84443-73787.jpg" },
+    { stockId: 11328325, title: "Light split through a prism",
+      remote: "https://img.magnific.com/free-photo/light-rays-prism-shadows_23-2148771775.jpg" },
+    { stockId: 17809172, title: "Abstract outdoor shadow in daylight",
+      remote: "https://img.magnific.com/free-photo/outdoors-abstract-shadow-daytime_23-2149080285.jpg" },
   ],
+
+  // ── Paths, openings, thresholds ───────────────────────────────────────────
   "conversion-experience": [
-    {
-      stockId: 143489084,
-      title: "Laptop showing company profit progress on screen",
-      remote:
-        "https://img.magnific.com/free-photo/laptop-computer-with-company-profit-progress-screen_482257-77678.jpg",
-    },
-    {
-      stockId: 34219984,
-      title: "Workplace arrangement with a laptop on a desk",
-      remote:
-        "https://img.magnific.com/free-photo/workplace-arrangement-with-laptop-desk_23-2149831290.jpg",
-    },
-    {
-      stockId: 11428126,
-      title: "Person using a laptop",
-      remote:
-        "https://img.magnific.com/free-photo/person-using-laptop_53876-95245.jpg",
-    },
-    {
-      stockId: 1281794,
-      title: "Hands working on a laptop showing a diagram",
-      remote:
-        "https://img.magnific.com/free-photo/hands-working-laptop-with-diagram-it_1163-2755.jpg",
-    },
+    { stockId: 10980107, title: "Perforated wall and gangway",
+      remote: "https://img.magnific.com/free-photo/wall-with-holes-gangway_23-2148742463.jpg" },
+    { stockId: 27830368, title: "Architecture and shadows in the city",
+      remote: "https://img.magnific.com/free-photo/architecture-shadows-city-day_23-2149451223.jpg" },
+    { stockId: 17809084, title: "Abstract daylight shadows outdoors",
+      remote: "https://img.magnific.com/free-photo/view-abstract-outdoors-daylight-shadows_23-2149080264.jpg" },
+    { stockId: 1737765, title: "Shadow of a runner",
+      remote: "https://img.magnific.com/free-photo/shadow-running-sportsman_23-2147755456.jpg" },
   ],
+
+  // ── Construction, building upward ─────────────────────────────────────────
   "growth-strategy": [
-    {
-      stockId: 26390733,
-      title: "Entrepreneur presenting a new business strategy on a whiteboard",
-      remote:
-        "https://img.magnific.com/free-photo/happy-entrepreneur-presenting-his-colleagues-new-business-strategy-whiteboard-meeting-office_637285-6984.jpg",
-    },
-    {
-      stockId: 26390821,
-      title: "Team developing a new business strategy in the office",
-      remote:
-        "https://img.magnific.com/free-photo/business-team-cooperating-while-developing-new-business-strategy-office-focus-is-young-man-presenting-ideas-whiteboard_637285-7044.jpg",
-    },
-    {
-      stockId: 6627770,
-      title: "Founder drawing a flowchart on a board while discussing a project",
-      remote:
-        "https://img.magnific.com/free-photo/startup-leader-drawing-flowchart-board-discussing-project_74855-3307.jpg",
-    },
-    {
-      stockId: 25592185,
-      title: "Leader explaining project plans on a whiteboard",
-      remote:
-        "https://img.magnific.com/free-photo/business-leader-giving-presentation-his-team-explaining-project-plans-whiteboard-office_637285-992.jpg",
-    },
+    { stockId: 27040105, title: "Geometric wavy folds",
+      remote: "https://img.magnific.com/free-photo/abstract-geometric-wavy-folds-background_1048-15906.jpg" },
+    { stockId: 4605136, title: "Architectural construction against sky",
+      remote: "https://img.magnific.com/free-photo/architectural-construction-against-blue-sky_23-2148139889.jpg" },
+    { stockId: 7901216, title: "Modern architecture from a low angle",
+      remote: "https://img.magnific.com/free-photo/low-angle-shot-high-modern-architecture-with-beautiful-sky_181624-2992.jpg" },
+    { stockId: 16496434, title: "Minimal architecture against open sky",
+      remote: "https://img.magnific.com/free-photo/minimal-architect-background-blue-skye_53876-123078.jpg" },
   ],
+
+  // ── Massing and silhouette ────────────────────────────────────────────────
   "industry-insights": [
-    {
-      stockId: 17984025,
-      title: "Analyst presenting growth analysis to a team",
-      remote:
-        "https://img.magnific.com/free-photo/chief-analyst-holding-meeting-presentation-team-economists-manager-showing-digital-interactive-whiteboard-with-growth-analysis-charts-statistics-data-diverse-people-working-broadroom_482257-13904.jpg",
-    },
-    {
-      stockId: 414767022,
-      title: "Business analyst presenting plans on an interactive board",
-      remote:
-        "https://img.magnific.com/free-photo/business-analyst-presenting-latest-budgeting-plans-interactive-board_482257-115918.jpg",
-    },
-    {
-      stockId: 999396,
-      title: "Speaker explaining a bar chart to an audience",
-      remote:
-        "https://img.magnific.com/free-photo/senior-speaker-explaining-bar-chart-audience_1262-1908.jpg",
-    },
-    {
-      stockId: 7286239,
-      title: "Team in a boardroom working through a problem",
-      remote:
-        "https://img.magnific.com/free-photo/creative-people-sitting-table-boardroom_171337-5926.jpg",
-    },
+    { stockId: 22894320, title: "City building shadows",
+      remote: "https://img.magnific.com/free-photo/abstract-city-building-shadows_23-2149283228.jpg" },
+    { stockId: 932066, title: "Dark structure",
+      remote: "https://img.magnific.com/free-photo/dark-structure_1127-2117.jpg" },
+    { stockId: 9991204, title: "Facade of a modern building, dark grey",
+      remote: "https://img.magnific.com/free-photo/greyscale-shot-facade-modern-building-with-dark-grey-walls_181624-11927.jpg" },
+    { stockId: 4153296, title: "Building from below with a plane overhead",
+      remote: "https://img.magnific.com/free-photo/building-bottom-view-with-plane_23-2148107063.jpg" },
   ],
+
+  // ── Repetition and sequence ───────────────────────────────────────────────
   "email-lifecycle": [
-    {
-      stockId: 16437083,
-      title: "Inbox and notification concept",
-      remote:
-        "https://img.magnific.com/free-photo/inbox-communication-notification-e-mail-mail-concept_53876-120056.jpg",
-    },
-    {
-      stockId: 926672,
-      title: "Hand on a laptop surrounded by envelopes",
-      remote:
-        "https://img.magnific.com/free-photo/hand-tounching-laptop-many-envelopes_1134-189.jpg",
-    },
-    {
-      stockId: 17140276,
-      title: "Newsletter subscribe and register concept",
-      remote:
-        "https://img.magnific.com/free-photo/subscribe-newsletter-advertising-register-member-concept_53876-125132.jpg",
-    },
-    {
-      stockId: 2767120,
-      title: "New incoming message notification",
-      remote:
-        "https://img.magnific.com/free-photo/new-incoming-message-email-icon_53876-14640.jpg",
-    },
+    { stockId: 426436353, title: "Sunlight through window blinds",
+      remote: "https://img.magnific.com/free-photo/sunlight-shadows-through-window-blinds_84443-73840.jpg" },
+    { stockId: 5792407, title: "Roll of paper under artificial light",
+      remote: "https://img.magnific.com/free-photo/roll-wallpaper-illuminated-by-artificial-light_122409-89.jpg" },
+    { stockId: 11628139, title: "Twisted grey paper",
+      remote: "https://img.magnific.com/free-photo/twisted-grey-paper-copy-space_23-2148792955.jpg" },
+    { stockId: 114671255, title: "Stacked papers and documents",
+      remote: "https://img.magnific.com/free-photo/still-life-stacks-papers-documents_23-2151118338.jpg" },
   ],
+
+  // ── Colour and energy — the one bright set ────────────────────────────────
   "social-content": [
-    {
-      stockId: 69346961,
-      title: "Social media communication concept",
-      remote:
-        "https://img.magnific.com/free-photo/social-media-communication-concept_23-2150822048.jpg",
-    },
-    {
-      stockId: 64239593,
-      title: "Communication and social media icons",
-      remote:
-        "https://img.magnific.com/free-photo/communication-social-media-icons_23-2150749328.jpg",
-    },
-    {
-      stockId: 17096272,
-      title: "Social networking and internet technology",
-      remote:
-        "https://img.magnific.com/free-photo/social-media-networking-internet-technology_53876-123954.jpg",
-    },
-    {
-      stockId: 1208864,
-      title: "Social apps on a phone beside a laptop",
-      remote:
-        "https://img.magnific.com/free-photo/twitter-phone-facebook-laptop_23-2147651286.jpg",
-    },
+    { stockId: 10974421, title: "Corner of an orange wall",
+      remote: "https://img.magnific.com/free-photo/corner-orange-wall-copy-space_23-2148742542.jpg" },
+    { stockId: 8858101, title: "Red metal structure against blue sky",
+      remote: "https://img.magnific.com/free-photo/low-angle-metal-red-structure-clear-blue-sky_181624-6529.jpg" },
+    { stockId: 13704820, title: "Red balloon against a door",
+      remote: "https://img.magnific.com/free-photo/red-balloon-door-background_23-2148935853.jpg" },
+    { stockId: 5282712, title: "Ferromagnetic liquid metal bloom",
+      remote: "https://img.magnific.com/free-photo/abstract-flower-ferromagnetic-liquid-metal-with-copy-space_23-2148253529.jpg" },
   ],
 };
 
@@ -243,7 +176,13 @@ const FALLBACK = "growth-strategy";
  * DOWNLOAD-ARTICLE-IMAGES.command appends to it after a successful fetch —
  * until then, leave it empty.
  */
-const LOCAL_AVAILABLE: string[] = [];
+const LOCAL_AVAILABLE: string[] = [
+  // Emptied 23 Sep 2026 with the image set replacement. These ids referenced
+  // files in /public/insights-cover/ for the PREVIOUS photographs; leaving
+  // them would have every new lookup resolve to a local path that does not
+  // exist. Re-populate only after the new images are actually downloaded and
+  // committed to /public/insights-cover/<category>-<stockId>.jpg.
+];
 
 /**
  * Stable per-article pick from the category's pool.

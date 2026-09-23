@@ -14,7 +14,7 @@ import { ReadingProgress } from "@/components/insights/ReadingProgress";
 import { ShareRow } from "@/components/insights/ShareRow";
 import { LeadMagnetCard } from "@/components/insights/LeadMagnetCard";
 import { ArticleByline } from "@/components/insights/ArticleByline";
-import { ArticleCover } from "@/components/insights/ArticleCover";
+import { getCategoryImage, getCategoryImageMeta } from "@/lib/insights/category-image";
 import { Comments, type PublicComment } from "@/components/insights/Comments";
 import { sanity } from "@/sanity/lib/client";
 import { sanityImageProps } from "@/sanity/lib/image";
@@ -181,10 +181,25 @@ export default async function ArticlePage({
                 className="object-cover"
               />
             ) : (
-              <ArticleCover
-                title={article.title}
-                category={article.category}
-                size="hero"
+              /* ── SAME IMAGE AS THE CARD ────────────────────────────────────
+                 Changed 23 Sep 2026. This used to render ArticleCover — the
+                 generated SVG motif — while the card that linked here showed a
+                 photograph. So a reader clicked a photo and landed on an
+                 abstract line drawing, and the two never matched.
+
+                 It now resolves the same photo the card does, through the same
+                 slug-seeded pick, so the thumbnail and the hero are one image.
+                 An uploaded heroImage in Sanity still wins over both.
+
+                 ArticleCover is kept in the repo — it is a decent component and
+                 the motifs are reusable — but it is no longer the article hero. */
+              <Image
+                src={getCategoryImage(article.category, article.slug.current)}
+                alt={getCategoryImageMeta(article.category, article.slug.current).title}
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="object-cover"
               />
             )}
           </div>

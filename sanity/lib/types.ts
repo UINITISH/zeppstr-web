@@ -83,13 +83,38 @@ export interface SubService extends SeoFields {
 // 3. Industry
 // ─────────────────────────────────────────────
 
-export type IndustryName =
+/**
+ * The six industries that have their own page under /industries.
+ * Every one of these resolves to a real route.
+ */
+export type IndustryPageName =
   | "Healthcare"
   | "SaaS / Tech"
   | "Real Estate"
   | "EdTech / Education"
   | "Professional Services"
   | "E-commerce / D2C";
+
+/**
+ * Sectors we work in that do NOT have a page of their own.
+ *
+ * Added 17 Sep 2026. Vikas corrected three client mappings and two of them —
+ * 21 Finance (fintech) and Aishwarya Interiors (interior design) — had been
+ * filed under whichever of the six was closest, which meant the site was
+ * telling a visitor something untrue about a named client. One of them
+ * carried a literal "(?)" in the seed.
+ *
+ * The taxonomy is coarser than the client list, and forcing every client into
+ * six buckets was the actual bug. A card may now display the client's REAL
+ * sector while its link still points at the nearest page that exists. Better a
+ * true label on a slightly approximate link than a false label on a tidy one.
+ *
+ * If one of these ever earns a page, promote it to IndustryPageName and give
+ * it a route.
+ */
+export type SectorLabelOnly = "Fintech" | "Interior Design";
+
+export type IndustryName = IndustryPageName | SectorLabelOnly;
 
 export interface Industry extends SeoFields {
   _id: string;

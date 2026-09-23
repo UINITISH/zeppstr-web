@@ -75,7 +75,9 @@ export const CLIENT_LOGOS: SeedClientLogo[] = [
   {
     _id: "logo-invest-in-sharjah",
     clientName: "Invest in Sharjah",
-    industryId: "industry-professional-services",
+    // Corrected 17 Sep 2026 (Vikas): a real-estate channel partner, not a
+    // professional-services firm.
+    industryId: "industry-real-estate",
     status: "flagship",
     website: "https://investinsharjah.ae",
   },
@@ -103,8 +105,14 @@ export const CLIENT_LOGOS: SeedClientLogo[] = [
   { _id: "logo-empuls", clientName: "Empuls", industryId: "industry-saas-tech", status: "active" },
   { _id: "logo-fixstars", clientName: "Fixstars", industryId: "industry-saas-tech", status: "active" },
   { _id: "logo-tristar-online", clientName: "Tristar Online", industryId: "industry-ecommerce-dtc", status: "active" },
-  { _id: "logo-aishwarya-interiors", clientName: "Aishwarya Interiors", industryId: "industry-real-estate", status: "active" },
-  { _id: "logo-twenty-one-finance", clientName: "21 Finance", industryId: "industry-professional-services", status: "active" }, // (?) fintech — no fintech industry defined
+  // Corrected 17 Sep 2026 (Vikas): an interior design firm. There is no
+  // interior-design industry page, so it maps to professional-services and the
+  // true sector is carried in the label shown on the card.
+  { _id: "logo-aishwarya-interiors", clientName: "Aishwarya Interiors", industryId: "industry-professional-services", status: "active" },
+  // Confirmed 17 Sep 2026 (Vikas): a fintech company. The "(?)" is resolved.
+  // Still mapped to professional-services because there is no fintech industry
+  // page; the label on the card says Fintech.
+  { _id: "logo-twenty-one-finance", clientName: "21 Finance", industryId: "industry-professional-services", status: "active" },
   { _id: "logo-learncab", clientName: "LearnCab", industryId: "industry-edtech-education", status: "active" },
   { _id: "logo-ivehiclevalue", clientName: "iVehicleValue", industryId: "industry-saas-tech", status: "active" },
   { _id: "logo-bsg", clientName: "BSG", industryId: "industry-professional-services", status: "active" }, // BizSetupGlobal — accounting & compliance

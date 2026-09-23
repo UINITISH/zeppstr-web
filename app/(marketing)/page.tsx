@@ -78,7 +78,10 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
     headlineTimeframe: "positioning · owned channels",
     clientName: "21 Finance",
     slug: { _type: "slug", current: "21-finance" },
-    industry: { _id: "ind-professional-services", name: "Professional Services", slug: { _type: "slug", current: "professional-services" } },
+    /* Fintech, confirmed by Vikas 17 Sep 2026. There is no fintech industry
+       page, so the slug points at professional-services while the NAME — the
+       only part a visitor reads — says Fintech. */
+    industry: { _id: "ind-fintech", name: "Fintech", slug: { _type: "slug", current: "professional-services" } },
     country: "India",
     linkHref: "/work",
   },
@@ -99,7 +102,10 @@ const STATIC_FEATURED_CASES: CaseStudyListItem[] = [
     headlineTimeframe: "organic · lead qualification",
     clientName: "Aishwarya Interiors",
     slug: { _type: "slug", current: "aishwarya-interiors" },
-    industry: { _id: "ind-real-estate", name: "Real Estate", slug: { _type: "slug", current: "real-estate" } },
+    /* An interior design firm, not real estate — corrected 17 Sep 2026.
+       Same arrangement as 21 Finance: no interior-design page exists, so the
+       link goes to professional-services and the label tells the truth. */
+    industry: { _id: "ind-interior-design", name: "Interior Design", slug: { _type: "slug", current: "professional-services" } },
     country: "India",
     linkHref: "/work",
     screenshotSrc: "/case-screenshots/aishwarya-interiors.jpg",

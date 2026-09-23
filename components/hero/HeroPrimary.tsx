@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AnimatedNumber } from "@/components/utility/AnimatedNumber";
 import { AnimatedHeadline } from "@/components/utility/AnimatedHeadline";
-import { CompoundingVectors } from "@/components/utility/CompoundingVectors";
+import { RealFunnel } from "@/components/utility/RealFunnel";
 import { FloatingMarketingIcons } from "@/components/utility/FloatingMarketingIcons";
 
 interface CTA {
@@ -147,12 +147,15 @@ export function HeroPrimary({
               type alone, which is why it read as less designed than pages
               three clicks deeper.
 
-              CompoundingVectors argues the headline directly rather than
-              decorating it — four channel arrows that rotate from splayed to
-              aligned while the combined result grows. See that component for
-              the reasoning and for why it carries no figures. */}
+              REPLACED 23 SEP 2026. CompoundingVectors was an abstract vector
+              diagram — a good argument and a bad image, which is why it read
+              as generated. RealFunnel shows the actual Tru Aquapolis funnel
+              instead: ₹1.4 Cr of media, 6,000+ leads, 75 units, ₹187.5 Cr
+              closed, every figure lifted from the results table published at
+              /work/tru-aquapolis. On a site that argues it publishes only what
+              it can prove, the proof is the strongest available hero image. */}
           <aside className="md:col-span-5 hidden md:block">
-            <CompoundingVectors />
+            <RealFunnel />
 
             {/* ── The two USP figures ──
                 PROMOTED 15 SEP 2026. These are the firm's actual
