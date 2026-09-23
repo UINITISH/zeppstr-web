@@ -14,7 +14,7 @@ import { ReadingProgress } from "@/components/insights/ReadingProgress";
 import { ShareRow } from "@/components/insights/ShareRow";
 import { LeadMagnetCard } from "@/components/insights/LeadMagnetCard";
 import { ArticleByline } from "@/components/insights/ArticleByline";
-import { getCategoryImage, getCategoryImageMeta } from "@/lib/insights/category-image";
+import { ArticleDiagram } from "@/components/insights/ArticleDiagram";
 import { Comments, type PublicComment } from "@/components/insights/Comments";
 import { sanity } from "@/sanity/lib/client";
 import { sanityImageProps } from "@/sanity/lib/image";
@@ -193,14 +193,7 @@ export default async function ArticlePage({
 
                  ArticleCover is kept in the repo — it is a decent component and
                  the motifs are reusable — but it is no longer the article hero. */
-              <Image
-                src={getCategoryImage(article.category, article.slug.current)}
-                alt={getCategoryImageMeta(article.category, article.slug.current).title}
-                fill
-                priority
-                sizes="(max-width: 1280px) 100vw, 1280px"
-                className="object-cover"
-              />
+              <ArticleDiagram slug={article.slug.current} category={article.category} />
             )}
           </div>
         </div>

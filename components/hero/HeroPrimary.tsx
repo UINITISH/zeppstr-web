@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { AnimatedNumber } from "@/components/utility/AnimatedNumber";
 import { AnimatedHeadline } from "@/components/utility/AnimatedHeadline";
-import { RealFunnel } from "@/components/utility/RealFunnel";
 import { FloatingMarketingIcons } from "@/components/utility/FloatingMarketingIcons";
 
 interface CTA {
@@ -140,23 +139,34 @@ export function HeroPrimary({
             </div>
           </div>
 
-          {/* ── Hero diagram ──
-              The homepage was the ONLY hero on the site with no graphic in it.
-              Every solution page, industry page, hub page, /work and /about
-              carries an animated diagram; the one page everybody sees carried
-              type alone, which is why it read as less designed than pages
-              three clicks deeper.
+          {/* ── The right column: OUR numbers, not a client's ──
+              Two graphics were tried here and both were wrong.
 
-              REPLACED 23 SEP 2026. CompoundingVectors was an abstract vector
-              diagram — a good argument and a bad image, which is why it read
-              as generated. RealFunnel shows the actual Tru Aquapolis funnel
-              instead: ₹1.4 Cr of media, 6,000+ leads, 75 units, ₹187.5 Cr
-              closed, every figure lifted from the results table published at
-              /work/tru-aquapolis. On a site that argues it publishes only what
-              it can prove, the proof is the strongest available hero image. */}
-          <aside className="md:col-span-5 hidden md:block">
-            <RealFunnel />
+              CompoundingVectors (15 Sep) was four hairline arrows rotating
+              from splayed to aligned — a good argument and a bad image.
+              Abstract, perfectly geometric, carrying nothing checkable. Vikas:
+              "looks like proper AI."
 
+              RealFunnel (23 Sep) over-corrected. It showed the complete Tru
+              Aquapolis funnel — their media spend, their leads, their closed
+              revenue — as the hero of OUR homepage. Vikas, correctly: "How can
+              we show a client's funnel on the homepage of our organisation? It
+              does not match."
+
+              He is right and it is worth stating the principle, because it is
+              not obvious: a client's results belong on the CASE STUDY, where
+              they are theirs and the context is complete, and in the proof
+              rail lower down this page where they are clearly attributed and
+              sit alongside two others. Lifting one client's whole funnel into
+              the hero implies it is a house metric. It is not. It is one
+              engagement, and the page already links to it.
+
+              So the right column is the firm's own two numbers — capped
+              capacity and breadth — which is what was here before the diagram
+              experiments and is what Vikas asked to have back. They are the
+              actual differentiators, they are ours to state, and they no
+              longer compete with a graphic for the same corner. */}
+          <aside className="md:col-span-5 hidden md:block md:pt-6">
             {/* ── The two USP figures ──
                 PROMOTED 15 SEP 2026. These are the firm's actual
                 differentiators — a capped client list and the breadth behind
@@ -172,7 +182,7 @@ export function HeroPrimary({
                 white. Only one tier of number can be the loudest, and yellow
                 on emerald is the loudest thing this palette can do. When the
                 rail was also yellow, five figures competed and none won. */}
-            <div className="grid grid-cols-2 gap-8 mt-9 pt-8 border-t border-white/15">
+            <div className="grid grid-cols-2 gap-8">
               {[
                 {
                   figure: (

@@ -145,7 +145,11 @@ const META: SeedCaseStudy[] = [
     _id: "case-study-invest-in-sharjah",
     clientName: "Invest in Sharjah",
     slug: "invest-in-sharjah",
-    industryId: "industry-professional-services",
+    // Corrected 23 Sep 2026 (Vikas): a real-estate channel partner. The work
+    // grid reads industry from THIS field via Sanity — correcting the logo
+    // seed and the homepage static entries last time did not reach it, which
+    // is why the row still displayed "Professional Services".
+    industryId: "industry-real-estate",
     solutionsUsedIds: [
       "solution-organic-growth",
       "solution-experience-engineering",

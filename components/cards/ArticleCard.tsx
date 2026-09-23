@@ -3,7 +3,7 @@ import Image from "next/image";
 import { cn } from "@/lib/cn";
 import type { Article } from "@/sanity/lib/types";
 import { sanityImageProps } from "@/sanity/lib/image";
-import { getCategoryImage, getCategoryImageMeta } from "@/lib/insights/category-image";
+import { ArticleDiagram } from "@/components/insights/ArticleDiagram";
 import { CATEGORY_LABELS } from "@/lib/insights/article";
 // ArticleCover is no longer rendered on-page — see the note above. It is kept
 // as a component because /insights-cover/[slug] still generates social share
@@ -38,9 +38,16 @@ export function ArticleCard({ article, variant = "default", className }: Article
     ? sanityImageProps(article.heroImage, { width: 960, height: 600 })
     : null;
 
-  // Category photograph, used whenever the article has no image of its own.
-  const categoryPhoto = getCategoryImage(article.category, article.slug.current);
-  const categoryPhotoAlt = getCategoryImageMeta(article.category, article.slug.current).title;
+  /* ── NO MORE CATEGORY PHOTOGRAPHS ─────────────────────────────────────────
+     Replaced 23 Sep 2026. Three treatments were tried here — generated title
+     cards, then Magnific business stock, then architecture photography — and
+     all three were decorative. A picture of a concrete wall says nothing about
+     crawl budget, however well shot.
+
+     The card now draws the article's own argument. See
+     components/insights/ArticleDiagram.tsx. An uploaded Sanity heroImage still
+     takes precedence, because a real photograph of a real thing beats a
+     diagram; a stock photograph of a stranger does not. */
 
   const categoryLabel = CATEGORY_LABELS[article.category] ?? article.category;
   const date = article.publishedAt ? new Date(article.publishedAt) : null;
@@ -102,14 +109,7 @@ export function ArticleCard({ article, variant = "default", className }: Article
                 className="object-cover transition-transform duration-page ease-smooth group-hover:scale-[1.03]"
               />
             ) : (
-              <Image
-                src={categoryPhoto}
-                alt={categoryPhotoAlt}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-page ease-smooth group-hover:scale-[1.03]"
-              />
+              <ArticleDiagram slug={article.slug.current} category={article.category} />
             )}
           </div>
           <div>
@@ -143,13 +143,7 @@ export function ArticleCard({ article, variant = "default", className }: Article
             className="object-cover transition-transform duration-page ease-smooth group-hover:scale-105"
           />
         ) : (
-          <Image
-            src={categoryPhoto}
-            alt={categoryPhotoAlt}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-cover transition-transform duration-page ease-smooth group-hover:scale-105"
-          />
+          <ArticleDiagram slug={article.slug.current} category={article.category} />
         )}
       </div>
       {meta}
