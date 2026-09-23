@@ -75,6 +75,17 @@ print -P "%F{cyan}[2/4] Building the site%f"
 print -P "Five new or rebuilt pages this round, so this one is worth running."
 print -P "Takes a few minutes. Ignore the scrolling output unless it stops.\n"
 
+# Drop Next's persisted data cache before building.
+#
+# We have just rewritten the content store, so every cached Sanity response is
+# by definition suspect. On 23 Sep this cache replayed a stale list of 12
+# deleted articles into three consecutive builds — each one produced a dozen
+# empty 404 pages and reported success. Content changed, so the data cache goes.
+#
+# Only fetch-cache is removed, not the whole of .next/cache: the compiler and
+# webpack caches are still valid and rebuilding those wastes minutes.
+rm -rf .next/cache/fetch-cache
+
 if ! npm run build; then
   print -P "\n%F{red}✗ BUILD FAILED.%f Nothing committed, nothing pushed."
   print -P "Send Claude everything above.\n"

@@ -29,8 +29,24 @@ interface IndustryPageData extends Industry {
 // ─────────────────────────────────────────────
 
 export async function generateStaticParams() {
+  /* {}, { next: { revalidate: 0 } } — this query must NEVER be served from
+     Next's persisted fetch cache.
+
+     23 Sep: 12 filler articles were deleted from Sanity and confirmed gone by
+     the prune, yet the next three builds each emitted 12 /insights/* routes.
+     The articles were genuinely deleted; .next/cache/fetch-cache was replaying
+     a stale 12-slug response for this exact query. Each generated page then
+     correctly fetched null and rendered a 404 shell — so the build produced a
+     dozen empty pages and reported success.
+
+     A generateStaticParams query decides WHICH PAGES EXIST. Caching it means
+     the route list can silently disagree with the content, and on Vercel the
+     build cache persists between deploys, so this ships. Freshness here costs
+     one request per build. */
   const industries = await sanity.fetch<Array<{ slug: { current: string } }>>(
-    `*[_type == "industry"]{ slug }`
+    `*[_type == "industry"]{ slug }`,
+    {},
+    { next: { revalidate: 0 } },
   );
   return industries.map((i) => ({ slug: i.slug.current }));
 }
