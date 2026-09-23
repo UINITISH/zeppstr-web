@@ -106,6 +106,8 @@ async function seedClientLogos() {
       industry: ref(c.industryId),
       status: c.status,
       website: c.website,
+      sector: c.sector, // honest label where the industry grouping isn't the client's real sector
+
       // logo intentionally omitted — schema's required validation will warn in Studio
       // until images are uploaded. Pages render with text fallback in the meantime.
     })),

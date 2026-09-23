@@ -112,7 +112,11 @@ export type IndustryPageName =
  * If one of these ever earns a page, promote it to IndustryPageName and give
  * it a route.
  */
-export type SectorLabelOnly = "Fintech" | "Interior Design";
+/* Not a union of literals any more. A client's real sector is now a free
+ * string on clientLogo.sector, because the set of sectors that lack a page
+ * grows whenever a client is signed and a hardcoded union means a code change
+ * for every one. The earlier union was also dead — nothing ever read it. */
+export type SectorLabelOnly = string;
 
 export type IndustryName = IndustryPageName | SectorLabelOnly;
 
@@ -215,7 +219,13 @@ export interface ClientLogo {
   _type: "clientLogo";
   clientName: string;
   logo: SanityImage;
+  /** Grouping key — which industry page this logo is listed on. Not a claim
+   *  about what the client actually does; see `sector`. */
   industry?: Industry;
+  /** The client's real sector, set only when it has no industry page of its
+   *  own (Fintech, Interior Design). Prefer this over industry.name for any
+   *  label shown to a visitor. */
+  sector?: string;
   status: ClientLogoStatus;
   website?: string;
 }

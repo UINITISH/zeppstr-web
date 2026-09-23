@@ -46,6 +46,8 @@ interface SeedClientLogo {
   _id: string;
   clientName: string;
   industryId: string;
+  /** Real sector, when it has no industry page of its own. Optional. */
+  sector?: string;
   status: "flagship" | "active" | "past";
   website?: string;
 }
@@ -108,11 +110,14 @@ export const CLIENT_LOGOS: SeedClientLogo[] = [
   // Corrected 17 Sep 2026 (Vikas): an interior design firm. There is no
   // interior-design industry page, so it maps to professional-services and the
   // true sector is carried in the label shown on the card.
-  { _id: "logo-aishwarya-interiors", clientName: "Aishwarya Interiors", industryId: "industry-professional-services", status: "active" },
+  // Interior design firm — same grouping-vs-truth split as 21 Finance above.
+  { _id: "logo-aishwarya-interiors", clientName: "Aishwarya Interiors", industryId: "industry-professional-services", sector: "Interior Design", status: "active" },
   // Confirmed 17 Sep 2026 (Vikas): a fintech company. The "(?)" is resolved.
   // Still mapped to professional-services because there is no fintech industry
   // page; the label on the card says Fintech.
-  { _id: "logo-twenty-one-finance", clientName: "21 Finance", industryId: "industry-professional-services", status: "active" },
+  // Fintech. No fintech industry page exists, so it is grouped under
+  // Professional Services and labelled truthfully via `sector`.
+  { _id: "logo-twenty-one-finance", clientName: "21 Finance", industryId: "industry-professional-services", sector: "Fintech", status: "active" },
   { _id: "logo-learncab", clientName: "LearnCab", industryId: "industry-edtech-education", status: "active" },
   { _id: "logo-ivehiclevalue", clientName: "iVehicleValue", industryId: "industry-saas-tech", status: "active" },
   { _id: "logo-bsg", clientName: "BSG", industryId: "industry-professional-services", status: "active" }, // BizSetupGlobal — accounting & compliance

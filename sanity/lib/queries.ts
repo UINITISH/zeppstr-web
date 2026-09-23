@@ -73,6 +73,7 @@ const clientLogoFragment = groq`
   logo { ${imageFragment} },
   status,
   website,
+  sector,
   industry->{ _id, name, slug }
 `;
 
