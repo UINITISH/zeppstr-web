@@ -66,22 +66,6 @@ interface SeedArticle {
  */
 export const WITHHELD: SeedArticle[] = [
   {
-    _id: "article-creative-concentration",
-    title:
-      "Eighty-six percent of your leads come from five ads. The skill is deleting the rest.",
-    slug: "creative-concentration",
-    excerpt:
-      "Thirty-three creatives tested, two survived, and a single static floor-plan image delivered 440 leads at 37% below the blended average. The discipline was never making it — it was retiring the others.",
-    author: "Team Zeppstr",
-    category: "performance-paid",
-    publishedAt: "2026-07-08T09:00:00Z",
-    markdownFile: "creative-concentration.md",
-    relatedSolutionId: "solution-performance-media",
-    seoTitle: "Creative Concentration: Why 5 Ads Carry Your Account",
-    seoDescription:
-      "86% of leads came from five creatives. Why retiring underperformers matters more than making new ones — and why retainer economics discourage it.",
-  },
-  {
     _id: "article-revenue-claims-arithmetic",
     title:
       "If your agency's case study claims more revenue than the project was worth, stop reading it",
@@ -96,37 +80,6 @@ export const WITHHELD: SeedArticle[] = [
     seoTitle: "The Revenue Claim Test for Agency Case Studies",
     seoDescription:
       "How impossible ROI claims get built from defensible-sounding estimates, what they cost you with a CFO buyer, and what to claim instead.",
-  },
-  {
-    _id: "article-zero-conversions",
-    title:
-      "Zero conversions on the platform, 147 in the CRM: what a broken account actually looks like",
-    slug: "zero-conversions-147-leads",
-    excerpt:
-      "The most expensive failure in paid media is invisible from the dashboard. Spend looks normal, impressions look normal, and Smart Bidding is optimising against nothing.",
-    author: "Team Zeppstr",
-    category: "conversion-experience",
-    publishedAt: "2026-06-17T09:00:00Z",
-    markdownFile: "zero-conversions-147-leads.md",
-    relatedSolutionId: "solution-experience-engineering",
-    seoTitle: "Broken Conversion Tracking: The Invisible Ad Spend Leak",
-    seoDescription:
-      "Zero platform conversions against 147 in the CRM. Why adding budget before fixing tracking compounds the waste — and the repair sequence that worked.",
-  },
-  {
-    _id: "article-win-four-searches",
-    title: "Win four searches completely, or a hundred partially. Not both.",
-    slug: "win-four-searches-completely",
-    excerpt:
-      "For high-value, low-volume query sets, position four isn't 40% of position one — it's close to nothing. Why owning a handful of terms beats ranking broadly.",
-    author: "Team Zeppstr",
-    category: "seo-search",
-    publishedAt: "2026-08-01T09:00:00Z",
-    markdownFile: "win-four-searches-completely.md",
-    relatedSolutionId: "solution-organic-growth",
-    seoTitle: "Own Four Searches, Not a Hundred | Zeppstr",
-    seoDescription:
-      "When a single conversion is worth more than a thousand visitors, traffic growth is the wrong target. Three tests to know if this applies to you.",
   },
 ];
 
@@ -168,7 +121,105 @@ export const WITHHELD: SeedArticle[] = [
  * reconstructs an identifiable third-party deck. Clearing those is a separate
  * decision and is not made here.
  */
-const PARKED_FILLER: SeedArticle[] = [
+const PARKED_FILLER: SeedArticle[] = []; // restored into META above, 23 Sep 2026
+
+/**
+ * PUBLISHED ARTICLES.
+ *
+ * Deliberately empty. See PARKED_FILLER above for why, and WITHHELD for the
+ * four essays that are ready in every respect except a sourcing review.
+ *
+ * Adding one back is a one-line move — but the bar is that it is written in
+ * this firm's voice and every figure in it traces to a named engagement. That
+ * is the same bar the case studies are held to.
+ */
+/**
+ * PUBLISHED — 23 Sep 2026.
+ *
+ * Three of the four essays previously in WITHHELD. They are the only articles
+ * on this site written from our own engagements, and each has a bespoke
+ * diagram drawn from its own figures (components/insights/ArticleDiagram.tsx).
+ *
+ * `revenue-claims-that-fail-arithmetic` stays withheld. It reconstructs an
+ * identifiable third-party deck — five projects named by their numbers, exact
+ * crore figures — a confidentiality and relationship risk regardless of
+ * whether the arithmetic is right. That needs a decision, not an edit.
+ *
+ * The 49 imported SEO posts in PARKED_FILLER stay parked: not written here,
+ * and they say nothing we would stand behind.
+ */
+/**
+ * PUBLISHED.
+ *
+ * ── 23 Sep 2026: the filler was restored ────────────────────────────────────
+ * I withdrew 49 imported SEO articles on editorial grounds and Vikas approved
+ * it in passing during a QA pass. That approval was taken too far: over the
+ * following rounds he asked four separate times for the article artwork to be
+ * redesigned, which only makes sense if the articles are live. I built 18
+ * scene compositions for a section I had emptied and never raised the
+ * contradiction.
+ *
+ * His call, correctly: an agency's Insights section with nothing in it is
+ * worse than one with imperfect posts in it. The 49 are back.
+ *
+ * The editorial concern was real and is not the same as a blocker — these were
+ * bulk-imported, are not in this firm's voice, and all carry the same
+ * 2024-03-02 import timestamp. Rewriting them in our voice, a few at a time,
+ * is worth doing. Deleting them first was not.
+ *
+ * STILL WITHHELD: revenue-claims-that-fail-arithmetic. Not an editorial
+ * judgement — it reconstructs an identifiable third-party deck (five projects
+ * named by their numbers, exact crore figures). That is a client
+ * confidentiality risk and needs an explicit decision before it goes live.
+ */
+const META: SeedArticle[] = [
+  {
+    _id: "article-creative-concentration",
+    title:
+      "Eighty-six percent of your leads come from five ads. The skill is deleting the rest.",
+    slug: "creative-concentration",
+    excerpt:
+      "Thirty-three creatives tested, two survived, and a single static floor-plan image delivered 440 leads at 37% below the blended average. The discipline was never making it — it was retiring the others.",
+    author: "Team Zeppstr",
+    category: "performance-paid",
+    publishedAt: "2026-07-08T09:00:00Z",
+    markdownFile: "creative-concentration.md",
+    relatedSolutionId: "solution-performance-media",
+    seoTitle: "Creative Concentration: Why 5 Ads Carry Your Account",
+    seoDescription:
+      "86% of leads came from five creatives. Why retiring underperformers matters more than making new ones — and why retainer economics discourage it.",
+  },
+  {
+    _id: "article-zero-conversions",
+    title:
+      "Zero conversions on the platform, 147 in the CRM: what a broken account actually looks like",
+    slug: "zero-conversions-147-leads",
+    excerpt:
+      "The most expensive failure in paid media is invisible from the dashboard. Spend looks normal, impressions look normal, and Smart Bidding is optimising against nothing.",
+    author: "Team Zeppstr",
+    category: "conversion-experience",
+    publishedAt: "2026-06-17T09:00:00Z",
+    markdownFile: "zero-conversions-147-leads.md",
+    relatedSolutionId: "solution-experience-engineering",
+    seoTitle: "Broken Conversion Tracking: The Invisible Ad Spend Leak",
+    seoDescription:
+      "Zero platform conversions against 147 in the CRM. Why adding budget before fixing tracking compounds the waste — and the repair sequence that worked.",
+  },
+  {
+    _id: "article-win-four-searches",
+    title: "Win four searches completely, or a hundred partially. Not both.",
+    slug: "win-four-searches-completely",
+    excerpt:
+      "For high-value, low-volume query sets, position four isn't 40% of position one — it's close to nothing. Why owning a handful of terms beats ranking broadly.",
+    author: "Team Zeppstr",
+    category: "seo-search",
+    publishedAt: "2026-08-01T09:00:00Z",
+    markdownFile: "win-four-searches-completely.md",
+    relatedSolutionId: "solution-organic-growth",
+    seoTitle: "Own Four Searches, Not a Hundred | Zeppstr",
+    seoDescription:
+      "When a single conversion is worth more than a thousand visitors, traffic growth is the wrong target. Three tests to know if this applies to you.",
+  },
   {
     _id: "article-technical-seo-website-performance",
     title: "Master Technical SEO for Peak Website Performance",
@@ -539,7 +590,7 @@ const PARKED_FILLER: SeedArticle[] = [
   // Dated to their true createdTime — these were written March 2024 and predate
   // Apple Mail Privacy Protection's effect on open-rate reporting becoming
   // common knowledge. Where the source asserted an open-rate benchmark as
-  // current fact, it has been reframed rather than reproduced.
+  // current fact, it has been reframed rather than reproduced.,
   {
     _id: "article-email-marketing-strategy",
     title: "Master Email Marketing: Strategy & Best Practices",
@@ -601,7 +652,7 @@ const PARKED_FILLER: SeedArticle[] = [
   // Imported Sep 2026 from Drive folder 1AgSzF5TBKGBGG7hTsk0MOkgs0o-Q08Mp.
   // Source drafts referenced "Google AdWords" and "Bing Ads" (renamed 2018/2019)
   // and predate the account-structure consequences of App Tracking Transparency.
-  // Corrected on import; fabricated case-study figures removed throughout.
+  // Corrected on import; fabricated case-study figures removed throughout.,
   {
     _id: "article-understanding-ppc",
     title: "Understanding PPC: A Step-by-Step Explanation",
@@ -672,7 +723,7 @@ const PARKED_FILLER: SeedArticle[] = [
   // case studies with specific percentages, one unfilled "[Name], Influencer
   // Marketing Expert" template placeholder, and three influencer platforms that
   // do not exist under the names given. All removed on import. Stale platform
-  // user-count tables and references to CrowdTangle (retired 2024) corrected.
+  // user-count tables and references to CrowdTangle (retired 2024) corrected.,
   {
     _id: "article-social-media-marketing-101",
     title: "Social Media Marketing 101: A Comprehensive Guide",
@@ -797,7 +848,7 @@ const PARKED_FILLER: SeedArticle[] = [
   // giving different figures for the same industries; `best-time-to-send-email`
   // recommended evening in its tables and 10am-12pm in its FAQ; and the bounce
   // rate source claimed a 20% average while its own table rated anything above
-  // 15% as "poor". All rebuilt from first principles.
+  // 15% as "poor". All rebuilt from first principles.,
   {
     _id: "article-email-bounce-rate",
     title: "Bounce Rate in Email Marketing: Causes and Fixes",
@@ -900,18 +951,6 @@ const PARKED_FILLER: SeedArticle[] = [
       "The questions that separate competent PPC agencies from expensive ones — account ownership, fee structures, reference checks and the warning signs.",
   },
 ];
-
-/**
- * PUBLISHED ARTICLES.
- *
- * Deliberately empty. See PARKED_FILLER above for why, and WITHHELD for the
- * four essays that are ready in every respect except a sourcing review.
- *
- * Adding one back is a one-line move — but the bar is that it is written in
- * this firm's voice and every figure in it traces to a named engagement. That
- * is the same bar the case studies are held to.
- */
-const META: SeedArticle[] = [];
 
 
 /** Reads each article's markdown and converts the body to Portable Text. */
