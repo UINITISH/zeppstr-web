@@ -75,16 +75,27 @@ print -P "%F{cyan}[2/4] Building the site%f"
 print -P "Five new or rebuilt pages this round, so this one is worth running."
 print -P "Takes a few minutes. Ignore the scrolling output unless it stops.\n"
 
-# Drop Next's persisted data cache before building.
+# Start every publish from a clean .next.
 #
-# We have just rewritten the content store, so every cached Sanity response is
-# by definition suspect. On 23 Sep this cache replayed a stale list of 12
-# deleted articles into three consecutive builds — each one produced a dozen
-# empty 404 pages and reported success. Content changed, so the data cache goes.
+# WHY NOT JUST THE DATA CACHE: the first version of this removed only
+# .next/cache/fetch-cache, reasoning that the compiler caches were still valid
+# and rebuilding them wastes minutes. The very next build died with
+#   Cannot find module './1682.js'
+# from webpack-runtime — a chunk the runtime expected and that no longer
+# existed. Deleting part of a build tree and asking the incremental build to
+# reason about the rest is how you get that class of error.
 #
-# Only fetch-cache is removed, not the whole of .next/cache: the compiler and
-# webpack caches are still valid and rebuilding those wastes minutes.
-rm -rf .next/cache/fetch-cache
+# The trade was wrong anyway. This script runs a few times a day, by hand,
+# after a content publish. Two extra minutes of compile is cheap; a failed
+# build, or worse a build that silently ships stale routes, is not. The
+# earlier symptom — three consecutive builds emitting 12 deleted articles as
+# empty 404 pages, each reporting success — is exactly what a half-cleaned
+# cache buys you.
+#
+# Clean build, every time. If build time ever becomes the real bottleneck,
+# fix it with a faster machine or a remote cache, not by guessing which
+# fragments of .next are still trustworthy.
+rm -rf .next
 
 if ! npm run build; then
   print -P "\n%F{red}✗ BUILD FAILED.%f Nothing committed, nothing pushed."
