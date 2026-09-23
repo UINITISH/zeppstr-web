@@ -9,6 +9,7 @@
 // MUST be the first import — loads .env.local before client.ts reads env vars
 import "./load-env";
 import { sanity, sanityConfig } from "./client";
+import { reportFailure } from "./report-failure";
 
 async function main() {
   console.log("Zeppstr · Sanity content audit");
@@ -43,6 +44,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(err);
+  reportFailure(err, "Check failed");
   process.exit(1);
 });

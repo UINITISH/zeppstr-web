@@ -21,6 +21,7 @@
 import "./load-env";
 import { resolve } from "node:path";
 import { sanity } from "./client";
+import { reportFailure } from "./report-failure";
 import { SOLUTIONS } from "./data/solutions";
 import { SUB_SERVICES } from "./data/sub-services";
 import { INDUSTRIES } from "./data/industries";
@@ -265,8 +266,4 @@ async function main() {
   console.log("  Next: open Sanity Studio → upload logo PNGs + hero images per record.");
 }
 
-main().catch((err) => {
-  console.error("\n✗ Seed failed:");
-  console.error(err);
-  process.exit(1);
-});
+main().catch((err) => reportFailure(err, "Seed failed"));

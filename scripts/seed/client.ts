@@ -20,12 +20,26 @@ if (!token) {
   );
 }
 
+/**
+ * maxRetries: the seed fires several hundred mutations in sequence over one
+ * keep-alive connection, and on 23 Sep it died on ECONNRESET four logos into a
+ * twenty-five logo batch — a transient TCP reset, nothing to do with content.
+ * Without retries a single dropped packet wastes the whole run and leaves the
+ * dataset half-written.
+ *
+ * Retrying is safe here specifically BECAUSE every document uses a
+ * deterministic _id, so a mutation replayed after an ambiguous failure upserts
+ * the same document rather than creating a duplicate. Do not copy this setting
+ * to a client that does create-without-id writes.
+ */
 export const sanity = createClient({
   projectId,
   dataset,
   apiVersion,
   token,
   useCdn: false,
+  maxRetries: 5,
+  retryDelay: (attempt: number) => Math.min(1000 * 2 ** attempt, 15000),
 });
 
 export const sanityConfig = { projectId, dataset, apiVersion };

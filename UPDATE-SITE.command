@@ -54,8 +54,18 @@ if [[ ! -f .env.local ]] || ! grep -q "^SANITY_API_TOKEN=." .env.local; then
 fi
 
 if ! npm run seed; then
-  print -P "\n%F{red}✗ PUBLISHING FAILED.%f"
-  print -P "Nothing was changed. Copy everything above and send it to Claude.\n"
+  # "Nothing was changed" was a lie. The seed writes incrementally, so a
+  # mid-run failure leaves whatever it already committed in place — the 23 Sep
+  # ECONNRESET had already written 5 solutions, 6 industries and 4 logos before
+  # it died, while this message claimed the dataset was untouched. Telling
+  # someone their data is clean when it is half-written is worse than saying
+  # nothing, because it stops them re-running.
+  print -P "\n%F{red}✗ PUBLISHING FAILED — partway through.%f"
+  print -P "Some records were already saved before it stopped; the rest were not."
+  print -P "This script is safe to re-run: it overwrites records rather than"
+  print -P "duplicating them, so running it again finishes the job.\n"
+  print -P "%F{yellow}Before sharing the output: check it for a line starting%f"
+  print -P "%F{yellow}'authorization: Bearer' and delete that line.%f\n"
   print -P "Press Return to close."; read; exit 1
 fi
 print -P "\n%F{green}✓ Content published.%f\n"

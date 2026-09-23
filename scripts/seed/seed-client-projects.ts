@@ -12,6 +12,7 @@
 import "./load-env";
 import { sanity } from "./client";
 import { CLIENT_PROJECTS } from "./data/client-projects";
+import { reportFailure } from "./report-failure";
 
 const log = {
   step: (msg: string) => console.log(`\n→ ${msg}`),
@@ -38,6 +39,6 @@ async function seedClientProjects() {
 seedClientProjects()
   .then(() => console.log("\nDone.\n"))
   .catch((err) => {
-    console.error(err);
+    reportFailure(err, "Client project seed failed");
     process.exit(1);
   });
