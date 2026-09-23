@@ -20,8 +20,10 @@
 // MUST be the first import — loads .env.local before client.ts reads env vars
 import "./load-env";
 import { resolve } from "node:path";
-import { sanity } from "./client";
 import { reportFailure } from "./report-failure";
+// Every write now goes through the batching helpers — nothing in this file
+// talks to the Sanity client directly any more. See scripts/seed/batch.ts.
+import { commitDocs, commitPatches } from "./batch";
 import { SOLUTIONS } from "./data/solutions";
 import { SUB_SERVICES } from "./data/sub-services";
 import { INDUSTRIES } from "./data/industries";
@@ -56,8 +58,8 @@ const ref = (id: string) => ({ _type: "reference", _ref: id });
 
 async function seedSolutions() {
   log.step(`Solutions (${SOLUTIONS.length})`);
-  for (const s of SOLUTIONS) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    SOLUTIONS.map((s) => ({
       _id: s._id,
       _type: "solution",
       name: s.name,
@@ -66,15 +68,15 @@ async function seedSolutions() {
       longDescription: s.longDescription,
       seoTitle: s.seoTitle,
       seoDescription: s.seoDescription,
-    });
-    log.ok(s.name);
-  }
+    })),
+    (d) => String(d.name),
+  );
 }
 
 async function seedIndustries() {
   log.step(`Industries (${INDUSTRIES.length})`);
-  for (const i of INDUSTRIES) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    INDUSTRIES.map((i) => ({
       _id: i._id,
       _type: "industry",
       name: i.name,
@@ -86,9 +88,9 @@ async function seedIndustries() {
       industryFaqs: i.industryFaqs,
       seoTitle: i.seoTitle,
       seoDescription: i.seoDescription,
-    });
-    log.ok(i.name);
-  }
+    })),
+    (d) => String(d.name),
+  );
 }
 
 async function seedClientLogos() {
@@ -96,8 +98,8 @@ async function seedClientLogos() {
   log.warn(
     "Logos seeded as records only. Upload actual logo PNGs in Sanity Studio after seeding."
   );
-  for (const c of CLIENT_LOGOS) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    CLIENT_LOGOS.map((c) => ({
       _id: c._id,
       _type: "clientLogo",
       clientName: c.clientName,
@@ -106,15 +108,15 @@ async function seedClientLogos() {
       website: c.website,
       // logo intentionally omitted — schema's required validation will warn in Studio
       // until images are uploaded. Pages render with text fallback in the meantime.
-    });
-    log.ok(c.clientName);
-  }
+    })),
+    (d) => String(d.clientName),
+  );
 }
 
 async function seedSubServices() {
   log.step(`Sub-services (${SUB_SERVICES.length})`);
-  for (const s of SUB_SERVICES) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    SUB_SERVICES.map((s) => ({
       _id: s._id,
       _type: "subService",
       name: s.name,
@@ -126,16 +128,16 @@ async function seedSubServices() {
       methodology: s.methodology,
       seoTitle: s.seoTitle,
       seoDescription: s.seoDescription,
-    });
-    log.ok(s.name);
-  }
+    })),
+    (d) => String(d.name),
+  );
 }
 
 async function seedCaseStudies() {
   const studies = loadCaseStudies(REPO_ROOT);
   log.step(`Case studies (${studies.length})`);
-  for (const cs of studies) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    studies.map((cs) => ({
       _id: cs._id,
       _type: "caseStudy",
       clientName: cs.clientName,
@@ -152,16 +154,16 @@ async function seedCaseStudies() {
       publishedAt: cs.publishedAt,
       seoTitle: cs.seoTitle,
       seoDescription: cs.seoDescription,
-    });
-    log.ok(cs.clientName);
-  }
+    })),
+    (d) => String(d.clientName),
+  );
 }
 
 async function seedArticles() {
   const articles = loadArticles(REPO_ROOT);
   log.step(`Articles / Insights (${articles.length})`);
-  for (const a of articles) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    articles.map((a) => ({
       _id: a._id,
       _type: "article",
       title: a.title,
@@ -174,15 +176,15 @@ async function seedArticles() {
       relatedSolution: a.relatedSolutionId ? ref(a.relatedSolutionId) : undefined,
       seoTitle: a.seoTitle,
       seoDescription: a.seoDescription,
-    });
-    log.ok(`${a.category} · ${a.title.slice(0, 52)}…`);
-  }
+    })),
+    (d) => `${d.category} · ${String(d.title).slice(0, 52)}…`,
+  );
 }
 
 async function seedQuotes() {
   log.step(`Quotes (${QUOTES.length})`);
-  for (const q of QUOTES) {
-    await sanity.createOrReplace({
+  await commitDocs(
+    QUOTES.map((q) => ({
       _id: q._id,
       _type: "quote",
       quoteText: q.quoteText,
@@ -190,23 +192,30 @@ async function seedQuotes() {
       attributionTitle: q.attributionTitle,
       attributionCompany: q.attributionCompany,
       relatedCaseStudy: q.relatedCaseStudyId ? ref(q.relatedCaseStudyId) : undefined,
-    });
-    log.ok(`${q.attributionName} — ${q.attributionCompany ?? ""}`);
-  }
+    })),
+    (d) => `${d.attributionName} — ${d.attributionCompany ?? ""}`,
+  );
 }
 
 async function backfillCrossLinks() {
   log.step("Cross-links (case study → quote, industry → featured case study)");
 
+  /* All four back-fills are collected into one patch list and committed in
+     batched transactions, for the same reason the document writes are —
+     see scripts/seed/batch.ts. These were ~20 more individual POSTs at the
+     very end of the run, i.e. the most annoying possible place to lose the
+     connection. */
+  const patches: Array<{ id: string; set: Record<string, unknown>; label: string }> = [];
+
   // Case study → founder quote (case studies were created without a quote ref;
   // patch them now that quotes exist)
   for (const q of QUOTES) {
     if (q.relatedCaseStudyId) {
-      await sanity
-        .patch(q.relatedCaseStudyId)
-        .set({ founderQuote: ref(q._id) })
-        .commit();
-      log.ok(`${q.relatedCaseStudyId} ← ${q._id}`);
+      patches.push({
+        id: q.relatedCaseStudyId,
+        set: { founderQuote: ref(q._id) },
+        label: `${q.relatedCaseStudyId} ← ${q._id}`,
+      });
     }
   }
 
@@ -216,8 +225,11 @@ async function backfillCrossLinks() {
     "industry-ecommerce-dtc": "case-study-wise-market",
   };
   for (const [industryId, caseStudyId] of Object.entries(featuredMap)) {
-    await sanity.patch(industryId).set({ featuredCaseStudy: ref(caseStudyId) }).commit();
-    log.ok(`${industryId} featuredCaseStudy → ${caseStudyId}`);
+    patches.push({
+      id: industryId,
+      set: { featuredCaseStudy: ref(caseStudyId) },
+      label: `${industryId} featuredCaseStudy → ${caseStudyId}`,
+    });
   }
 
   // Industry → allClientLogos (group logos by industry)
@@ -226,11 +238,11 @@ async function backfillCrossLinks() {
     return acc;
   }, {});
   for (const [industryId, logoIds] of Object.entries(logosByIndustry)) {
-    await sanity
-      .patch(industryId)
-      .set({ allClientLogos: logoIds.map(ref) })
-      .commit();
-    log.ok(`${industryId} ← ${logoIds.length} logos`);
+    patches.push({
+      id: industryId,
+      set: { allClientLogos: logoIds.map(ref) },
+      label: `${industryId} ← ${logoIds.length} logos`,
+    });
   }
 
   // Solution → services (sub-services list per solution)
@@ -239,9 +251,14 @@ async function backfillCrossLinks() {
     return acc;
   }, {});
   for (const [solutionId, subIds] of Object.entries(subsBySolution)) {
-    await sanity.patch(solutionId).set({ services: subIds.map(ref) }).commit();
-    log.ok(`${solutionId} ← ${subIds.length} sub-services`);
+    patches.push({
+      id: solutionId,
+      set: { services: subIds.map(ref) },
+      label: `${solutionId} ← ${subIds.length} sub-services`,
+    });
   }
+
+  await commitPatches(patches);
 }
 
 // ─────────────────────────────────────────────
