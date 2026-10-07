@@ -128,48 +128,46 @@
    * Vikas: "the yellow patches are not covering the words properly."
    * Fixing the overlap by shrinking the band is not fixing it.
    *
-   * ── IT IS A MARKER, NOT AN ENCLOSING BLOCK. THIS IS A DECISION. ─────────
-   * Vikas chose this on 8 Oct 2026 after seeing both. Descenders — the "y" of
-   * "system", the "g" of "agency" — hang BELOW the yellow on purpose, the way
-   * a highlighter pen behaves. That is not a bug; do not "fix" it.
+   * ── IT IS A HAND-DRAWN MARKER STROKE, AND IT COVERS THE WHOLE WORD ──────
+   * Two decisions from Vikas, 8 Oct 2026:
+   *   1. it should look like a highlighter pen, not a printed rectangle
+   *   2. it must cover the ENTIRE word — no "y" or "g" hanging out the bottom
    *
-   * The alternative was a block fully enclosing caps and descenders, which is
-   * what the original `bg-brand-yellow px-3 py-0.5` attempted. It needs 1.10em
-   * of line box in Plus Jakarta Sans. 170 of the site's headlines are set at
-   * leading 1.02–1.05, so an enclosing block is GEOMETRICALLY IMPOSSIBLE there
-   * — it would have to overlap the line above, which is the bug this class was
-   * created to fix. Getting the block look would mean loosening every one of
-   * those headlines to leading >= 1.12. That was offered and declined.
+   * ── A CORRECTION TO AN EARLIER NOTE IN THIS FILE ────────────────────────
+   * I previously wrote that full coverage was "geometrically impossible" at
+   * the site's 1.02–1.05 leadings, because a band enclosing caps AND
+   * descenders needs ~1.10em and the line box is smaller than that. The maths
+   * was right; the conclusion was wrong. An inline background is allowed to
+   * extend past its line box — what matters is only whether it visually
+   * collides with the neighbouring line, and at these leadings it does not.
+   * I asserted it from arithmetic without rendering it. Rendered, it is fine.
    *
-   * Note the band sits in `em` against the FONT, not the line box, so its
-   * relationship to the letters is identical at every leading and every tier.
-   * A word with no descenders ("inside") looks fully enclosed; one with them
-   * does not. That is the marker behaving correctly, not an inconsistency.
+   * ── THE STROKE ──────────────────────────────────────────────────────────
+   * The band is an inline SVG with an irregular outline: wobbled top and
+   * bottom edges, rounded pen-down and pen-up ends. preserveAspectRatio is
+   * "none" so it stretches to whatever the word is — the wobble lengthens on a
+   * long phrase, which is what a real swipe does anyway.
    *
-   * ── SOLVED CONSTRAINTS ──────────────────────────────────────────────────
-   * Against both fonts at all four leadings that actually ship with a
-   * highlight on them (1.02 / 1.05 / 1.16 / 1.18):
-   *   top edge inside the line box     +0.035em   no bleed upward
-   *   bottom edge inside the line box  +0.015em   no bleed downward
-   *   clearance above cap-height       +0.077em   capitals not clipped
-   *   runs past the baseline           +0.100em   covers 36% of the descender
+   * ── GEOMETRY ────────────────────────────────────────────────────────────
+   * Sized in `em` against the FONT, not the line box, so the stroke's
+   * relationship to the letters is identical at every tier and every leading.
+   *   position-y 0.15em  -> 0.12em of air above cap-height
+   *   size       1.16em  -> ends 0.03em BELOW the descender, so g/y/p/j are
+   *                         fully inside the ink
+   * Verified by rendering at 1.02 / 1.05 / 1.16, on light and dark, on first
+   * and second lines, with and without descenders.
    *
-   * The last one is what makes it read as a deliberate marker rather than a
-   * band that stopped short. An earlier pass sat at +0.060em and looked like a
-   * near-miss.
-   *
-   * IF YOU CHANGE THE DISPLAY FONT OR SET A HEADLINE TIGHTER THAN 1.02, RE-SOLVE:
-   *   top:    position-y >= (ascent + descent - lineHeight) / 2
-   *   bottom: position-y + size <= (ascent + descent + lineHeight) / 2
-   *   caps:   ascent - position-y >= capHeight
-   *   marker: position-y + size >  ascent   (strictly past the baseline)
+   * IF YOU CHANGE THE DISPLAY FONT, RE-CHECK BY EYE — not by arithmetic:
+   *   caps:  ascent - position-y >= capHeight            (capitals not clipped)
+   *   desc:  position-y + size  >= ascent + descent      (descenders covered)
+   *   then LOOK at a two-line heading at the tightest leading you ship.
    */
   .highlight-mark {
-    background-image: linear-gradient(theme("colors.brand.yellow"), theme("colors.brand.yellow"));
+    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60' preserveAspectRatio='none'%3E%3Cpath d='M6 15 C 72 8, 142 13, 206 7 C 250 4, 276 10, 294 9 C 299 20, 299 34, 296 45 C 248 51, 168 44, 98 50 C 58 53, 24 46, 4 49 C 1 36, 2 24, 6 15 Z' fill='%23FFD031'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-size: 100% 0.935em;
-    background-position: 0 0.165em;
-    padding: 0 0.16em;
+    background-size: 100% 1.16em;
+    background-position: 0 0.15em;
+    padding: 0 0.22em;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
