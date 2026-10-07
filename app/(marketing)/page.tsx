@@ -5,6 +5,7 @@ import { HeroPrimary } from "@/components/hero/HeroPrimary";
 import { FilterableWorkGrid } from "@/components/work/FilterableWorkGrid";
 import { ClientLogosWall } from "@/components/blocks/ClientLogosWall";
 import { ResultsStrip } from "@/components/blocks/ResultsStrip";
+import { ReflexSketch } from "@/components/blocks/ReflexSketch";
 import { ManifestoBlock } from "@/components/blocks/ManifestoBlock";
 import { MethodologyFlow } from "@/components/blocks/MethodologyFlow";
 import { Testimonials } from "@/components/blocks/Testimonials";
@@ -207,22 +208,31 @@ export default async function HomePage() {
 
         {/* ─── 2. EDITORIAL STATEMENT — pure type, no decoration ─── */}
         {/* The page's quietest-loudest moment. Nothing to click. */}
+        {/* py was 28/44 — ~176px of padding above and below a single
+            paragraph, with the whole right half of the grid empty. Every other
+            section on this page carries a visual, so this one read as the
+            place where the page ran out of things to say, at exactly its
+            strongest claim. Padding tightened and the statement now has a
+            drawing arguing the same point beside it. */}
         <section className="bg-bg-primary border-t border-ink-headline/10">
-          <div className="container-layout py-28 md:py-44">
-            <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+          <div className="container-layout py-24 md:py-32">
+            <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
               <div className="md:col-span-2">
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
                   POV
                 </p>
               </div>
-              <div className="md:col-span-10">
-                <p className="font-display font-extralight text-display-lg text-ink-headline leading-[1.08] tracking-[-0.02em] max-w-[28ch]">
+              <div className="md:col-span-6">
+                <p className="font-display font-extralight text-display-lg text-ink-headline leading-[1.08] tracking-[-0.02em]">
                   Growth stalls. The reflex is to add — another agency, another platform, another channel.{" "}
                   <span className="text-ink-muted">
                     The constraint was never the channels.
                   </span>{" "}
                   It was the architecture beneath them.
                 </p>
+              </div>
+              <div className="md:col-span-4">
+                <ReflexSketch className="w-full max-w-[300px] md:ml-auto" />
               </div>
             </div>
           </div>
