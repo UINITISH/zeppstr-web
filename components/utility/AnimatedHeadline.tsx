@@ -233,12 +233,12 @@ export function AnimatedHeadline({
       if (wi > 0) inner.push(" ");
       inner.push(renderWord(words[wi], wi));
     }
+    // .highlight-mark, not bg-brand-yellow — an inline background box is the
+    // font's full ascent+descent and overflows these tight headline line
+    // heights, cutting through the line above. See styles/globals.css.
+    // display:inline-block is kept: this wrapper spans several words and must
+    // stay one continuous block rather than breaking per word.
     elements.push(
-      {/* .highlight-mark, not bg-brand-yellow — an inline background box is the
-          font's full ascent+descent and overflows these tight headline line
-          heights, cutting through the line above. See styles/globals.css.
-          display:inline-block is kept: this wrapper spans several words and
-          must stay one continuous block rather than breaking per word. */}
       <span
         key="highlight-wrap"
         className="highlight-mark"
