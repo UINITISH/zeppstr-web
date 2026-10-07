@@ -38,7 +38,18 @@ export function CTABanner({
         className
       )}
     >
-      <div className="container-layout text-center max-w-3xl">
+      {/* LEFT-ALIGNED, NOT CENTRED — changed 7 Oct 2026.
+          This was `container-layout text-center max-w-3xl`. Because
+          container-layout is already `max-w-layout mx-auto`, adding max-w-3xl
+          shrank the block to 768px and re-centred it — so the banner lined up
+          with nothing above or below it, while every other section on the site
+          anchors to the container's left edge. On a wide screen it read as a
+          floating island rather than part of the page.
+
+          Measure is now capped on the text itself (max-w-[...ch]) instead of
+          on the wrapper, so the copy stays readable without moving the block
+          off the grid. */}
+      <div className="container-layout">
         {eyebrow && (
           <p
             className={cn(
@@ -51,7 +62,7 @@ export function CTABanner({
         )}
         <h2
           className={cn(
-            "font-display font-light text-display-lg tracking-tight mb-6",
+            "font-display font-light text-display-lg tracking-tight mb-8 max-w-[20ch]",
             isYellow ? "text-ink-headline" : "text-white"
           )}
         >
@@ -60,14 +71,14 @@ export function CTABanner({
         {subhead && (
           <p
             className={cn(
-              "font-body text-body-lg leading-relaxed mb-10",
+              "font-body text-body-lg leading-relaxed mb-10 max-w-[52ch]",
               isYellow ? "text-ink-body" : "text-white/80"
             )}
           >
             {subhead}
           </p>
         )}
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           {/* Primary CTA is SOLID in both variants.
               On the yellow banner it was previously `outline` — a thin dark
               border on yellow, which reads as a secondary action next to the
