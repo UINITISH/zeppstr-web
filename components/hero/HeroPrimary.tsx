@@ -264,30 +264,45 @@ export function HeroPrimary({
             below the claim.
 
             SOURCING: all three are published in full on this site with the
-            spend attached. Tru Aquapolis at /work/tru-aquapolis, Wise Market
-            at /work/wise-market, Mini Leaves at /work/mini-leaves. Each tile
-            links to the case study, which is the whole reason it is safe to
-            put the number here — a figure a reader can click into is a
-            different kind of claim from one they cannot. Do not add a fourth
-            tile for a result that is not written up. */}
+            spend attached — /work/tru-aquapolis, /work/wise-market and
+            /work/mini-leaves respectively. Each tile links to its case study,
+            which is the whole reason it is safe to put the number here: a
+            figure a reader can click into is a different kind of claim from
+            one they cannot. Do not add a fourth tile for a result that is not
+            written up.
+
+            CLIENT NAMES REMOVED FROM THE RAIL — 7 Oct 2026, at Vikas's
+            request. The tiles now read by sector only ("Real estate, India"
+            rather than "Tru Aquapolis"). The homepage leads with the result
+            and the category; the client's identity belongs to the case study,
+            one click away, where there is room to give the engagement context
+            rather than a name stripped of it.
+
+            NOTE THE LIMIT OF THIS: the links still resolve to named case
+            studies, and the logo wall further down this page names all three.
+            So this is presentation, not anonymity. If any of these ever needs
+            to be genuinely unnameable, the case study, the logo wall and the
+            work grid all have to change together — see the note in
+            scripts/seed/data/case-studies.ts about clients who cannot be
+            named at all. */}
         <div className="border-t border-white/15 grid grid-cols-1 md:grid-cols-3">
           {[
             {
               figure: "₹187.5 Cr",
               label: "closed from leads we generated",
-              note: "on ₹1.4 Cr of media · Tru Aquapolis",
+              note: "on ₹1.4 Cr of media · real estate, India",
               href: "/work/tru-aquapolis",
             },
             {
               figure: "AUD 40K → 2.7M",
               label: "monthly revenue, six months",
-              note: "Australian e-commerce · Wise Market",
+              note: "e-commerce, Australia",
               href: "/work/wise-market",
             },
             {
               figure: "0.5% → 3%+",
               label: "site conversion rate",
-              note: "Indian DTC brand · Mini Leaves",
+              note: "DTC brand, India",
               href: "/work/mini-leaves",
             },
           ].map((p, i) => (

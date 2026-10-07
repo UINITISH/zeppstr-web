@@ -333,7 +333,7 @@ export default function AnalyticsInstrumentationPage() {
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   If you can’t{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     trust the number
                   </span>
                   , don’t trust the decision.
@@ -386,7 +386,7 @@ export default function AnalyticsInstrumentationPage() {
                   className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Four lies your{" "}
-                  <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark text-ink-headline">
                     dashboard
                   </span>{" "}
                   is telling you.
@@ -454,7 +454,7 @@ export default function AnalyticsInstrumentationPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   instrument from
                 </span>
                 .
@@ -501,7 +501,7 @@ export default function AnalyticsInstrumentationPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Twenty-four
                   </span>{" "}
                   event groups.
@@ -581,7 +581,7 @@ export default function AnalyticsInstrumentationPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers between{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     event and decision
                   </span>
                   .
@@ -647,7 +647,7 @@ export default function AnalyticsInstrumentationPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks from audit to{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     one source of truth
                   </span>
                   .
@@ -735,7 +735,7 @@ export default function AnalyticsInstrumentationPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the audit{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   always finds
                 </span>
                 .
@@ -811,7 +811,7 @@ export default function AnalyticsInstrumentationPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   actually
                 </span>{" "}
                 ask.
@@ -854,7 +854,7 @@ export default function AnalyticsInstrumentationPage() {
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop debating numbers.{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 Trust them
               </span>
               .

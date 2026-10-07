@@ -55,7 +55,7 @@ export function MethodologyFlow() {
             className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] mb-8 text-balance"
           >
             Diagnose.{" "}
-            <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">Architect</span>
+            <span className="highlight-mark">Architect</span>
             . Deploy. Operate.
           </h2>
           <p className="font-body text-body-lg text-ink-body max-w-[60ch] leading-[1.55]">

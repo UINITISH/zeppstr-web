@@ -333,7 +333,7 @@ export default function UXResearchPage() {
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop asking users.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Start watching them
                   </span>
                   .
@@ -386,7 +386,7 @@ export default function UXResearchPage() {
                   className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   What users{" "}
-                  <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark text-ink-headline">
                     say
                   </span>{" "}
                   is rarely what they do.
@@ -467,7 +467,7 @@ export default function UXResearchPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   research from
                 </span>
                 .
@@ -514,7 +514,7 @@ export default function UXResearchPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Twenty-four
                   </span>{" "}
                   method types.
@@ -594,7 +594,7 @@ export default function UXResearchPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     question to decision
                   </span>
                   .
@@ -661,7 +661,7 @@ export default function UXResearchPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Six weeks from question to{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     decision log
                   </span>
                   .
@@ -750,7 +750,7 @@ export default function UXResearchPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the cycle{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   produces
                 </span>
                 .
@@ -827,7 +827,7 @@ export default function UXResearchPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What operators{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   actually
                 </span>{" "}
                 ask.
@@ -871,7 +871,7 @@ export default function UXResearchPage() {
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop deciding from opinion.{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 Decide from evidence
               </span>
               .

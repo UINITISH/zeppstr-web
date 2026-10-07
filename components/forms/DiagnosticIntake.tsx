@@ -769,7 +769,7 @@ function ConfirmationScreen({
         </p>
         <h1 className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.05] mb-10 max-w-[20ch] text-balance">
           We’ve got it.{" "}
-          <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+          <span className="highlight-mark">
             Report
           </span>{" "}
           within 24 hours.

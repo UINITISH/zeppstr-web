@@ -343,7 +343,7 @@ export default function RevenueSystemDesignPage() {
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[20ch] text-balance mb-8">
                   Pipeline gets built.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Revenue
                   </span>{" "}
                   gets designed.
@@ -396,7 +396,7 @@ export default function RevenueSystemDesignPage() {
                   className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Five levers, designed{" "}
-                  <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark text-ink-headline">
                     together
                   </span>
                   .
@@ -492,7 +492,7 @@ export default function RevenueSystemDesignPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   design from
                 </span>
                 .
@@ -540,7 +540,7 @@ export default function RevenueSystemDesignPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six domains.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Twenty-four
                   </span>{" "}
                   system components.
@@ -620,7 +620,7 @@ export default function RevenueSystemDesignPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     question to operating
                   </span>
                   .
@@ -687,7 +687,7 @@ export default function RevenueSystemDesignPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks to a{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     wired system
                   </span>
                   .
@@ -776,7 +776,7 @@ export default function RevenueSystemDesignPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the design{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   produces
                 </span>
                 .
@@ -853,7 +853,7 @@ export default function RevenueSystemDesignPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   actually
                 </span>{" "}
                 ask.
@@ -896,7 +896,7 @@ export default function RevenueSystemDesignPage() {
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop assembling tactics.{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 Design a system
               </span>
               .

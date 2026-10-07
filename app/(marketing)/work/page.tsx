@@ -79,7 +79,7 @@ export default async function WorkHubPage() {
                     went stale the moment a fourth was published. */}
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[15ch] text-balance mb-8">
                   {caseCountWord} businesses. {industryCountWord} industries.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     One pattern
                   </span>
                   .

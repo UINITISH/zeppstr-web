@@ -342,7 +342,7 @@ export default function OrganicSocialPage() {
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Posts decay.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Formats
                   </span>{" "}
                   compound.
@@ -395,7 +395,7 @@ export default function OrganicSocialPage() {
                   className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   One format,{" "}
-                  <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark text-ink-headline">
                     six parts
                   </span>
                   , fifty-two posts.
@@ -480,7 +480,7 @@ export default function OrganicSocialPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   publish from
                 </span>
                 .
@@ -527,7 +527,7 @@ export default function OrganicSocialPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Twenty-four
                   </span>{" "}
                   format starters.
@@ -609,7 +609,7 @@ export default function OrganicSocialPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers behind every{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     published post
                   </span>
                   .
@@ -675,7 +675,7 @@ export default function OrganicSocialPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks from audit to{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     operating rhythm
                   </span>
                   .
@@ -763,7 +763,7 @@ export default function OrganicSocialPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What format-led{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   produces
                 </span>
                 .
@@ -839,7 +839,7 @@ export default function OrganicSocialPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   actually
                 </span>{" "}
                 ask.
@@ -882,7 +882,7 @@ export default function OrganicSocialPage() {
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop posting.{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 Start compounding
               </span>
               .

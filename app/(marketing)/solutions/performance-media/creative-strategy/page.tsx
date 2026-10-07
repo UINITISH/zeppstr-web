@@ -46,7 +46,7 @@ export default function Page() {
       headline={
         <>
           Test concepts.{" "}
-          <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+          <span className="highlight-mark">
             Retire the rest
           </span>
           .

@@ -46,7 +46,7 @@ export default function Page() {
       headline={
         <>
           Stop re-buying{" "}
-          <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+          <span className="highlight-mark">
             the same people
           </span>
           .

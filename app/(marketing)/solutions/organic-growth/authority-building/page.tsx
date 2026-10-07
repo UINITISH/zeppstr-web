@@ -340,7 +340,7 @@ export default function AuthorityBuildingPage() {
 
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[18ch] text-balance mb-8">
                   Stop building links. Start building{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     citations
                   </span>
                   .
@@ -394,7 +394,7 @@ export default function AuthorityBuildingPage() {
                   className="font-bold tracking-[-0.025em] text-display-lg text-white leading-[1.05] max-w-[24ch] text-balance"
                 >
                   Not every citation is{" "}
-                  <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark text-ink-headline">
                     worth the same
                   </span>
                   .
@@ -509,7 +509,7 @@ export default function AuthorityBuildingPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 Four rules we{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   earn from
                 </span>
                 .
@@ -557,7 +557,7 @@ export default function AuthorityBuildingPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   Six categories.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     Twenty-four
                   </span>{" "}
                   earned-media plays.
@@ -637,7 +637,7 @@ export default function AuthorityBuildingPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[24ch] text-balance"
                 >
                   Five layers from{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     audience to leverage
                   </span>
                   .
@@ -704,7 +704,7 @@ export default function AuthorityBuildingPage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[26ch] text-balance"
                 >
                   Twelve weeks to first{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     citations
                   </span>
                   .
@@ -793,7 +793,7 @@ export default function AuthorityBuildingPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What the practice{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   asks for
                 </span>
                 .
@@ -870,7 +870,7 @@ export default function AuthorityBuildingPage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
               >
                 What founders{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                <span className="highlight-mark">
                   actually
                 </span>{" "}
                 ask.
@@ -914,7 +914,7 @@ export default function AuthorityBuildingPage() {
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[22ch] mb-16 md:mb-24 text-white text-balance">
               Stop being a vendor.{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 Become the source
               </span>
               .

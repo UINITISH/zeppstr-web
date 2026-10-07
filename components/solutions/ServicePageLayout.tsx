@@ -409,7 +409,7 @@ export function ServicePageLayout({
             </p>
             <h2 className="font-bold tracking-[-0.025em] text-display-xl leading-[1.02] max-w-[18ch] mb-12 text-white text-balance">
               Start with the{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 diagnostic
               </span>
               .

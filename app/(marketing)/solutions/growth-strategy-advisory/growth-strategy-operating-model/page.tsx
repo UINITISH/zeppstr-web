@@ -51,7 +51,7 @@ export default function Page() {
       headline={
         <>
           Everyone is busy.{" "}
-          <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+          <span className="highlight-mark">
             Nothing moved
           </span>
           .

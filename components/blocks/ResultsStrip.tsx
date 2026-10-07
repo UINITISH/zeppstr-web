@@ -70,7 +70,7 @@ export function ResultsStrip() {
               className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[16ch] text-balance"
             >
               What the{" "}
-              <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">system</span>{" "}
+              <span className="highlight-mark">system</span>{" "}
               produces.
             </h2>
           </div>

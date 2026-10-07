@@ -243,7 +243,7 @@ export default async function HomePage() {
                 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
               >
                 Same playbook.{" "}
-                <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">Outsized</span>{" "}
+                <span className="highlight-mark">Outsized</span>{" "}
                 results.
               </h2>
             </div>
@@ -291,7 +291,7 @@ export default async function HomePage() {
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
                 >
                   Five practices. Built to{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">compound</span>{" "}
+                  <span className="highlight-mark">compound</span>{" "}
                   revenue.
                 </h2>
               </div>
@@ -374,7 +374,7 @@ export default async function HomePage() {
                     className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[14ch] text-balance"
                   >
                     Notes from{" "}
-                    <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">inside</span>{" "}
+                    <span className="highlight-mark">inside</span>{" "}
                     the work.
                   </h2>
                 </div>
@@ -409,7 +409,7 @@ export default async function HomePage() {
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[20ch] mb-14 md:mb-18 text-white text-balance">
               Build a{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 system
               </span>{" "}
               like this for your business.

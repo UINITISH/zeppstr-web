@@ -196,7 +196,7 @@ export default async function SolutionPage({
                     className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[20ch] text-balance"
                   >
                     What you actually{" "}
-                    <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                    <span className="highlight-mark">
                       get
                     </span>
                     .
@@ -390,7 +390,7 @@ export default async function SolutionPage({
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   {solution.services.length} services.{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     One
                   </span>{" "}
                   connected practice.
@@ -458,7 +458,7 @@ export default async function SolutionPage({
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   How we{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     deliver
                   </span>{" "}
                   this practice.
@@ -512,7 +512,7 @@ export default async function SolutionPage({
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[18ch] text-balance"
                 >
                   Numbers we can{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     publish
                   </span>
                   .
@@ -563,7 +563,7 @@ export default async function SolutionPage({
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance mb-6"
                 >
                   What this practice has{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     delivered
                   </span>
                   .
@@ -623,7 +623,7 @@ export default async function SolutionPage({
                   className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.02] max-w-[22ch] text-balance"
                 >
                   What you might want to{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     ask
                   </span>
                   .
@@ -666,7 +666,7 @@ export default async function SolutionPage({
 
             <h2 className="font-bold tracking-[-0.025em] text-display-stat leading-[1.02] max-w-[20ch] mb-16 md:mb-24 text-white text-balance">
               Build a{" "}
-              <span className="bg-brand-yellow text-ink-headline px-3 py-0.5 box-decoration-clone">
+              <span className="highlight-mark text-ink-headline">
                 system
               </span>{" "}
               around this practice.

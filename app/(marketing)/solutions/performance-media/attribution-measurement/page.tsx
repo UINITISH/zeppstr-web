@@ -46,7 +46,7 @@ export default function Page() {
       headline={
         <>
           Your dashboard looks normal.{" "}
-          <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+          <span className="highlight-mark">
             That proves nothing
           </span>
           .

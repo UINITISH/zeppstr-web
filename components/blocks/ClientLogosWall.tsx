@@ -98,7 +98,7 @@ export function ClientLogosWall() {
               className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.05] max-w-[28ch] text-balance"
             >
               Different industries, different scales. Same{" "}
-              <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">compounding</span>{" "}
+              <span className="highlight-mark">compounding</span>{" "}
               result.
             </h2>
           </div>

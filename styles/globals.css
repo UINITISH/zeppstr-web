@@ -90,6 +90,39 @@
 }
 
 @layer components {
+  /**
+   * .highlight-mark — the yellow marker behind a word inside a headline.
+   *
+   * REPLACED `bg-brand-yellow px-3 py-0.5 box-decoration-clone` ON 7 OCT 2026.
+   * That pattern was used in 157 places across 34 files and overlapped the line
+   * above it everywhere a headline wrapped: in "Same playbook. / Outsized
+   * results." the block cut straight through the descender of the "y".
+   *
+   * The cause is not the padding — it is that an inline element's background
+   * box is the font's full content area (ascent + descent, ~1.15em), which is
+   * TALLER than these headlines' line-height. So the background always spilled
+   * into the neighbouring line, and the vertical padding made it worse.
+   *
+   * The fix is to paint the band with a background-image instead of a
+   * background-color, sized in `em`. Because the size and offset are relative
+   * to the font, the band scales correctly at every headline tier and can
+   * never exceed the line box. Values were tuned visually against the real
+   * type: the band clears cap-height with a little air, and descenders (the
+   * "p" and "g" of "compounding") hang below it the way a real marker behaves.
+   *
+   * Horizontal padding is in `em` for the same reason — at 64px and at 24px
+   * the ink around the word stays optically identical.
+   */
+  .highlight-mark {
+    background-image: linear-gradient(theme("colors.brand.yellow"), theme("colors.brand.yellow"));
+    background-repeat: no-repeat;
+    background-size: 100% 0.86em;
+    background-position: 0 0.13em;
+    padding: 0 0.16em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
   /* CTA — signature yellow + black */
   .btn-primary {
     @apply inline-flex items-center justify-center

@@ -146,7 +146,7 @@ export default function AboutPage() {
                 </div>
                 <h1 className="font-bold tracking-[-0.025em] text-display-xl text-ink-headline leading-[1.16] max-w-[16ch] text-balance mb-8">
                   A growth practice, not an{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+                  <span className="highlight-mark">
                     agency retainer
                   </span>
                   .

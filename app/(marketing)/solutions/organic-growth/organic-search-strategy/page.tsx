@@ -51,7 +51,7 @@ export default function Page() {
       headline={
         <>
           Rank for the{" "}
-          <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone">
+          <span className="highlight-mark">
             decision
           </span>
           , not the keyword.

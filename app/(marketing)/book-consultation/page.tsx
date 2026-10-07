@@ -48,7 +48,7 @@ export default function BookConsultationPage() {
                     room for its own padding or it collides with the line above. */}
                 <h1 className="font-bold tracking-[-0.03em] text-display-xl text-ink-headline leading-[1.18] max-w-[18ch] text-balance mb-8">
                   Tell us where it’s leaking. We’ll send a preliminary read within{" "}
-                  <span className="bg-brand-yellow px-3 py-0.5 box-decoration-clone whitespace-nowrap">
+                  <span className="highlight-mark whitespace-nowrap">
                     24 hours
                   </span>
                   .
