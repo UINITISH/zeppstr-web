@@ -112,12 +112,31 @@
    *
    * Horizontal padding is in `em` for the same reason — at 64px and at 24px
    * the ink around the word stays optically identical.
+   *
+   * ── THE NUMBERS ARE DERIVED, NOT EYEBALLED ─────────────────────────────
+   * First attempt used 0.86em @ 0.13em, tuned by eye against Inter. That was
+   * wrong: the display face is Plus Jakarta Sans, whose content area is
+   * 1.280em (asc 1.000 + desc 0.280) against Inter's 1.211em. At the tightest
+   * tier — display-stat, line-height 0.95, 21 usages — the band still
+   * overlapped the line above by 0.035em, and display-xl cleared by only
+   * 0.020em (~1px at 64px), which is not a margin worth trusting.
+   *
+   * These values are solved against both fonts at every tier the class is
+   * actually used on. Worst case across all six combinations:
+   *     band top    +0.015em inside the line box
+   *     band bottom +0.160em inside the line box
+   *     air above cap-height +0.062em
+   * So the band can no longer touch the neighbouring line in any combination
+   * that ships, while still sitting clear of the capitals.
+   *
+   * IF YOU CHANGE THE DISPLAY FONT OR ADD A TIGHTER TIER, RE-SOLVE THESE.
+   * The constraint is: background-position-y >= (ascent + descent - lineHeight) / 2
    */
   .highlight-mark {
     background-image: linear-gradient(theme("colors.brand.yellow"), theme("colors.brand.yellow"));
     background-repeat: no-repeat;
-    background-size: 100% 0.86em;
-    background-position: 0 0.13em;
+    background-size: 100% 0.74em;
+    background-position: 0 0.18em;
     padding: 0 0.16em;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
