@@ -128,27 +128,47 @@
    * Vikas: "the yellow patches are not covering the words properly."
    * Fixing the overlap by shrinking the band is not fixing it.
    *
-   * ── THE FOUR CONSTRAINTS, ALL OF WHICH MUST HOLD ────────────────────────
-   * Solved against both fonts at every tier the class is used on:
-   *   1. top edge inside the line box      >= +0.020em  (no bleed upward)
-   *   2. bottom edge inside the line box   >= +0.020em  (no bleed downward)
-   *   3. clearance above cap-height        >= +0.057em  (caps not clipped)
-   *   4. extends PAST the baseline         >= +0.060em  (letters fully sat on)
+   * ── IT IS A MARKER, NOT AN ENCLOSING BLOCK. THIS IS A DECISION. ─────────
+   * Vikas chose this on 8 Oct 2026 after seeing both. Descenders — the "y" of
+   * "system", the "g" of "agency" — hang BELOW the yellow on purpose, the way
+   * a highlighter pen behaves. That is not a bug; do not "fix" it.
    *
-   * Constraint 4 is the one I missed. Without it the solver happily returns a
-   * thin band that satisfies everything else and looks broken.
+   * The alternative was a block fully enclosing caps and descenders, which is
+   * what the original `bg-brand-yellow px-3 py-0.5` attempted. It needs 1.10em
+   * of line box in Plus Jakarta Sans. 170 of the site's headlines are set at
+   * leading 1.02–1.05, so an enclosing block is GEOMETRICALLY IMPOSSIBLE there
+   * — it would have to overlap the line above, which is the bug this class was
+   * created to fix. Getting the block look would mean loosening every one of
+   * those headlines to leading >= 1.12. That was offered and declined.
    *
-   * IF YOU CHANGE THE DISPLAY FONT OR ADD A TIGHTER TIER, RE-SOLVE ALL FOUR.
+   * Note the band sits in `em` against the FONT, not the line box, so its
+   * relationship to the letters is identical at every leading and every tier.
+   * A word with no descenders ("inside") looks fully enclosed; one with them
+   * does not. That is the marker behaving correctly, not an inconsistency.
+   *
+   * ── SOLVED CONSTRAINTS ──────────────────────────────────────────────────
+   * Against both fonts at all four leadings that actually ship with a
+   * highlight on them (1.02 / 1.05 / 1.16 / 1.18):
+   *   top edge inside the line box     +0.035em   no bleed upward
+   *   bottom edge inside the line box  +0.015em   no bleed downward
+   *   clearance above cap-height       +0.077em   capitals not clipped
+   *   runs past the baseline           +0.100em   covers 36% of the descender
+   *
+   * The last one is what makes it read as a deliberate marker rather than a
+   * band that stopped short. An earlier pass sat at +0.060em and looked like a
+   * near-miss.
+   *
+   * IF YOU CHANGE THE DISPLAY FONT OR SET A HEADLINE TIGHTER THAN 1.02, RE-SOLVE:
    *   top:    position-y >= (ascent + descent - lineHeight) / 2
    *   bottom: position-y + size <= (ascent + descent + lineHeight) / 2
    *   caps:   ascent - position-y >= capHeight
-   *   base:   position-y + size >= ascent
+   *   marker: position-y + size >  ascent   (strictly past the baseline)
    */
   .highlight-mark {
     background-image: linear-gradient(theme("colors.brand.yellow"), theme("colors.brand.yellow"));
     background-repeat: no-repeat;
-    background-size: 100% 0.875em;
-    background-position: 0 0.185em;
+    background-size: 100% 0.935em;
+    background-position: 0 0.165em;
     padding: 0 0.16em;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
