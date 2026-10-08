@@ -31,6 +31,7 @@ import { CLIENT_LOGOS } from "./data/client-logos";
 import { QUOTES } from "./data/quotes";
 import { loadCaseStudies } from "./data/case-studies";
 import { loadArticles } from "./data/articles";
+import { envOr } from "../../lib/env";
 
 // scripts/seed/seed.ts → up 5 levels lands at zeppstr-new-web/ (the repo root that contains deliverables/)
 // Was: resolve(__dirname, "..", "..", "..", "..", "..") — five levels up, which
@@ -270,7 +271,7 @@ async function backfillCrossLinks() {
 async function main() {
   console.log("Zeppstr · Sanity content seed");
   console.log(`  project: ${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`);
-  console.log(`  dataset: ${process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production"}`);
+  console.log(`  dataset: ${envOr(process.env.NEXT_PUBLIC_SANITY_DATASET, "production")}`);
 
   await seedSolutions();
   await seedIndustries();

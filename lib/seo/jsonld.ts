@@ -1,3 +1,4 @@
+import { envOr } from "@/lib/env";
 /**
  * Schema.org JSON-LD generators.
  * Each function returns a serializable object you drop into a <script type="application/ld+json">.
@@ -8,7 +9,7 @@
  */
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://zeppstr.com";
+  envOr(process.env.NEXT_PUBLIC_SITE_URL, "https://zeppstr.com");
 
 const ORG_NAME = "Zeppstr Growth Media";
 const ORG_LEGAL_NAME = "Zeppstr Growth Media Pvt. Ltd.";

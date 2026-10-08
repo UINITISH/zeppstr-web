@@ -1,12 +1,13 @@
 import { createClient } from "@sanity/client";
+import { envOr } from "../../lib/env";
 
 /**
  * Sanity write client for seeding.
  * Uses SANITY_API_TOKEN (read+write) — must be set in .env.local before running `npm run seed`.
  */
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
-const apiVersion = process.env.SANITY_API_VERSION ?? "2024-01-01";
+const dataset = envOr(process.env.NEXT_PUBLIC_SANITY_DATASET, "production");
+const apiVersion = envOr(process.env.SANITY_API_VERSION, "2024-01-01");
 const token = process.env.SANITY_API_TOKEN;
 
 if (!projectId) {

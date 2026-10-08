@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { envOr } from "@/lib/env";
 
 /**
  * Email helper.
@@ -11,8 +12,8 @@ import { Resend } from "resend";
  *   ZEPPSTR_INBOX       — primary inbox (default "nitish@zeppstr.com")
  */
 
-const FROM = process.env.ZEPPSTR_FROM_EMAIL ?? "Zeppstr Website <onboarding@resend.dev>";
-export const PRIMARY_INBOX = process.env.ZEPPSTR_INBOX ?? "nitish@zeppstr.com";
+const FROM = envOr(process.env.ZEPPSTR_FROM_EMAIL, "Zeppstr Website <onboarding@resend.dev>");
+export const PRIMARY_INBOX = envOr(process.env.ZEPPSTR_INBOX, "nitish@zeppstr.com");
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 

@@ -6,6 +6,7 @@ import { WhatsAppButton } from "@/components/utility/WhatsAppButton";
 import { LiveChat } from "@/components/utility/LiveChat";
 import { organizationLd, websiteLd } from "@/lib/seo/jsonld";
 import "@/styles/globals.css";
+import { envOr } from "@/lib/env";
 
 /**
  * Plus Jakarta Sans for display.
@@ -34,7 +35,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://zeppstr.com"),
+  metadataBase: new URL(envOr(process.env.NEXT_PUBLIC_SITE_URL, "https://zeppstr.com")),
   title: {
     default: "Zeppstr — Your Growth Partner in Digital Marketing & SEO",
     template: "%s · Zeppstr",

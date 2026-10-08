@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { ChatLauncher } from "@/components/utility/ChatLauncher";
+import { envOr } from "@/lib/env";
 
 /**
  * Live chat widget loader — bottom-right.
@@ -57,7 +58,7 @@ import { ChatLauncher } from "@/components/utility/ChatLauncher";
  */
 
 const TAWK_PROPERTY = process.env.NEXT_PUBLIC_TAWK_PROPERTY_ID;
-const TAWK_WIDGET = process.env.NEXT_PUBLIC_TAWK_WIDGET_ID ?? "default";
+const TAWK_WIDGET = envOr(process.env.NEXT_PUBLIC_TAWK_WIDGET_ID, "default");
 const CRISP_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID;
 
 export function LiveChat() {

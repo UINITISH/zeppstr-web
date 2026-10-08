@@ -44,6 +44,12 @@ gitignored and has never been committed (verified).
 Minimum needed to render the site locally: `NEXT_PUBLIC_SANITY_PROJECT_ID`,
 `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_TOKEN`.
 
+**If you see `Error: Configuration must contain \`projectId\``** — you have a
+`.env.local` with a blank `NEXT_PUBLIC_SANITY_PROJECT_ID=` line. Either fill it
+in (`03uhyc94`) or delete the line entirely; a blank line is worse than no line.
+The code now falls back on blank values as well as missing ones, so pull latest
+if you are on an older commit.
+
 ```bash
 npm run typecheck     # tsc --noEmit — must be clean before any PR
 npm run lint
