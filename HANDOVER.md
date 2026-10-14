@@ -145,6 +145,15 @@ pasted into a chat. All three seed scripts print via `report-failure.ts`, which 
 / status / message / responseBody only. Error output is meant to be shared — it must never
 contain a secret.
 
+**Building on Windows: `TypeError: Invalid URL` at `@vercel/og`.**
+@vercel/og resolves its bundled assets from `import.meta.url`, which on Windows
+is a drive path (`D:\...`) not a `file://` URL, so the module throws on import
+during `next build`. It is a platform bug in the copy vendored into Next 14 —
+macOS and Vercel's Linux builders are unaffected. `app/opengraph-image.tsx` is
+marked `force-dynamic` so it is never prerendered and the import never happens
+at build time. Do not switch it to `runtime = "edge"`: `lib/og-mark.ts` reads
+the brand mark with `node:fs`, which edge does not provide.
+
 **`UPDATE-SITE.command` runs `rm -rf .next` on purpose.**
 Deleting only part of the build tree produced `Cannot find module './1682.js'` from
 webpack-runtime. A clean build costs ~2 minutes and is worth it.

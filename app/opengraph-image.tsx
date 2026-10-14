@@ -16,6 +16,43 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+/**
+ * force-dynamic — DO NOT REMOVE. It is what lets this repo build on Windows.
+ *
+ * ── THE FAILURE ─────────────────────────────────────────────────────────────
+ * 14 Oct 2026, reported by the developer on Windows:
+ *
+ *     TypeError: Invalid URL
+ *       at fileURLToPath (node:internal/url)
+ *       at .../node_modules/next/dist/compiled/@vercel/og/index.node.js
+ *     Export encountered errors on following paths:
+ *       /opengraph-image/route
+ *
+ * @vercel/og resolves its bundled WASM and font assets from `import.meta.url`
+ * at module load. On Windows that value is a drive path (D:\...) rather than a
+ * file:// URL, so fileURLToPath rejects it and the module throws on import.
+ * It is a platform bug in the copy of @vercel/og vendored into Next 14 — the
+ * build passes on macOS and on Vercel's Linux builders, and fails on Windows
+ * only. Nothing is wrong with this file's own code.
+ *
+ * ── WHY THIS ROUTE AND NOT THE OTHER THREE ──────────────────────────────────
+ * /work-thumb/[slug] and /insights-cover/[slug] also use ImageResponse and
+ * build fine, because they are [slug] routes with no generateStaticParams —
+ * Next treats them as dynamic, never prerenders them, and so never imports
+ * @vercel/og at build time. This file is a root metadata convention, so Next
+ * prerenders it, and the import happens during `next build`.
+ *
+ * Marking it dynamic puts it on the same footing as the other three: the image
+ * is generated on request instead of at build. For an OG card fetched
+ * occasionally by crawlers that costs nothing measurable.
+ *
+ * ── WHAT NOT TO DO INSTEAD ──────────────────────────────────────────────────
+ * `export const runtime = "edge"` is the usual advice for this error and would
+ * BREAK this route: lib/og-mark.ts reads the brand mark off disk with
+ * node:fs readFileSync, which the edge runtime does not provide.
+ */
+export const dynamic = "force-dynamic";
+
 // Brand tokens (from tailwind.config.ts)
 const GREEN = "#064E3B";
 const YELLOW = "#FFD031";
