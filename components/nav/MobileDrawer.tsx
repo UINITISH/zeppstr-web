@@ -69,10 +69,11 @@ export function MobileDrawer({ solutions, industries }: MobileDrawerProps) {
               aria-label="Zeppstr — home"
             >
               <Image
-                src="/brand/zeppstr-logo-horizontal.png"
+                src="/brand/zeppstr-logo-horizontal.svg"
                 alt="Zeppstr"
-                width={1999}
-                height={548}
+                width={283}
+                height={78}
+                unoptimized
                 className="h-[26px] w-auto"
               />
             </Link>

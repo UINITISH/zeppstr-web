@@ -28,17 +28,16 @@ export async function GlobalNav() {
     <NavShell>
       <div className="container-layout flex items-center justify-between py-5">
         {/* Logo */}
-        {/* Real horizontal wordmark, replacing the placeholder that was an
-            emerald square with a "↗" character next to the word "Zeppstr" set
-            in the display font. Source: Brand Assets/Zeppstr Logo Flat.jpg,
-            background removed and trimmed — see public/brand/. */}
+        {/* Horizontal wordmark (brand green #0F3D2E, with tagline), vector SVG —
+            see public/brand/. */}
         <Link href="/" className="flex items-center" aria-label="Zeppstr — home">
           <Image
-            src="/brand/zeppstr-logo-horizontal.png"
+            src="/brand/zeppstr-logo-horizontal.svg"
             alt="Zeppstr"
-            width={1999}
-            height={548}
+            width={283}
+            height={78}
             priority
+            unoptimized
             className="h-[30px] w-auto"
           />
         </Link>

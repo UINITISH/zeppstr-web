@@ -20,10 +20,11 @@ export function Footer() {
               logo would be invisible here. */}
           <div className="mb-5">
             <Image
-              src="/brand/zeppstr-logo-horizontal-white.png"
+              src="/brand/zeppstr-logo-horizontal-white.svg"
               alt="Zeppstr"
-              width={1999}
-              height={548}
+              width={283}
+              height={78}
+              unoptimized
               className="h-[32px] w-auto"
             />
           </div>
