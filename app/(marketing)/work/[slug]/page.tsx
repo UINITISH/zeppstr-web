@@ -16,6 +16,13 @@ import { CTABanner } from "@/components/blocks/CTABanner";
 import { getCaseVisuals } from "@/lib/case-visuals";
 import { CaseChart } from "@/components/work/CaseCharts";
 import { TruAquapolisCase } from "@/components/work/cases/TruAquapolisCase";
+import { WiseMarketCase } from "@/components/work/cases/WiseMarketCase";
+
+/* Case studies rebuilt on the benchmark layout (17 Nov 2026). Add new ones here. */
+const BESPOKE_CASES: Record<string, () => JSX.Element> = {
+  "tru-aquapolis": TruAquapolisCase,
+  "wise-market": WiseMarketCase,
+};
 import { sanity } from "@/sanity/lib/client";
 import { sanityImageProps } from "@/sanity/lib/image";
 import { caseStudyBySlugQuery } from "@/sanity/lib/queries";
@@ -65,6 +72,7 @@ export async function generateMetadata({
    author for every case study (decided 17 Nov 2026). */
 const CASE_MODIFIED: Record<string, string> = {
   "tru-aquapolis": "2026-11-17",
+  "wise-market": "2026-11-17",
 };
 
 function CaseJsonLd({ cs, slug }: { cs: CaseStudyPageData; slug: string }) {
@@ -110,11 +118,12 @@ export default async function CaseStudyPage({
   if (!cs) notFound();
 
   // Bespoke layout (17 Nov 2026). Metadata still comes from Sanity above.
-  if (params.slug === "tru-aquapolis")
+  const Bespoke = BESPOKE_CASES[params.slug];
+  if (Bespoke)
     return (
       <>
         <CaseJsonLd cs={cs} slug={params.slug} />
-        <TruAquapolisCase />
+        <Bespoke />
       </>
     );
 
