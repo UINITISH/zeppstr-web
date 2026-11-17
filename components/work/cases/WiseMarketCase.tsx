@@ -13,8 +13,8 @@ import { CTABanner } from "@/components/blocks/CTABanner";
  *   - deliverables/content/case-studies/wise-market.md (revenue, rankings table)
  *   - lib/case-study-metrics.ts "wise-market" (keywords ranked, referring domains,
  *     peak-month spend and return) — already published on the site.
- * Do not add a figure that is not in those files. Engagement dates are not on
- * record, so the page says "six months" and gives no calendar range.
+ * Do not add a figure that is not in those files. Engagement length: 12 months (confirmed by Nitish, 17 Nov 2026). The AUD 2.7M
+ * revenue milestone was reached within the first six months, per the source deck.
  */
 
 const BEFORE_AFTER = [
@@ -186,7 +186,7 @@ export function WiseMarketCase() {
               </div>
               {[
                 ["Market", "Australia · new & refurbished tech"],
-                ["Duration", "Six months"],
+                ["Engagement", "12 months"],
                 ["Our role", "SEO, paid media, site architecture"],
               ].map(([k, v]) => (
                 <div key={k}>
