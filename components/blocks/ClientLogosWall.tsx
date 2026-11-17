@@ -47,51 +47,48 @@ import { logoBox, WALL_LOGO } from "@/lib/logo-optical";
 type Client = { name: string; file: string };
 
 const CLIENTS: Client[] = [
+  // Deliberately mixed (developers interleaved with all other clients) so the
+  // wall reads as one body of work, not sectors. Keep this order when adding.
   { name: "Ace Online", file: "ace-online.png" },
+  { name: "Prestige", file: "prestige.png" },
   { name: "Aishwarya Interiors", file: "aishwarya-interiors.png" },
   { name: "BSG", file: "bsg.png" },
+  { name: "Moonwalk", file: "moonwalk.png" },
   { name: "EagleDrift", file: "eagledrift.png" },
   { name: "Empuls", file: "empuls.png" },
+  { name: "Sobha", file: "sobha.png" },
   { name: "Fixstars", file: "fixstars.png" },
+  { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
+  { name: "Lodha", file: "lodha.png" },
   { name: "Homatico", file: "homatico.png" },
   { name: "Ignite", file: "ignite.png" },
   { name: "iVehicleValue", file: "ivehiclevalue.png" },
+  { name: "Puravankara", file: "puravankara.webp" },
+  { name: "TruGlobal", file: "truglobal.png" },
   { name: "JP Parking Yard", file: "jp-parking-yard.png" },
   { name: "LearnCab", file: "learncab.png" },
+  { name: "Shapoorji Pallonji", file: "shapoorji-pallonji.png" },
+  { name: "Leverage Edu", file: "leverage-edu.png" },
   { name: "Lucky White Goods", file: "lucky-white-goods.png" },
   { name: "Mini Leaves", file: "mini-leaves.png" },
   { name: "My Keto Co", file: "my-keto-co.png" },
+  { name: "Raheja", file: "raheja.png" },
+  { name: "Invest in Sharjah", file: "invest-in-sharjah.png" },
   { name: "Nakshatech", file: "nakshatech.png" },
   { name: "Pacer", file: "pacer.png" },
+  { name: "Signature Global", file: "signature-global.png" },
   { name: "Prohance", file: "prohance.png" },
+  { name: "FWC", file: "fwc-dark.png" },
   { name: "Sky Phonez", file: "sky-phonez.png" },
+  { name: "Anantraj", file: "anantraj.png" },
   { name: "Tristar Online", file: "tristar-online.png" },
   { name: "Twenty One Finance", file: "twenty-one-finance.png" },
+  { name: "DS-Max Properties", file: "ds-max.png" },
+  { name: "Magtik Lighting", file: "magtik-lighting-dark.png" },
   { name: "VehicleMall", file: "vehiclemall.png" },
   { name: "Wise Market", file: "wise-market.png" },
-
-  // ── Added 15 Sep 2026, logos supplied directly by Vikas ──
-  { name: "Moonwalk", file: "moonwalk.png" },
-  { name: "Tru Aquapolis", file: "tru-aquapolis.png" },
-  { name: "TruGlobal", file: "truglobal.png" },
-  { name: "Leverage Edu", file: "leverage-edu.png" },
-  { name: "Invest in Sharjah", file: "invest-in-sharjah.png" },
-  { name: "FWC", file: "fwc-dark.png" },
-  { name: "Magtik Lighting", file: "magtik-lighting-dark.png" },
-  { name: "Pohewala", file: "pohewala-2018.png" },
-
-  // ── Added 17 Nov 2026: real-estate developers ──
-  // Raheja and Origen were supplied reversed (light on dark) and recoloured to ink.
-  { name: "Prestige", file: "prestige.png" },
-  { name: "Sobha", file: "sobha.png" },
-  { name: "Lodha", file: "lodha.png" },
-  { name: "Puravankara", file: "puravankara.webp" },
-  { name: "Shapoorji Pallonji", file: "shapoorji-pallonji.png" },
-  { name: "Raheja", file: "raheja.png" },
-  { name: "Signature Global", file: "signature-global.png" },
-  { name: "Anantraj", file: "anantraj.png" },
-  { name: "DS-Max Properties", file: "ds-max.png" },
   { name: "Origen Realty", file: "origen-realty.png" },
+  { name: "Pohewala", file: "pohewala-2018.png" },
 ];
 
 export function ClientLogosWall() {
