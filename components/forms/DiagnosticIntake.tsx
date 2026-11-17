@@ -257,7 +257,7 @@ export function DiagnosticIntake() {
         <div className="grid lg:grid-cols-10 lg:gap-0">
           {/* ─── LEFT: Logo wall — 60% of width on desktop ─── */}
           <aside className="hidden lg:block lg:col-span-6 border-r border-ink-headline/10 bg-bg-primary">
-            <div className="sticky top-[72px] py-12 px-8 xl:px-10">
+            <div className="sticky top-[calc(var(--nav-h)-6px)] py-12 px-8 xl:px-10">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-headline mb-3">
                 <span className="inline-block w-2 h-2 bg-brand-yellow mr-2 align-middle" />
                 Trusted by

@@ -74,7 +74,7 @@ export function MobileDrawer({ solutions, industries }: MobileDrawerProps) {
                 width={283}
                 height={78}
                 unoptimized
-                className="h-[26px] w-auto"
+                className="h-[34px] w-auto"
               />
             </Link>
             <Dialog.Close asChild>

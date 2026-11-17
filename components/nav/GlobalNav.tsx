@@ -26,7 +26,7 @@ export async function GlobalNav() {
 
   return (
     <NavShell>
-      <div className="container-layout flex items-center justify-between py-5">
+      <div className="container-layout flex items-center justify-between py-5 md:py-6">
         {/* Logo */}
         {/* Horizontal wordmark (brand green #0F3D2E, with tagline), vector SVG —
             see public/brand/. */}
@@ -38,7 +38,7 @@ export async function GlobalNav() {
             height={78}
             priority
             unoptimized
-            className="h-[30px] w-auto"
+            className="h-[38px] md:h-[50px] w-auto"
           />
         </Link>
 

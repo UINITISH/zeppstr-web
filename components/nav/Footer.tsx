@@ -25,7 +25,7 @@ export function Footer() {
               width={283}
               height={78}
               unoptimized
-              className="h-[32px] w-auto"
+              className="h-[46px] w-auto"
             />
           </div>
           <p className="font-body text-body-sm text-white/75 mb-6">

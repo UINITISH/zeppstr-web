@@ -42,10 +42,15 @@
      guesses at the same measurement, so one of them was always wrong and the
      filter bar left a 9px gap the page scrolled through.
 
-     Derived from GlobalNav: py-5 (20px top + 20px bottom) around a 30px
-     wordmark and a 38px CTA button, so 40 + 38 = 78px.
-     Change this if the nav padding or the button size changes. */
+     Derived from GlobalNav. Mobile: py-5 (40px) around a 38px logo = 78px.
+     Desktop (md+): py-6 (48px) around a 50px logo = 98px.
+     Change this if the nav padding or the logo size changes. */
   --nav-h: 78px;
+}
+@media (min-width: 768px) {
+  :root {
+    --nav-h: 98px;
+  }
 }
 
 @layer base {
