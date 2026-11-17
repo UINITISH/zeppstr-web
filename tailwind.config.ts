@@ -16,7 +16,10 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          blue: "#3147FF",
+          // Interactive accent (hover, links, focus, eyebrows). Was blue #3147FF;
+          // now the brand green. The key stays "blue" so the ~120 existing
+          // classes keep working — use brand-green for new code.
+          blue: "#0F3D2E",
           yellow: "#FFD031",
           "yellow-hover": "#F5C012",
           green: "#0F3D2E",

@@ -9,7 +9,7 @@
 
 :root {
   /* Brand */
-  --color-brand-blue: #3147FF;
+  --color-brand-blue: #0F3D2E; /* was #3147FF — now brand green */
   --color-brand-yellow: #FFD031;
   --color-brand-yellow-hover: #F5C012;
 
@@ -68,6 +68,13 @@
     @apply font-display text-ink-headline;
   }
 
+  :where(
+    .bg-emerald-900, .bg-emerald-950, .bg-bg-inverse, .bg-bg-footer,
+    .bg-ink-headline, .on-dark
+  ) *:focus-visible {
+    outline-color: #fff;
+  }
+
   /* Headings on dark / green / image backgrounds are white; on white they are
      brand green. :where() keeps this at the same specificity as the base
      heading rule, so any explicit text-* class on a heading still wins. */
@@ -92,7 +99,7 @@
     @apply font-light text-display-md;
   }
 
-  /* Focus ring — accessible + brand-blue */
+  /* Focus ring — brand green on light, white on dark sections */
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-blue;
   }
