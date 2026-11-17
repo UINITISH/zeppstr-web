@@ -39,7 +39,7 @@ const DEVELOPERS: Dev[] = [
 
 const AREA = 6200; // target px² per logo, at 1x
 const MAX_W = 150;
-const MAX_H = 62;
+const MAX_H = 74;
 
 function box(w: number, h: number) {
   const ar = w / h;
@@ -102,7 +102,7 @@ export function MarketDevelopersWall() {
                   width={width}
                   height={height}
                   sizes="150px"
-                  className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-hover"
+                  className="object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-hover"
                   style={{ width, height }}
                 />
                 <span
