@@ -36,7 +36,12 @@ function toWord(n: number): string {
 }
 
 export default async function WorkHubPage() {
-  const cases = await sanity.fetch<CaseStudyListItem[]>(allCaseStudiesQuery);
+  const fetchedCases = await sanity.fetch<CaseStudyListItem[]>(allCaseStudiesQuery);
+  // Invest in Sharjah leads (17 Nov 2026), ahead of Tru Aquapolis; stable sort keeps the rest.
+  const cases = [...fetchedCases].sort(
+    (a, b) =>
+      Number(b.slug.current === "invest-in-sharjah") - Number(a.slug.current === "invest-in-sharjah"),
+  );
 
   const caseCountWord = toWord(cases.length);
   const industryCountWord = toWord(

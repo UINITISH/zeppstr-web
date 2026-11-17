@@ -162,7 +162,12 @@ export default async function HomePage() {
     country: c.country ?? COUNTRY_BY_SLUG[c.slug.current],
     screenshotSrc: c.screenshotSrc ?? SCREENSHOT_BY_SLUG[c.slug.current],
   }));
-  const allCases = [...enrichedSanityCases, ...STATIC_FEATURED_CASES];
+  // Invest in Sharjah leads the Selected Work grid (set 17 Nov 2026), ahead of
+  // Tru Aquapolis. Array.sort is stable, so every other case keeps its order.
+  const LEAD_SLUG = "invest-in-sharjah";
+  const allCases = [...enrichedSanityCases, ...STATIC_FEATURED_CASES].sort(
+    (a, b) => Number(b.slug.current === LEAD_SLUG) - Number(a.slug.current === LEAD_SLUG),
+  );
 
   return (
     <>
