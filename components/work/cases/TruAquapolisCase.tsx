@@ -145,7 +145,7 @@ export function TruAquapolisCase() {
                 <p className="mt-8 font-body text-body-lg text-white/75 max-w-[56ch] leading-relaxed">
                   Eight months of Meta and Google for a premium 3 &amp; 4 BHK lake-facing tower, in
                   India&apos;s most contested luxury corridor. ₹187.5 Cr in closed sales, with ₹50–60 Cr
-                  still in pipeline.
+                  still in pipeline, and site visits up from 10–15 to ~100 a month.
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">
@@ -257,6 +257,42 @@ export function TruAquapolisCase() {
             acquisition and qualification. TRU&apos;s in-house sales team closed every one of these 75
             units. We do not claim the close.
           </p>
+        </section>
+
+        {/* ── 3b. SITE VISITS — before / after ──
+            Added 17 Nov 2026, figures from Nitish (founder): January baseline
+            10–15 site visits a month; now 90–120 a month, averaging ~100.
+            Monthly figures are not individually published, so no per-month chart. */}
+        <section className="bg-brand-yellow">
+          <div className="container-layout py-20 md:py-24 grid md:grid-cols-12 gap-10 items-center">
+            <div className="md:col-span-5">
+              <Eyebrow>Site visits</Eyebrow>
+              <h2 className="font-bold tracking-[-0.025em] text-display-lg text-ink-headline leading-[1.05] text-balance">
+                From a trickle to a full weekend calendar.
+              </h2>
+              <p className="mt-6 font-body text-body-lg text-ink-headline/80 leading-relaxed max-w-[44ch]">
+                Qualified leads only matter if they show up. In January the sales gallery saw 10–15
+                visits a month. It now runs between 90 and 120.
+              </p>
+            </div>
+            <div className="md:col-span-6 md:col-start-7 grid grid-cols-[1fr_auto_1fr] items-end gap-6">
+              <div>
+                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-headline/60">January</p>
+                <p className="mt-2 font-display font-extralight text-[64px] md:text-[88px] leading-none tracking-[-0.04em] text-ink-headline/50">
+                  10–15
+                </p>
+                <p className="mt-2 font-body text-body-sm text-ink-headline/70">site visits a month</p>
+              </div>
+              <span aria-hidden="true" className="pb-10 text-[40px] text-ink-headline">→</span>
+              <div>
+                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-headline/60">Now</p>
+                <p className="mt-2 font-display font-bold text-[64px] md:text-[88px] leading-none tracking-[-0.04em] text-ink-headline">
+                  ~100
+                </p>
+                <p className="mt-2 font-body text-body-sm text-ink-headline/70">a month on average · 90–120 range</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ── 4. SITUATION ── */}

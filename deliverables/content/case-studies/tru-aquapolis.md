@@ -77,6 +77,7 @@ Eight months, January to August 2026.
 | Average ticket | ₹2.5 Cr |
 | **Closed sales value** | **₹187.5 Cr** |
 | Open pipeline | ₹50–60 Cr |
+| Site visits per month | 10–15 in January → ~100 now (90–120 range) |
 | Media to closed sales | 134× |
 
 The two middle numbers are the ones that matter. **₹2,333 per lead** and a **1.8% close
