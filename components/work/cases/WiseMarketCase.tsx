@@ -21,7 +21,7 @@ const BEFORE_AFTER = [
   { label: "Monthly revenue", before: "AUD 40K", after: "AUD 2.7M", note: "67× in six months" },
   { label: "Organic keywords ranked", before: "~0", after: "12,300", note: "commercial and model-level terms" },
   { label: "Referring domains", before: "~0", after: "3,900", note: "earned, not bought" },
-  { label: "Paid return, peak month", before: "AUD 360K spend", after: "AUD 1.24M", note: "3.4× ROAS" },
+  { label: "Paid return, peak month", before: "from AUD 360K spend", after: "AUD 1.24M", note: "3.4× ROAS", noStrike: true },
 ];
 
 const MOVES = [
@@ -134,7 +134,7 @@ export function WiseMarketCase() {
                 </p>
                 <h1 className="font-bold tracking-[-0.03em] text-display-xl leading-[1.02] text-balance">
                   Monthly revenue from AUD 40K to{" "}
-                  <span className="highlight-mark text-ink-headline">AUD 2.7M</span> in six months.
+                  <span className="highlight-mark text-ink-headline whitespace-nowrap">AUD 2.7M</span> in six months.
                 </h1>
                 <p className="mt-8 font-body text-body-lg text-white/75 max-w-[56ch] leading-relaxed">
                   An Australian retailer of new and refurbished tech, in a category where margins are
@@ -262,7 +262,11 @@ export function WiseMarketCase() {
             {BEFORE_AFTER.map((b, i) => (
               <div key={b.label} className={i === 0 ? "bg-brand-yellow p-8" : "bg-white p-8"}>
                 <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-headline/60">{b.label}</p>
-                <p className="mt-6 font-body text-body-sm text-ink-headline/60 line-through decoration-ink-headline/30">
+                <p
+                  className={`mt-6 font-body text-body-sm text-ink-headline/60 ${
+                    "noStrike" in b ? "" : "line-through decoration-ink-headline/30"
+                  }`}
+                >
                   {b.before}
                 </p>
                 <p className="mt-1 font-display font-bold text-[40px] leading-none tracking-[-0.03em] text-ink-headline">
