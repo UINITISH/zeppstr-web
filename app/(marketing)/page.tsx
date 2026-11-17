@@ -4,7 +4,6 @@ import { GlobalNav } from "@/components/nav/GlobalNav";
 import { HeroPrimary } from "@/components/hero/HeroPrimary";
 import { FilterableWorkGrid } from "@/components/work/FilterableWorkGrid";
 import { ClientLogosWall } from "@/components/blocks/ClientLogosWall";
-import { MarketDevelopersWall } from "@/components/blocks/MarketDevelopersWall";
 import { ResultsStrip } from "@/components/blocks/ResultsStrip";
 import { ReflexSketch } from "@/components/blocks/ReflexSketch";
 import { ManifestoBlock } from "@/components/blocks/ManifestoBlock";
@@ -288,9 +287,6 @@ export default async function HomePage() {
 
         {/* ─── 6. METHODOLOGY — Diagnose → Architect → Deploy → Operate ─── */}
         <MethodologyFlow />
-
-        {/* ─── MARKET — developers we operate alongside (NOT a client wall) ─── */}
-        <MarketDevelopersWall />
 
         {/* ─── 7. SERVICES — editorial list, not card grid ─── */}
         <section className="bg-bg-primary" aria-labelledby="services-heading">

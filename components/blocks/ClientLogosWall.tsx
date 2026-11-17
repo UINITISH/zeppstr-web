@@ -10,7 +10,8 @@ import { logoBox, WALL_LOGO } from "@/lib/logo-optical";
  * desaturated + low-opacity for visual unity; on hover the cell brightens
  * back to full color and a yellow underline appears (brand-block accent).
  *
- * Layout: 2 cols (mobile) → 3 cols (sm) → 4 cols (md) → 6 cols (lg).
+ * Layout: 2 cols (mobile) → 4 cols (sm) → 5 cols (lg). 40 logos divide evenly
+ * by 2, 4 and 5, so no breakpoint leaves a ragged last row.
  * Hairline dividers between rows/columns mirror the rest of the page system.
  */
 
@@ -78,6 +79,19 @@ const CLIENTS: Client[] = [
   { name: "FWC", file: "fwc-dark.png" },
   { name: "Magtik Lighting", file: "magtik-lighting-dark.png" },
   { name: "Pohewala", file: "pohewala-2018.png" },
+
+  // ── Added 17 Nov 2026: real-estate developers ──
+  // Raheja and Origen were supplied reversed (light on dark) and recoloured to ink.
+  { name: "Prestige", file: "prestige.png" },
+  { name: "Sobha", file: "sobha.png" },
+  { name: "Lodha", file: "lodha.png" },
+  { name: "Puravankara", file: "puravankara.webp" },
+  { name: "Shapoorji Pallonji", file: "shapoorji-pallonji.png" },
+  { name: "Raheja", file: "raheja.png" },
+  { name: "Signature Global", file: "signature-global.png" },
+  { name: "Anantraj", file: "anantraj.png" },
+  { name: "DS-Max Properties", file: "ds-max.png" },
+  { name: "Origen Realty", file: "origen-realty.png" },
 ];
 
 export function ClientLogosWall() {
@@ -118,7 +132,8 @@ export function ClientLogosWall() {
             rendered each mark too small to read, which defeats the point of a
             logo wall.
 
-            THE COUNT HAS TO MATCH THE COLUMNS. 30 divides evenly by 2, 3 and 6,
+            THE COUNT HAS TO MATCH THE COLUMNS. Now 40 logos in 2/4/5 columns
+            (was 30 in 2/3/6). 40 divides evenly by 2, 4 and 5. Old note: 30 divided by 2, 3 and 6,
             so no breakpoint leaves a ragged final row. At 32 logos a six-column
             grid would strand two on their own line, which is exactly the
             unfinished look this grid was rebuilt to avoid.
@@ -137,7 +152,7 @@ export function ClientLogosWall() {
             regardless of how clean the artwork is. A card with a hairline and a
             soft shadow gives every logo the same footprint and a defined edge,
             which is what makes a logo wall look deliberate. */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
           {CLIENTS.map((client) => (
             <div
               key={client.file}

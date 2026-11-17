@@ -85,6 +85,17 @@ const LOGO_DIMENSIONS: Record<string, { w: number; h: number }> = {
   "tristar-online.png": { w: 542, h: 82 },
   "scageon-dark.png": { w: 121, h: 16 },
   "scageon.png": { w: 121, h: 16 },
+  // Added 17 Nov 2026 — real-estate developers (Raheja and Origen recoloured from reversed to ink)
+  "prestige.png": { w: 249, h: 300 },
+  "sobha.png": { w: 261, h: 72 },
+  "lodha.png": { w: 412, h: 84 },
+  "puravankara.webp": { w: 640, h: 141 },
+  "shapoorji-pallonji.png": { w: 378, h: 198 },
+  "raheja.png": { w: 367, h: 65 },
+  "signature-global.png": { w: 640, h: 229 },
+  "anantraj.png": { w: 446, h: 300 },
+  "ds-max.png": { w: 356, h: 300 },
+  "origen-realty.png": { w: 183, h: 56 },
 };
 
 export interface LogoBoxOptions {
