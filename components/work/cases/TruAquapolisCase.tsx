@@ -137,7 +137,13 @@ export function TruAquapolisCase() {
 
             <div className="grid md:grid-cols-12 gap-12 items-end">
               <div className="md:col-span-8">
-                <Eyebrow light>Case study · Real estate · East Bengaluru</Eyebrow>
+                <p className="font-mono text-[11px] uppercase tracking-[0.2em] mb-6 text-white/60">
+                  Case study ·{" "}
+                  <Link href="/industries/real-estate" className="underline underline-offset-4 decoration-white/30 hover:text-white">
+                    Real estate
+                  </Link>{" "}
+                  · East Bengaluru
+                </p>
                 <h1 className="font-bold tracking-[-0.03em] text-display-xl leading-[1.02] text-balance">
                   75 apartments sold from leads we generated, on{" "}
                   <span className="highlight-mark text-ink-headline">₹1.4 Cr</span> of media.
@@ -146,6 +152,24 @@ export function TruAquapolisCase() {
                   Eight months of Meta and Google for a premium 3 &amp; 4 BHK lake-facing tower, in
                   India&apos;s most contested luxury corridor. ₹187.5 Cr in closed sales, with ₹50–60 Cr
                   still in pipeline, and site visits up from 10–15 to ~100 a month.
+                </p>
+                {/* Byline + dates (benchmark pillar B). */}
+                <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-body text-body-sm text-white/60">
+                  <span>
+                    By{" "}
+                    <Link href="/about" className="text-white hover:underline underline-offset-4">
+                      Nitish Kumar
+                    </Link>
+                    , Founder
+                  </span>
+                  <span aria-hidden="true">·</span>
+                  <span>
+                    Published <time dateTime="2026-09-11">11 Sep 2026</time>
+                  </span>
+                  <span aria-hidden="true">·</span>
+                  <span>
+                    Updated <time dateTime="2026-11-17">17 Nov 2026</time>
+                  </span>
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">
@@ -160,14 +184,26 @@ export function TruAquapolisCase() {
 
             <dl className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 border-t border-white/15 pt-8">
               {[
-                ["Client", "TRU Aquapolis"],
+                ["Client", "TRU Aquapolis", "logo"],
                 ["Duration", "Jan – Aug 2026"],
                 ["Channels", "Meta · Google · Organic"],
                 ["Our role", "Acquisition & qualification"],
-              ].map(([k, v]) => (
+              ].map(([k, v, logo]) => (
                 <div key={k}>
                   <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">{k}</dt>
-                  <dd className="mt-2 font-body text-body text-white">{v}</dd>
+                  <dd className="mt-2 font-body text-body text-white">
+                    {logo ? (
+                      <Image
+                        src="/client-logos/v3/tru-aquapolis.png"
+                        alt={`${v} logo`}
+                        width={140}
+                        height={56}
+                        className="h-10 w-auto brightness-0 invert"
+                      />
+                    ) : (
+                      v
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -185,15 +221,34 @@ export function TruAquapolisCase() {
             <div className="relative aspect-[16/9]">
               <Image
                 src="/case-screenshots/tru-aquapolis.jpg"
-                alt="TRU Aquapolis website"
+                alt="TRU Aquapolis website home page, showing the lake-facing tower and the enquiry navigation Zeppstr's campaigns sent buyers to"
                 fill
                 priority
                 sizes="(min-width: 1280px) 1200px, 100vw"
                 className="object-cover object-top"
-                unoptimized
               />
             </div>
           </div>
+        </section>
+
+        {/* ── 2b. AT A GLANCE — answer-first summary (benchmark pillar C).
+            Three plain sentences a buyer, Google or an AI answer can lift whole. */}
+        <section className="container-layout pt-20 md:pt-24" aria-labelledby="glance-heading">
+          <h2 id="glance-heading" className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-8">
+            At a glance
+          </h2>
+          <dl className="grid md:grid-cols-3 gap-px bg-ink-headline/15 border border-ink-headline/15 rounded-lg overflow-hidden">
+            {[
+              ["The challenge", "A premium 3 & 4 BHK tower in East Bengaluru needed qualified buyer enquiries, but its ad account had broken tracking and every campaign paused."],
+              ["What Zeppstr did", "Fixed conversion tracking, rebuilt Meta and Google around high-intent buyers, and screened every lead before it reached TRU's sales team."],
+              ["The result", "6,000+ leads at ₹2,333 each over eight months; TRU's team closed 75 apartments worth ₹187.5 Cr from them, on ₹1.4 Cr of media."],
+            ].map(([k, v]) => (
+              <div key={k} className="bg-white p-8">
+                <dt className="font-body font-semibold text-body text-ink-headline">{k}</dt>
+                <dd className="mt-3 font-body text-body text-ink-body leading-relaxed">{v}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* ── 3. THE ARITHMETIC — funnel ── */}
@@ -249,6 +304,46 @@ export function TruAquapolisCase() {
             <p className="md:col-span-4 font-body text-body-sm text-ink-body leading-relaxed">
               ₹2,333 per lead and a 1.8% close rate are unremarkable for ₹2.5 Cr property. That is
               the point — they are checkable.
+            </p>
+          </div>
+
+          {/* Full arithmetic as a real table (benchmark pillar C): the funnel above is
+              styled boxes; this is the machine- and screen-reader-readable version. */}
+          <div className="mt-14 overflow-x-auto">
+            <table className="w-full max-w-[820px] font-body text-body text-left border-collapse">
+              <caption className="text-left font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted pb-4">
+                The full numbers · Jan–Aug 2026
+              </caption>
+              <thead>
+                <tr className="border-b-2 border-ink-headline">
+                  <th scope="col" className="py-3 pr-6 font-semibold text-ink-headline">Measure</th>
+                  <th scope="col" className="py-3 font-semibold text-ink-headline text-right">Value</th>
+                </tr>
+              </thead>
+              <tbody className="text-ink-body">
+                {[
+                  ["Media investment (Meta + Google)", "₹1.4 Cr"],
+                  ["Leads generated", "6,000+"],
+                  ["Blended cost per lead", "₹2,333"],
+                  ["Qualified after screening", "70%+ (~4,200)"],
+                  ["Site visits per month", "10–15 in Jan → ~100 now"],
+                  ["Units closed (by TRU's sales team)", "75"],
+                  ["Close rate on qualified leads", "1.8%"],
+                  ["Average ticket", "₹2.5 Cr"],
+                  ["Closed sales value", "₹187.5 Cr"],
+                  ["Open pipeline", "₹50–60 Cr"],
+                  ["Media to closed sales", "134×"],
+                ].map(([k, v]) => (
+                  <tr key={k} className="border-b border-ink-headline/10">
+                    <th scope="row" className="py-3 pr-6 font-normal">{k}</th>
+                    <td className="py-3 text-right font-semibold text-ink-headline tabular-nums">{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="mt-4 max-w-[820px] font-body text-body-sm text-ink-muted leading-relaxed">
+              &ldquo;Qualified&rdquo; means the lead passed screening on budget band, configuration
+              fit, contactability and genuine purchase intent before being handed to TRU.
             </p>
           </div>
 
@@ -531,6 +626,58 @@ export function TruAquapolisCase() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── 10b. AUTHOR (benchmark pillar B) ── */}
+        <section className="container-layout pt-20">
+          <div className="flex items-start gap-5 border-t border-b border-ink-headline/15 py-8 max-w-[820px]">
+            <span
+              aria-hidden="true"
+              className="shrink-0 w-14 h-14 rounded-full bg-ink-headline text-white grid place-items-center font-display font-bold text-[18px]"
+            >
+              NK
+            </span>
+            <div>
+              <p className="font-body text-body text-ink-headline">
+                Written by{" "}
+                <Link href="/about" className="font-semibold hover:underline underline-offset-4">
+                  Nitish Kumar
+                </Link>
+                , Founder, Zeppstr Growth Media
+              </p>
+              <p className="mt-1 font-body text-body-sm text-ink-body leading-relaxed">
+                Led the TRU Aquapolis engagement. 10+ years in UX, growth and performance marketing
+                across real estate, healthcare, SaaS and finance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 10c. RELATED WORK (benchmark pillar F) ── */}
+        <section className="container-layout pt-20" aria-labelledby="related-heading">
+          <h2 id="related-heading" className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted mb-8">
+            Related work
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { name: "Invest in Sharjah", metric: "#1 for “invest in sharjah”", tag: "Real estate · Organic search", href: "/work/invest-in-sharjah" },
+              { name: "Wise Market", metric: "AUD 40K → AUD 2.7M in 6 months", tag: "E-commerce · Full-funnel growth", href: "/work/wise-market" },
+            ].map((r) => (
+              <Link
+                key={r.href}
+                href={r.href}
+                className="group block rounded-lg border border-ink-headline/15 p-8 hover:border-ink-headline transition-colors"
+              >
+                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">{r.tag}</p>
+                <p className="mt-4 font-display font-bold text-[26px] tracking-[-0.02em] text-ink-headline leading-tight">
+                  {r.metric}
+                </p>
+                <p className="mt-3 font-body text-body text-ink-body">
+                  {r.name} <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </p>
+              </Link>
+            ))}
           </div>
         </section>
 

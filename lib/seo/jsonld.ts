@@ -218,21 +218,37 @@ interface CaseStudyLdInput {
   clientName: string;
   slug: string;
   headlineMetric?: string;
+  description?: string;
   industryName?: string;
   heroImageUrl?: string;
   publishedAt?: string;
+  modifiedAt?: string;
+  authorName?: string;
+  authorTitle?: string;
 }
 
 export function caseStudyLd(c: CaseStudyLdInput) {
+  const url = `${SITE_URL}/work/${c.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${SITE_URL}/work/${c.slug}#case-study`,
+    "@id": `${url}#case-study`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     headline: `${c.clientName} — ${c.headlineMetric ?? "Client outcome"}`,
-    image: c.heroImageUrl ? [c.heroImageUrl] : undefined,
+    description: c.description,
+    image: [c.heroImageUrl ?? `${SITE_URL}/case-og/${c.slug}`],
     datePublished: c.publishedAt,
+    dateModified: c.modifiedAt ?? c.publishedAt,
     about: c.industryName,
-    author: { "@id": `${SITE_URL}/#organization` },
+    author: c.authorName
+      ? {
+          "@type": "Person",
+          name: c.authorName,
+          jobTitle: c.authorTitle,
+          url: `${SITE_URL}/about`,
+          worksFor: { "@id": `${SITE_URL}/#organization` },
+        }
+      : { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }

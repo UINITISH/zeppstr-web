@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/meta";
+import { caseStudyLd, breadcrumbLd, SITE_URL } from "@/lib/seo/jsonld";
 import { getCaseStudyMetrics } from "@/lib/case-study-metrics";
 import { CaseStudyMetrics } from "@/components/case-study/CaseStudyMetrics";
 import { getCaseStudyImage } from "@/lib/case-study-images";
@@ -50,7 +51,47 @@ export async function generateMetadata({
     title: cs.seoTitle ?? `${cs.clientName} — ${cs.headlineMetric}`,
     description: cs.seoDescription,
     path: `/work/${params.slug}`,
+    // Page-specific share image with the headline number (benchmark pillar D).
+    openGraph: {
+      type: "article",
+      url: `/work/${params.slug}`,
+      images: [{ url: `/case-og/${params.slug}`, width: 1200, height: 630, alt: `${cs.clientName} — ${cs.headlineMetric}` }],
+    },
+    twitter: { card: "summary_large_image", images: [`/case-og/${params.slug}`] },
   });
+}
+
+/* Byline + update date per case (benchmark pillar B). Nitish is the default
+   author for every case study (decided 17 Nov 2026). */
+const CASE_MODIFIED: Record<string, string> = {
+  "tru-aquapolis": "2026-11-17",
+};
+
+function CaseJsonLd({ cs, slug }: { cs: CaseStudyPageData; slug: string }) {
+  const data = [
+    caseStudyLd({
+      clientName: cs.clientName,
+      slug,
+      headlineMetric: cs.headlineMetric,
+      description: cs.seoDescription,
+      industryName: cs.industry?.name,
+      publishedAt: cs.publishedAt,
+      modifiedAt: CASE_MODIFIED[slug],
+      authorName: "Nitish Kumar",
+      authorTitle: "Founder, Zeppstr Growth Media",
+    }),
+    breadcrumbLd([
+      { name: "Work", url: `${SITE_URL}/work` },
+      { name: cs.clientName, url: `${SITE_URL}/work/${slug}` },
+    ]),
+  ];
+  return (
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
 }
 
 // ─────────────────────────────────────────────
@@ -69,7 +110,13 @@ export default async function CaseStudyPage({
   if (!cs) notFound();
 
   // Bespoke layout (17 Nov 2026). Metadata still comes from Sanity above.
-  if (params.slug === "tru-aquapolis") return <TruAquapolisCase />;
+  if (params.slug === "tru-aquapolis")
+    return (
+      <>
+        <CaseJsonLd cs={cs} slug={params.slug} />
+        <TruAquapolisCase />
+      </>
+    );
 
   const metrics = getCaseStudyMetrics(params.slug);
   /* Stat band + chart. Null for any case without published figures, which is
@@ -80,6 +127,7 @@ export default async function CaseStudyPage({
 
   return (
     <>
+      <CaseJsonLd cs={cs} slug={params.slug} />
       <GlobalNav />
       <main>
         {/* Breadcrumb */}
