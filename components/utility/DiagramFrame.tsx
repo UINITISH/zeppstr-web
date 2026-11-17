@@ -12,7 +12,7 @@ import * as React from "react";
  * components to share a wrapper is churn, and they can migrate if they are ever
  * touched for another reason.
  */
-export const INK = "#0A102F";
+export const INK = "#0F3D2E";
 export const EMERALD = "#064E3B";
 export const YELLOW = "#FFD031";
 export const MONO = "var(--font-mono), ui-monospace, monospace";

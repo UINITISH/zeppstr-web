@@ -78,7 +78,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -90,7 +90,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -103,7 +103,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -115,7 +115,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -129,7 +129,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           y="76"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -143,7 +143,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
             y1="78"
             x2={CHART_X + CHART_W - 96}
             y2="78"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.35"
             strokeWidth="1.5"
             strokeDasharray="3 2"
@@ -153,7 +153,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
             y="81"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.5"
             letterSpacing="1.2"
           >
@@ -173,7 +173,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
             y="95"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.85"
             letterSpacing="1.2"
             fontWeight="500"
@@ -192,7 +192,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
               y1={y}
               x2={CHART_X + CHART_W}
               y2={y}
-              stroke="#0A102F"
+              stroke="#0F3D2E"
               strokeOpacity="0.08"
               strokeWidth="1"
             />
@@ -209,7 +209,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
                 y1={CHART_Y + CHART_H}
                 x2={x}
                 y2={CHART_Y + CHART_H + 5}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.4"
                 strokeWidth="1"
               />
@@ -218,7 +218,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
                 y={CHART_Y + CHART_H + 18}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.5"
                 letterSpacing="1.2"
                 textAnchor="middle"
@@ -233,7 +233,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
         <path
           d={contentPath}
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.35"
           strokeWidth="1.5"
           strokeDasharray="3 2"
@@ -266,7 +266,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
                 y1={p.y}
                 x2={p.x}
                 y2={CHART_Y - 4}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.2"
                 strokeWidth="1"
                 strokeDasharray="2 3"
@@ -276,7 +276,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
                 cy={p.y}
                 r="3.5"
                 fill="#FFD031"
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeWidth="1"
               />
               {/* Label positioned above the chart */}
@@ -286,7 +286,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.75"
                 letterSpacing="1.0"
                 textAnchor="middle"
@@ -299,7 +299,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
                   y={CHART_Y - 4}
                   fontFamily="var(--font-mono), ui-monospace, monospace"
                   fontSize="7"
-                  fill="#0A102F"
+                  fill="#0F3D2E"
                   fillOpacity="0.45"
                   letterSpacing="1.0"
                   textAnchor="middle"
@@ -312,7 +312,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
         })}
 
         {/* Animated pulse dot traveling along the yellow curve */}
-        <circle r="5" fill="#FFD031" stroke="#0A102F" strokeWidth="1.25">
+        <circle r="5" fill="#FFD031" stroke="#0F3D2E" strokeWidth="1.25">
           <animateMotion dur="6s" repeatCount="indefinite" path={formatPath} />
           <animate
             attributeName="opacity"
@@ -329,7 +329,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -341,7 +341,7 @@ export function OrganicCompoundingCurve({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

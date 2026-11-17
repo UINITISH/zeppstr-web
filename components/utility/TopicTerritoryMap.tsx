@@ -71,7 +71,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -83,7 +83,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -96,7 +96,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -108,7 +108,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -121,7 +121,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           y="72"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -195,7 +195,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                 height={r.h}
                 fill={isHovered ? "#FFD031" : "#FFFFFF"}
                 fillOpacity={isHovered ? 0.35 : 1}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.6"
                 strokeWidth="1.25"
                 style={{ transition: "fill 240ms ease, fill-opacity 240ms ease" }}
@@ -216,7 +216,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                 y={r.y + 11}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.7"
                 letterSpacing="1.5"
               >
@@ -230,7 +230,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
                 fontWeight="600"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.7"
                 letterSpacing="1.2"
                 textAnchor="end"
@@ -246,7 +246,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                   y1={pillarY + 7}
                   x2={s.sx}
                   y2={s.sy}
-                  stroke="#0A102F"
+                  stroke="#0F3D2E"
                   strokeOpacity="0.45"
                   strokeWidth="1"
                   strokeDasharray="2 2"
@@ -259,7 +259,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                 y={pillarY}
                 width="28"
                 height="14"
-                fill="#0A102F"
+                fill="#0F3D2E"
               />
               <text
                 x={pillarX + 14}
@@ -281,7 +281,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="9"
                 fontWeight="600"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.85"
                 letterSpacing="-0.1"
               >
@@ -297,7 +297,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                     width="8"
                     height="8"
                     fill={isHovered ? "#FFD031" : "#FFFFFF"}
-                    stroke="#0A102F"
+                    stroke="#0F3D2E"
                     strokeOpacity="0.65"
                     strokeWidth="1"
                   />
@@ -325,7 +325,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
                 y={r.y + r.h - 6}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.5"
                 letterSpacing="1.0"
                 textAnchor="end"
@@ -343,7 +343,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -355,7 +355,7 @@ export function TopicTerritoryMap({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

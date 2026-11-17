@@ -45,10 +45,10 @@ function cellColor(b: RankBucket): {
   textColor: string;
   textOpacity: number;
 } {
-  if (b === "mappack") return { fill: "#FFD031", textColor: "#0A102F", textOpacity: 0.9 };
+  if (b === "mappack") return { fill: "#FFD031", textColor: "#0F3D2E", textOpacity: 0.9 };
   if (b === "page1")
-    return { fill: "#FFF1B8", textColor: "#0A102F", textOpacity: 0.7 };
-  return { fill: "#F0F0EC", textColor: "#0A102F", textOpacity: 0.4 };
+    return { fill: "#FFF1B8", textColor: "#0F3D2E", textOpacity: 0.7 };
+  return { fill: "#F0F0EC", textColor: "#0F3D2E", textOpacity: 0.4 };
 }
 
 export function LocationCoverageHeatmap({ className = "" }: { className?: string }) {
@@ -97,7 +97,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -109,7 +109,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -122,7 +122,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -134,7 +134,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -150,7 +150,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y="73"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.6"
             letterSpacing="1.0"
           >
@@ -162,7 +162,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             width="10"
             height="10"
             fill="#FFF1B8"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.3"
             strokeWidth="0.75"
           />
@@ -171,7 +171,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y="73"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.6"
             letterSpacing="1.0"
           >
@@ -183,7 +183,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y="73"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.6"
             letterSpacing="1.0"
           >
@@ -200,7 +200,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
             fontWeight="500"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.55"
             letterSpacing="1.2"
             textAnchor="middle"
@@ -218,7 +218,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
             fontWeight="500"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.55"
             letterSpacing="1.2"
             textAnchor="end"
@@ -233,7 +233,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
           y={gridY - 6}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -244,7 +244,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
           y={gridY - 6}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -273,7 +273,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
                   width={cell}
                   height={cell}
                   fill={style.fill}
-                  stroke="#0A102F"
+                  stroke="#0F3D2E"
                   strokeOpacity={isHovered ? 0.85 : b === "mappack" ? 0.55 : b === "page1" ? 0.25 : 0.15}
                   strokeWidth={isHovered ? 1.75 : b === "mappack" ? 1.25 : 1}
                   style={{ transition: "stroke-width 200ms ease, stroke-opacity 200ms ease" }}
@@ -286,7 +286,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
                     y={y}
                     width="6"
                     height="6"
-                    fill="#0A102F"
+                    fill="#0F3D2E"
                   />
                 )}
 
@@ -312,7 +312,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
                     cy={y + cell - 5}
                     r="2"
                     fill="#FFD031"
-                    stroke="#0A102F"
+                    stroke="#0F3D2E"
                     strokeWidth="0.75"
                   />
                 )}
@@ -358,7 +358,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y1="396"
             x2="428"
             y2="396"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.2"
             strokeWidth="1"
           />
@@ -368,7 +368,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
             fontWeight="600"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.85"
             letterSpacing="1.5"
           >
@@ -379,7 +379,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y="426"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.5"
             letterSpacing="1.0"
           >
@@ -392,7 +392,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
             fontWeight="600"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.85"
             letterSpacing="1.5"
             textAnchor="middle"
@@ -404,7 +404,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y="426"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.5"
             letterSpacing="1.0"
             textAnchor="middle"
@@ -418,7 +418,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
             fontWeight="600"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.85"
             letterSpacing="1.5"
             textAnchor="middle"
@@ -430,7 +430,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             y="426"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.5"
             letterSpacing="1.0"
             textAnchor="middle"
@@ -444,7 +444,7 @@ export function LocationCoverageHeatmap({ className = "" }: { className?: string
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="9"
             fontWeight="500"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.5"
             letterSpacing="1.8"
             textAnchor="end"

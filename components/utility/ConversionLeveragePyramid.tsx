@@ -56,7 +56,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -68,7 +68,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -81,7 +81,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -93,7 +93,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -106,7 +106,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           y="76"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -133,7 +133,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
                 width={tier.width}
                 height={tierH - 6}
                 fill={isHovered ? "#FFD031" : "#F8F8F6"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.4"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -145,7 +145,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
                 y={y + 18}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.6"
                 letterSpacing="1.5"
               >
@@ -159,7 +159,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize={i === 4 ? 22 : i === 3 ? 18 : i === 2 ? 16 : i === 1 ? 14 : 12}
                 fontWeight={i >= 3 ? 600 : 400}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 textAnchor="middle"
                 letterSpacing="-0.3"
               >
@@ -172,7 +172,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
                 y={y + 18}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill={i === 4 ? "#0A102F" : "#0A102F"}
+                fill={i === 4 ? "#0F3D2E" : "#0F3D2E"}
                 fillOpacity={i === 4 ? 1 : 0.6}
                 letterSpacing="1.2"
                 textAnchor="end"
@@ -206,14 +206,14 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             y1={startY + 25}
             x2="105"
             y2={startY + 25}
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.4"
             strokeWidth="1"
             strokeDasharray="2 2"
           />
           <polygon
             points={`108,${startY + 22} 108,${startY + 28} 113,${startY + 25}`}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.4"
           />
           <text
@@ -221,7 +221,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             y={startY + 12}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.65"
             letterSpacing="1.2"
           >
@@ -232,7 +232,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             y={startY + 38}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.65"
             letterSpacing="1.2"
           >
@@ -247,7 +247,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             y1={startY + 4 * tierH + 22}
             x2="48"
             y2={startY + 4 * tierH + 22}
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.5"
             strokeWidth="1"
             strokeDasharray="2 2"
@@ -266,7 +266,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             y={startY + 4 * tierH + 18}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.8"
             letterSpacing="1.2"
             textAnchor="end"
@@ -279,7 +279,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
             fontWeight="500"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.9"
             letterSpacing="1.2"
             textAnchor="end"
@@ -291,7 +291,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
             y={startY + 4 * tierH + 46}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.8"
             letterSpacing="1.2"
             textAnchor="end"
@@ -307,7 +307,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -319,7 +319,7 @@ export function ConversionLeveragePyramid({ className = "" }: { className?: stri
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

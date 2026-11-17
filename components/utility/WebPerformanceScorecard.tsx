@@ -57,7 +57,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -69,7 +69,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -82,7 +82,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -94,7 +94,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -107,7 +107,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           y="72"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -138,7 +138,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
                 cy={cy}
                 r={RADIUS}
                 fill="none"
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.12"
                 strokeWidth="6"
               />
@@ -173,7 +173,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="32"
                 fontWeight="300"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 textAnchor="middle"
                 letterSpacing="-1.5"
               >
@@ -186,7 +186,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
                 cy={cy - RADIUS}
                 r="3"
                 fill="#FFD031"
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeWidth="1"
               >
                 <animate
@@ -204,7 +204,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.85"
                 letterSpacing="1.5"
                 textAnchor="middle"
@@ -216,7 +216,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
                 y={cy + RADIUS + 28}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.55"
                 letterSpacing="1.0"
                 textAnchor="middle"
@@ -234,7 +234,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -246,7 +246,7 @@ export function WebPerformanceScorecard({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

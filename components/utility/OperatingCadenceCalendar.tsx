@@ -92,7 +92,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -104,7 +104,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -117,7 +117,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -129,7 +129,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -142,7 +142,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           y="72"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -160,7 +160,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
               fontFamily="var(--font-mono), ui-monospace, monospace"
               fontSize="8"
               fontWeight="500"
-              fill="#0A102F"
+              fill="#0F3D2E"
               fillOpacity="0.55"
               letterSpacing="1.5"
               textAnchor="middle"
@@ -181,7 +181,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.7"
                 letterSpacing="1.2"
                 textAnchor="end"
@@ -193,7 +193,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                 y={y + 7}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.45"
                 letterSpacing="1.0"
                 textAnchor="end"
@@ -234,7 +234,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                 height={cellH}
                 fill={fillColor}
                 fillOpacity={fillOpacity}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity={strokeOpacity}
                 strokeWidth={isHovered ? 1.5 : 1}
                 style={{ transition: "stroke-width 200ms ease" }}
@@ -246,7 +246,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                 y={y + 14}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill={cell.active ? "#0A102F" : "#0A102F"}
+                fill={cell.active ? "#0F3D2E" : "#0F3D2E"}
                 fillOpacity={cell.active ? 0.85 : 0.35}
                 letterSpacing="0.8"
               >
@@ -261,7 +261,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                     y={y + cellH / 2 - 5}
                     width="10"
                     height="10"
-                    fill="#0A102F"
+                    fill="#0F3D2E"
                     fillOpacity="0.85"
                   />
                   {/* Pulse halo on active cells */}
@@ -270,7 +270,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                     cy={y + cellH / 2}
                     r="8"
                     fill="none"
-                    stroke="#0A102F"
+                    stroke="#0F3D2E"
                     strokeOpacity="0.5"
                     strokeWidth="1"
                   >
@@ -297,7 +297,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
                   y={y + cellH - 5}
                   fontFamily="var(--font-mono), ui-monospace, monospace"
                   fontSize="6"
-                  fill="#0A102F"
+                  fill="#0F3D2E"
                   letterSpacing="0.6"
                   textAnchor="middle"
                   fontWeight="500"
@@ -315,7 +315,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           y="396"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.55"
           letterSpacing="1.5"
         >
@@ -329,7 +329,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -341,7 +341,7 @@ export function OperatingCadenceCalendar({ className = "" }: { className?: strin
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

@@ -14,7 +14,7 @@
   --color-brand-yellow-hover: #F5C012;
 
   /* Ink */
-  --color-ink-headline: #0A102F;
+  --color-ink-headline: #0F3D2E; /* brand green — matches the logo */
   --color-ink-body: #404040;
   --color-ink-muted: #69727D;
   --color-ink-soft: #585450;
@@ -61,6 +61,16 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-ink-headline;
+  }
+
+  /* Headings on dark / green / image backgrounds are white; on white they are
+     brand green. :where() keeps this at the same specificity as the base
+     heading rule, so any explicit text-* class on a heading still wins. */
+  :where(
+    .bg-emerald-900, .bg-emerald-950, .bg-bg-inverse, .bg-bg-footer,
+    .bg-ink-headline, .bg-brand-blue, .on-dark
+  ) :is(h1, h2, h3, h4, h5, h6) {
+    color: #fff;
   }
 
   /* Headlines use Plus Jakarta Sans 200 — the brand-defining extra-light weight.

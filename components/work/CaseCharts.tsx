@@ -23,7 +23,7 @@ import * as React from "react";
  * second visual language and ~50KB for the privilege.
  */
 
-const INK = "#0A102F";
+const INK = "#0F3D2E";
 const EMERALD = "#064E3B";
 const YELLOW = "#FFD031";
 const MONO = "var(--font-mono), ui-monospace, monospace";

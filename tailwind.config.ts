@@ -19,9 +19,12 @@ const config: Config = {
           blue: "#3147FF",
           yellow: "#FFD031",
           "yellow-hover": "#F5C012",
+          green: "#0F3D2E",
         },
         ink: {
-          headline: "#0A102F",
+          // Brand green (logo colour). Headings and "ink" on light backgrounds.
+          // On dark/green/image backgrounds use text-white instead.
+          headline: "#0F3D2E",
           body: "#404040",
           muted: "#69727D",
           soft: "#585450",

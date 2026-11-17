@@ -62,7 +62,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -74,7 +74,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -87,7 +87,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -99,7 +99,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -108,7 +108,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
         </text>
 
         {/* Dimension marks along the top of the screen */}
-        <g stroke="#0A102F" strokeOpacity="0.3" strokeWidth="0.75">
+        <g stroke="#0F3D2E" strokeOpacity="0.3" strokeWidth="0.75">
           <line x1={screenX} y1={screenY - 10} x2={screenX} y2={screenY - 4} />
           <line
             x1={screenX + screenW}
@@ -128,7 +128,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           y={screenY - 12}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="7"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.0"
           textAnchor="middle"
@@ -143,7 +143,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           width={screenW}
           height={screenH}
           fill="#FFFFFF"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.7"
           strokeWidth="1.25"
         />
@@ -155,7 +155,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y1={screenY + 28}
             x2={screenX + screenW}
             y2={screenY + 28}
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.3"
             strokeWidth="1"
           />
@@ -164,7 +164,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + 10}
             width={32}
             height={8}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.85"
           />
           {/* nav placeholders */}
@@ -175,7 +175,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
               y={screenY + 12}
               width={14}
               height={4}
-              fill="#0A102F"
+              fill="#0F3D2E"
               fillOpacity="0.3"
             />
           ))}
@@ -189,7 +189,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + 50}
             width={screenW - 100}
             height={14}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.85"
           />
           <rect
@@ -197,7 +197,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + 70}
             width={screenW - 130}
             height={10}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.55"
           />
           {/* Sub text */}
@@ -206,7 +206,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + 92}
             width={screenW - 60}
             height={4}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.25"
           />
           <rect
@@ -214,7 +214,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + 100}
             width={screenW - 80}
             height={4}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.25"
           />
           {/* Yellow button */}
@@ -230,7 +230,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + 124}
             width={32}
             height={4}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.9"
           />
         </g>
@@ -245,7 +245,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 width={64}
                 height={72}
                 fill="#F8F8F6"
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.2"
                 strokeWidth="1"
               />
@@ -264,7 +264,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y={screenY + 175}
                 width={46}
                 height={6}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.7"
               />
               <rect
@@ -272,7 +272,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y={screenY + 187}
                 width={34}
                 height={3}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.4"
               />
               <rect
@@ -280,7 +280,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y={screenY + 195}
                 width={42}
                 height={3}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.4"
               />
               <rect
@@ -288,7 +288,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y={screenY + 203}
                 width={38}
                 height={3}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.4"
               />
               {/* card bottom indicator */}
@@ -297,7 +297,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y={screenY + 224}
                 width={14}
                 height={3}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.6"
               />
             </g>
@@ -311,7 +311,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y1={screenY + screenH - 28}
             x2={screenX + screenW}
             y2={screenY + screenH - 28}
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.3"
             strokeWidth="1"
           />
@@ -320,7 +320,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + screenH - 18}
             width={30}
             height={4}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.5"
           />
           <rect
@@ -328,7 +328,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + screenH - 18}
             width={30}
             height={4}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.3"
           />
           <rect
@@ -336,7 +336,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
             y={screenY + screenH - 18}
             width={30}
             height={4}
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.3"
           />
         </g>
@@ -357,7 +357,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 cy={c.ay}
                 r="3"
                 fill="#FFD031"
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeWidth="1"
               />
               <circle
@@ -388,7 +388,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y1={c.ay}
                 x2={c.cx}
                 y2={c.cy}
-                stroke={isHovered ? "#FFD031" : "#0A102F"}
+                stroke={isHovered ? "#FFD031" : "#0F3D2E"}
                 strokeOpacity={isHovered ? 1 : 0.3}
                 strokeWidth={isHovered ? 1.5 : 1}
                 strokeDasharray="2 3"
@@ -402,7 +402,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 width={86}
                 height={28}
                 fill={isHovered ? "#FFD031" : "#F8F8F6"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.5"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -413,7 +413,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
                 fontWeight="600"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="1.5"
               >
                 {c.label}
@@ -423,7 +423,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
                 y={c.cy + 9}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.65"
                 letterSpacing="0.8"
               >
@@ -440,7 +440,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -452,7 +452,7 @@ export function InterfaceBlueprint({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

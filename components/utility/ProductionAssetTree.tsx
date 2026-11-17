@@ -56,7 +56,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -68,7 +68,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -81,7 +81,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -93,7 +93,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -106,7 +106,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           y="74"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -117,7 +117,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           y="74"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="middle"
@@ -129,7 +129,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           y="74"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="end"
@@ -144,7 +144,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
             y={trunkY - 30}
             width="60"
             height="60"
-            fill="#0A102F"
+            fill="#0F3D2E"
           />
           <text
             x={trunkX}
@@ -187,7 +187,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           y1={trunkY}
           x2={editX - 30}
           y2={editY}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.4"
           strokeWidth="1.25"
           strokeDasharray="4 4"
@@ -213,7 +213,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
             width="60"
             height="44"
             fill="#FFFFFF"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.7"
             strokeWidth="1.25"
           />
@@ -222,7 +222,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
             y={editY - 4}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.6"
             letterSpacing="1.5"
             textAnchor="middle"
@@ -235,7 +235,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
             fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
             fontSize="13"
             fontWeight="400"
-            fill="#0A102F"
+            fill="#0F3D2E"
             textAnchor="middle"
           >
             EDIT
@@ -261,7 +261,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
               <path
                 d={path}
                 fill="none"
-                stroke={isHovered ? "#FFD031" : "#0A102F"}
+                stroke={isHovered ? "#FFD031" : "#0F3D2E"}
                 strokeOpacity={isHovered ? 1 : 0.3}
                 strokeWidth={isHovered ? 2 : 1}
                 strokeDasharray="3 3"
@@ -283,7 +283,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
                 width="86"
                 height="36"
                 fill={isHovered ? "#FFD031" : "#F8F8F6"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.4"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -296,7 +296,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="10.5"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
               >
                 {LEAVES[i].label}
               </text>
@@ -307,7 +307,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
                 y={y + 9}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.6"
                 letterSpacing="0.8"
               >
@@ -339,7 +339,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -351,7 +351,7 @@ export function ProductionAssetTree({ className = "" }: { className?: string }) 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

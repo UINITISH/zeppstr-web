@@ -52,24 +52,24 @@ function statusStyle(s: StatusType) {
   if (s === "winner")
     return {
       bg: "#FFD031",
-      stroke: "#0A102F",
+      stroke: "#0F3D2E",
       strokeOpacity: 0.85,
-      textColor: "#0A102F",
+      textColor: "#0F3D2E",
       label: "WINNER",
     };
   if (s === "testing")
     return {
       bg: "#FFFFFF",
-      stroke: "#0A102F",
+      stroke: "#0F3D2E",
       strokeOpacity: 0.55,
-      textColor: "#0A102F",
+      textColor: "#0F3D2E",
       label: "TESTING",
     };
   return {
     bg: "#F0F0EC",
-    stroke: "#0A102F",
+    stroke: "#0F3D2E",
     strokeOpacity: 0.25,
-    textColor: "#0A102F",
+    textColor: "#0F3D2E",
     label: "KILLED",
   };
 }
@@ -104,7 +104,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -116,7 +116,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -129,7 +129,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -141,7 +141,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -154,7 +154,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           y="72"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -182,7 +182,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 width={cardW}
                 height={cardH}
                 fill="#FFFFFF"
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity={isHovered ? 0.85 : 0.4}
                 strokeWidth={isHovered ? 1.5 : 1}
                 style={{
@@ -196,7 +196,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 y1={y + 22}
                 x2={startX + cardW}
                 y2={y + 22}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.15"
                 strokeWidth="1"
               />
@@ -212,7 +212,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 y={y + 14}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.65"
                 letterSpacing="1.2"
               >
@@ -250,7 +250,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 width="60"
                 height="60"
                 fill={card.status === "winner" ? "#FFD031" : "#F0F0EC"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.4"
                 strokeWidth="1"
               />
@@ -259,7 +259,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                   {/* "Play" indicator */}
                   <polygon
                     points={`${startX + 32},${y + 50} ${startX + 32},${y + 74} ${startX + 50},${y + 62}`}
-                    fill="#0A102F"
+                    fill="#0F3D2E"
                   />
                 </>
               )}
@@ -272,7 +272,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                     fontFamily="var(--font-mono), ui-monospace, monospace"
                     fontSize="14"
                     fontWeight="600"
-                    fill="#0A102F"
+                    fill="#0F3D2E"
                     fillOpacity="0.65"
                     textAnchor="middle"
                   >
@@ -288,7 +288,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                     y1={y + 44}
                     x2={startX + 58}
                     y2={y + 80}
-                    stroke="#0A102F"
+                    stroke="#0F3D2E"
                     strokeOpacity="0.45"
                     strokeWidth="2"
                   />
@@ -297,7 +297,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                     y1={y + 44}
                     x2={startX + 22}
                     y2={y + 80}
-                    stroke="#0A102F"
+                    stroke="#0F3D2E"
                     strokeOpacity="0.45"
                     strokeWidth="2"
                   />
@@ -311,7 +311,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="11"
                 fontWeight="600"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="-0.2"
               >
                 {card.headline}
@@ -324,7 +324,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="9"
                 fontWeight="400"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.55"
                 letterSpacing="-0.1"
               >
@@ -338,7 +338,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 width={card.status === "killed" ? 70 : 56}
                 height="14"
                 fill={card.status === "winner" ? "#FFD031" : "#FFFFFF"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.5"
                 strokeWidth="1"
               />
@@ -352,7 +352,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
                 fontWeight="600"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="1.0"
                 textAnchor="middle"
               >
@@ -366,8 +366,8 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="13"
                 fontWeight="600"
-                fill={card.status === "winner" ? "#FFD031" : "#0A102F"}
-                stroke={card.status === "winner" ? "#0A102F" : "none"}
+                fill={card.status === "winner" ? "#FFD031" : "#0F3D2E"}
+                stroke={card.status === "winner" ? "#0F3D2E" : "none"}
                 strokeWidth={card.status === "winner" ? 0.5 : 0}
                 letterSpacing="-0.3"
                 textAnchor="end"
@@ -385,7 +385,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
             y1={startY}
             x2="420"
             y2={startY + 3 * (cardH + gap) - gap}
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.15"
             strokeWidth="1"
           />
@@ -395,9 +395,9 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
               cx="420"
               cy={startY + i * (cardH + gap) + cardH / 2}
               r="3"
-              fill={i === 0 ? "#FFD031" : "#0A102F"}
+              fill={i === 0 ? "#FFD031" : "#0F3D2E"}
               fillOpacity={i === 0 ? 1 : 0.3}
-              stroke="#0A102F"
+              stroke="#0F3D2E"
               strokeWidth="0.75"
               strokeOpacity={i === 0 ? 0.6 : 0.3}
             >
@@ -420,7 +420,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -432,7 +432,7 @@ export function CreativeScrollFeed({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

@@ -68,7 +68,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -80,7 +80,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -96,7 +96,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
               y1={y}
               x2={26}
               y2={y}
-              stroke="#0A102F"
+              stroke="#0F3D2E"
               strokeOpacity="0.3"
               strokeWidth="1"
             />
@@ -110,7 +110,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -122,7 +122,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -136,7 +136,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           y="76"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -164,7 +164,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
                 width={tier.width}
                 height={bandHeight}
                 fill={fill}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.18"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -176,7 +176,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
                 y={bandY + 22}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.6"
                 letterSpacing="1.5"
               >
@@ -190,7 +190,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="30"
                 fontWeight="300"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="-0.8"
               >
                 {tier.label}
@@ -202,7 +202,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
                 y={bandY + 24}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.7"
                 letterSpacing="1.5"
                 textAnchor="end"
@@ -216,7 +216,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
                 y={bandY + 74}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.8"
                 letterSpacing="1.5"
                 textAnchor="end"
@@ -245,7 +245,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
                 y={bandY + bandHeight + 14}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity={hovered === i ? 0.7 : 0}
                 letterSpacing="1.2"
                 style={{ transition: "fill-opacity 240ms ease" }}
@@ -263,7 +263,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -275,7 +275,7 @@ export function CreatorTierLadder({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

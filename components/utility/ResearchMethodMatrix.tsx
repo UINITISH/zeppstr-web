@@ -88,7 +88,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -100,7 +100,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -113,7 +113,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -125,7 +125,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -140,7 +140,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.6"
           letterSpacing="1.5"
           textAnchor="middle"
@@ -155,7 +155,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.6"
           letterSpacing="1.5"
           textAnchor="middle"
@@ -172,7 +172,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           height={plotH}
           fill="#F8F8F6"
           fillOpacity="0.4"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.35"
           strokeWidth="1"
         />
@@ -183,7 +183,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           y1={plotY}
           x2={plotX + plotW / 2}
           y2={plotY + plotH}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.25"
           strokeWidth="1"
           strokeDasharray="2 3"
@@ -193,7 +193,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           y1={plotY + plotH / 2}
           x2={plotX + plotW}
           y2={plotY + plotH / 2}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.25"
           strokeWidth="1"
           strokeDasharray="2 3"
@@ -207,7 +207,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
             y={plotY + q.y * plotH + (q.y < 0.5 ? 14 : -8)}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.45"
             letterSpacing="1.2"
             textAnchor={q.anchor}
@@ -232,8 +232,8 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
                 cx={cx}
                 cy={cy}
                 r={isHovered ? 6 : 4}
-                fill={isHovered ? "#FFD031" : "#0A102F"}
-                stroke="#0A102F"
+                fill={isHovered ? "#FFD031" : "#0F3D2E"}
+                stroke="#0F3D2E"
                 strokeWidth="1"
                 style={{ transition: "fill 200ms ease, r 200ms ease" }}
               />
@@ -243,7 +243,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
                 fontWeight={isHovered ? 600 : 400}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity={isHovered ? 1 : 0.7}
                 letterSpacing="0.8"
                 style={{ transition: "fill-opacity 200ms ease" }}
@@ -255,7 +255,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
         })}
 
         {/* Orbiting yellow pulse dot — drifts around the matrix on a slow path */}
-        <circle r="5" fill="#FFD031" stroke="#0A102F" strokeWidth="1.25">
+        <circle r="5" fill="#FFD031" stroke="#0F3D2E" strokeWidth="1.25">
           <animateMotion
             dur="14s"
             repeatCount="indefinite"
@@ -282,7 +282,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -294,7 +294,7 @@ export function ResearchMethodMatrix({ className = "" }: { className?: string })
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

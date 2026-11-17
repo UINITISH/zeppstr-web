@@ -33,7 +33,7 @@ function SeverityIndicator({ level, x, y }: { level: number; x: number; y: numbe
           cy={y}
           r="3"
           fill={i < level ? "#FFD031" : "none"}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.6"
           strokeWidth="1"
         />
@@ -71,7 +71,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -83,7 +83,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -96,7 +96,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -108,7 +108,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -123,7 +123,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           width={docW}
           height={docH}
           fill="#FFFFFF"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.6"
           strokeWidth="1.25"
         />
@@ -136,7 +136,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
             y1={docY}
             x2={docX + docW * frac}
             y2={docY + 4}
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeOpacity="0.25"
             strokeWidth="1"
           />
@@ -148,7 +148,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y={docY + 18}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="end"
@@ -162,7 +162,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y={docY + 18}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -189,7 +189,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
           fontSize="28"
           fontWeight="700"
-          fill="#0A102F"
+          fill="#0F3D2E"
           letterSpacing="-1.2"
         >
           Diagnostic
@@ -200,7 +200,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
           fontSize="28"
           fontWeight="200"
-          fill="#0A102F"
+          fill="#0F3D2E"
           letterSpacing="-1.2"
         >
           & 90-Day Plan
@@ -212,7 +212,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y1={docY + 138}
           x2={docX + docW - 18}
           y2={docY + 138}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.2"
           strokeWidth="1"
         />
@@ -221,7 +221,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y={docY + 155}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.55"
           letterSpacing="1.5"
         >
@@ -232,7 +232,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y={docY + 155}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.55"
           letterSpacing="1.5"
           textAnchor="end"
@@ -247,7 +247,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.65"
           letterSpacing="1.8"
         >
@@ -260,7 +260,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y={docY + 188}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="7"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.45"
           letterSpacing="1.2"
           textAnchor="end"
@@ -296,7 +296,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
                 y={rowY}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.55"
                 letterSpacing="1.5"
               >
@@ -309,7 +309,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="12"
                 fontWeight={isHovered ? 600 : 400}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="-0.2"
               >
                 {f.label}
@@ -322,7 +322,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
                 y1={rowY + 8}
                 x2={docX + docW - 18}
                 y2={rowY + 8}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.12"
                 strokeWidth="1"
               />
@@ -336,7 +336,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y1={docY + docH - 32}
           x2={docX + docW - 18}
           y2={docY + docH - 32}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.25"
           strokeWidth="1"
         />
@@ -346,7 +346,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.55"
           letterSpacing="1.5"
         >
@@ -366,7 +366,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           y={docY + docH - 14}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="7"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fontWeight="500"
           letterSpacing="0.8"
           textAnchor="middle"
@@ -381,7 +381,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -393,7 +393,7 @@ export function DiagnosticReportCover({ className = "" }: { className?: string }
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

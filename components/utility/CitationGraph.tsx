@@ -74,7 +74,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -86,7 +86,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -99,7 +99,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -111,7 +111,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -126,7 +126,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y1="404"
             x2="48"
             y2="404"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeWidth="2.5"
             strokeOpacity="0.8"
           />
@@ -135,7 +135,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y="407"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.55"
             letterSpacing="1.0"
           >
@@ -147,7 +147,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y1="404"
             x2="134"
             y2="404"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeWidth="1.5"
             strokeOpacity="0.6"
           />
@@ -156,7 +156,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y="407"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.55"
             letterSpacing="1.0"
           >
@@ -168,7 +168,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y1="404"
             x2="224"
             y2="404"
-            stroke="#0A102F"
+            stroke="#0F3D2E"
             strokeWidth="0.75"
             strokeOpacity="0.45"
           />
@@ -177,7 +177,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y="407"
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill="#0A102F"
+            fill="#0F3D2E"
             fillOpacity="0.55"
             letterSpacing="1.0"
           >
@@ -198,7 +198,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
               y1={pos.y}
               x2={cx}
               y2={cy}
-              stroke={isHovered ? "#FFD031" : "#0A102F"}
+              stroke={isHovered ? "#FFD031" : "#0F3D2E"}
               strokeOpacity={isHovered ? 1 : baseOpacity}
               strokeWidth={strokeWidth}
               strokeDasharray="3 3"
@@ -245,7 +245,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
             y={cy - 28}
             width="76"
             height="56"
-            fill="#0A102F"
+            fill="#0F3D2E"
           />
           <text
             x={cx}
@@ -304,7 +304,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
                 width={w}
                 height={h}
                 fill={isHovered ? "#FFD031" : "#FFFFFF"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity={c.tier === 1 ? 0.85 : c.tier === 2 ? 0.6 : 0.45}
                 strokeWidth={c.tier === 1 ? 1.5 : 1}
                 style={{ transition: "fill 200ms ease" }}
@@ -315,7 +315,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize={c.tier === 3 ? 7 : 8}
                 fontWeight={c.tier === 1 ? 600 : 500}
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="0.8"
                 textAnchor="middle"
               >
@@ -326,7 +326,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
                 cx={pos.x - w / 2 + 4}
                 cy={pos.y - h / 2 + 4}
                 r="1.5"
-                fill={c.tier === 1 ? "#FFD031" : c.tier === 2 ? "#0A102F" : "#0A102F"}
+                fill={c.tier === 1 ? "#FFD031" : c.tier === 2 ? "#0F3D2E" : "#0F3D2E"}
                 fillOpacity={c.tier === 1 ? 1 : c.tier === 2 ? 0.6 : 0.35}
               />
               {/* Arrow head pointing at the brand */}
@@ -366,7 +366,7 @@ export function CitationGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

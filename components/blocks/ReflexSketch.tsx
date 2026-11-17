@@ -28,7 +28,7 @@ import * as React from "react";
  * the section, it is wrong.
  */
 
-const INK = "#0A102F";
+const INK = "#0F3D2E";
 const MONO = "var(--font-mono), ui-monospace, monospace";
 
 const ADDITIONS = ["+ agency", "+ platform", "+ channel"];

@@ -62,7 +62,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -74,7 +74,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -87,7 +87,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -99,7 +99,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -113,7 +113,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           y={76}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="middle"
@@ -125,7 +125,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           y={76}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="middle"
@@ -137,7 +137,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           y={76}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="middle"
@@ -158,7 +158,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
               key={`sline-${i}`}
               d={path}
               fill="none"
-              stroke={isLit ? "#FFD031" : "#0A102F"}
+              stroke={isLit ? "#FFD031" : "#0F3D2E"}
               strokeOpacity={isLit ? 1 : 0.3}
               strokeWidth={isLit ? 2 : 1}
               strokeDasharray="3 3"
@@ -188,7 +188,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
               key={`oline-${i}`}
               d={path}
               fill="none"
-              stroke={isLit ? "#FFD031" : "#0A102F"}
+              stroke={isLit ? "#FFD031" : "#0F3D2E"}
               strokeOpacity={isLit ? 1 : 0.3}
               strokeWidth={isLit ? 2 : 1}
               strokeDasharray="3 3"
@@ -222,7 +222,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
                 width="60"
                 height="28"
                 fill={isHovered ? "#FFD031" : "#F8F8F6"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.5"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -233,7 +233,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="12"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 textAnchor="middle"
               >
                 {src.label}
@@ -253,7 +253,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
             y={warehouseY - 36}
             width="72"
             height="72"
-            fill={hovered === "warehouse" ? "#FFD031" : "#0A102F"}
+            fill={hovered === "warehouse" ? "#FFD031" : "#0F3D2E"}
             style={{ transition: "fill 240ms ease" }}
           />
           <text
@@ -261,7 +261,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
             y={warehouseY - 12}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="8"
-            fill={hovered === "warehouse" ? "#0A102F" : "#FFD031"}
+            fill={hovered === "warehouse" ? "#0F3D2E" : "#FFD031"}
             letterSpacing="1.5"
             textAnchor="middle"
             style={{ transition: "fill 240ms ease" }}
@@ -274,7 +274,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
             fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
             fontSize="13"
             fontWeight="400"
-            fill={hovered === "warehouse" ? "#0A102F" : "#FFFFFF"}
+            fill={hovered === "warehouse" ? "#0F3D2E" : "#FFFFFF"}
             textAnchor="middle"
             style={{ transition: "fill 240ms ease" }}
           >
@@ -285,7 +285,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
             y={warehouseY + 20}
             fontFamily="var(--font-mono), ui-monospace, monospace"
             fontSize="7"
-            fill={hovered === "warehouse" ? "#0A102F" : "#FFFFFF"}
+            fill={hovered === "warehouse" ? "#0F3D2E" : "#FFFFFF"}
             fillOpacity="0.7"
             letterSpacing="1.2"
             textAnchor="middle"
@@ -354,7 +354,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
                 width="60"
                 height="28"
                 fill={isHovered ? "#FFD031" : "#F8F8F6"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.5"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -365,7 +365,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="10"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 textAnchor="middle"
               >
                 {out.label}
@@ -381,7 +381,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -393,7 +393,7 @@ export function DataInstrumentationFlow({ className = "" }: { className?: string
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

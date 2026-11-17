@@ -58,7 +58,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -70,7 +70,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -83,7 +83,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -95,7 +95,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -109,7 +109,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           y="74"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -120,7 +120,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           y="74"
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="end"
@@ -134,7 +134,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           y1={startY + 14}
           x2={cx}
           y2={startY + stepY * 4 - 14}
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.5"
           strokeWidth="1"
           strokeDasharray="4 4"
@@ -154,7 +154,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
               Q ${cx + 80} ${startY + stepY * 2 + 8}, ${cx + 80} ${startY + stepY * 2 + 40}
               Q ${cx + 80} ${startY + stepY * 3 + 12}, ${cx + 14} ${startY + stepY * 3}`}
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeOpacity="0.3"
           strokeWidth="1"
           strokeDasharray="3 3"
@@ -164,7 +164,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           y={startY + stepY * 2 + 36}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.2"
         >
@@ -175,7 +175,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           y={startY + stepY * 2 + 48}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -192,7 +192,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
                 y={labelY}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.6"
                 letterSpacing="1.2"
                 textAnchor="end"
@@ -226,7 +226,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
                 width="200"
                 height="32"
                 fill={isHovered ? "#FFD031" : "#FFFFFF"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.6"
                 strokeWidth="1.25"
                 style={{ transition: "fill 240ms ease" }}
@@ -237,7 +237,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
                 y={y + 4}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.6"
                 letterSpacing="1.5"
               >
@@ -250,7 +250,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="16"
                 fontWeight="400"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 textAnchor="middle"
                 letterSpacing="-0.3"
               >
@@ -281,7 +281,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -293,7 +293,7 @@ export function EmailFlowGraph({ className = "" }: { className?: string }) {
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"

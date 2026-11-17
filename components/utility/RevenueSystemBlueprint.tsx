@@ -76,7 +76,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           width="420"
           height="420"
           fill="none"
-          stroke="#0A102F"
+          stroke="#0F3D2E"
           strokeWidth="1"
           strokeOpacity="0.15"
         />
@@ -88,7 +88,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           { x: 20, y: 440 },
           { x: 440, y: 440 },
         ].map((c, i) => (
-          <g key={i} stroke="#0A102F" strokeWidth="1.5" strokeOpacity="0.8">
+          <g key={i} stroke="#0F3D2E" strokeWidth="1.5" strokeOpacity="0.8">
             <line x1={c.x - 6} y1={c.y} x2={c.x + 6} y2={c.y} />
             <line x1={c.x} y1={c.y - 6} x2={c.x} y2={c.y + 6} />
           </g>
@@ -101,7 +101,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -113,7 +113,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
@@ -127,7 +127,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           y={80}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
         >
@@ -138,7 +138,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           y={80}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="middle"
@@ -150,7 +150,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           y={80}
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="8"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.4"
           letterSpacing="1.2"
           textAnchor="end"
@@ -175,7 +175,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 y={y + 18}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.55"
                 letterSpacing="1.5"
               >
@@ -187,7 +187,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 fontFamily="var(--font-display), ui-sans-serif, system-ui, sans-serif"
                 fontSize="14"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 letterSpacing="-0.4"
               >
                 {stage.name}
@@ -200,7 +200,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 width={railW}
                 height={railH}
                 fill={isHovered ? "#FFD031" : "#F8F8F6"}
-                stroke="#0A102F"
+                stroke="#0F3D2E"
                 strokeOpacity="0.4"
                 strokeWidth="1"
                 style={{ transition: "fill 240ms ease" }}
@@ -218,7 +218,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                       width={compW - 8}
                       height={railH - 24}
                       fill="#FFFFFF"
-                      stroke="#0A102F"
+                      stroke="#0F3D2E"
                       strokeOpacity="0.35"
                       strokeWidth="1"
                     />
@@ -228,7 +228,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                       fontFamily="var(--font-mono), ui-monospace, monospace"
                       fontSize="9"
                       fontWeight="500"
-                      fill="#0A102F"
+                      fill="#0F3D2E"
                       letterSpacing="1.0"
                       textAnchor="middle"
                     >
@@ -244,7 +244,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 y={y + 18}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.45"
                 letterSpacing="1.2"
                 textAnchor="end"
@@ -257,7 +257,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="9"
                 fontWeight="600"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.85"
                 letterSpacing="1.2"
                 textAnchor="end"
@@ -273,7 +273,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                     y1={y + railH}
                     x2={railX + railW / 2}
                     y2={y + railH + railGap}
-                    stroke="#0A102F"
+                    stroke="#0F3D2E"
                     strokeOpacity="0.5"
                     strokeWidth="1"
                   />
@@ -326,7 +326,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="8"
                 fontWeight="500"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.7"
                 letterSpacing="1.2"
               >
@@ -337,7 +337,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
                 y={(first + last) / 2 + 6}
                 fontFamily="var(--font-mono), ui-monospace, monospace"
                 fontSize="7"
-                fill="#0A102F"
+                fill="#0F3D2E"
                 fillOpacity="0.5"
                 letterSpacing="1.0"
               >
@@ -354,7 +354,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
         >
@@ -366,7 +366,7 @@ export function RevenueSystemBlueprint({ className = "" }: { className?: string 
           fontFamily="var(--font-mono), ui-monospace, monospace"
           fontSize="9"
           fontWeight="500"
-          fill="#0A102F"
+          fill="#0F3D2E"
           fillOpacity="0.5"
           letterSpacing="1.8"
           textAnchor="end"
