@@ -1,76 +1,54 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 /**
- * MarketDevelopersWall — the real-estate developers that make up the market we
- * work in.
+ * MarketDevelopersWall — leading real-estate developers in the market we work in.
  *
  * THIS IS NOT A CLIENT OR PARTNER WALL, and must not be labelled as one.
- * Most of these developers have no relationship with Zeppstr. Showing a
- * developer's logo under "Clients" or "Partners" would be a false claim. The
- * heading, eyebrow and footnote are written to say "market", and the footnote
- * disclaims affiliation. Real clients live in ClientLogosWall.
+ * These developers are not Zeppstr clients. Showing a developer's logo under
+ * "Clients" or "Partners" would be a false claim. The eyebrow, heading and
+ * footnote say "market" and disclaim affiliation. Real clients live in
+ * ClientLogosWall (TRU Dwellings is a real client and is shown there, not here).
  *
- * LOGOS: drop files into public/market-logos/ named `<slug>.svg|png|webp`.
- * A developer without a file renders as a name tile, so a missing logo never
- * breaks the page. Files are checked once at build/render time on the server.
+ * ARTWORK: public/market-logos/. Every file is dark artwork on transparent or
+ * white — Raheja and Origen were supplied reversed (light on dark) and were
+ * recoloured to ink, per the same rule as ClientLogosWall. Do not add a white
+ * logo; recolour the file.
  *
- * COUNT: 29 developers + 1 "& more" tile = 30, which divides evenly into the
- * 2/3/6 columns used below, matching ClientLogosWall (no ragged last row).
+ * SIZING: logos have wildly different aspect ratios, so a fixed box makes
+ * square marks huge and wordmarks tiny. Each logo is sized to the same target
+ * AREA (capped on width and height) so they carry equal visual weight.
+ *
+ * COUNT: 10 = 2 rows of 5 at md+, 5 rows of 2 on mobile. Add logos in
+ * multiples of 5 to keep the grid even.
  */
-type Dev = { name: string; slug: string };
+type Dev = { name: string; file: string; w: number; h: number };
 
 const DEVELOPERS: Dev[] = [
-  { name: "Prestige", slug: "prestige" },
-  { name: "Sobha", slug: "sobha" },
-  { name: "Lodha", slug: "lodha" },
-  { name: "Puravankara", slug: "puravankara" },
-  { name: "Shapoorji Pallonji", slug: "shapoorji-pallonji" },
-  { name: "Raheja", slug: "raheja" },
-  { name: "Signature Global", slug: "signature-global" },
-  { name: "Eldeco", slug: "eldeco" },
-  { name: "Anantraj", slug: "anantraj" },
-  { name: "Premier", slug: "premier" },
-  { name: "Key Mansions", slug: "key-mansions" },
-  { name: "Aditya", slug: "aditya" },
-  { name: "Arqis", slug: "arqis" },
-  { name: "Tribeca", slug: "tribeca" },
-  { name: "Trump Organization", slug: "trump-org" },
-  { name: "Raghava", slug: "raghava" },
-  { name: "NPS Developers", slug: "nps-developers" },
-  { name: "ATZ Properties", slug: "atz-properties" },
-  { name: "Vayu Infra", slug: "vayu-infra" },
-  { name: "TRU Dwellings", slug: "tru-dwellings" },
-  { name: "DS-Max Properties", slug: "ds-max" },
-  { name: "Origen Realty", slug: "origen-realty" },
-  { name: "Shri Vrinda", slug: "shri-vrinda" },
-  { name: "Surya", slug: "surya" },
-  { name: "K Sons", slug: "k-sons" },
-  { name: "GYGY Group", slug: "gygy" },
-  { name: "Veena Developers", slug: "veena" },
-  { name: "Northwind", slug: "northwind" },
-  { name: "EIPL", slug: "eipl" },
+  { name: "Prestige", file: "prestige.png", w: 249, h: 300 },
+  { name: "Sobha", file: "sobha.png", w: 261, h: 72 },
+  { name: "Lodha", file: "lodha.png", w: 412, h: 84 },
+  { name: "Puravankara", file: "puravankara.webp", w: 640, h: 141 },
+  { name: "Shapoorji Pallonji", file: "shapoorji-pallonji.png", w: 378, h: 198 },
+  { name: "Raheja", file: "raheja.png", w: 367, h: 65 },
+  { name: "Signature Global", file: "signature-global.png", w: 640, h: 229 },
+  { name: "Anantraj", file: "anantraj.png", w: 446, h: 300 },
+  { name: "DS-Max Properties", file: "ds-max.png", w: 356, h: 300 },
+  { name: "Origen Realty", file: "origen-realty.png", w: 183, h: 56 },
 ];
 
-function logoFor(slug: string): string | null {
-  for (const ext of ["svg", "png", "webp"]) {
-    const file = `${slug}.${ext}`;
-    if (fs.existsSync(path.join(process.cwd(), "public", "market-logos", file))) {
-      return `/market-logos/${file}`;
-    }
-  }
-  return null;
-}
+const AREA = 6200; // target px² per logo, at 1x
+const MAX_W = 150;
+const MAX_H = 62;
 
-const CELL = cn(
-  "group relative flex items-center justify-center text-center",
-  "h-[96px] md:h-[110px] px-4",
-  "bg-white rounded-md border border-ink-headline/10",
-  "shadow-[0_1px_2px_rgba(15,61,46,0.04),0_2px_8px_rgba(15,61,46,0.05)]",
-  "transition-all duration-hover hover:-translate-y-0.5 hover:border-ink-headline/20",
-);
+function box(w: number, h: number) {
+  const ar = w / h;
+  let dw = Math.sqrt(AREA * ar);
+  let dh = dw / ar;
+  if (dw > MAX_W) { dw = MAX_W; dh = dw / ar; }
+  if (dh > MAX_H) { dh = MAX_H; dw = dh * ar; }
+  return { width: Math.round(dw), height: Math.round(dh) };
+}
 
 export function MarketDevelopersWall() {
   return (
@@ -102,40 +80,50 @@ export function MarketDevelopersWall() {
           </div>
         </div>
 
-        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+        <ul className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
           {DEVELOPERS.map((d) => {
-            const src = logoFor(d.slug);
+            const { width, height } = box(d.w, d.h);
             return (
-              <li key={d.slug} className={CELL}>
-                {src ? (
-                  <Image
-                    src={src}
-                    alt={d.name}
-                    width={160}
-                    height={64}
-                    unoptimized={src.endsWith(".svg")}
-                    className="w-auto h-auto max-w-[140px] max-h-[56px] object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-hover"
-                  />
-                ) : (
-                  <span className="font-body font-semibold text-body-sm text-ink-headline/70 group-hover:text-ink-headline transition-colors">
-                    {d.name}
-                  </span>
+              <li
+                key={d.file}
+                className={cn(
+                  "group relative flex items-center justify-center",
+                  "h-[112px] md:h-[132px] px-5",
+                  "bg-white rounded-md border border-ink-headline/10",
+                  "shadow-[0_1px_2px_rgba(15,61,46,0.04),0_2px_8px_rgba(15,61,46,0.05)]",
+                  "transition-all duration-hover",
+                  "hover:-translate-y-0.5 hover:border-ink-headline/20",
+                  "hover:shadow-[0_2px_4px_rgba(15,61,46,0.06),0_10px_24px_rgba(15,61,46,0.10)]",
                 )}
+              >
+                <Image
+                  src={`/market-logos/${d.file}`}
+                  alt={d.name}
+                  width={width}
+                  height={height}
+                  sizes="150px"
+                  className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-hover"
+                  style={{ width, height }}
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute left-4 right-4 bottom-0 h-[2px] rounded-full bg-brand-yellow scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-hover"
+                />
               </li>
             );
           })}
-          <li className={cn(CELL, "bg-transparent shadow-none border-dashed")}>
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted">
-              &amp; many more
-            </span>
-          </li>
         </ul>
 
-        <p className="mt-8 font-body text-[12px] leading-relaxed text-ink-muted max-w-[70ch]">
-          Names and logos are trademarks of their respective owners, shown for
-          market context only. No endorsement, partnership or client
-          relationship is implied.
-        </p>
+        <div className="mt-8 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <p className="font-body text-[12px] leading-relaxed text-ink-muted max-w-[70ch]">
+            Names and logos are trademarks of their respective owners, shown for
+            market context only. No endorsement, partnership or client
+            relationship is implied.
+          </p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted whitespace-nowrap">
+            &amp; many more across Karnataka
+          </p>
+        </div>
       </div>
     </section>
   );
