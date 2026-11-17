@@ -193,13 +193,17 @@ export function TruAquapolisCase() {
                   <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">{k}</dt>
                   <dd className="mt-2 font-body text-body text-white">
                     {logo ? (
-                      <Image
-                        src="/client-logos/v3/tru-aquapolis.png"
-                        alt={`${v} logo`}
-                        width={140}
-                        height={56}
-                        className="h-10 w-auto brightness-0 invert"
-                      />
+                      /* Logo file has an opaque background, so it sits on a white chip
+                         rather than being inverted (inverting turned it into a solid block). */
+                      <span className="inline-flex items-center rounded-md bg-white px-3 py-2">
+                        <Image
+                          src="/client-logos/v3/tru-aquapolis.png"
+                          alt={`${v} logo`}
+                          width={140}
+                          height={56}
+                          className="h-8 w-auto"
+                        />
+                      </span>
                     ) : (
                       v
                     )}
