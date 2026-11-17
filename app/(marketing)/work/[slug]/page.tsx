@@ -14,6 +14,7 @@ import { PullQuote } from "@/components/blocks/PullQuote";
 import { CTABanner } from "@/components/blocks/CTABanner";
 import { getCaseVisuals } from "@/lib/case-visuals";
 import { CaseChart } from "@/components/work/CaseCharts";
+import { TruAquapolisCase } from "@/components/work/cases/TruAquapolisCase";
 import { sanity } from "@/sanity/lib/client";
 import { sanityImageProps } from "@/sanity/lib/image";
 import { caseStudyBySlugQuery } from "@/sanity/lib/queries";
@@ -66,6 +67,9 @@ export default async function CaseStudyPage({
   });
 
   if (!cs) notFound();
+
+  // Bespoke layout (17 Nov 2026). Metadata still comes from Sanity above.
+  if (params.slug === "tru-aquapolis") return <TruAquapolisCase />;
 
   const metrics = getCaseStudyMetrics(params.slug);
   /* Stat band + chart. Null for any case without published figures, which is
