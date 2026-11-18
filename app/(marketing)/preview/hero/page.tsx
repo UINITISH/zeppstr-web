@@ -247,7 +247,10 @@ function Slab({ y, w, h, fill, side, top, label, dark }: { y: number; w: number;
       <polygon points={left} fill={fill} />
       <polygon points={right} fill={side} />
       <polygon points={topPts} fill={top} />
-      <text x={cx} y={y + 5} textAnchor="middle" fontSize="12" fontWeight="700" fontFamily="ui-monospace, monospace" letterSpacing="2" fill={dark ? "#0F3D2E" : "#ffffff"}>
+      {/* label sits outside the stack, joined by a leader line, so slabs above never cover it */}
+      <line x1={cx + d} y1={y + h / 2} x2={560} y2={y + h / 2} stroke="#0F3D2E" strokeOpacity="0.35" strokeDasharray="3 4" />
+      <circle cx={cx + d} cy={y + h / 2} r="2.5" fill="#0F3D2E" />
+      <text x={568} y={y + h / 2 + 4} fontSize="12" fontWeight="700" fontFamily="ui-monospace, monospace" letterSpacing="2" fill={dark ? "#0F3D2E" : "#0F3D2E"}>
         {label.toUpperCase()}
       </text>
     </g>
@@ -271,7 +274,7 @@ function HeroF() {
           </div>
         </div>
         <div className="lg:col-span-6">
-          <svg viewBox="0 0 520 470" className="w-full max-w-[520px] mx-auto block" role="img" aria-label="Isometric stack: four thin channel slabs resting on three thick foundation slabs labelled positioning, measurement and conversion">
+          <svg viewBox="0 0 720 470" className="w-full max-w-[640px] mx-auto block" role="img" aria-label="Isometric stack: four thin channel slabs resting on three thick foundation slabs labelled positioning, measurement and conversion">
             {/* foundations, bottom up */}
             <Slab y={360} w={440} h={46} fill="#0F3D2E" side="#0B2E22" top="#14523D" label="Positioning" />
             <Slab y={300} w={440} h={46} fill="#0F3D2E" side="#0B2E22" top="#1A6049" label="Measurement" />
