@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GlobalNav } from "@/components/nav/GlobalNav";
 import { HeroPrimary } from "@/components/hero/HeroPrimary";
 import { FilterableWorkGrid } from "@/components/work/FilterableWorkGrid";
+import { ToolsWall } from "@/components/blocks/ToolsWall";
 import { ClientLogosWall } from "@/components/blocks/ClientLogosWall";
 import { ResultsStrip } from "@/components/blocks/ResultsStrip";
 import { ReflexSketch } from "@/components/blocks/ReflexSketch";
@@ -269,6 +270,9 @@ export default async function HomePage() {
 
         {/* ─── 4. CLIENT LOGOS WALL — visual breadth proof ─── */}
         <ClientLogosWall />
+
+        {/* ─── 4b. TOOLS WALL — platforms we build and measure on ─── */}
+        <ToolsWall />
 
         {/* ─── 5. MANIFESTO — yellow full-bleed ─── */}
         <ManifestoBlock
