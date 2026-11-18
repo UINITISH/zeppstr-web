@@ -22,7 +22,7 @@ export function AIStackPipeline() {
       </div>
 
       <div className="mt-16 md:mt-20 pb-24 md:pb-32 overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin]">
-        <ol className="relative flex w-max px-[max(1.5rem,calc((100vw-1200px)/2))]">
+        <ol className="relative flex w-max px-6 md:px-[max(3rem,calc((100vw_-_1280px)/2_+_3rem))]">
           {/* the rail */}
           <span aria-hidden="true" className="absolute top-[11px] left-0 right-0 h-[2px] bg-ink-headline/15" />
           {AI_STAGES.map((s, i) => (
