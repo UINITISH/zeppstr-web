@@ -1,3 +1,5 @@
+import { AI_STAGES as STAGES } from "@/lib/ai-stack";
+
 /**
  * AI STACK — the AI tools Zeppstr uses at each stage of the work.
  * Added to the homepage 18 Nov 2026, directly after the tools wall.
@@ -10,53 +12,7 @@
  * card spans both columns so no row is left ragged.
  */
 
-const STAGES = [
-  {
-    stage: "Research & strategy",
-    line: "Market, competitor, keyword and audience research, done in days.",
-    tools: ["Claude", "ChatGPT", "Perplexity", "Gemini"],
-  },
-  {
-    stage: "Content & copy",
-    line: "First drafts of web, ad, email and social copy, then edited by our writers.",
-    tools: ["Claude", "ChatGPT", "Grammarly"],
-  },
-  {
-    stage: "Design & creative",
-    line: "Concepts, layouts, ad variations and imagery.",
-    tools: ["Figma", "Midjourney", "Adobe Firefly", "Canva"],
-  },
-  {
-    stage: "Video & voice",
-    line: "Short-form video, motion and voiceovers.",
-    tools: ["Higgsfield", "Runway", "ElevenLabs", "HeyGen"],
-  },
-  {
-    stage: "Build & development",
-    line: "Design to working code, faster builds, cleaner launches.",
-    tools: ["Claude Code", "Vercel", "Cursor", "GitHub Copilot"],
-  },
-  {
-    stage: "Prospecting & CRM",
-    line: "Finding decision-makers, enriching leads and scoring them before handover.",
-    tools: ["Apollo", "Clay", "HubSpot"],
-  },
-  {
-    stage: "Ads & optimisation",
-    line: "Bidding, audience targeting and budget moved to what converts.",
-    tools: ["Google Ads (Performance Max)", "Meta Advantage+"],
-  },
-  {
-    stage: "Analytics & reporting",
-    line: "Daily data pulls, problem alerts, client reports.",
-    tools: ["Supermetrics", "Google Analytics 4", "Looker Studio"],
-  },
-  {
-    stage: "Automation",
-    line: "Connecting every tool so leads and data move without manual work.",
-    tools: ["Zapier", "Make", "n8n"],
-  },
-];
+
 
 export function AIStack() {
   return (
