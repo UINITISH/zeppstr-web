@@ -4,6 +4,7 @@ import { GlobalNav } from "@/components/nav/GlobalNav";
 import { HeroPrimary } from "@/components/hero/HeroPrimary";
 import { FilterableWorkGrid } from "@/components/work/FilterableWorkGrid";
 import { ToolsWall } from "@/components/blocks/ToolsWall";
+import { AIStack } from "@/components/blocks/AIStack";
 import { ClientLogosWall } from "@/components/blocks/ClientLogosWall";
 import { ResultsStrip } from "@/components/blocks/ResultsStrip";
 import { ReflexSketch } from "@/components/blocks/ReflexSketch";
@@ -273,6 +274,9 @@ export default async function HomePage() {
 
         {/* ─── 4b. TOOLS WALL — platforms we build and measure on ─── */}
         <ToolsWall />
+
+        {/* ─── 4c. AI STACK — AI tools by stage of the work ─── */}
+        <AIStack />
 
         {/* ─── 5. MANIFESTO — yellow full-bleed ─── */}
         <ManifestoBlock
