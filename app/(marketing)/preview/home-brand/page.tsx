@@ -183,7 +183,7 @@ export default async function HomeBrandPreview() {
       <main className="relative">
         <GridOverlay />
         {/* ─── 1. HERO — one idea, oversized ─── */}
-        {/* Founder-led hero (preview). Add photo="/team/nitish-kumar.jpg" once the file exists. */}
+        {/* Founder-led hero, plain and centred (preview). */}
         <HeroFounder />
 
         {/* ─── 2. EDITORIAL STATEMENT — pure type, no decoration ─── */}
