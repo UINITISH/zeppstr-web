@@ -273,14 +273,6 @@ export default async function HomeBrandPreview() {
 
             <FilterableWorkGrid cases={featuredCases} />
 
-            <div className="mt-14 flex justify-center">
-              <Link
-                href="/work"
-                className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-headline border-b-2 border-ink-headline pb-1 hover:border-brand-yellow transition-colors"
-              >
-                See all work →
-              </Link>
-            </div>
           </div>
         </section>
 
