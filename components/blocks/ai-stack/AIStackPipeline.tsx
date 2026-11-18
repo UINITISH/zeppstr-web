@@ -21,8 +21,9 @@ export function AIStackPipeline() {
         </div>
       </div>
 
-      <div className="mt-16 md:mt-20 pb-24 md:pb-32 overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin]">
-        <ol className="relative flex w-max px-6 md:px-[max(3rem,calc((100vw_-_1280px)/2_+_3rem))]">
+      <div className="container-layout mt-16 md:mt-20 pb-24 md:pb-32">
+        <div className="overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:thin]">
+        <ol className="relative flex w-max">
           {/* the rail */}
           <span aria-hidden="true" className="absolute top-[11px] left-0 right-0 h-[2px] bg-ink-headline/15" />
           {AI_STAGES.map((s, i) => (
@@ -51,6 +52,7 @@ export function AIStackPipeline() {
             </li>
           ))}
         </ol>
+        </div>
       </div>
     </section>
   );
