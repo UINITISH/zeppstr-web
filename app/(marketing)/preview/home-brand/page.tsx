@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GlobalNav } from "@/components/nav/GlobalNav";
-import { HeroPrimary } from "@/components/hero/HeroPrimary";
+import { HeroFounder } from "@/components/hero/HeroFounder";
 import { FilterableWorkGrid } from "@/components/work/FilterableWorkGrid";
 import { ClientLogosWall } from "@/components/blocks/ClientLogosWall";
 import { ResultsStrip } from "@/components/blocks/ResultsStrip";
@@ -183,41 +183,8 @@ export default async function HomeBrandPreview() {
       <main className="relative">
         <GridOverlay />
         {/* ─── 1. HERO — one idea, oversized ─── */}
-        <HeroPrimary
-          /**
-           * ── HEADLINE REPLACED 15 SEP 2026 ──────────────────────────────────
-           *
-           * WAS: "Strategic growth planning for ambitious businesses."
-           *
-           * That is a category description, not a claim. Every word in it is
-           * one a competitor would also use, and none of it commits to
-           * anything a reader could disagree with — which means none of it is
-           * worth reading. It also duplicated the old subhead almost verbatim
-           * (fixed separately), so the top of the site said nothing twice.
-           *
-           * The replacement is contrarian and specific: it states a position
-           * a prospect can push back on, and it is the exact argument the POV
-           * section immediately below the fold then makes ("Growth stalls. The
-           * reflex is to add —"). The hero now sets up the page instead of
-           * introducing the company.
-           *
-           * If you want the old line back it is one string. But be clear about
-           * the trade: the old line is safe and says nothing; this one takes a
-           * position and will lose the readers who disagree with it. For a
-           * firm that turns down most inbound work, losing those readers early
-           * is the point.
-           */
-          headline="Your channels aren't the problem. What's underneath them is."
-          /* REWRITTEN 15 SEP 2026. The previous subhead opened "Zeppstr is the
-             strategic growth partner for ambitious businesses" — a near-verbatim
-             restatement of the headline directly above it. The first two
-             sentences on the site said the same thing twice, which spends the
-             most valuable paragraph on the site saying nothing new. This version
-             makes the argument the rest of the page then evidences. */
-          subhead="Most growth stalls are architecture problems, not channel problems. We rebuild the layer beneath your marketing — positioning, measurement, conversion — so every channel, every campaign, every rupee compounds instead of competing."
-          ctaPrimary={{ label: "View Selected Work", href: "/work" }}
-          ctaSecondary={{ label: "Apply for a diagnostic", href: "/book-consultation" }}
-        />
+        {/* Founder-led hero (preview). Add photo="/team/nitish-kumar.jpg" once the file exists. */}
+        <HeroFounder />
 
         {/* ─── 2. EDITORIAL STATEMENT — pure type, no decoration ─── */}
         {/* The page's quietest-loudest moment. Nothing to click. */}
