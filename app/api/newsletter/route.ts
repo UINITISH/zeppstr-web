@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 import { newsletterSchema } from "@/lib/schemas/contact";
-import { sendEmail, emailTemplate, PRIMARY_INBOX } from "@/lib/email";
+import { emailTemplate } from "@/lib/email";
+import { deliverLead } from "@/lib/lead";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
  * Newsletter — The Brief.
- * V1: validates email, sends an internal notification so Nitish manually adds to ConvertKit/Mailchimp.
- * V2 (later): direct-add to ESP via API once provider is selected.
+ * Subscribers go to HubSpot as contacts (note: "Newsletter · The Brief") plus an email alert.
  */
 export async function POST(request: Request) {
   let payload: unknown;
@@ -39,27 +39,28 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, stub: true });
   }
 
-  const html = emailTemplate({
-    title: "New subscriber to The Brief",
-    rows: [
-      { label: "Email", value: email },
-      { label: "Source", value: source },
-      { label: "Subscribed at", value: new Date().toISOString() },
-    ],
-  });
+  const result = await deliverLead(
+    {
+      email,
+      source: "Newsletter · The Brief",
+      page: source,
+      details: [["Subscribed from", source]],
+    },
+    {
+      subject: `[Brief] New subscriber: ${email}`,
+      html: emailTemplate({
+        title: "New subscriber to The Brief",
+        rows: [
+          { label: "Email", value: email },
+          { label: "Source", value: source },
+          { label: "Subscribed at", value: new Date().toISOString() },
+        ],
+      }),
+    },
+  );
 
-  const result = await sendEmail({
-    to: PRIMARY_INBOX,
-    subject: `[Brief] New subscriber: ${email}`,
-    html,
-  });
-
-  if (!result.ok) {
-    return NextResponse.json(
-      { ok: false, message: "Subscription failed. Please try again." },
-      { status: 500 }
-    );
+  if (!result.delivered) {
+    return NextResponse.json({ ok: false, message: "Something went wrong sending this. Please try again, or email nitish@zeppstr.com directly." }, { status: 503 });
   }
-
   return NextResponse.json({ ok: true });
 }

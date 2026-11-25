@@ -1,3 +1,4 @@
+import { deliverLead } from "@/lib/lead";
 import { NextResponse } from "next/server";
 
 /**
@@ -43,42 +44,6 @@ interface ChatLeadPayload {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-async function pushToHubSpot(data: ChatLeadPayload, token: string) {
-  const [firstName, ...rest] = (data.name ?? "").trim().split(/\s+/);
-
-  const res = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      properties: {
-        email: data.email,
-        firstname: firstName || undefined,
-        lastname: rest.join(" ") || undefined,
-        company: data.company || undefined,
-        hs_lead_status: "NEW",
-        // Free-text so it works without creating custom properties first.
-        message: [
-          `Source: site chat widget`,
-          `Intent: ${data.intent ?? "unknown"}`,
-          data.page ? `Page: ${data.page}` : null,
-          data.trail?.length ? `Path: ${data.trail.join(" → ")}` : null,
-        ]
-          .filter(Boolean)
-          .join("\n"),
-      },
-    }),
-  });
-
-  // 409 means the contact already exists — that is a normal outcome for a
-  // returning visitor, not a failure worth throwing on.
-  if (!res.ok && res.status !== 409) {
-    throw new Error(`HubSpot ${res.status}: ${await res.text()}`);
-  }
-}
-
 export async function POST(req: Request) {
   try {
     const data = (await req.json()) as ChatLeadPayload;
@@ -97,29 +62,30 @@ export async function POST(req: Request) {
       );
     }
 
-    // Log first, always — see the note above. A lead that reaches the console
-    // is recoverable; one lost to a failed integration is not.
-    console.log("[chat-lead] new lead:", {
-      name: data.name,
-      email: data.email,
-      company: data.company,
-      intent: data.intent,
-      page: data.page,
-      trail: data.trail,
-    });
+    const result = await deliverLead(
+      {
+        email: (data.email ?? "").trim(),
+        name: data.name,
+        company: data.company,
+        source: "Chat widget",
+        page: data.page,
+        details: [
+          ["Intent", data.intent ?? "unknown"],
+          ["Path through the chat", data.trail?.join(" → ")],
+        ],
+      },
+      {
+        subject: `[Chat] ${data.name}${data.company ? ` — ${data.company}` : ""}`,
+        replyTo: (data.email ?? "").trim(),
+        html: `<p><strong>${data.name}</strong> (${data.email})${data.company ? `, ${data.company}` : ""}</p><p>Intent: ${data.intent ?? "unknown"}<br>Page: ${data.page ?? "—"}<br>Path: ${data.trail?.join(" → ") ?? "—"}</p>`,
+      },
+    );
 
-    const token = process.env.HUBSPOT_TOKEN;
-    if (token) {
-      try {
-        await pushToHubSpot(data, token);
-        console.log(`[chat-lead] pushed to HubSpot: ${data.email}`);
-      } catch (err) {
-        // Never surface an integration failure to the visitor — the lead is
-        // already in the logs and they have done nothing wrong.
-        console.error("[chat-lead] HubSpot push failed:", err);
-      }
-    } else {
-      console.warn("[chat-lead] HUBSPOT_TOKEN not set — lead logged only");
+    if (!result.delivered) {
+      return NextResponse.json(
+        { error: "Something went wrong sending this. Please try again, or email nitish@zeppstr.com directly." },
+        { status: 503 },
+      );
     }
 
     return NextResponse.json({ ok: true });

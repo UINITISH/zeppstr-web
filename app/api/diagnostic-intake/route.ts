@@ -1,3 +1,4 @@
+import { deliverLead } from "@/lib/lead";
 import { NextResponse } from "next/server";
 
 /**
@@ -67,112 +68,6 @@ function formatNoteBody(d: IntakePayload): string {
   ].join("<br>");
 }
 
-async function pushToHubSpot(d: IntakePayload, token: string): Promise<void> {
-  const [firstName, ...restName] = d.fullName.trim().split(/\s+/);
-  const lastName = restName.join(" ") || "—";
-
-  // Strip protocol from website for cleaner HubSpot record
-  const cleanWebsite = d.website
-    ? d.website.replace(/^https?:\/\//i, "").replace(/\/$/, "")
-    : undefined;
-
-  const baseHeaders = {
-    Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
-  };
-
-  // ─── Step 1: Create or update contact ─────────────────────────────
-  const properties: Record<string, string> = {
-    email: d.email,
-    firstname: firstName,
-    lastname: lastName,
-    company: d.company,
-    lifecyclestage: "lead",
-  };
-  if (cleanWebsite) properties.website = cleanWebsite;
-
-  let contactId: string | null = null;
-
-  const createRes = await fetch(
-    "https://api.hubapi.com/crm/v3/objects/contacts",
-    {
-      method: "POST",
-      headers: baseHeaders,
-      body: JSON.stringify({ properties }),
-    }
-  );
-
-  if (createRes.ok) {
-    const created = await createRes.json();
-    contactId = created.id;
-  } else if (createRes.status === 409) {
-    // Conflict — contact already exists. Look up by email then update.
-    const lookupRes = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(d.email)}?idProperty=email`,
-      { headers: baseHeaders }
-    );
-    if (lookupRes.ok) {
-      const existing = await lookupRes.json();
-      contactId = existing.id;
-      // PATCH the contact with any updated fields (latest company, name, etc.)
-      await fetch(
-        `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
-        {
-          method: "PATCH",
-          headers: baseHeaders,
-          body: JSON.stringify({ properties }),
-        }
-      );
-    }
-  } else {
-    const errText = await createRes.text();
-    throw new Error(`HubSpot contact create failed (${createRes.status}): ${errText}`);
-  }
-
-  if (!contactId) {
-    throw new Error("Could not resolve HubSpot contact ID");
-  }
-
-  // ─── Step 2: Create a Note with the full intake transcript ────────
-  const noteRes = await fetch("https://api.hubapi.com/crm/v3/objects/notes", {
-    method: "POST",
-    headers: baseHeaders,
-    body: JSON.stringify({
-      properties: {
-        hs_timestamp: Date.now().toString(),
-        hs_note_body: formatNoteBody(d),
-      },
-    }),
-  });
-
-  if (!noteRes.ok) {
-    const errText = await noteRes.text();
-    throw new Error(`HubSpot note create failed (${noteRes.status}): ${errText}`);
-  }
-
-  const note = await noteRes.json();
-  const noteId: string = note.id;
-
-  // ─── Step 3: Associate the note with the contact ──────────────────
-  // Association type 202 = note → contact (HubSpot defined)
-  const assocRes = await fetch(
-    `https://api.hubapi.com/crm/v4/objects/notes/${noteId}/associations/contacts/${contactId}`,
-    {
-      method: "PUT",
-      headers: baseHeaders,
-      body: JSON.stringify([
-        { associationCategory: "HUBSPOT_DEFINED", associationTypeId: 202 },
-      ]),
-    }
-  );
-
-  if (!assocRes.ok) {
-    const errText = await assocRes.text();
-    // Don't throw — contact + note exist, association is best-effort
-    console.warn(`HubSpot association failed (${assocRes.status}): ${errText}`);
-  }
-}
-
 export async function POST(req: Request) {
   try {
     const data = (await req.json()) as IntakePayload;
@@ -192,33 +87,35 @@ export async function POST(req: Request) {
       );
     }
 
-    // Always log so the lead is captured even if HubSpot fails / isn't configured
-    console.log("[diagnostic-intake] new submission:", {
-      name: data.fullName,
-      email: data.email,
-      company: data.company,
-      website: data.website,
-      revenue: data.annualRevenue,
-      budget: data.marketingBudget,
-      industry: data.industry,
-      channels: data.channels,
-      constraints: data.constraints,
-      outcome: data.desiredOutcome,
-      timeline: data.startTimeline,
-    });
+    const result = await deliverLead(
+      {
+        email: data.email,
+        name: data.fullName,
+        company: data.company,
+        website: data.website,
+        source: "Diagnostic intake",
+        page: "/book-consultation",
+        details: [
+          ["Annual revenue", data.annualRevenue],
+          ["Marketing investment", `${data.marketingBudget}/year`],
+          ["Industry", data.industry],
+          ["Channels running", data.channels?.join(", ")],
+          ["Where it leaks", data.constraints.map((c) => CONSTRAINT_LABELS[c] ?? c).join(", ")],
+          ["Desired 12-month outcome", data.desiredOutcome],
+          ["Engagement timing", TIMELINE_LABELS[data.startTimeline] ?? data.startTimeline],
+        ],
+      },
+      {
+        subject: `[Diagnostic] ${data.company} — ${data.fullName}`,
+        replyTo: data.email,
+        html: formatNoteBody(data),
+      },
+    );
 
-    const hsToken = process.env.HUBSPOT_TOKEN;
-    if (hsToken) {
-      try {
-        await pushToHubSpot(data, hsToken);
-        console.log(`[diagnostic-intake] pushed to HubSpot: ${data.email}`);
-      } catch (err) {
-        // Log the failure but still return success to the user — the lead is in console logs
-        console.error("[diagnostic-intake] HubSpot push failed:", err);
-      }
-    } else {
-      console.warn(
-        "[diagnostic-intake] HUBSPOT_TOKEN not set — submission logged only"
+    if (!result.delivered) {
+      return NextResponse.json(
+        { error: "Something went wrong sending this. Please try again, or email nitish@zeppstr.com directly." },
+        { status: 503 },
       );
     }
 
