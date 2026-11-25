@@ -5,7 +5,11 @@
  *
  * Logos: official marks from the open-source icon sets simple-icons (CC0) and
  * @lobehub/icons (MIT), exported to /public/ai-tool-logos/. Still needed as
- * files from the team: Canva, Higgsfield, HeyGen, Apollo, Clay, Supermetrics.
+ * files from the team: Canva, Higgsfield, HeyGen, Apollo, Clay, Supermetrics,
+ * Jasper, Synthesia, Bolt, Lemlist, Salesforce, Microsoft Clarity.
+ *
+ * 25 Nov 2026: tools added per stage from 2026 category research at Nitish's
+ * request. Sora deliberately NOT listed — OpenAI shut it down in April 2026.
  */
 export interface AITool {
   name: string;
@@ -28,6 +32,8 @@ export const AI_STAGES: AIStage[] = [
       { name: "ChatGPT", logo: "chatgpt" },
       { name: "Perplexity", logo: "perplexity" },
       { name: "Gemini", logo: "gemini" },
+      { name: "NotebookLM", logo: "notebooklm" },
+      { name: "Semrush", logo: "semrush" },
     ],
   },
   {
@@ -37,6 +43,8 @@ export const AI_STAGES: AIStage[] = [
       { name: "Claude", logo: "claude" },
       { name: "ChatGPT", logo: "chatgpt" },
       { name: "Grammarly", logo: "grammarly" },
+      { name: "Notion AI", logo: "notion" },
+      { name: "Jasper" },
     ],
   },
   {
@@ -47,6 +55,9 @@ export const AI_STAGES: AIStage[] = [
       { name: "Midjourney", logo: "midjourney" },
       { name: "Adobe Firefly", logo: "adobe-firefly" },
       { name: "Canva" },
+      { name: "Ideogram", logo: "ideogram" },
+      { name: "Recraft", logo: "recraft" },
+      { name: "Krea", logo: "krea" },
     ],
   },
   {
@@ -57,6 +68,9 @@ export const AI_STAGES: AIStage[] = [
       { name: "Runway", logo: "runway" },
       { name: "ElevenLabs", logo: "elevenlabs" },
       { name: "HeyGen" },
+      { name: "Google Veo", logo: "google-veo" },
+      { name: "Kling", logo: "kling" },
+      { name: "Synthesia" },
     ],
   },
   {
@@ -67,6 +81,10 @@ export const AI_STAGES: AIStage[] = [
       { name: "Vercel", logo: "vercel" },
       { name: "Cursor", logo: "cursor" },
       { name: "GitHub Copilot", logo: "github-copilot" },
+      { name: "v0", logo: "v0" },
+      { name: "Lovable", logo: "lovable" },
+      { name: "Replit", logo: "replit" },
+      { name: "Bolt" },
     ],
   },
   {
@@ -76,6 +94,8 @@ export const AI_STAGES: AIStage[] = [
       { name: "Apollo" },
       { name: "Clay" },
       { name: "HubSpot", logo: "hubspot" },
+      { name: "Lemlist" },
+      { name: "Salesforce" },
     ],
   },
   {
@@ -84,6 +104,8 @@ export const AI_STAGES: AIStage[] = [
     tools: [
       { name: "Google Ads (Performance Max)", logo: "google-ads" },
       { name: "Meta Advantage+", logo: "meta" },
+      { name: "LinkedIn Ads", logo: "linkedin" },
+      { name: "Microsoft Advertising", logo: "microsoft" },
     ],
   },
   {
@@ -93,6 +115,8 @@ export const AI_STAGES: AIStage[] = [
       { name: "Supermetrics" },
       { name: "Google Analytics 4", logo: "google-analytics" },
       { name: "Looker Studio", logo: "looker" },
+      { name: "Hotjar", logo: "hotjar" },
+      { name: "Microsoft Clarity" },
     ],
   },
   {
