@@ -9,10 +9,12 @@
  * history stacks up on a single record instead of creating duplicates.
  *
  * SETUP (one time, in HubSpot portal 245883344):
- *   Settings → Integrations → Private Apps → Create private app
+ *   Settings → Integrations → Service Keys → create a key
+ *   (Service Keys replaced private apps; new private apps can no longer be
+ *   created since late Sep/Oct 2026. Both work the same way here: Bearer token.)
  *   Scopes: crm.objects.contacts.read, crm.objects.contacts.write
  *   (notes are written through the contacts scopes)
- *   Copy the access token into Vercel → zeppstr-web → Settings →
+ *   Copy the key into Vercel → zeppstr-web → Settings →
  *   Environment Variables as HUBSPOT_TOKEN, for Production AND Preview.
  *
  * Lifecycle stage and lead status are set only when the contact is CREATED.
